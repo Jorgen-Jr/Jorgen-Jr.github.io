@@ -9,9 +9,13 @@ try {
     ghostConfig = require(`./.ghost`)
 } catch (e) {
     ghostConfig = {
+        // production: {
+        //     apiUrl: process.env.GHOST_API_URL,
+        //     contentApiKey: process.env.GHOST_CONTENT_API_KEY,
+        // },
         production: {
-            apiUrl: process.env.GHOST_API_URL,
-            contentApiKey: process.env.GHOST_CONTENT_API_KEY,
+            apiUrl: `localhost:90`,
+            contentApiKey: `651f74275bf2c12b305c4eccc1`,
         },
     }
 } finally {
