@@ -114,7 +114,7 @@ const Header = ({ slide }: IProps) => {
           fontSize={["unset", "unset", "0.7rem", "unset"]}
           as="nav"
         >
-          <Flex alignContent="center" justifyContent="center" flexDir="column">
+          <Flex alignContent="center" justifyContent="center" flexDir="column" w="100%">
             <Text fontFamily="FiraCode" fontSize="xl">
               Jorge.room{" "}
               <MotionText
