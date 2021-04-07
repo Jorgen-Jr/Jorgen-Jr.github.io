@@ -1,195 +1,102 @@
-const path = require(`path`)
-
-const config = require(`./src/utils/siteConfig`)
-const generateRSSFeed = require(`./src/utils/rss/generate-feed`)
-
-let ghostConfig
-
-try {
-    ghostConfig = require(`./.ghost`)
-} catch (e) {
-    ghostConfig = {
-        // production: {
-        //     apiUrl: process.env.GHOST_API_URL,
-        //     contentApiKey: process.env.GHOST_CONTENT_API_KEY,
-        // },
-        production: {
-            apiUrl: `localhost:90`,
-            contentApiKey: `651f74275bf2c12b305c4eccc1`,
-        },
-    }
-} finally {
-    const { apiUrl, contentApiKey } = process.env.NODE_ENV === `development` ? ghostConfig.development : ghostConfig.production
-
-    if (!apiUrl || !contentApiKey || contentApiKey.match(/<key>/)) {
-        throw new Error(`GHOST_API_URL and GHOST_CONTENT_API_KEY are required to build. Check the README.`) // eslint-disable-line
-    }
-}
-
-if (process.env.NODE_ENV === `production` && config.siteUrl === `http://localhost:8000` && !process.env.SITEURL) {
-    throw new Error(`siteUrl can't be localhost and needs to be configured in siteConfig. Check the README.`) // eslint-disable-line
-}
-
-/**
-* This is the place where you can tell Gatsby which plugins to use
-* and set them up the way you want.
-*
-* Further info 👉🏼 https://www.gatsbyjs.org/docs/gatsby-config/
-*
-*/
 module.exports = {
-    siteMetadata: {
-        siteUrl: process.env.SITEURL || config.siteUrl,
+  siteMetadata: {
+    title: `Room`,
+    description: `Jorge's personal blog and portfolio..`,
+    keywords: `DevBlog, personal blog, gatsby, react, jorge jr, frontend, backend, fullstack, NodeJs, Javascript, C#, PHP, DevOps`,
+    author: {
+      name: `Jorge Antônio da Silva Nascimento Junior`,
     },
-    plugins: [
+  },
+  plugins: [
+    {
+      resolve: "@chakra-ui/gatsby-plugin",
+      options: {
         /**
-         *  Content Plugins
+         * @property {boolean} [isResettingCSS=true]
+         * if false, this plugin will not use `<CSSReset />
          */
-        {
-            resolve: `gatsby-source-filesystem`,
-            options: {
-                path: path.join(__dirname, `src`, `pages`),
-                name: `pages`,
-            },
-        },
-        // Setup for optimised images.
-        // See https://www.gatsbyjs.org/packages/gatsby-image/
-        {
-            resolve: `gatsby-source-filesystem`,
-            options: {
-                path: path.join(__dirname, `src`, `images`),
-                name: `images`,
-            },
-        },
-        `gatsby-plugin-sharp`,
-        `gatsby-transformer-sharp`,
-        {
-            resolve: `gatsby-source-ghost`,
-            options:
-                process.env.NODE_ENV === `development`
-                    ? ghostConfig.development
-                    : ghostConfig.production,
-        },
+        isResettingCSS: true,
         /**
-         *  Utility Plugins
+         * @property {boolean} [isUsingColorMode=true]
+         * if false, this plugin will not use <ColorModeProvider />
          */
-        {
-            resolve: `gatsby-plugin-ghost-manifest`,
+        isUsingColorMode: true,
+      },
+    },
+    `gatsby-plugin-react-helmet`,
+    // {
+    //   resolve: `gatsby-plugin-netlify-cms`,
+    //   options: {
+    //     /**
+    //      * One convention is to place your Netlify CMS customization code in a
+    //      * `src/cms` directory.
+    //      */
+    //     modulePath: `${__dirname}/src/cms/cms.js`,
+    //   },
+    // },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/assets`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `blog`,
+        path: `${__dirname}/_posts/`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-create-client-paths`,
+      options: { prefixes: [`/projects/*`] },
+    },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        //trackingId: `ADD YOUR TRACKING ID HERE`,
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
             options: {
-                short_name: config.shortTitle,
-                start_url: `/`,
-                background_color: config.backgroundColor,
-                theme_color: config.themeColor,
-                display: `minimal-ui`,
-                icon: `static/${config.siteIcon}`,
-                legacy: true,
-                query: `
-                {
-                    allGhostSettings {
-                        edges {
-                            node {
-                                title
-                                description
-                            }
-                        }
-                    }
-                }
-              `,
+              maxWidth: 630,
             },
-        },
-        {
-            resolve: `gatsby-plugin-feed`,
+          },
+          {
+            resolve: `gatsby-remark-responsive-iframe`,
             options: {
-                query: `
-                {
-                    allGhostSettings {
-                        edges {
-                            node {
-                                title
-                                description
-                            }
-                        }
-                    }
-                }
-              `,
-                feeds: [
-                    generateRSSFeed(config),
-                ],
+              wrapperStyle: `margin-bottom: 1.0725rem`,
             },
-        },
-        {
-            resolve: `gatsby-plugin-advanced-sitemap`,
-            options: {
-                query: `
-                {
-                    allGhostPost {
-                        edges {
-                            node {
-                                id
-                                slug
-                                updated_at
-                                created_at
-                                feature_image
-                            }
-                        }
-                    }
-                    allGhostPage {
-                        edges {
-                            node {
-                                id
-                                slug
-                                updated_at
-                                created_at
-                                feature_image
-                            }
-                        }
-                    }
-                    allGhostTag {
-                        edges {
-                            node {
-                                id
-                                slug
-                                feature_image
-                            }
-                        }
-                    }
-                    allGhostAuthor {
-                        edges {
-                            node {
-                                id
-                                slug
-                                profile_image
-                            }
-                        }
-                    }
-                }`,
-                mapping: {
-                    allGhostPost: {
-                        sitemap: `posts`,
-                    },
-                    allGhostTag: {
-                        sitemap: `tags`,
-                    },
-                    allGhostAuthor: {
-                        sitemap: `authors`,
-                    },
-                    allGhostPage: {
-                        sitemap: `pages`,
-                    },
-                },
-                exclude: [
-                    `/dev-404-page`,
-                    `/404`,
-                    `/404.html`,
-                    `/offline-plugin-app-shell-fallback`,
-                ],
-                createLinkInHead: true,
-                addUncaughtPages: true,
-            },
-        },
-        `gatsby-plugin-catch-links`,
-        `gatsby-plugin-react-helmet`,
-        `gatsby-plugin-force-trailing-slashes`,
-        `gatsby-plugin-offline`,
-    ],
-}
+          },
+          `gatsby-remark-prismjs`,
+          `gatsby-remark-copy-linked-files`,
+          `gatsby-remark-smartypants`,
+        ],
+      },
+    },
+    `gatsby-plugin-feed`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Jorge.room`,
+        short_name: `jorge.room`,
+        start_url: `/`,
+        background_color: `#D6D3F0`,
+        theme_color: `#48E838`,
+        display: `minimal-ui`,
+        icon: `src/assets/image/favicon.png`, // This path is relative to the root of the site.
+      },
+    },
+    // this (optional) plugin enables Progressive Web App + Offline functionality
+    // To learn more, visit: https://gatsby.dev/offline
+    // `gatsby-plugin-offline`,
+  ],
+};

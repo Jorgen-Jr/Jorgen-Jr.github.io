@@ -1,0 +1,38 @@
+.plano_body {
+    font-size: 16px;
+}
+.plano_body > h1 {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color:white;
+    margin-top: 20px;
+}.plano_body > h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color:white;
+    margin-top: 20px;
+}.plano_body > h3 {
+    font-size: 16px;
+    font-weight: bold;
+    color:white;
+}
+.plano_body > ul {
+    margin-left: 30px;
+    list-style: lower-latin;
+}
+.plano_body > ul > li > ul {
+    margin-left: 30px;
+    list-style: lower-latin;
+}
+.plano_body > blockquote {
+    text-align: center;
+    margin: 10px 0;
+    color: white;
+    font-weight: bold;
+}
+.plano_body > blockquote > blockquote {
+    text-align: center;
+    color: #333;
+    font-weight: lighter;
+}
