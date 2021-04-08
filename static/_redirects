@@ -1,7 +1,2 @@
 /admin/        /admin/admin.html 200
 /admin#/        /admin/admin.html 200
-
-/.netlify/git/settings /.netlify/git/settings 200
-
-/planos/:name /planos 200
-/avisos/:name /avisos 200 
