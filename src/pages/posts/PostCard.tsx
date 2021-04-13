@@ -1,113 +1,126 @@
 import {
-  Box,
-  Flex,
-  Heading,
-  Image,
-  Stack,
-  Text,
-  useColorModeValue,
+    Box,
+    Flex,
+    Heading,
+    Image,
+    Stack,
+    Text,
+    useColorModeValue,
 } from "@chakra-ui/react";
 import { Link } from "gatsby";
 import React from "react";
 import { Post } from "../../types";
 
 interface PostCardProps {
-  post: Post;
-  fullWidth: Boolean;
+    post: Post;
+    fullWidth: Boolean;
 }
 
 export const PostCard: React.FC<PostCardProps> = ({
-  post: post,
-  fullWidth,
+    post: post,
+    fullWidth,
 }) => {
-  const special = post?.special;
+    const special = post?.special;
 
-  return (
-    <>
-      {post ? (
-        <Stack
-          borderRadius="5px"
-          w={
-            special
-              ? "100%"
-              : fullWidth
-              ? "100%"
-              : ["100%", "100%", "100%", "45%"]
-          }
-          m="20px"
-          overflow="hidden"
-          background={special ? "unset" : useColorModeValue("white", "#102435")}
-          position="relative"
-          direction={
-            fullWidth ? ["column", "column", "column", "row"] : "column"
-          }
-          justifyContent={special ? "center" : "auto"}
-          shadow={special ? "none" : "xl"}
-        >
-          <Image
-            src={post.cover}
-            alt={post.title}
-            // maxW={
-            //   special ? "80%" : fullWidth ? "100%" : ["100%", "100%", "400px"]
-            // }
-            // maxH={
-            //   special ? "80%" : fullWidth ? "100%" : ["100%", "100%", "300px"]
-            // }
-            loading={post.isBanner ? "eager" : "lazy"}
-            style={{ margin: 0 }}
-            borderRadius={special ? "7px" : "unset"}
-            shadow={special ? "md" : "none"}
-          />
-          <Box
-            {...(post.isBanner
-              ? {
-                  display: "none",
-                }
-              : null)}
-            p="0 20px"
-          >
-            <Text
-              as="span"
-              fontSize="12px"
-              color={useColorModeValue("#666", "#CCC")}
-              fontWeight="bolder"
-            >
-              {`${post.category.toUpperCase()}`}
-            </Text>
-            {" • "}
-            <Text
-              as="span"
-              fontSize="12px"
-              color={useColorModeValue("#666", "#CCC")}
-            >
-              {`${post.post_date}`}
-            </Text>
-            <Heading fontSize="25px">{post.title}</Heading>
-            <Flex flexGrow={1} justifyContent="space-between" flexDir="row">
-              <Text
-                as="div"
-                mt="10px"
-                pb="25px"
-                color={useColorModeValue("#666", "#CCC")}
-                zIndex={0}
-              >
-                <div
-                  className="aviso-content-list"
-                  dangerouslySetInnerHTML={{ __html: post.content }}
-                />{" "}
-                <Link
-                  to={post.slug}
-                  style={{ color: useColorModeValue("darkblue", "lightblue") }}
+    return (
+        <>
+            {post ? (
+                <Stack
+                    borderRadius="5px"
+                    w={
+                        special
+                            ? "100%"
+                            : fullWidth
+                            ? "100%"
+                            : ["100%", "100%", "100%", "45%"]
+                    }
+                    m="20px"
+                    overflow="hidden"
+                    background={
+                        special
+                            ? "unset"
+                            : useColorModeValue("white", "#102435")
+                    }
+                    position="relative"
+                    direction={
+                        fullWidth
+                            ? ["column", "column", "column", "row"]
+                            : "column"
+                    }
+                    justifyContent={special ? "center" : "auto"}
+                    shadow={special ? "none" : "xl"}
                 >
-                  ler mais
-                </Link>
-              </Text>
-            </Flex>
-          </Box>
-        </Stack>
-      ) : null}
-    </>
-  );
+                    <Link to={post.slug}>
+                        <Image
+                            src={post.cover}
+                            alt={post.title}
+                            loading={post.isBanner ? "eager" : "lazy"}
+                            style={{ margin: 0, width: "100%" }}
+                            borderRadius={special ? "7px" : "unset"}
+                            shadow={special ? "md" : "none"}
+                        />
+                        <Box
+                            {...(post.isBanner
+                                ? {
+                                      display: "none",
+                                  }
+                                : null)}
+                            p="0 20px"
+                        >
+                            <Text
+                                as="span"
+                                fontSize="12px"
+                                color={useColorModeValue("#666", "#CCC")}
+                                fontWeight="bolder"
+                            >
+                                {`${post.category.toUpperCase()}`}
+                            </Text>
+                            {" • "}
+                            <Text
+                                as="span"
+                                fontSize="12px"
+                                color={useColorModeValue("#666", "#CCC")}
+                            >
+                                {`${post.post_date}`}
+                            </Text>
+                            <Heading fontSize="25px">{post.title}</Heading>
+                            <Flex
+                                flexGrow={1}
+                                justifyContent="space-between"
+                                flexDir="row"
+                            >
+                                <Text
+                                    as="div"
+                                    mt="10px"
+                                    pb="25px"
+                                    color={useColorModeValue("#666", "#CCC")}
+                                    zIndex={0}
+                                >
+                                    <div
+                                        className="aviso-content-list"
+                                        dangerouslySetInnerHTML={{
+                                            __html: post.content,
+                                        }}
+                                    />{" "}
+                                    <Link
+                                        to={post.slug}
+                                        style={{
+                                            color: useColorModeValue(
+                                                "darkblue",
+                                                "lightblue"
+                                            ),
+                                        }}
+                                    >
+                                        ler mais
+                                    </Link>
+                                </Text>
+                            </Flex>
+                        </Box>
+                    </Link>
+                </Stack>
+            ) : null}
+        </>
+    );
 };
 
 export default PostCard;
