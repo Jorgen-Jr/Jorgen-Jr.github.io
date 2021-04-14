@@ -1,4 +1,3 @@
 /admin/        /admin/admin.html 200
-/admin#/        /admin/admin.html 200
 
 /config.yml /admin/config.yml 200
