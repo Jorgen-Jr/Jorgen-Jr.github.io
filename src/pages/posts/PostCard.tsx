@@ -32,7 +32,7 @@ export const PostCard: React.FC<PostCardProps> = ({
                             ? "100%"
                             : fullWidth
                             ? "100%"
-                            : ["100%", "100%", "100%", "45%"]
+                            : ["100%", "100%", "100%", "30%"]
                     }
                     m="20px"
                     overflow="hidden"

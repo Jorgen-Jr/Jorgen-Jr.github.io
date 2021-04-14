@@ -1,12 +1,12 @@
 import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
 import {
-  Box,
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  Flex,
-  HStack,
-  Text,
+    Box,
+    Breadcrumb,
+    BreadcrumbItem,
+    BreadcrumbLink,
+    Flex,
+    HStack,
+    Text,
 } from "@chakra-ui/react";
 import { graphql, Link } from "gatsby";
 import React from "react";
@@ -15,205 +15,167 @@ import Layout from "../components/Layout";
 import SEO from "../components/Seo";
 import { Post } from "../types";
 
-// import { Container } from './styles';
-
 function PostListTemplate(props) {
-  const { data } = props;
+    const { data } = props;
 
-  const { currentPage, numPages } = props.pageContext;
+    const { currentPage, numPages } = props.pageContext;
 
-  const posts = data.allMarkdownRemark.edges;
+    const posts = data.allMarkdownRemark.edges;
 
-  const isFirst = currentPage === 1;
-  const isLast = currentPage === numPages;
-  const prevPage =
-    currentPage - 1 === 1
-      ? "/posts/"
-      : "/posts/" + (currentPage - 1).toString();
-  const nextPage = "/posts/" + (currentPage + 1).toString();
+    const isFirst = currentPage === 1;
+    const isLast = currentPage === numPages;
+    const prevPage =
+        currentPage - 1 === 1
+            ? "/posts/"
+            : "/posts/" + (currentPage - 1).toString();
+    const nextPage = "/posts/" + (currentPage + 1).toString();
 
-  const post_list: Post[] = posts.map((item) => {
-    let post: Post = {
-      post_date: item.node.frontmatter.date,
-      slug: item.node.fields.slug,
-      title: item.node.frontmatter.title,
-      cover: item.node.frontmatter.cover,
-      content: item.node.excerpt,
-      isBanner: item.node.frontmatter.isBanner,
-      special: item.node.frontmatter.special,
-      category: item.node.frontmatter.category,
-    };
-    return post;
-  });
+    const post_list: Post[] = posts.map((item) => {
+        let post: Post = {
+            post_date: item.node.frontmatter.date,
+            slug: item.node.fields.slug,
+            title: item.node.frontmatter.title,
+            cover: item.node.frontmatter.cover,
+            content: item.node.excerpt,
+            isBanner: item.node.frontmatter.isBanner,
+            special: item.node.frontmatter.special,
+            category: item.node.frontmatter.category,
+        };
+        return post;
+    });
 
-  return (
-    <Layout slide={-1}>
-      <SEO
-        title={"Blog"}
-        description={"Jorge's Room - Blog Posts."}
-        lang="pt-BR"
-      />
-
-      <Box
-        className="wrapper"
-        mt="80px"
-        mb="80px"
-        p={["0 10px", "0", "0", "0", "0 100px"]}
-      >
-        {/* Breadcrumb e cabeçalho */}
-        <Flex flexDir="column" mb="35px" ml="15px">
-          <Flex h="50px" alignItems="center">
-            <Breadcrumb
-              separator={<ChevronRightIcon color="gray.500" />}
-              fontWeight="medium"
-              fontSize="md"
-            >
-              <BreadcrumbItem>
-                <BreadcrumbLink>
-                  <Link to="/#">Início</Link>
-                </BreadcrumbLink>
-              </BreadcrumbItem>
-              <BreadcrumbItem isCurrentPage>
-                <BreadcrumbLink>
-                  <Link to="/blog">Blog</Link>
-                </BreadcrumbLink>
-              </BreadcrumbItem>
-            </Breadcrumb>
-          </Flex>
-        </Flex>
-
-        <Flex
-          p={["0", "0", "0", "0", "0", "0 100px"]}
-          justifyContent="space-between"
-          alignSelf="center"
-          flexWrap="wrap"
-        >
-          {post_list.map((aviso, index) => (
-            <PostCard
-              key={"aviso" + index}
-              post={aviso}
-              fullWidth={index === 0}
+    return (
+        <Layout slide={-1}>
+            <SEO
+                title={"Blog"}
+                description={"Jorge's Room - Blog Posts."}
+                lang="pt-BR"
             />
-          ))}
-        </Flex>
-      </Box>
 
-      {/* Navegar entre próximo post e anterior */}
-      <HStack w="100%" justifyContent="space-evenly" p="30px">
-        {!isFirst && (
-          <Link to={prevPage} rel="Anterior">
-            <Flex alignItems="center">
-              <ChevronLeftIcon boxSize="30px" color="#053a63" />
-              {"  "}
-              <Text
-                as="span"
-                height="30px"
-                fontWeight="bolder"
-                fontSize="1.1rem"
-                display="flex"
-                alignItems="center"
-                color="#053a63"
-                paddingTop="2px"
-              >
-                Página Anterior
-              </Text>
-            </Flex>
-          </Link>
-        )}
-
-        {!isLast && (
-          <Link to={nextPage} rel="Próximo">
-            <Flex alignItems="center">
-              <Text
-                as="span"
-                height="30px"
-                fontWeight="bolder"
-                fontSize="1.1rem"
-                display="flex"
-                alignItems="center"
-                color="#053a63"
-                paddingTop="2px"
-              >
-                Próxima Página
-              </Text>
-              {"  "}
-              <ChevronRightIcon boxSize="30px" color="#053a63" />
-            </Flex>
-          </Link>
-        )}
-      </HStack>
-
-      {/* <ul
-        style={{
-          display: "flex",
-          flexWrap: "wrap",
-          justifyContent: "space-between",
-          alignItems: "center",
-          listStyle: "none",
-          padding: 0,
-        }}
-      >
-        {Array.from({ length: numPages }, (_, i) => (
-          <li
-            key={`pagination-number${i + 1}`}
-            style={{
-              margin: 0,
-            }}
-          >
-            <Link
-              to={`/avisos/${i === 0 ? "" : i + 1}`}
-              style={{
-                // padding: rhythm(1 / 4),
-                textDecoration: "none",
-                color: i + 1 === currentPage ? "#ffffff" : "",
-                background: i + 1 === currentPage ? "#007acc" : "",
-              }}
+            <Box
+                className="wrapper"
+                mt="80px"
+                mb="80px"
+                p={["0 10px", "0", "0", "0", "0 100px"]}
             >
-              {i + 1}
-            </Link>
-          </li>
-        ))}
-      </ul> */}
-    </Layout>
-  );
+                {/* Breadcrumb e cabeçalho */}
+                <Flex flexDir="column" mb="35px" ml="15px">
+                    <Flex h="50px" alignItems="center">
+                        <Breadcrumb
+                            separator={<ChevronRightIcon color="gray.500" />}
+                            fontWeight="medium"
+                            fontSize="md"
+                        >
+                            <BreadcrumbItem>
+                                <BreadcrumbLink>
+                                    <Link to="/#">Início</Link>
+                                </BreadcrumbLink>
+                            </BreadcrumbItem>
+                            <BreadcrumbItem isCurrentPage>
+                                <BreadcrumbLink>
+                                    <Link to="/blog">Blog</Link>
+                                </BreadcrumbLink>
+                            </BreadcrumbItem>
+                        </Breadcrumb>
+                    </Flex>
+                </Flex>
+
+                <Flex
+                    p={["0", "0", "0", "0", "0", "0 100px"]}
+                    justifyContent="space-between"
+                    alignSelf="center"
+                    flexWrap="wrap"
+                >
+                    {post_list.map((aviso, index) => (
+                        <PostCard
+                            key={"aviso" + index}
+                            post={aviso}
+                            fullWidth={index === 0}
+                        />
+                    ))}
+                </Flex>
+            </Box>
+
+            {/* Navegar entre próximo post e anterior */}
+            <HStack w="100%" justifyContent="space-evenly" p="30px">
+                {!isFirst && (
+                    <Link to={prevPage} rel="Anterior">
+                        <Flex alignItems="center">
+                            <ChevronLeftIcon boxSize="30px" color="#053a63" />
+                            {"  "}
+                            <Text
+                                as="span"
+                                height="30px"
+                                fontWeight="bolder"
+                                fontSize="1.1rem"
+                                display="flex"
+                                alignItems="center"
+                                color="#053a63"
+                                paddingTop="2px"
+                            >
+                                Página Anterior
+                            </Text>
+                        </Flex>
+                    </Link>
+                )}
+
+                {!isLast && (
+                    <Link to={nextPage} rel="Próximo">
+                        <Flex alignItems="center">
+                            <Text
+                                as="span"
+                                height="30px"
+                                fontWeight="bolder"
+                                fontSize="1.1rem"
+                                display="flex"
+                                alignItems="center"
+                                color="#053a63"
+                                paddingTop="2px"
+                            >
+                                Próxima Página
+                            </Text>
+                            {"  "}
+                            <ChevronRightIcon boxSize="30px" color="#053a63" />
+                        </Flex>
+                    </Link>
+                )}
+            </HStack>
+        </Layout>
+    );
 }
 
 export default PostListTemplate;
 
 export const pageQuery = graphql`
-  query PostFeed($skip: Int!, $limit: Int!) {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-      limit: $limit
-      skip: $skip
-      filter: { frontmatter: { layout: { eq: "post" } } }
-    ) {
-      edges {
-        node {
-          excerpt(format: PLAIN, pruneLength: 500)
-          fields {
-            slug
-          }
-          frontmatter {
-            cover
-            date(
-              fromNow: true
-              locale: "pt-br"
-              # formatString: "DD/mm/yyyy"
-            )
-            isBanner
-            layout
-            special
-            title
-            category
-          }
+    query PostFeed($skip: Int!, $limit: Int!) {
+        site {
+            siteMetadata {
+                title
+            }
         }
-      }
+        allMarkdownRemark(
+            sort: { fields: [frontmatter___date], order: DESC }
+            limit: $limit
+            skip: $skip
+            filter: { frontmatter: { layout: { eq: "post" } } }
+        ) {
+            edges {
+                node {
+                    excerpt(format: PLAIN, pruneLength: 500)
+                    fields {
+                        slug
+                    }
+                    frontmatter {
+                        cover
+                        date(fromNow: true, locale: "pt-br")
+                        isBanner
+                        layout
+                        special
+                        title
+                        category
+                    }
+                }
+            }
+        }
     }
-  }
 `;
