@@ -31,12 +31,27 @@ const PostTemplate = ({ data }) => {
                         description={post.excerpt}
                         lang="pt-BR"
                         meta={[
-                            post.frontmatter.cover
-                                ? {
-                                      name: "og:image",
-                                      content: post.frontmatter.cover,
-                                  }
-                                : undefined,
+                            {
+                                name: "og:image",
+                                content: post.frontmatter.cover,
+                            },
+                            {
+                                name: "og:description",
+                                content: post.excerpt,
+                            },
+                            {
+                                name: "og:url",
+                                content: post.slug,
+                            },
+                            {
+                                name: "twitter:title",
+                                content:
+                                    "Jorge's Room - " + post.frontmatter.title,
+                            },
+                            {
+                                name: "twitter:card",
+                                content: "summary_large_image",
+                            },
                             {
                                 name: "twitter:description",
                                 content: post.excerpt,
