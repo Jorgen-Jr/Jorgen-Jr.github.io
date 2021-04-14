@@ -26,6 +26,7 @@ const Footer = () => {
             background="#053a63"
             fontFamily="Roboto, sans, serif"
             color="white"
+            mt="90px"
         >
             <Flex
                 justifyContent={["center", "center", "space-around"]}
@@ -41,7 +42,6 @@ const Footer = () => {
                         borderRadius="15px"
                         boxShadow="md"
                         mt="-90px"
-                        zIndex={1}
                         overflow="hidden"
                     >
                         <Flex flexDir="column" alignContent="center">

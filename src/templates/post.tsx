@@ -61,20 +61,14 @@ const PostTemplate = ({ data }) => {
                                     fontSize="md"
                                 >
                                     <BreadcrumbItem>
-                                        <BreadcrumbLink>
-                                            <Link to="/#">Início</Link>
-                                        </BreadcrumbLink>
+                                        <Link to="/#">Início</Link>
                                     </BreadcrumbItem>
                                     <BreadcrumbItem>
-                                        <BreadcrumbLink>
-                                            <Link to="/blog">Blog</Link>
-                                        </BreadcrumbLink>
+                                        <Link to="/blog">Blog</Link>
                                     </BreadcrumbItem>
                                     <BreadcrumbItem isCurrentPage>
                                         <BreadcrumbLink>
-                                            <Link to="/blog">
-                                                {post.frontmatter.title}
-                                            </Link>
+                                            {post.frontmatter.title}
                                         </BreadcrumbLink>
                                     </BreadcrumbItem>
                                 </Breadcrumb>
@@ -124,7 +118,7 @@ const PostTemplate = ({ data }) => {
                     </Box>
 
                     <HStack w="100%" justifyContent="space-around" p="30px">
-                        {next !== null && (
+                        {next !== null ? (
                             <Link to={next.fields.slug} rel="Anterior">
                                 <Text textAlign="left" ml="10px">
                                     Próximo Post
@@ -155,9 +149,11 @@ const PostTemplate = ({ data }) => {
                                     </Text>
                                 </Flex>
                             </Link>
+                        ) : (
+                            <Box></Box>
                         )}
 
-                        {previous !== null && (
+                        {previous !== null ? (
                             <Link to={previous.fields.slug} rel="Próximo">
                                 <Text textAlign="right" mr="10px">
                                     Post Anterior
@@ -188,6 +184,8 @@ const PostTemplate = ({ data }) => {
                                     />
                                 </Flex>
                             </Link>
+                        ) : (
+                            <Box></Box>
                         )}
                     </HStack>
                 </>

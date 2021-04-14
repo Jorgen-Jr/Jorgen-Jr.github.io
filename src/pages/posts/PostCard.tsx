@@ -89,8 +89,7 @@ export const PostCard: React.FC<PostCardProps> = ({
                                 justifyContent="space-between"
                                 flexDir="row"
                             >
-                                <Text
-                                    as="div"
+                                <Box
                                     mt="10px"
                                     pb="25px"
                                     color={useColorModeValue("#666", "#CCC")}
@@ -102,8 +101,7 @@ export const PostCard: React.FC<PostCardProps> = ({
                                             __html: post.content,
                                         }}
                                     />{" "}
-                                    <Link
-                                        to={post.slug}
+                                    <Text
                                         style={{
                                             color: useColorModeValue(
                                                 "darkblue",
@@ -112,8 +110,8 @@ export const PostCard: React.FC<PostCardProps> = ({
                                         }}
                                     >
                                         ler mais
-                                    </Link>
-                                </Text>
+                                    </Text>
+                                </Box>
                             </Flex>
                         </Box>
                     </Link>

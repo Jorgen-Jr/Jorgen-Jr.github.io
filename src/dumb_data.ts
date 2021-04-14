@@ -26,12 +26,6 @@ export const headerItens = [
     //   active: false,
     //   published: true,
     // },
-    // {
-    //   label: "Convênios",
-    //   target_id: "blog",
-    //   active: false,
-    // published: true,
-    // },
     {
         label: "Contato",
         target_id: "contato",

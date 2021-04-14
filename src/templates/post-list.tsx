@@ -3,10 +3,10 @@ import {
     Box,
     Breadcrumb,
     BreadcrumbItem,
-    BreadcrumbLink,
     Flex,
     HStack,
     Text,
+    useColorModeValue,
 } from "@chakra-ui/react";
 import { graphql, Link } from "gatsby";
 import React from "react";
@@ -26,9 +26,9 @@ function PostListTemplate(props) {
     const isLast = currentPage === numPages;
     const prevPage =
         currentPage - 1 === 1
-            ? "/posts/"
-            : "/posts/" + (currentPage - 1).toString();
-    const nextPage = "/posts/" + (currentPage + 1).toString();
+            ? "/blog/"
+            : "/blog/" + (currentPage - 1).toString();
+    const nextPage = "/blog/" + (currentPage + 1).toString();
 
     const post_list: Post[] = posts.map((item) => {
         let post: Post = {
@@ -67,14 +67,10 @@ function PostListTemplate(props) {
                             fontSize="md"
                         >
                             <BreadcrumbItem>
-                                <BreadcrumbLink>
-                                    <Link to="/#">Início</Link>
-                                </BreadcrumbLink>
+                                <Link to="/#">Início</Link>
                             </BreadcrumbItem>
                             <BreadcrumbItem isCurrentPage>
-                                <BreadcrumbLink>
-                                    <Link to="/blog">Blog</Link>
-                                </BreadcrumbLink>
+                                <Link to="/blog">Blog</Link>
                             </BreadcrumbItem>
                         </Breadcrumb>
                     </Flex>
@@ -98,10 +94,13 @@ function PostListTemplate(props) {
 
             {/* Navegar entre próximo post e anterior */}
             <HStack w="100%" justifyContent="space-evenly" p="30px">
-                {!isFirst && (
+                {!isFirst ? (
                     <Link to={prevPage} rel="Anterior">
                         <Flex alignItems="center">
-                            <ChevronLeftIcon boxSize="30px" color="#053a63" />
+                            <ChevronLeftIcon
+                                boxSize="30px"
+                                color={useColorModeValue("#053a63", "#e1e1e1")}
+                            />
                             {"  "}
                             <Text
                                 as="span"
@@ -110,16 +109,18 @@ function PostListTemplate(props) {
                                 fontSize="1.1rem"
                                 display="flex"
                                 alignItems="center"
-                                color="#053a63"
+                                color={useColorModeValue("#053a63", "#e1e1e1")}
                                 paddingTop="2px"
                             >
                                 Página Anterior
                             </Text>
                         </Flex>
                     </Link>
+                ) : (
+                    <Box></Box>
                 )}
 
-                {!isLast && (
+                {!isLast ? (
                     <Link to={nextPage} rel="Próximo">
                         <Flex alignItems="center">
                             <Text
@@ -129,15 +130,20 @@ function PostListTemplate(props) {
                                 fontSize="1.1rem"
                                 display="flex"
                                 alignItems="center"
-                                color="#053a63"
+                                color={useColorModeValue("#053a63", "#e1e1e1")}
                                 paddingTop="2px"
                             >
                                 Próxima Página
                             </Text>
                             {"  "}
-                            <ChevronRightIcon boxSize="30px" color="#053a63" />
+                            <ChevronRightIcon
+                                boxSize="30px"
+                                color={useColorModeValue("#053a63", "#e1e1e1")}
+                            />
                         </Flex>
                     </Link>
+                ) : (
+                    <Box></Box>
                 )}
             </HStack>
         </Layout>
