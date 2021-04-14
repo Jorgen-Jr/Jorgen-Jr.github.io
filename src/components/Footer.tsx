@@ -28,10 +28,10 @@ const Footer = () => {
             color="white"
         >
             <Flex
-                justifyContent="space-evenly"
+                justifyContent={["center", "center", "space-around"]}
                 p="15px"
-                flexDirection={["column", "row"]}
-                alignItems={["center", "unset"]}
+                flexDirection={["column", "column", "row"]}
+                alignItems={["center", "center", "unset"]}
             >
                 <Flex position="relative">
                     <Box
@@ -40,8 +40,7 @@ const Footer = () => {
                         background={useColorModeValue("#e1e1e1", "#092a44")}
                         borderRadius="15px"
                         boxShadow="md"
-                        position="absolute"
-                        bottom="0"
+                        mt="-90px"
                         zIndex={1}
                         overflow="hidden"
                     >
@@ -162,31 +161,32 @@ const Footer = () => {
                 flexDirection={["column", "row"]}
             >
                 <Flex alignItems="center" p={["10px", "0"]}>
-                    <Text>
-                        <Link
-                            href="https://github.com/Jorgen-Jr/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <Box className="github-link">
-                                <Text as="span" style={{ width: "15px" }}>
-                                    {" "}
+                    <Link
+                        href="https://github.com/Jorgen-Jr/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{
+                            textDecoration: "none",
+                        }}
+                    >
+                        <Box className="github-link">
+                            <Text as="span" style={{ width: "15px" }}>
+                                {" "}
+                            </Text>{" "}
+                            <Text as="span">
+                                Made with{" "}
+                                <Text
+                                    as="span"
+                                    role="img"
+                                    aria-label="heart emoji"
+                                    color="red"
+                                >
+                                    ❤️
                                 </Text>{" "}
-                                <Text as="span">
-                                    Made with{" "}
-                                    <Text
-                                        as="span"
-                                        role="img"
-                                        aria-label="heart emoji"
-                                        color="red"
-                                    >
-                                        ❤️
-                                    </Text>{" "}
-                                    by Jorge © {new Date().getFullYear()}
-                                </Text>
-                            </Box>
-                        </Link>
-                    </Text>
+                                by Jorge © {new Date().getFullYear()}
+                            </Text>
+                        </Box>
+                    </Link>
                 </Flex>
             </Flex>
         </Box>
