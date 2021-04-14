@@ -2,7 +2,8 @@
 layout: post
 title: Iure Et Rerum
 date: 2021-01-12T11:22:09.196Z
-cover: /images/uploads/3-0183dd359adff4b4a7b3b4a13ef58a21.webp
+post_date: 2021-04-14T16:04:57.390Z
+cover: /images/uploads/5ed7cff194e69cde94e643d27648c592.jpg
 isBanner: false
 special: false
 active: true
