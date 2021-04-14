@@ -30,7 +30,7 @@ const PostTemplate = ({ data }) => {
                         title={"Jorge's Room - " + post.frontmatter.title}
                         description={post.excerpt}
                         lang="pt-BR"
-                        image={post.frontmatter.cover}
+                        image={`.${post.frontmatter.cover}`}
                         meta={[
                             {
                                 name: "og:url",
