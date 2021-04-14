@@ -38,9 +38,11 @@ const Footer = () => {
                     <Box
                         w="350px"
                         h="350px"
-                        background={useColorModeValue("#e1e1e1", "#092a44")}
+                        background={useColorModeValue("#FFF", "#092a44")}
                         borderRadius="15px"
-                        boxShadow="md"
+                        boxShadow="lg"
+                        borderColor={useColorModeValue("#EAEAEA", "#092a44")}
+                        borderWidth="1px"
                         mt="-90px"
                         overflow="hidden"
                     >
