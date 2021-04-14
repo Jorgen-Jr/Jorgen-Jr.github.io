@@ -5,92 +5,104 @@ import { useStaticQuery, graphql } from "gatsby";
 
 import logo from "./../assets/image/brand_logo.png";
 
-function SEO({ description, lang, meta, title }: IProps) {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author {
-              name
+function SEO({ description, lang, meta, title, image, url }: IProps) {
+    const { site } = useStaticQuery(
+        graphql`
+            query {
+                site {
+                    siteMetadata {
+                        title
+                        description
+                        author {
+                            name
+                        }
+                    }
+                }
             }
-          }
-        }
-      }
-    `
-  );
+        `
+    );
 
-  const metaDescription = description || site.siteMetadata.description;
+    const metaDescription = description || site.siteMetadata.description;
+    const metaUrl = url || "";
 
-  return (
-    <Helmet
-      htmlAttributes={{
-        lang,
-      }}
-      title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          name: `og:image`,
-          content: logo,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata.author.name,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-      ].concat(meta)}
-    />
-  );
+    return (
+        <Helmet
+            htmlAttributes={{
+                lang,
+            }}
+            title={title}
+            titleTemplate={`%s | ${site.siteMetadata.title}`}
+            meta={[
+                {
+                    name: `description`,
+                    content: metaDescription,
+                },
+                {
+                    property: `og:title`,
+                    content: title,
+                },
+                {
+                    property: `og:description`,
+                    content: metaDescription,
+                },
+                {
+                    property: `og:type`,
+                    content: `website`,
+                },
+                {
+                    name: `og:image`,
+                    content: image,
+                },
+                {
+                    name: `og:url`,
+                    content: metaUrl,
+                },
+                {
+                    name: `twitter:card`,
+                    content: `summary`,
+                },
+                {
+                    name: `twitter:image`,
+                    content: image,
+                },
+                {
+                    name: `twitter:creator`,
+                    content: site.siteMetadata.author.name,
+                },
+                {
+                    name: `twitter:title`,
+                    content: title,
+                },
+                {
+                    name: `twitter:description`,
+                    content: metaDescription,
+                },
+            ].concat(meta)}
+        />
+    );
 }
 
 interface IProps {
-  lang: string;
-  meta: any[];
-  description: string;
-  title: string;
+    lang: string;
+    meta: any[];
+    description: string;
+    title: string;
+    image: string;
+    url: string;
 }
 
 SEO.defaultProps = {
-  lang: `pt`,
-  meta: [],
-  description: ``,
+    lang: `pt-BR`,
+    meta: [],
+    description: ``,
+    url: ``,
 };
 
 SEO.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
+    description: PropTypes.string,
+    lang: PropTypes.string,
+    meta: PropTypes.arrayOf(PropTypes.object),
+    title: PropTypes.string.isRequired,
 };
 
 export default SEO;

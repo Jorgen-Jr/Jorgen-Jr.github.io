@@ -30,15 +30,8 @@ const PostTemplate = ({ data }) => {
                         title={"Jorge's Room - " + post.frontmatter.title}
                         description={post.excerpt}
                         lang="pt-BR"
+                        image={post.frontmatter.cover}
                         meta={[
-                            {
-                                name: "og:image",
-                                content: post.frontmatter.cover,
-                            },
-                            {
-                                name: "og:description",
-                                content: post.excerpt,
-                            },
                             {
                                 name: "og:url",
                                 content: post.slug,
@@ -51,10 +44,6 @@ const PostTemplate = ({ data }) => {
                             {
                                 name: "twitter:card",
                                 content: "summary_large_image",
-                            },
-                            {
-                                name: "twitter:description",
-                                content: post.excerpt,
                             },
                         ]}
                     />
