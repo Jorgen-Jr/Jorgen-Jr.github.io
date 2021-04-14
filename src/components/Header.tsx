@@ -198,7 +198,7 @@ const Header = ({ slide }: IProps) => {
                     <Flex
                         pr={["15px", "30px"]}
                         justifyContent="flex-end"
-                        width={["100%", "100%", "0"]}
+                        width={["0", "100%", "100%", "0"]}
                     >
                         <Button onClick={toggleColorMode}>
                             {colorMode === "light" ? <SunIcon /> : <MoonIcon />}

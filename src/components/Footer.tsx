@@ -74,7 +74,11 @@ const Footer = () => {
                     </Box>
                 </Flex>
 
-                <Flex flexDir="column" p="40px" fontFamily="Fira Code">
+                <Flex
+                    flexDir="column"
+                    p={["40px 0", "40px 0", "40px"]}
+                    fontFamily="Fira Code"
+                >
                     <Box maxW="350px" lineHeight="2em">
                         <Heading fontFamily="Fira Code" lineHeight="1.2em">
                             Me encontre nas redes sociais

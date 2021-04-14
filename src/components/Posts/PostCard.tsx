@@ -22,8 +22,8 @@ export const PostCard: React.FC<PostCardProps> = ({ post: post }) => {
                 borderRadius="5px"
                 w={
                     post.special
-                        ? ["100%", "100%", "100%", "1100px"]
-                        : ["100%", "100%", "400px"]
+                        ? ["unset", "unset", "unset", "1100px"]
+                        : ["unset", "unset", "400px"]
                 }
                 m="20px"
                 overflow="hidden"
@@ -37,8 +37,8 @@ export const PostCard: React.FC<PostCardProps> = ({ post: post }) => {
                 <Image
                     src={post.cover}
                     alt={post.title}
-                    minW="400px"
-                    minH="300px"
+                    minW={["100%", "100%", "400px"]}
+                    minH={["100%", "100%", "300px"]}
                     loading={post.isBanner ? "eager" : "lazy"}
                     style={{ margin: 0 }}
                 />

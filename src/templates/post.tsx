@@ -136,7 +136,7 @@ const PostTemplate = ({ data }) => {
                                         as="span"
                                         height="30px"
                                         fontWeight="bolder"
-                                        fontSize="1.1rem"
+                                        fontSize={["0.9rem", "1.1rem"]}
                                         display="flex"
                                         alignItems="center"
                                         color={useColorModeValue(
@@ -144,6 +144,7 @@ const PostTemplate = ({ data }) => {
                                             "#5c9fed"
                                         )}
                                         paddingTop="2px"
+                                        lineHeight="1"
                                     >
                                         {next.frontmatter.title}
                                     </Text>
@@ -163,7 +164,7 @@ const PostTemplate = ({ data }) => {
                                         as="span"
                                         height="30px"
                                         fontWeight="bolder"
-                                        fontSize="1.1rem"
+                                        fontSize={["0.9rem", "1.1rem"]}
                                         display="flex"
                                         alignItems="center"
                                         color={useColorModeValue(
@@ -171,6 +172,7 @@ const PostTemplate = ({ data }) => {
                                             "#5c9fed"
                                         )}
                                         paddingTop="2px"
+                                        lineHeight="1"
                                     >
                                         {previous.frontmatter.title}
                                     </Text>
