@@ -37,7 +37,7 @@ const Footer = () => {
                 <Flex position="relative">
                     <Box
                         w="350px"
-                        h="350px"
+                        minH="350px"
                         background={useColorModeValue("#FFF", "#092a44")}
                         borderRadius="15px"
                         boxShadow="lg"
@@ -52,7 +52,7 @@ const Footer = () => {
                                     borderRadius="50%"
                                     boxSize="150px"
                                     margin="auto"
-                                    src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.IO2MvrG7m1-23Q3wPtMKSAHaEK%26pid%3DApi&f=1"
+                                    src="https://avatars.githubusercontent.com/u/38020033?v=4"
                                 ></Image>
                             </Box>
                             <Divider
@@ -65,10 +65,23 @@ const Footer = () => {
                             />
                             <Flex
                                 p="15px 10px"
-                                justifyContent="center"
+                                flexDir="column"
+                                alignContent="center"
+                                textAlign="center"
                                 color={useColorModeValue("#333", "#e1e1e1")}
                             >
-                                <Heading>Sobre</Heading>
+                                <Heading fontSize="21px">
+                                    Oi, me chamo Jorge
+                                </Heading>
+                                <Text>
+                                    Proprietário deste site, Sou um
+                                    desenvolvedor fullstack focado em
+                                    tecnologias para a web. Qui dolorum quas
+                                    dolores.Qui dolorum quas dolores. Provident
+                                    aut qui placeat exercitationem unde sint
+                                    sed. In non ipsam facilis eaque sint
+                                    tenetur.
+                                </Text>
                             </Flex>
                         </Flex>
                     </Box>

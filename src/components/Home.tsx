@@ -69,7 +69,7 @@ export const Home: React.FC<HomeProps> = ({}) => {
                             flexDir={["column", "column", "row"]}
                         >
                             <MotionFlex
-                                aria-label="A HEALTHY oferece as melhores opções em planos de saúde com valores que cabem no seu bolso"
+                                aria-label="Bem vindo ao blog"
                                 pt="80px"
                                 initial={{ x: -30, opacity: 0 }}
                                 animate={{ x: 0, opacity: 1 }}
@@ -91,19 +91,19 @@ export const Home: React.FC<HomeProps> = ({}) => {
                                     maxW="400px"
                                     lineHeight="2rem"
                                     alignItems="center"
-                                    letterSpacing="-2px"
+                                    letterSpacing="-1px"
                                     m="0 10px"
                                 >
                                     <Box
                                         fontSize={["30px", "35px"]}
                                         textAlign={["center", "center", "left"]}
-                                        fontWeight="800"
+                                        fontWeight="bolder"
                                         color={useColorModeValue(
                                             "#4A6D7C",
                                             "#EF6351"
                                         )}
                                     >
-                                        Bem vindo a Jorge.room
+                                        <Text>Bem vindo a Jorge.room</Text>
                                     </Box>
 
                                     <Text
@@ -207,20 +207,8 @@ export const Home: React.FC<HomeProps> = ({}) => {
                             borderRadius="50%"
                             background={useColorModeValue("#26FFE6", "#28587B")}
                             transform="rotate(25deg)"
+                            opacity="0.5"
                             zIndex={-1}
-                            boxShadow="md"
-                        ></Box>
-                        <Box
-                            position="absolute"
-                            height="2000px"
-                            width="2000px"
-                            left="%60"
-                            // top="30"
-                            borderRadius="50%"
-                            background={useColorModeValue("#CDFFF9", "#4A6D7C")}
-                            opacity="0.6"
-                            transform="rotate(25deg)"
-                            zIndex={-10}
                             boxShadow="md"
                         ></Box>
                     </MotionFlex>
