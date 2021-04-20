@@ -76,11 +76,7 @@ const Footer = () => {
                                 <Text>
                                     Proprietário deste site, Sou um
                                     desenvolvedor fullstack focado em
-                                    tecnologias para a web. Qui dolorum quas
-                                    dolores.Qui dolorum quas dolores. Provident
-                                    aut qui placeat exercitationem unde sint
-                                    sed. In non ipsam facilis eaque sint
-                                    tenetur.
+                                    tecnologias para a web :)
                                 </Text>
                             </Flex>
                         </Flex>
