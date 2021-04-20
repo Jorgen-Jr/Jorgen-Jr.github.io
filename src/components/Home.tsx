@@ -115,15 +115,15 @@ export const Home: React.FC<HomeProps> = ({}) => {
                                         )}
                                         fontWeight="light"
                                     >
-                                        Dolores culpa quis soluta sit ipsa. Ut
-                                        inventore amet id perferendis excepturi.
+                                        Um blog sobre tecnologia e
+                                        desenvolvimento de software.
                                     </Text>
 
                                     <Flex mt="30px">
                                         <MotionButton
                                             onClick={onOpen}
-                                            borderRadius="10px"
                                             backgroundColor="#3ABEFF"
+                                            initial={{ borderRadius: 10 }}
                                             whileHover={{
                                                 scale: 1.3,
                                                 borderRadius: 30,
@@ -154,29 +154,7 @@ export const Home: React.FC<HomeProps> = ({}) => {
                                             bounce: 0.5,
                                         },
                                     }}
-                                >
-                                    {/* <Link
-                                        aria-label="Ir para posts"
-                                        to="#posts"
-                                        style={{ textDecoration: "none" }}
-                                    >
-                                        <Box
-                                            backgroundColor="#3ABEFF"
-                                            p="1px"
-                                            textAlign="center"
-                                            fontSize="25px"
-                                            fontWeight="bolder"
-                                            borderRadius="lg"
-                                            w="100%"
-                                            flex={0}
-                                            alignItems="center"
-                                        >
-                                            <Text as="span">
-                                                Conheça o blog
-                                            </Text>
-                                        </Box>
-                                    </Link> */}
-                                </MotionFlex>
+                                ></MotionFlex>
                             </MotionFlex>
                         </Flex>
                     </Flex>

@@ -32,7 +32,7 @@ export const PostCard: React.FC<PostCardProps> = ({
                             ? "100%"
                             : fullWidth
                             ? "100%"
-                            : ["100%", "100%", "100%", "30%"]
+                            : ["100%", "100%", "100%", "29%"]
                     }
                     m="20px"
                     overflow="hidden"
@@ -44,7 +44,7 @@ export const PostCard: React.FC<PostCardProps> = ({
                     position="relative"
                     direction={
                         fullWidth
-                            ? ["column", "column", "column", "row"]
+                            ? ["column", "column", "row", "row"]
                             : "column"
                     }
                     justifyContent={special ? "center" : "auto"}
@@ -59,6 +59,8 @@ export const PostCard: React.FC<PostCardProps> = ({
                             borderRadius={special ? "7px" : "unset"}
                             shadow={special ? "md" : "none"}
                         />
+                    </Link>
+                    <Link to={post.slug}>
                         <Box
                             {...(post.isBanner
                                 ? {
