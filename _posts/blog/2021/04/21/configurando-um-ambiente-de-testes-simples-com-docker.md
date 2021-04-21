@@ -1,8 +1,15 @@
 ---
 layout: post
 title: Configurando Um Ambiente de Testes Simples com Docker
-date: 2021-04-21T15:08:12.141Z
-post_date: 2021-04-21T15:08:12.197Z
+desenvolvimento: Desenvolvimento
+tags:
+  - Desenvolvimento
+  - Containers
+  - Docker
+  - ""
+date: 2021-04-21T15:20:10.313Z
+post_date: 2021-04-21T15:20:11.271Z
+cover: /images/uploads/pexels-pixabay-326410.jpg
 isBanner: false
 special: false
 active: true
