@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "# Configurando Um Ambiente de Testes Simples com Docker"
+title: Configurando Um Ambiente de Testes Simples com Docker
 date: 2021-04-21T15:08:12.141Z
 post_date: 2021-04-21T15:08:12.197Z
 isBanner: false
