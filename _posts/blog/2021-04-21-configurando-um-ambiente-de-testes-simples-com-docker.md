@@ -6,7 +6,6 @@ tags:
   - Desenvolvimento
   - Containers
   - Docker
-  - ""
 date: 2021-04-21T15:20:10.313Z
 post_date: 2021-04-21T15:20:11.271Z
 cover: /images/uploads/pexels-pixabay-326410.jpg
