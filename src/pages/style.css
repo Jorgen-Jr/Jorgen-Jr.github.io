@@ -32,8 +32,10 @@
   max-width: 800px;
   text-align: justify;
   line-height: 25px;
+  width: 100%;
 }
 .aviso-content-full p {
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
