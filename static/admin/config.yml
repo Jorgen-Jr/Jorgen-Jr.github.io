@@ -20,6 +20,8 @@ collections:
     fields: # The fields for each document, usually in front matter
       - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
       - { label: "Titulo", name: "title", widget: "string" }
+      - { label: "Categoria", name: "desenvolvimento", widget: "string" }
+      - { label: "Tags", name: "tags", widget: "list", default: ["tutorial"] }
       - { label: "Data de Publicação", name: "date", widget: "datetime" }
       - { label: "Data de Postagem", name: "post_date", widget: "datetime" }
       - { label: "Imagem de Capa 1:1", name: "cover", widget: "image", required: false, }
