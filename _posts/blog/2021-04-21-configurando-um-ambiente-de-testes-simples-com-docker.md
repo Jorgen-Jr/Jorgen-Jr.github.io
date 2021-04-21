@@ -11,10 +11,10 @@ date: 2021-04-21T15:20:10.313Z
 post_date: 2021-04-21T15:20:11.271Z
 cover: /images/uploads/pexels-pixabay-326410.jpg
 isBanner: false
-special: false
+special: true
 active: true
 ---
-
+Subindo um ambiente simples com banco de dados e servidores para front-end e backend usando docker.
 
 > Usando distros baseadas no Debian/Ubuntu (No meu caso, ElementaryOS)
 
@@ -100,7 +100,9 @@ sudo chmod +x /usr/local/bin/docker-compose
 ```
 
 para torna-lo executável.
-![Passo - 08](https://github.com/Jorgen-Jr/homolog_docker_config/blob/master/screenshots/09.png)
+
+
+![Passo 8](https://raw.githubusercontent.com/Jorgen-Jr/tutorial_docker_compose/master/screenshots/09.png)
 
 ## Configurando o Ambiente através do YAML
 
@@ -186,16 +188,26 @@ volumes:
 ```
 
 Meu arquivo final ficou assim, mas você pode altera-lo conforme sua necessidade.
-![Passo - 08](https://github.com/Jorgen-Jr/homolog_docker_config/blob/master/screenshots/08.png)
+
+
+![Passo 8](https://raw.githubusercontent.com/Jorgen-Jr/tutorial_docker_compose/master/screenshots/08.png)
 
 ### Iniciando o ambiente de testes com Docker Compose.
 
 Para iniciar o ambiente de testes, basta ir até a pasta onde está o arquivo `docker-compose.yml` e executar o comando `sudo docker-compose up` ele irá baixar as imagens dos containers necessárias e iniciar os serviços criando as pastas aonde definimos.
-![Passo - 09](https://github.com/Jorgen-Jr/homolog_docker_config/blob/master/screenshots/10.png)
-![Passo - 10](https://github.com/Jorgen-Jr/homolog_docker_config/blob/master/screenshots/11.png)
+
+
+![Passo 9](https://raw.githubusercontent.com/Jorgen-Jr/tutorial_docker_compose/master/screenshots/10.png)
+
+![Passo 10](https://raw.githubusercontent.com/Jorgen-Jr/tutorial_docker_compose/master/screenshots/11.png)
+
+
+
 
 Agora basta copiar o código da nossa aplicação para as pastas criadas e reiniciar nosso ambiente rodando ele no fundo usando o comando `sudo docker-compose up -d`.
-![Passo - 11](https://github.com/Jorgen-Jr/homolog_docker_config/blob/master/screenshots/12.png)
+
+
+![Passo 11](https://raw.githubusercontent.com/Jorgen-Jr/tutorial_docker_compose/master/screenshots/12.png)
 
 E voilla, tá pronto o sorvetinho. já podemos acessar a aplicação localmente.
 
@@ -206,9 +218,16 @@ Se você preferir usar uma interface para gerenciar seus containers, recomendo u
 ### Importando
 
 Como já possuimos um arquivo docker-composee.yml basta criar um novo projeto no Dockstation usando ele.
-![Passo - 12](https://github.com/Jorgen-Jr/homolog_docker_config/blob/master/screenshots/13.png)
-![Passo - 13](https://github.com/Jorgen-Jr/homolog_docker_config/blob/master/screenshots/14.png)
-![Passo - 13](https://github.com/Jorgen-Jr/homolog_docker_config/blob/master/screenshots/15.png)
+
+![Passo 12](https://raw.githubusercontent.com/Jorgen-Jr/tutorial_docker_compose/master/screenshots/13.png)
+
+
+
+![Passo 13](https://raw.githubusercontent.com/Jorgen-Jr/tutorial_docker_compose/master/screenshots/14.png)
+
+![Passo 14](https://raw.githubusercontent.com/Jorgen-Jr/tutorial_docker_compose/master/screenshots/15.png)
+
+
 O Dockstation facilita o gerenciamento, te dando acesso aos logs, propriedades e várias informações sobre o projeto e os containers, alem de dispor um editor para modificar o código do compose.
 
 > Note que você vai precisar remover os container criados anteriormente para poder usar os nomes usados em `container_name` no nosso arquivo compose.
@@ -223,11 +242,16 @@ Uma configuração adcional é necessária para usar o react-router do reactjs n
 $ sudo docker exec -it srv_nginx /bin/bash
 ```
 
-![Passo - 14](https://github.com/Jorgen-Jr/homolog_docker_config/blob/master/screenshots/16.png)
+![Passo 15](https://raw.githubusercontent.com/Jorgen-Jr/tutorial_docker_compose/master/screenshots/16.png)
+
+
 Em seguida instale um editor de sua preferencia, eu usarei o nano.
 O arquivo que vamos modificar é o `default.conf` localizado em `/etc/nginx/config.d/default.conf` então irei usar o comando `nano /etc/nginx/conf.d/default.conf` para edita-lo.
 Adcione `try_files $uri $uri/ /index.html;` dentro do escopo `location / {` como a seguir:
-![Passo - 15](https://github.com/Jorgen-Jr/homolog_docker_config/blob/master/screenshots/17.png)
+
+![Passo 16](https://raw.githubusercontent.com/Jorgen-Jr/tutorial_docker_compose/master/screenshots/17.png)
+
+
 Salve o arquivo e saia do container e o reinicie com `sudo docker container restart srv_nginx`. Isso deve resolver os problemas com react-router onde acabamos com uma página 404.
 
 ### React-Router Método 2
