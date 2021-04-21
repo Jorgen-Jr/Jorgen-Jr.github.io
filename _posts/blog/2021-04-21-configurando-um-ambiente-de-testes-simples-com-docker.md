@@ -10,7 +10,7 @@ date: 2021-04-21T15:20:10.313Z
 post_date: 2021-04-21T15:20:11.271Z
 cover: /images/uploads/pexels-pixabay-326410.jpg
 isBanner: false
-special: true
+special: false
 active: true
 ---
 Subindo um ambiente simples com banco de dados e servidores para front-end e backend usando docker.
@@ -23,12 +23,12 @@ Subindo um ambiente simples com banco de dados e servidores para front-end e bac
 
 Para configurar o repositório, você precisa atualizar o `apt` e instalar os seguintes pacotes: <break>
 
-```shell
-$ sudo apt-get update
+```bash
+sudo apt-get update
 ```
 
-```shell
-$ sudo apt-get install \
+```bash
+sudo apt-get install \
     apt-transport-https \
     ca-certificates \
     curl \
@@ -40,7 +40,7 @@ $ sudo apt-get install \
 
 E em seguida adcionar a chave GPG official do Docker.
 
-```shell
+```bash
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 ```
 
@@ -48,7 +48,7 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
 Você pode verificar se a chave foi adcionada pelo fingerprint `9DC8 5822 9FC7 DD38 854A  E2D8 8D81 803C 0EBF CD88`, buscando pelos últimos 8 characteres. O resultado deve ser como a seguir:
 
-```shell
+```bash
 sudo apt-key fingerprint 0EBFCD88
 
 pub   rsa4096 2017-02-22 [SCEA]
@@ -61,7 +61,7 @@ sub   rsa4096 2017-02-22 [S]
 
 Agora podemos adcionar o repositório dos lançamentos estáveis do Docker Engine. Através do comando:
 
-```shell
+```bash
 sudo add-apt-repository \
    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
    $(lsb_release -cs) \
@@ -88,13 +88,13 @@ Ou executando o comando `docker run hello-world` que deve baixar a imagem de tes
 
 Instale agora o docker compose através dos comandos:
 
-```shell
+```bash
 sudo curl -L "https://github.com/docker/compose/releases/download/1.26.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 ```
 
 para baixar o docker-compose e
 
-```shell
+```bash
 sudo chmod +x /usr/local/bin/docker-compose
 ```
 
@@ -237,8 +237,8 @@ O Dockstation facilita o gerenciamento, te dando acesso aos logs, propriedades e
 
 Uma configuração adcional é necessária para usar o react-router do reactjs no nginx. Para fazer isso através do docker, vamos entrar no container através do terminal usando o seguinte comando.
 
-```shell
-$ sudo docker exec -it srv_nginx /bin/bash
+```bash
+sudo docker exec -it srv_nginx /bin/bash
 ```
 
 ![Passo 15](https://raw.githubusercontent.com/Jorgen-Jr/tutorial_docker_compose/master/screenshots/16.png)

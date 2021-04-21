@@ -28,7 +28,7 @@ export const PostCard: React.FC<PostCardProps> = ({ post: post }) => {
                 m="20px"
                 overflow="hidden"
                 background={
-                    post.special
+                    post.special && post.banner
                         ? "unset"
                         : useColorModeValue("white", "#102435")
                 }
