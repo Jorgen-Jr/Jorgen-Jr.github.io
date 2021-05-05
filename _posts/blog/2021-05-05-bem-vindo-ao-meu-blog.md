@@ -29,6 +29,4 @@ Nos **tutoriais** pretendo explicar da forma mais completa, e podem sempre me co
 
 Serei breve e deixo claro que assim como qualquer pessoa da nossa área ainda tenho muito a aprender, com a quantidade de coisas incrveis que a rea de tecnologia nos possibilita fazer e dificl manter o foco ou aprender tudo o que desejamos aprender, mas possuo experiencias que desejo compartilhar e espero que meu conteúdo possa ajudar as pessoas de alguma forma ou outra.
 
-
-
-Para voc meu caro leitor, um bom dia.
+Grato pela sua visita.
