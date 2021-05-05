@@ -11,7 +11,7 @@ post_date: 2021-04-21T15:20:11.271Z
 cover: /images/uploads/pexels-pixabay-326410.jpg
 isBanner: false
 special: false
-active: true
+active: false
 ---
 Subindo um ambiente simples com banco de dados e servidores para front-end e backend usando docker.
 
