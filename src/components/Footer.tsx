@@ -16,8 +16,9 @@ import icon_github from "./../assets/image/social-icons/github.png";
 import icon_instagram from "./../assets/image/social-icons/instagram.png";
 import icon_linkedn from "./../assets/image/social-icons/linkedn.png";
 import icon_mail from "./../assets/image/social-icons/mail.png";
-import icon_rss from "./../assets/image/social-icons/rss.png";
 import icon_twitter from "./../assets/image/social-icons/twitter.png";
+// import icon_rss from "./../assets/image/social-icons/rss.png";
+import profile_pic from "./../assets/image/profile_pic.png";
 
 const Footer = () => {
     return (
@@ -52,7 +53,7 @@ const Footer = () => {
                                     borderRadius="50%"
                                     boxSize="150px"
                                     margin="auto"
-                                    src="https://avatars.githubusercontent.com/u/38020033?v=4"
+                                    src={profile_pic}
                                 ></Image>
                             </Box>
                             <Divider
@@ -74,9 +75,9 @@ const Footer = () => {
                                     Oi, me chamo Jorge
                                 </Heading>
                                 <Text>
-                                    Proprietário deste site, Sou um
-                                    desenvolvedor fullstack focado em
-                                    tecnologias para a web :)
+                                    Proprietário deste site e desenvolvedor
+                                    fullstack focado em tecnologias para a web
+                                    :)
                                 </Text>
                             </Flex>
                         </Flex>
@@ -117,7 +118,7 @@ const Footer = () => {
                             ></Image>
                         </Link>
                         <Link
-                            href="mailto:##########@#########.com"
+                            href="mailto:jorgenjr@pm.me"
                             target="_BLANK"
                             p="10px"
                         >
@@ -128,7 +129,11 @@ const Footer = () => {
                                 src={icon_mail}
                             ></Image>
                         </Link>
-                        <Link href="./" target="_BLANK" p="10px">
+                        <Link
+                            href="https://www.instagram.com/jorge.njr/"
+                            target="_BLANK"
+                            p="10px"
+                        >
                             <Image
                                 boxSize="30px"
                                 backgroundColor="#727475"
@@ -136,7 +141,11 @@ const Footer = () => {
                                 src={icon_instagram}
                             ></Image>
                         </Link>
-                        <Link href="./" target="_BLANK" p="10px">
+                        <Link
+                            href="https://www.linkedin.com/in/jorge-ant%C3%B4nio-da-silva-nascimento-junior-7884191a1/"
+                            target="_BLANK"
+                            p="10px"
+                        >
                             <Image
                                 boxSize="30px"
                                 backgroundColor="#727475"
@@ -144,15 +153,19 @@ const Footer = () => {
                                 src={icon_linkedn}
                             ></Image>
                         </Link>
-                        <Link href="./" target="_BLANK" p="10px">
+                        {/* <Link href="./" target="_BLANK" p="10px">
                             <Image
                                 boxSize="30px"
                                 backgroundColor="#727475"
                                 borderRadius="50%"
                                 src={icon_rss}
                             ></Image>
-                        </Link>
-                        <Link href="./" target="_BLANK" p="10px">
+                        </Link> */}
+                        <Link
+                            href="https://twitter.com/Jorgesnjr"
+                            target="_BLANK"
+                            p="10px"
+                        >
                             <Image
                                 boxSize="30px"
                                 backgroundColor="#727475"
