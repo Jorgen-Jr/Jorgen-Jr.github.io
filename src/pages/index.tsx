@@ -18,6 +18,7 @@ import { Posts } from "../components/Posts";
 // import Servicos from "../components/Projects";
 // import Sobre from "../components/Sobre";
 import Contato from "../components/Contato";
+import Projects from "../components/Projects";
 
 type DataProps = {
     site: {
@@ -54,39 +55,17 @@ const HomePage: React.FC<PageProps<DataProps>> = () => {
                 </Slide>
             </VisibilitySensor>
 
-            {/* <VisibilitySensor
-        minTopValue={400}
-        onChange={(isVisible: Boolean) => {
-          isVisible ? setSlideIndex(1) : null;
-        }}
-      >
-        <Slide id="projetos">
-          <Servicos />
-        </Slide>
-      </VisibilitySensor>
+            <VisibilitySensor
+                minTopValue={400}
+                onChange={(isVisible: Boolean) => {
+                    isVisible ? setSlideIndex(1) : null;
+                }}
+            >
+                <Slide id="projetos">
+                    <Projects />
+                </Slide>
+            </VisibilitySensor>
 
-      <VisibilitySensor
-        minTopValue={400}
-        onChange={(isVisible: Boolean) => {
-          isVisible ? setSlideIndex(2) : null;
-        }}
-      >
-        <Slide id="sobre">
-          <Sobre />
-        </Slide>
-      </VisibilitySensor> */}
-
-            {/* <VisibilitySensor
-        minTopValue={400}
-        onChange={(isVisible: Boolean) => {
-          isVisible ? setSlideIndex(3) : null;
-        }}
-      >
-        <Slide id="blog">
-          <Convenios active={slide >= 3} />
-        </Slide>
-      </VisibilitySensor>
-*/}
             <VisibilitySensor
                 minTopValue={600}
                 onChange={(isVisible: Boolean) => {

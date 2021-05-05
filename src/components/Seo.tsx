@@ -51,7 +51,7 @@ function SEO({ description, lang, meta, title, image, url }: IProps) {
                 },
                 {
                     name: `og:image`,
-                    content: image,
+                    content: image ? image : logo,
                 },
                 {
                     name: `og:url`,
@@ -63,7 +63,7 @@ function SEO({ description, lang, meta, title, image, url }: IProps) {
                 },
                 {
                     name: `twitter:image`,
-                    content: image,
+                    content: image ? image : logo,
                 },
                 {
                     name: `twitter:creator`,
@@ -87,7 +87,7 @@ interface IProps {
     meta: any[];
     description: string;
     title: string;
-    image: string;
+    image?: string;
     url: string;
 }
 

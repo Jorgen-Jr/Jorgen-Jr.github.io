@@ -5,15 +5,17 @@ import {
     BreadcrumbItem,
     BreadcrumbLink,
     Flex,
+    Heading,
     Image,
+    List,
+    ListItem,
     Text,
+    useColorModeValue,
 } from "@chakra-ui/react";
 import { graphql, Link } from "gatsby";
 import React from "react";
 import Layout from "../components/Layout";
 import SEO from "../components/Seo";
-
-import Table from "../components/Table";
 
 import "./markdown.css";
 
@@ -35,6 +37,7 @@ const ProjectTemplate = ({ data }) => {
                 description={
                     "Jorge's Room - " + project.frontmatter.short_description
                 }
+                image={project.frontmatter.illustration}
             />
 
             <Box
@@ -43,8 +46,8 @@ const ProjectTemplate = ({ data }) => {
                 mb="80px"
                 p={["0 10px", "0 30px", "0 100px"]}
             >
-                {/* Breadcrumb e cabeçalho */}
                 <Flex flexDir="column" mb="35px">
+                    {/* Breadcrumb e cabeçalho */}
                     <Flex h="50px" alignItems="center">
                         <Breadcrumb
                             separator={<ChevronRightIcon color="gray.500" />}
@@ -120,37 +123,78 @@ const ProjectTemplate = ({ data }) => {
                             )}
                         </Box>
                         <Flex justifyContent="center">
-                            <Image
-                                alt={project.frontmatter.name}
-                                src={
-                                    project.frontmatter.icon
-                                        ? project.frontmatter.icon
-                                        : projects
-                                }
-                                maxH="90px"
-                                objectFit="contain"
-                            />
+                            {project.frontmatter.icon ? (
+                                <Image
+                                    alt={project.frontmatter.name}
+                                    src={project.frontmatter.icon}
+                                    maxH="90px"
+                                    objectFit="contain"
+                                />
+                            ) : (
+                                <Flex
+                                    flexGrow={1}
+                                    minH="80px"
+                                    justifyContent="center"
+                                    alignContent="center"
+                                    flexDir="column"
+                                >
+                                    <Heading
+                                        fontFamily="Fira Code"
+                                        fontWeight="bolder"
+                                        fontSize="32px"
+                                    >
+                                        {project.frontmatter.name}
+                                    </Heading>
+                                </Flex>
+                            )}
                         </Flex>
 
                         <Flex justifyContent="center" mt="15px">
                             <Box maxW="450px" textAlign="center" color="#CCC">
-                                <Text></Text>
+                                <Text>{project.frontmatter.category}</Text>
                             </Box>
+                        </Flex>
+
+                        <Flex
+                            m="10px 0"
+                            flexDir="column"
+                            justifyContent="center"
+                            alignItems="center"
+                            pos="relative"
+                        >
+                            <List display="flex">
+                                {project.frontmatter.tags.map((tag, index) => (
+                                    <ListItem
+                                        key={index}
+                                        p="10px 15px "
+                                        m="0 7px"
+                                        borderRadius="7px"
+                                        backgroundColor={`#333`}
+                                        color="white"
+                                        fontWeight="bolder"
+                                    >
+                                        {console.log(tag)}
+                                        {tag}
+                                    </ListItem>
+                                ))}
+                            </List>
                         </Flex>
                     </Flex>
                 </Flex>
 
                 <Flex flexDir={["column"]}>
-                    <section title="Tabela ">
+                    <section title="Cabeçalho ">
                         <Flex justifyContent="center">
-                            <Image
-                                alt={
-                                    "Illustração do project " +
-                                    project.frontmatter.name
-                                }
-                                src={project.frontmatter.illustration}
-                                maxH="500px"
-                            />
+                            {project.frontmatter.illustration && (
+                                <Image
+                                    alt={
+                                        "Illustração do project " +
+                                        project.frontmatter.name
+                                    }
+                                    src={project.frontmatter.illustration}
+                                    maxH="500px"
+                                />
+                            )}
                         </Flex>
 
                         <Flex
@@ -160,8 +204,7 @@ const ProjectTemplate = ({ data }) => {
                         ></Flex>
                     </section>
 
-                    {/* Dados Adcionais */}
-
+                    {/* Descrição Completa */}
                     <Flex
                         m="10px 0"
                         flexDir="column"
@@ -169,25 +212,16 @@ const ProjectTemplate = ({ data }) => {
                         alignItems="center"
                         pos="relative"
                     >
-                        {/* Background */}
-                        <Flex
-                            pos="absolute"
-                            w="200%"
-                            bgColor={theme.colors.secondary}
-                            h={"110%"}
-                            mt="110px"
-                            ml="-50%"
-                            zIndex={-1}
-                            transform="rotate(2deg)"
-                        ></Flex>
-
                         <Box
-                            color={theme.colors.fontColor}
+                            color={useColorModeValue(
+                                theme.colors.fontColor,
+                                "#ddd"
+                            )}
                             p="20px"
-                            bgColor={theme.colors.secondary}
+                            // bgColor={theme.colors.secondary}
                             borderRadius="lg"
                             maxWidth="1000px"
-                            className="plano_body"
+                            className="aviso-content-full"
                             dangerouslySetInnerHTML={{ __html: project.html }}
                         />
                     </Flex>
@@ -200,7 +234,7 @@ const ProjectTemplate = ({ data }) => {
 export default ProjectTemplate;
 
 export const pageQuery = graphql`
-    query Servico($id: String!) {
+    query Project($id: String!) {
         site {
             siteMetadata {
                 title
@@ -214,10 +248,12 @@ export const pageQuery = graphql`
                 description
                 short_description
                 icon
-                link
                 name
                 title
                 cover
+                link
+                category
+                tags
                 illustration
                 theme_color_primary
                 theme_color_secondary

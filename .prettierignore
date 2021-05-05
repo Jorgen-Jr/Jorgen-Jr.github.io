@@ -1,0 +1,2 @@
+# Ignore config.yml from Netlify.CMS
+static/admin/config.yml

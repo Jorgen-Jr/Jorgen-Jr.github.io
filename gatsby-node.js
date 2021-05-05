@@ -73,71 +73,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     });
   }
 
-  // Define a template for blog post
-  const projectPost = path.resolve(`./src/templates/project.tsx`);
-
-  // Get all markdown blog posts sorted by date
-  const planosResult = await graphql(
-    `
-      {
-        allMarkdownRemark(
-          filter: { frontmatter: { layout: { eq: "project" } } }
-          sort: { fields: frontmatter___date, order: ASC }
-        ) {
-          nodes {
-            id
-            html
-            frontmatter {
-              layout
-              description
-              short_description
-              icon
-              link
-              name
-              title
-            }
-            fields {
-              slug
-            }
-          }
-        }
-      }
-    `
-  );
-
-  if (planosResult.errors) {
-    reporter.panicOnBuild(
-      `There was an error loading your blog posts`,
-      planosResult.errors
-    );
-    return;
-  }
-
-  const planos = planosResult.data.allMarkdownRemark.nodes;
-
-  // Create blog posts pages
-  // But only if there's at least one markdown file found at "content/blog" (defined in gatsby-config.js)
-  // `context` is available in the template as a prop and as a variable in GraphQL
-
-  if (planos.length > 0) {
-    planos.forEach((project, index) => {
-      const previousPostId = index === 0 ? null : planos[index - 1].id;
-      const nextPostId =
-        index === planos.length - 1 ? null : planos[index + 1].id;
-
-      createPage({
-        path: project.fields.slug,
-        component: projectPost,
-        context: {
-          id: project.id,
-          previousPostId,
-          nextPostId,
-        },
-      });
-    });
-  }
-
-  // Create aviso list pages
+  // Create post feed pages
   await graphql(
     `
       {
@@ -185,6 +121,68 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       });
     });
   });
+
+  // Define a template for blog post
+  const projectPost = path.resolve(`./src/templates/project.tsx`);
+
+  // Get all markdown blog posts sorted by date
+  await graphql(
+    `
+    {
+      allMarkdownRemark(filter: {frontmatter: {layout: {eq: "project"}, active: {eq: true}}}, sort: {fields: frontmatter___date, order: ASC}) {
+        nodes {
+          id
+          html
+          frontmatter {
+            layout
+            description
+            short_description
+            icon
+            name
+            title
+            active
+          }
+          fields {
+            slug
+          }
+        }
+      }
+    }
+    
+    `
+  ).then((result) => {
+    if (result.errors) {
+      reporter.panicOnBuild(
+        `There was an error loading your blog posts`,
+        projectResult.errors
+      );
+      return;
+    }
+
+    const projects = result.data.allMarkdownRemark.nodes;
+
+    // Create blog posts pages
+    // But only if there's at least one markdown file found at "content/blog" (defined in gatsby-config.js)
+    // `context` is available in the template as a prop and as a variable in GraphQL
+    if (projects.length > 0) {
+      projects.forEach((project, index) => {
+        // const previousPostId = index === 0 ? null : project[index - 1].id;
+        // const nextPostId = index === project.length - 1 ? null : project[index + 1].id;
+
+
+        createPage({
+          path: project.fields.slug,
+          component: projectPost,
+          context: {
+            id: project.id,
+            // previousPostId,
+            // nextPostId,
+          },
+        });
+      });
+    }
+  });
+
 };
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
