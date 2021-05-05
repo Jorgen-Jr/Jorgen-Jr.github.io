@@ -1,20 +1,17 @@
 ---
-theme_color_secondary: "#31bedd"
-theme_color_fontcolor: "#183d65"
-theme_color_primary: "#1977ab"
-description: Bot de Dicionário para Telegram
-category: Bots
-tags:
-    - NodeJS
-    - Cheerio
 layout: project
 name: nDefinitionBot
 short_description: Bot para Telegram
-# icon: /images/uploads/teste.png
-# cover: /images/uploads/teste_cover.webp
-# illustration: /images/uploads/teste_illustration.png
-link: teste
+tags:
+  - NodeJS
+  - Cheerio
+link: nDefinitionBot
+theme_color_primary: "#1977ab"
+theme_color_secondary: "#31bedd"
+theme_color_fontcolor: "#183d65"
 active: false
+description: Bot de Dicionário para Telegram
+category: Bots
 ---
 
 # nDefinitionBot
