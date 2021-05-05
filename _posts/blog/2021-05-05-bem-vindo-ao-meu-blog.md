@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Bem Vindo ao meu Blog
-category: Conversa Fora
+category: Aviso
 tags:
   - aviso
   - diversos
@@ -28,3 +28,5 @@ Pretendo cobrir esse blog com posts relacionados as seguintes categorias:
 Nos **tutoriais** pretendo explicar da forma mais completa, e podem sempre me consultar através de emails ou pela página de contato para criticar, comentar tirar duvidas e afins. Para as **dicas** serão pequenas dicas com snippets que podem ajudar no dia a dia em questão de produtividade e afins. E pretendo meus **projetos** expor ate o ponto que não vá ferir nenhum de meus stakeholders no quesito de privacidade e segurança nos quais participei, criei  ou que so open-source que estarao sempre no meu [github](https://github.com/Jorgen-Jr) para consultas.
 
 Serei breve e deixo claro que assim como qualquer pessoa da nossa área ainda tenho muito a aprender, com a quantidade de coisas incrveis que a rea de tecnologia nos possibilita fazer e dificl manter o foco ou aprender tudo o que desejamos aprender, mas possuo experiencias que desejo compartilhar e espero que meu conteúdo possa ajudar as pessoas de alguma forma ou outra.
+
+Para voc meu caro leitor, um bom dia.
