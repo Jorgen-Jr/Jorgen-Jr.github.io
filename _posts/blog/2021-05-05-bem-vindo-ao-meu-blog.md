@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Bem Vindo ao meu Blog
+title: Bem Vindo ao Meu Blog
 category: Aviso
 tags:
   - aviso
