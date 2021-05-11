@@ -1,15 +1,17 @@
+import React from "react";
 import { ChevronRightIcon } from "@chakra-ui/icons";
 import {
     Box,
     Flex,
     Heading,
     Image,
-    Link,
     Stack,
     Text,
     useColorModeValue,
 } from "@chakra-ui/react";
-import React from "react";
+
+import { Link } from "gatsby";
+
 import { Project } from "../../types";
 
 import { motion } from "framer-motion";
@@ -25,8 +27,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
 }) => {
     return (
         <Link
-            href={project.slug || null}
-            ariaLabel={"Visitar " + project.name}
+            to={project.slug || null}
             style={{
                 textDecoration: "none",
             }}
