@@ -25,7 +25,7 @@ const Contato = ({}) => {
     });
 
     const handleSubmit = () => {
-        fetch("/", {
+        fetch("https://joujiroom.netlify.app/", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: new URLSearchParams({
