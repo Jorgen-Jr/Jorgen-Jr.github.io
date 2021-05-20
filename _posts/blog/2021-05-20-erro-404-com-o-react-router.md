@@ -11,7 +11,7 @@ isBanner: false
 special: false
 active: true
 ---
-A meses atrás criei um projeto usando o create-react-app e usei o react-router para lidar com as rotas da minha aplicação front-end, porém ao enviar minha build para o servidor, acabei sendo introduzido por um problema, quando o usuário entrava em uma rota e atualizar a página ele retornava o erro 404 ou quando ele acessava através de um link externo, devido ao arquivo não ter sido encontrado no endereço requisitado, para resolver isso usei regras de redirecionamento no servidor. Espero que minha solução possa ajudar quem também passar por esse problema.
+A meses atrás criei um projeto usando o **create-react-app** e usei o **react-router** para lidar com as rotas da minha aplicação front-end, porém ao enviar minha build para o servidor, acabei sendo introduzido a um problema, quando o usuário entrava em uma rota e atualizar a página ou quando ele acessava através de um link externo ele retornava o erro 404, devido ao arquivo não ter sido encontrado no endereço requisitado, para resolver isso usei regras de redirecionamento no servidor. Espero que minha solução possa ajudar quem também passar por esse problema.
 
 ## Resolvendo no Apache e servidores com suporte ao arquivo .htaccess
 
