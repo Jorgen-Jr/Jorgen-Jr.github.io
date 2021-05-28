@@ -12,10 +12,6 @@ isBanner: false
 special: false
 active: true
 ---
-# About My Telegram Bot
-
-![](https://telegra.ph/file/bd81e85af9cc0febb2acb.jpg)
-
 Many months ago I developed some bots for telegram, being \`@ndefinitionbot\`, \`@whatsinthisfoodbot\`, \`@ntalesbot\` and \`@ntextifybot\`, and recently I migrate all of them to become serverless so it becomes more available.
 
 Bear in mind that since it's now using serverless functions at aws you guys might experience some cold starts, and for that... My apologies, I will be explaining what each one of them does and what you can expect from them.
