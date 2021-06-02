@@ -1,0 +1,70 @@
+backend:
+  name: git-gateway
+  branch: main
+
+locale: "pt"
+
+# This line should *not* be indented
+publish_mode: editorial_workflow
+
+# This line should *not* be indented
+media_folder: "static/images/uploads" # Media files will be stored in the repo under images/uploads
+public_folder: "/images/uploads"
+
+collections:
+  - name: "post" # Used in routes, e.g., /admin/collections/blog
+    label: "Post" # Used in the UI
+    folder: "_posts/blog/" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}-{{title}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
+      - { label: "Titulo", name: "title", widget: "string" }
+      - { label: "Categoria", name: "category", widget: "string" }
+      - { label: "Tags", name: "tags", widget: "list", default: ["tutorial"] }
+      - { label: "Data de Publicação", name: "date", widget: "datetime" }
+      - { label: "Data de Postagem", name: "post_date", widget: "datetime" }
+      - { label: "Imagem de Capa 1:1", name: "cover", widget: "image", required: false, }
+      - { label: "Conteúdo", name: "body", widget: "markdown", required: false }
+      - { label: "Banner (Sem Conteúdo Textual)", name: "isBanner", widget: "boolean", default: false, }
+      - { label: "Especial (Ganha um destaque na tela inicial)", name: "special", widget: "boolean", default: false, }
+      - { label: "Ativo", name: "active", widget: "boolean", default: true }
+
+  - name: "Projects" # Used in routes, e.g., /admin/collections/blog
+    label: "Projetos / Serviços" # Used in the UI
+    folder: "_posts/project" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{link}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - { label: "Layout", name: "layout", widget: "hidden", default: "projects", }
+      - { label: "Nome", name: "name", widget: "string" }
+      - { label: "Descrição Curta", name: "short_description", widget: "string", required: false, }
+      - { label: "Categoria", name: "category", widget: "string" }
+      - { label: "Tags", name: "tags", widget: "list", default: ["javascript"] }
+      - { label: "Ícone", name: "icon", widget: "image", required: false }
+      - { label: "Capa", name: "cover", widget: "image", required: false }
+      - { label: "Illustração", name: "illustration", widget: "image", required: false, }
+      - { label: "Endereço de Acesso", name: "link", widget: "string" }
+      - { label: "Cor Primária", name: "theme_color_primary", widget: "color", required: false, }
+      - { label: "Cor Secundária", name: "theme_color_secondary", widget: "color", required: false, }
+      - { label: "Cor Textual", name: "theme_color_fontcolor", widget: "color", required: false, }
+      - { label: "Descricao", name: "body", widget: "markdown", required: false, }
+      - { label: "Ativo", name: "active", widget: "boolean", default: true }
+
+  - name: "convenios" # Used in routes, e.g., /admin/collections/blog
+    label: "Convênios" # Used in the UI
+    folder: "_posts/convenio" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{name}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - { label: "Layout", name: "layout", widget: "hidden", default: "convenio", }
+      - { label: "Nome", name: "name", widget: "string" }
+      - { label: "Nome Empresa", name: "nome_empresa", widget: "string" }
+      - { label: "Banner", name: "banner", widget: "image", required: false }
+      - { label: "Logo Empresa", name: "logo", widget: "image" }
+      - { label: "Descricao Curta", name: "short_description", widget: "string", required: false, }
+      - { label: "Descricao", name: "descricao", widget: "string", required: false, }
+      - { label: "Valor Desconto", name: "desconto", widget: "string", required: false, }
+      - { label: "Link de Acesso a Empresa", name: "link", widget: "string", required: false, }
+      - { label: "E-Mail da Empresa", name: "email", widget: "string", required: false, }
+      - { label: "Ativo", name: "active", widget: "boolean", default: true }

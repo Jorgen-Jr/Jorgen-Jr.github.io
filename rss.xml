@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Room]]></title><description><![CDATA[Jorge's personal blog and portfolio..]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 02 Jun 2021 13:16:23 GMT</lastBuildDate><item><title><![CDATA[No title]]></title><description><![CDATA[Dumb Data so GraphiQL is happy.]]></description><link>null/project/dumb_data/</link><guid isPermaLink="false">null/project/dumb_data/</guid><content:encoded>&lt;p&gt;Dumb Data so GraphiQL is happy.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[No title]]></title><description><![CDATA[nDefinitionBot I wanted to test out how telegram bots works, so I made this little bot that give you the definition of a word through inline…]]></description><link>null/project/nDefinitionBot/</link><guid isPermaLink="false">null/project/nDefinitionBot/</guid><content:encoded>&lt;h1&gt;nDefinitionBot&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I wanted to test out how telegram bots works, so I made this little bot that give you the definition of a word through inline commands.
+It should return a list with the definition for the given word.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;Usage&lt;/h3&gt;
+&lt;p&gt;Start typing &lt;code class=&quot;language-text&quot;&gt;@ndefinitionbot&lt;/code&gt; in any chat and it will show what definitions there is for the desired word. It’s a fair simple bot.&lt;/p&gt;
+&lt;h3&gt;Options&lt;/h3&gt;
+&lt;p&gt;You will have the following options when entering the word.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Thesaurus (With the english definition)&lt;/li&gt;
+&lt;li&gt;Urban Dictionary (With the Urban Dictionary definition in case of slangs)&lt;/li&gt;
+&lt;li&gt;Priberam (With the portuguese definition)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;External References&lt;/h3&gt;
+&lt;p&gt;This bot uses the following sources:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://word.com&quot;&gt;Thesaurus&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://urbandictionary.com&quot;&gt;UrbanDictionary&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://dicionario.priberam.org&quot;&gt;Priberam&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Jorgen-Jr/TheDictApi&quot;&gt;TheDictApi&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Incoming&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.dicionariopopular.com/&quot;&gt;Dicionário Popular&lt;/a&gt;;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Stay Home]]></title><description><![CDATA[Sem Contedo.]]></description><link>null/blog/2021-04-21-stay-home/</link><guid isPermaLink="false">null/blog/2021-04-21-stay-home/</guid><pubDate>Wed, 21 Apr 2021 16:10:22 GMT</pubDate><content:encoded>&lt;p&gt;Sem Contedo.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[dumb_data]]></title><description><![CDATA[DUMB DATA]]></description><link>null/blog/dumb_data/</link><guid isPermaLink="false">null/blog/dumb_data/</guid><pubDate>Wed, 21 Apr 2021 16:10:22 GMT</pubDate><content:encoded>&lt;p&gt;DUMB DATA&lt;/p&gt;</content:encoded></item></channel></rss>
