@@ -7,8 +7,8 @@ tags:
 date: 2021-04-21T16:10:22.928Z
 post_date: 2021-04-21T16:10:22.940Z
 cover: dumb_data
-isBanner: true
-special: true
+isBanner: false
+special: false
 active: false
 ---
 
