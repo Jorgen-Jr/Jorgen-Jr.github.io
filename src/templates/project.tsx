@@ -139,7 +139,7 @@ const ProjectTemplate = ({ data }) => {
                                     flexDir="column"
                                 >
                                     <Heading
-                                        fontFamily="Fira Code"
+                                        fontFamily="FiraCode"
                                         fontWeight="bolder"
                                         fontSize="32px"
                                     >

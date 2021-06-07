@@ -25,7 +25,7 @@ const Footer = () => {
         <Box
             as="footer"
             background="#053a63"
-            fontFamily="Roboto, sans, serif"
+            fontFamily="FiraCode, sans, serif"
             color="white"
             mt="90px"
         >
@@ -87,10 +87,10 @@ const Footer = () => {
                 <Flex
                     flexDir="column"
                     p={["40px 0", "40px 0", "40px"]}
-                    fontFamily="Fira Code"
+                    fontFamily="Mont Serrat"
                 >
                     <Box maxW="350px" lineHeight="2em">
-                        <Heading fontFamily="Fira Code" lineHeight="1.2em">
+                        <Heading fontFamily="Mont Serrat" lineHeight="1.2em">
                             Me encontre nas redes sociais
                         </Heading>
                         <Text>Tenho certeza que tem ideias para discutir.</Text>
@@ -190,7 +190,7 @@ const Footer = () => {
             >
                 <Flex alignItems="center" p={["10px", "0"]}>
                     <Link
-                        href="https://github.com/Jorgen-Jr/"
+                        href="https://github.com/Jorgen-Jr/room"
                         target="_blank"
                         rel="noopener noreferrer"
                         style={{
