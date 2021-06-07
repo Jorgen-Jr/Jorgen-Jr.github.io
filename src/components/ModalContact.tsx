@@ -107,6 +107,7 @@ const ModalContact = ({ isOpen, onClose, produto }: ModalContactProps) => {
                             <form
                                 name="precadastro"
                                 method="POST"
+                                action="https://joujiroom.netlify.app/"
                                 onSubmit={handleSubmit}
                                 data-netlify="true"
                             >
