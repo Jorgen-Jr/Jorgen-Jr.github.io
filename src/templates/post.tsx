@@ -17,6 +17,8 @@ import Layout from "../components/Layout";
 import SEO from "../components/Seo";
 // import { Container } from './styles';
 
+import "./markdown.css";
+
 const PostTemplate = ({ data }) => {
     const post = data.markdownRemark;
     // const siteTitle = data.site.siteMetadata?.title || `Title`;
@@ -106,7 +108,7 @@ const PostTemplate = ({ data }) => {
                             />
 
                             <div
-                                className="aviso-content-full"
+                                className="post-content-full"
                                 dangerouslySetInnerHTML={{ __html: post.html }}
                             />
 

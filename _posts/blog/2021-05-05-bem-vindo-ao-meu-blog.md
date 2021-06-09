@@ -14,8 +14,6 @@ special: false
 active: true
 ---
 
-# Introdução a blog
-
 > Um blog sobre desenvolvimento para web
 
 Eu criei esse blog com o intuito de ajudar de alguma forma novos desenvolvedores com tutoriais incisivos sobre as tecnologias que uso, estou aprendendo a usar e pequenas dicas que posso compartilhar com o tempo sempre em formato textual porque pessoalmente não suporto mais ver videoaulas extensas, e acredito que existem várias que assim como eu sentem mais facilidade em aprender e absorver conteúdo novo lendo.

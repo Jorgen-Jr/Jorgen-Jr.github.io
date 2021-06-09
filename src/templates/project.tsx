@@ -221,7 +221,7 @@ const ProjectTemplate = ({ data }) => {
                             // bgColor={theme.colors.secondary}
                             borderRadius="lg"
                             maxWidth="1000px"
-                            className="aviso-content-full"
+                            className="post-content-full"
                             dangerouslySetInnerHTML={{ __html: project.html }}
                         />
                     </Flex>
