@@ -113,4 +113,4 @@ async function main(){
 }
 ```
 
-https://www.youtube.com/watch?v=ITogH7lJTyE
+[](https://www.youtube.com/watch?v=ITogH7lJTyE)Fonte: Fireship
