@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Room]]></title><description><![CDATA[Jorge's personal blog and portfolio..]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 07 Jun 2021 19:46:47 GMT</lastBuildDate><item><title><![CDATA[No title]]></title><description><![CDATA[Dumb Data so GraphiQL is happy.]]></description><link>null/project/dumb_data/</link><guid isPermaLink="false">null/project/dumb_data/</guid><content:encoded>&lt;p&gt;Dumb Data so GraphiQL is happy.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[No title]]></title><description><![CDATA[nDefinitionBot I wanted to test out how telegram bots works, so I made this little bot that give you the definition of a word through inline…]]></description><link>null/project/nDefinitionBot/</link><guid isPermaLink="false">null/project/nDefinitionBot/</guid><content:encoded>&lt;h1&gt;nDefinitionBot&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Room]]></title><description><![CDATA[Jorge's personal blog and portfolio..]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 09 Jun 2021 15:02:22 GMT</lastBuildDate><item><title><![CDATA[No title]]></title><description><![CDATA[Dumb Data so GraphiQL is happy.]]></description><link>null/project/dumb_data/</link><guid isPermaLink="false">null/project/dumb_data/</guid><content:encoded>&lt;p&gt;Dumb Data so GraphiQL is happy.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[No title]]></title><description><![CDATA[nDefinitionBot I wanted to test out how telegram bots works, so I made this little bot that give you the definition of a word through inline…]]></description><link>null/project/nDefinitionBot/</link><guid isPermaLink="false">null/project/nDefinitionBot/</guid><content:encoded>&lt;h1&gt;nDefinitionBot&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;I wanted to test out how telegram bots works, so I made this little bot that give you the definition of a word through inline commands.
 It should return a list with the definition for the given word.&lt;/p&gt;
@@ -15,10 +15,18 @@ It should return a list with the definition for the given word.&lt;/p&gt;
 &lt;h3&gt;External References&lt;/h3&gt;
 &lt;p&gt;This bot uses the following sources:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://word.com&quot;&gt;Thesaurus&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://urbandictionary.com&quot;&gt;UrbanDictionary&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://dicionario.priberam.org&quot;&gt;Priberam&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/Jorgen-Jr/TheDictApi&quot;&gt;TheDictApi&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;http://word.com&quot;&gt;Thesaurus&lt;/a&gt;;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;http://urbandictionary.com&quot;&gt;UrbanDictionary&lt;/a&gt;;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://dicionario.priberam.org&quot;&gt;Priberam&lt;/a&gt;;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/Jorgen-Jr/TheDictApi&quot;&gt;TheDictApi&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Incoming&lt;/h3&gt;
 &lt;ul&gt;
