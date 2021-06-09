@@ -24,7 +24,6 @@ Começe digitando `@ndefinitionbot` em qualquer chat e a palavra desejada e ele 
 
 ### Opções
 
-You will have the following options when entering the word.
 Existe atualmente as seguintes opções de dicionário.
 
 * Thesaurus (With the english definition)
