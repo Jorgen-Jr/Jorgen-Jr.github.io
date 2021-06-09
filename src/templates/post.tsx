@@ -116,6 +116,7 @@ const PostTemplate = ({ data }) => {
                                 textAlign="right"
                                 fontSize="medium"
                                 fontWeight="bolder"
+                                mt="20px"
                                 w="100%"
                             >
                                 {post.frontmatter.date}
