@@ -1,5 +1,3 @@
-import { Convenio } from "./types";
-
 export const headerItens = [
     {
         label: "Início",
@@ -11,7 +9,7 @@ export const headerItens = [
         label: "Projetos",
         target_id: "projetos",
         active: false,
-        published: false,
+        published: true,
     },
     {
         label: "Blog",

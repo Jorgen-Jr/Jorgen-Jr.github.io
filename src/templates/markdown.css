@@ -88,3 +88,11 @@
 .post-content-full pre {
     background: RGBA(0, 0, 0, 0.06);
 }
+
+.post-content-full > img {
+    margin: auto;
+}
+
+.post-content-full > p > img {
+    margin: auto;
+}
