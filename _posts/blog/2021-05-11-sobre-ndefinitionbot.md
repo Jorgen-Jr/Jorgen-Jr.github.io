@@ -8,7 +8,7 @@ tags:
     - sobre
 date: 2021-06-16T15:15:53.995Z
 post_date: 2021-06-16T15:15:54.006Z
-cover: /images/uploads/bd81e85af9cc0febb2acb.jpg
+cover: /room/images/uploads/bd81e85af9cc0febb2acb.jpg
 isBanner: false
 special: false
 active: true
@@ -22,11 +22,11 @@ Tenha em mente que por estar usando serverless functions alguns clientes podem s
 
 Para usar bots embutidos (inline bots) é bem fácil no telegram, basta digitar a tag do bot e em seguida inserir sua query. Como mostra a imagem a seguir.
 
-![Resultados para a query "radio"](/images/uploads/imagem1.png "Resultados para a query radio'")
+![Resultados para a query "radio"](/room/images/uploads/imagem1.png "Resultados para a query radio'")
 
 E então selecionando o resultado que deseja, ele deve enviar para o recipiente o significado.
 
-![Resultado para o recipiente desejado.](/images/uploads/imagem2.png "Resultado para o recipiente desejado.")
+![Resultado para o recipiente desejado.](/room/images/uploads/imagem2.png "Resultado para o recipiente desejado.")
 
 O `@ndefinitionbot` usa uma api que desenvolvi usando web scrappers que pode ser vista em [The Dict Api](https://github.com/Jorgen-Jr/TheDictApi) que mais a frente estará na lista dos projetos em meu portfolio.
 
