@@ -8,7 +8,7 @@ tags:
     - ""
 date: 2021-06-02T13:24:39.209Z
 post_date: 2021-06-02T13:24:39.240Z
-cover: /room/images/uploads/pexels-photo-5759268.jpeg
+cover: /images/uploads/pexels-photo-5759268.jpeg
 isBanner: false
 special: false
 active: true
