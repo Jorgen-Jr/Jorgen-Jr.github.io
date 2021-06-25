@@ -1,9 +1,9 @@
 exports.ids = [0];
 exports.modules = {
 
-/***/ "./node_modules/@deckdeckgo/highlight-code/dist/esm/deckdeckgo-highlight-code-languages-adfbe9aa.js":
+/***/ "./node_modules/@deckdeckgo/highlight-code/dist/esm/deckdeckgo-highlight-code-languages-ce6124c0.js":
 /*!**********************************************************************************************************!*\
-  !*** ./node_modules/@deckdeckgo/highlight-code/dist/esm/deckdeckgo-highlight-code-languages-adfbe9aa.js ***!
+  !*** ./node_modules/@deckdeckgo/highlight-code/dist/esm/deckdeckgo-highlight-code-languages-ce6124c0.js ***!
   \**********************************************************************************************************/
 /*! exports provided: D, a, d */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -222,7 +222,7 @@ const deckdeckgoHighlightCodeLanguages = {
   less: { title: 'Less', require: ['css'] },
   lilypond: { title: 'LilyPond', require: ['scheme'] },
   ly: { title: 'ly', main: 'lilypond', require: ['scheme'] },
-  liquid: { title: 'Liquid' },
+  liquid: { title: 'Liquid', require: ['markup-templating'] },
   lisp: { title: 'Lisp' },
   emacs: { title: 'emacs', main: 'lisp' },
   elisp: { title: 'elisp', main: 'lisp' },
@@ -381,6 +381,10 @@ const deckdeckgoHighlightCodeLanguages = {
   warpscript: { title: 'WarpScript' },
   wasm: { title: 'WebAssembly' },
   wiki: { title: 'Wiki markup', require: ['markup'] },
+  wolfram: { title: 'Wolfram language' },
+  mathematica: { title: 'Mathematica', main: 'wolfram' },
+  nb: { title: 'Mathematica Notebook', main: 'wolfram' },
+  wl: { title: 'wl', main: 'wolfram' },
   xeora: { title: 'Xeora', require: ['markup'] },
   xeoracube: { title: 'XeoraCube', main: 'xeora', require: ['markup'] },
   'xml-doc': { title: 'XML doc (.net)', require: ['markup'] },
@@ -408,7 +412,7 @@ const deckdeckgoHighlightCodeLanguages = {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deckgo_highlight_code", function() { return DeckdeckgoHighlightCode; });
 /* harmony import */ var _index_54334b7b_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index-54334b7b.js */ "./node_modules/@deckdeckgo/highlight-code/dist/esm/index-54334b7b.js");
-/* harmony import */ var _deckdeckgo_highlight_code_languages_adfbe9aa_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./deckdeckgo-highlight-code-languages-adfbe9aa.js */ "./node_modules/@deckdeckgo/highlight-code/dist/esm/deckdeckgo-highlight-code-languages-adfbe9aa.js");
+/* harmony import */ var _deckdeckgo_highlight_code_languages_ce6124c0_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./deckdeckgo-highlight-code-languages-ce6124c0.js */ "./node_modules/@deckdeckgo/highlight-code/dist/esm/deckdeckgo-highlight-code-languages-ce6124c0.js");
 
 
 
@@ -419,61 +423,61 @@ function loadTheme(theme) {
     return undefined;
   }
   switch (theme) {
-    case _deckdeckgo_highlight_code_languages_adfbe9aa_js__WEBPACK_IMPORTED_MODULE_1__["a"]['3024-NIGHT']:
+    case _deckdeckgo_highlight_code_languages_ce6124c0_js__WEBPACK_IMPORTED_MODULE_1__["a"]['3024-NIGHT']:
       return __webpack_require__.e(/*! import() */ 1).then(__webpack_require__.bind(null, /*! ./3024-night-3717f6e5.js */ "./node_modules/@deckdeckgo/highlight-code/dist/esm/3024-night-3717f6e5.js"));
-    case _deckdeckgo_highlight_code_languages_adfbe9aa_js__WEBPACK_IMPORTED_MODULE_1__["a"]['A11Y-DARK']:
+    case _deckdeckgo_highlight_code_languages_ce6124c0_js__WEBPACK_IMPORTED_MODULE_1__["a"]['A11Y-DARK']:
       return __webpack_require__.e(/*! import() */ 2).then(__webpack_require__.bind(null, /*! ./a11y-dark-22265427.js */ "./node_modules/@deckdeckgo/highlight-code/dist/esm/a11y-dark-22265427.js"));
-    case _deckdeckgo_highlight_code_languages_adfbe9aa_js__WEBPACK_IMPORTED_MODULE_1__["a"]['BASE16-DARK']:
+    case _deckdeckgo_highlight_code_languages_ce6124c0_js__WEBPACK_IMPORTED_MODULE_1__["a"]['BASE16-DARK']:
       return __webpack_require__.e(/*! import() */ 3).then(__webpack_require__.bind(null, /*! ./base16-dark-8d7c311e.js */ "./node_modules/@deckdeckgo/highlight-code/dist/esm/base16-dark-8d7c311e.js"));
-    case _deckdeckgo_highlight_code_languages_adfbe9aa_js__WEBPACK_IMPORTED_MODULE_1__["a"]['BASE16-LIGHT']:
+    case _deckdeckgo_highlight_code_languages_ce6124c0_js__WEBPACK_IMPORTED_MODULE_1__["a"]['BASE16-LIGHT']:
       return __webpack_require__.e(/*! import() */ 4).then(__webpack_require__.bind(null, /*! ./base16-light-01b62ded.js */ "./node_modules/@deckdeckgo/highlight-code/dist/esm/base16-light-01b62ded.js"));
-    case _deckdeckgo_highlight_code_languages_adfbe9aa_js__WEBPACK_IMPORTED_MODULE_1__["a"].BLACKBOARD:
+    case _deckdeckgo_highlight_code_languages_ce6124c0_js__WEBPACK_IMPORTED_MODULE_1__["a"].BLACKBOARD:
       return __webpack_require__.e(/*! import() */ 5).then(__webpack_require__.bind(null, /*! ./blackboard-b04f8d31.js */ "./node_modules/@deckdeckgo/highlight-code/dist/esm/blackboard-b04f8d31.js"));
-    case _deckdeckgo_highlight_code_languages_adfbe9aa_js__WEBPACK_IMPORTED_MODULE_1__["a"].COBALT:
+    case _deckdeckgo_highlight_code_languages_ce6124c0_js__WEBPACK_IMPORTED_MODULE_1__["a"].COBALT:
       return __webpack_require__.e(/*! import() */ 6).then(__webpack_require__.bind(null, /*! ./cobalt-aacac248.js */ "./node_modules/@deckdeckgo/highlight-code/dist/esm/cobalt-aacac248.js"));
-    case _deckdeckgo_highlight_code_languages_adfbe9aa_js__WEBPACK_IMPORTED_MODULE_1__["a"].DUOTONE:
+    case _deckdeckgo_highlight_code_languages_ce6124c0_js__WEBPACK_IMPORTED_MODULE_1__["a"].DUOTONE:
       return __webpack_require__.e(/*! import() */ 8).then(__webpack_require__.bind(null, /*! ./duotone-32fdb092.js */ "./node_modules/@deckdeckgo/highlight-code/dist/esm/duotone-32fdb092.js"));
-    case _deckdeckgo_highlight_code_languages_adfbe9aa_js__WEBPACK_IMPORTED_MODULE_1__["a"].HOPSCOTCH:
+    case _deckdeckgo_highlight_code_languages_ce6124c0_js__WEBPACK_IMPORTED_MODULE_1__["a"].HOPSCOTCH:
       return __webpack_require__.e(/*! import() */ 9).then(__webpack_require__.bind(null, /*! ./hopscotch-d546eaac.js */ "./node_modules/@deckdeckgo/highlight-code/dist/esm/hopscotch-d546eaac.js"));
-    case _deckdeckgo_highlight_code_languages_adfbe9aa_js__WEBPACK_IMPORTED_MODULE_1__["a"].LUCARIO:
+    case _deckdeckgo_highlight_code_languages_ce6124c0_js__WEBPACK_IMPORTED_MODULE_1__["a"].LUCARIO:
       return __webpack_require__.e(/*! import() */ 10).then(__webpack_require__.bind(null, /*! ./lucario-4ed868c1.js */ "./node_modules/@deckdeckgo/highlight-code/dist/esm/lucario-4ed868c1.js"));
-    case _deckdeckgo_highlight_code_languages_adfbe9aa_js__WEBPACK_IMPORTED_MODULE_1__["a"].MATERIAL:
+    case _deckdeckgo_highlight_code_languages_ce6124c0_js__WEBPACK_IMPORTED_MODULE_1__["a"].MATERIAL:
       return __webpack_require__.e(/*! import() */ 11).then(__webpack_require__.bind(null, /*! ./material-8754dbee.js */ "./node_modules/@deckdeckgo/highlight-code/dist/esm/material-8754dbee.js"));
-    case _deckdeckgo_highlight_code_languages_adfbe9aa_js__WEBPACK_IMPORTED_MODULE_1__["a"].MONOKAI:
+    case _deckdeckgo_highlight_code_languages_ce6124c0_js__WEBPACK_IMPORTED_MODULE_1__["a"].MONOKAI:
       return __webpack_require__.e(/*! import() */ 12).then(__webpack_require__.bind(null, /*! ./monokai-629c48a4.js */ "./node_modules/@deckdeckgo/highlight-code/dist/esm/monokai-629c48a4.js"));
-    case _deckdeckgo_highlight_code_languages_adfbe9aa_js__WEBPACK_IMPORTED_MODULE_1__["a"]['NIGHT-OWL']:
+    case _deckdeckgo_highlight_code_languages_ce6124c0_js__WEBPACK_IMPORTED_MODULE_1__["a"]['NIGHT-OWL']:
       return __webpack_require__.e(/*! import() */ 13).then(__webpack_require__.bind(null, /*! ./night-owl-21406bee.js */ "./node_modules/@deckdeckgo/highlight-code/dist/esm/night-owl-21406bee.js"));
-    case _deckdeckgo_highlight_code_languages_adfbe9aa_js__WEBPACK_IMPORTED_MODULE_1__["a"].NORD:
+    case _deckdeckgo_highlight_code_languages_ce6124c0_js__WEBPACK_IMPORTED_MODULE_1__["a"].NORD:
       return __webpack_require__.e(/*! import() */ 14).then(__webpack_require__.bind(null, /*! ./nord-95d3cd49.js */ "./node_modules/@deckdeckgo/highlight-code/dist/esm/nord-95d3cd49.js"));
-    case _deckdeckgo_highlight_code_languages_adfbe9aa_js__WEBPACK_IMPORTED_MODULE_1__["a"]['OCEANIC-NEXT']:
+    case _deckdeckgo_highlight_code_languages_ce6124c0_js__WEBPACK_IMPORTED_MODULE_1__["a"]['OCEANIC-NEXT']:
       return __webpack_require__.e(/*! import() */ 15).then(__webpack_require__.bind(null, /*! ./oceanic-next-0195fab9.js */ "./node_modules/@deckdeckgo/highlight-code/dist/esm/oceanic-next-0195fab9.js"));
-    case _deckdeckgo_highlight_code_languages_adfbe9aa_js__WEBPACK_IMPORTED_MODULE_1__["a"]['ONE-DARK']:
+    case _deckdeckgo_highlight_code_languages_ce6124c0_js__WEBPACK_IMPORTED_MODULE_1__["a"]['ONE-DARK']:
       return __webpack_require__.e(/*! import() */ 16).then(__webpack_require__.bind(null, /*! ./one-dark-13137631.js */ "./node_modules/@deckdeckgo/highlight-code/dist/esm/one-dark-13137631.js"));
-    case _deckdeckgo_highlight_code_languages_adfbe9aa_js__WEBPACK_IMPORTED_MODULE_1__["a"]['ONE-LIGHT']:
+    case _deckdeckgo_highlight_code_languages_ce6124c0_js__WEBPACK_IMPORTED_MODULE_1__["a"]['ONE-LIGHT']:
       return __webpack_require__.e(/*! import() */ 17).then(__webpack_require__.bind(null, /*! ./one-light-ba402c6a.js */ "./node_modules/@deckdeckgo/highlight-code/dist/esm/one-light-ba402c6a.js"));
-    case _deckdeckgo_highlight_code_languages_adfbe9aa_js__WEBPACK_IMPORTED_MODULE_1__["a"].PANDA:
+    case _deckdeckgo_highlight_code_languages_ce6124c0_js__WEBPACK_IMPORTED_MODULE_1__["a"].PANDA:
       return __webpack_require__.e(/*! import() */ 18).then(__webpack_require__.bind(null, /*! ./panda-8d3100d3.js */ "./node_modules/@deckdeckgo/highlight-code/dist/esm/panda-8d3100d3.js"));
-    case _deckdeckgo_highlight_code_languages_adfbe9aa_js__WEBPACK_IMPORTED_MODULE_1__["a"].PARAISO:
+    case _deckdeckgo_highlight_code_languages_ce6124c0_js__WEBPACK_IMPORTED_MODULE_1__["a"].PARAISO:
       return __webpack_require__.e(/*! import() */ 19).then(__webpack_require__.bind(null, /*! ./paraiso-04a3b991.js */ "./node_modules/@deckdeckgo/highlight-code/dist/esm/paraiso-04a3b991.js"));
-    case _deckdeckgo_highlight_code_languages_adfbe9aa_js__WEBPACK_IMPORTED_MODULE_1__["a"].SETI:
+    case _deckdeckgo_highlight_code_languages_ce6124c0_js__WEBPACK_IMPORTED_MODULE_1__["a"].SETI:
       return __webpack_require__.e(/*! import() */ 20).then(__webpack_require__.bind(null, /*! ./seti-f82fd092.js */ "./node_modules/@deckdeckgo/highlight-code/dist/esm/seti-f82fd092.js"));
-    case _deckdeckgo_highlight_code_languages_adfbe9aa_js__WEBPACK_IMPORTED_MODULE_1__["a"]['SHADES-OF-PURPLE']:
+    case _deckdeckgo_highlight_code_languages_ce6124c0_js__WEBPACK_IMPORTED_MODULE_1__["a"]['SHADES-OF-PURPLE']:
       return __webpack_require__.e(/*! import() */ 21).then(__webpack_require__.bind(null, /*! ./shades-of-purple-2be1efc9.js */ "./node_modules/@deckdeckgo/highlight-code/dist/esm/shades-of-purple-2be1efc9.js"));
-    case _deckdeckgo_highlight_code_languages_adfbe9aa_js__WEBPACK_IMPORTED_MODULE_1__["a"]['SOLARIZED-DARK']:
+    case _deckdeckgo_highlight_code_languages_ce6124c0_js__WEBPACK_IMPORTED_MODULE_1__["a"]['SOLARIZED-DARK']:
       return __webpack_require__.e(/*! import() */ 22).then(__webpack_require__.bind(null, /*! ./solarized-dark-71a5e422.js */ "./node_modules/@deckdeckgo/highlight-code/dist/esm/solarized-dark-71a5e422.js"));
-    case _deckdeckgo_highlight_code_languages_adfbe9aa_js__WEBPACK_IMPORTED_MODULE_1__["a"]['SOLARIZED-LIGHT']:
+    case _deckdeckgo_highlight_code_languages_ce6124c0_js__WEBPACK_IMPORTED_MODULE_1__["a"]['SOLARIZED-LIGHT']:
       return __webpack_require__.e(/*! import() */ 23).then(__webpack_require__.bind(null, /*! ./solarized-light-d6bd38c3.js */ "./node_modules/@deckdeckgo/highlight-code/dist/esm/solarized-light-d6bd38c3.js"));
-    case _deckdeckgo_highlight_code_languages_adfbe9aa_js__WEBPACK_IMPORTED_MODULE_1__["a"].SYNTHWAVE:
+    case _deckdeckgo_highlight_code_languages_ce6124c0_js__WEBPACK_IMPORTED_MODULE_1__["a"].SYNTHWAVE:
       return __webpack_require__.e(/*! import() */ 24).then(__webpack_require__.bind(null, /*! ./synthwave-93032cb3.js */ "./node_modules/@deckdeckgo/highlight-code/dist/esm/synthwave-93032cb3.js"));
-    case _deckdeckgo_highlight_code_languages_adfbe9aa_js__WEBPACK_IMPORTED_MODULE_1__["a"].TWILIGHT:
+    case _deckdeckgo_highlight_code_languages_ce6124c0_js__WEBPACK_IMPORTED_MODULE_1__["a"].TWILIGHT:
       return __webpack_require__.e(/*! import() */ 25).then(__webpack_require__.bind(null, /*! ./twilight-f8fdf84f.js */ "./node_modules/@deckdeckgo/highlight-code/dist/esm/twilight-f8fdf84f.js"));
-    case _deckdeckgo_highlight_code_languages_adfbe9aa_js__WEBPACK_IMPORTED_MODULE_1__["a"].VERMINAL:
+    case _deckdeckgo_highlight_code_languages_ce6124c0_js__WEBPACK_IMPORTED_MODULE_1__["a"].VERMINAL:
       return __webpack_require__.e(/*! import() */ 26).then(__webpack_require__.bind(null, /*! ./verminal-53286fae.js */ "./node_modules/@deckdeckgo/highlight-code/dist/esm/verminal-53286fae.js"));
-    case _deckdeckgo_highlight_code_languages_adfbe9aa_js__WEBPACK_IMPORTED_MODULE_1__["a"].VSCODE:
+    case _deckdeckgo_highlight_code_languages_ce6124c0_js__WEBPACK_IMPORTED_MODULE_1__["a"].VSCODE:
       return __webpack_require__.e(/*! import() */ 27).then(__webpack_require__.bind(null, /*! ./vscode-c9a3f0c1.js */ "./node_modules/@deckdeckgo/highlight-code/dist/esm/vscode-c9a3f0c1.js"));
-    case _deckdeckgo_highlight_code_languages_adfbe9aa_js__WEBPACK_IMPORTED_MODULE_1__["a"].YETI:
+    case _deckdeckgo_highlight_code_languages_ce6124c0_js__WEBPACK_IMPORTED_MODULE_1__["a"].YETI:
       return __webpack_require__.e(/*! import() */ 28).then(__webpack_require__.bind(null, /*! ./yeti-3f36b336.js */ "./node_modules/@deckdeckgo/highlight-code/dist/esm/yeti-3f36b336.js"));
-    case _deckdeckgo_highlight_code_languages_adfbe9aa_js__WEBPACK_IMPORTED_MODULE_1__["a"].ZENBURN:
+    case _deckdeckgo_highlight_code_languages_ce6124c0_js__WEBPACK_IMPORTED_MODULE_1__["a"].ZENBURN:
       return __webpack_require__.e(/*! import() */ 29).then(__webpack_require__.bind(null, /*! ./zenburn-9d88a90e.js */ "./node_modules/@deckdeckgo/highlight-code/dist/esm/zenburn-9d88a90e.js"));
     default:
       return __webpack_require__.e(/*! import() */ 7).then(__webpack_require__.bind(null, /*! ./dracula-ab3aab94.js */ "./node_modules/@deckdeckgo/highlight-code/dist/esm/dracula-ab3aab94.js"));
@@ -2330,7 +2334,7 @@ const parseCode = async ({ refContainer, refCode, code, lineNumbers, highlightLi
 };
 
 const loadGoogleFonts = async (terminal) => {
-  if (terminal === _deckdeckgo_highlight_code_languages_adfbe9aa_js__WEBPACK_IMPORTED_MODULE_1__["D"].UBUNTU) {
+  if (terminal === _deckdeckgo_highlight_code_languages_ce6124c0_js__WEBPACK_IMPORTED_MODULE_1__["D"].UBUNTU) {
     await P('google-fonts-ubuntu', 'https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Mono&display=swap');
   }
 };
@@ -2381,7 +2385,7 @@ const DeckdeckgoHighlightCode = class {
     /**
      * Present the code in a stylish "windowed" card
      */
-    this.terminal = _deckdeckgo_highlight_code_languages_adfbe9aa_js__WEBPACK_IMPORTED_MODULE_1__["D"].CARBON;
+    this.terminal = _deckdeckgo_highlight_code_languages_ce6124c0_js__WEBPACK_IMPORTED_MODULE_1__["D"].CARBON;
     /**
      * In case you would like to set the code component as being editable
      */
@@ -2389,7 +2393,7 @@ const DeckdeckgoHighlightCode = class {
     /**
      * The theme of the selected terminal (applied only in case of carbon)
      */
-    this.theme = _deckdeckgo_highlight_code_languages_adfbe9aa_js__WEBPACK_IMPORTED_MODULE_1__["a"].DRACULA;
+    this.theme = _deckdeckgo_highlight_code_languages_ce6124c0_js__WEBPACK_IMPORTED_MODULE_1__["a"].DRACULA;
     this.parseAfterUpdate = false;
     this.loaded = false;
     this.highlightGroup = undefined;
@@ -2426,7 +2430,7 @@ const DeckdeckgoHighlightCode = class {
     }
   }
   async loadTheme() {
-    if (this.terminal !== _deckdeckgo_highlight_code_languages_adfbe9aa_js__WEBPACK_IMPORTED_MODULE_1__["D"].CARBON || !this.theme) {
+    if (this.terminal !== _deckdeckgo_highlight_code_languages_ce6124c0_js__WEBPACK_IMPORTED_MODULE_1__["D"].CARBON || !this.theme) {
       this.themeStyle = undefined;
       return;
     }
@@ -2446,7 +2450,7 @@ const DeckdeckgoHighlightCode = class {
     }
   }
   async parse() {
-    if (!this.language || !_deckdeckgo_highlight_code_languages_adfbe9aa_js__WEBPACK_IMPORTED_MODULE_1__["d"][this.language]) {
+    if (!this.language || !_deckdeckgo_highlight_code_languages_ce6124c0_js__WEBPACK_IMPORTED_MODULE_1__["d"][this.language]) {
       return;
     }
     await this.parseSlottedCode();
@@ -2471,7 +2475,7 @@ const DeckdeckgoHighlightCode = class {
   }
   async loadLanguages(reload = false) {
     this.loaded = false;
-    if (!this.language || !_deckdeckgo_highlight_code_languages_adfbe9aa_js__WEBPACK_IMPORTED_MODULE_1__["d"][this.language]) {
+    if (!this.language || !_deckdeckgo_highlight_code_languages_ce6124c0_js__WEBPACK_IMPORTED_MODULE_1__["d"][this.language]) {
       console.error(`Language ${this.language} is not supported`);
       return;
     }
@@ -2483,12 +2487,12 @@ const DeckdeckgoHighlightCode = class {
     if (!this.language) {
       return;
     }
-    const definition = _deckdeckgo_highlight_code_languages_adfbe9aa_js__WEBPACK_IMPORTED_MODULE_1__["d"][this.language];
+    const definition = _deckdeckgo_highlight_code_languages_ce6124c0_js__WEBPACK_IMPORTED_MODULE_1__["d"][this.language];
     this.languagesToLoad = definition.require && definition.require.length > 0 ? [this.language, ...definition.require] : [this.language];
   }
   async loadLanguagesRequire() {
     const promises = [];
-    const definition = _deckdeckgo_highlight_code_languages_adfbe9aa_js__WEBPACK_IMPORTED_MODULE_1__["d"][this.language];
+    const definition = _deckdeckgo_highlight_code_languages_ce6124c0_js__WEBPACK_IMPORTED_MODULE_1__["d"][this.language];
     if (definition.require) {
       promises.push(...definition.require.map((extraScript) => this.loadScript(extraScript, false, true)));
     }
@@ -2529,7 +2533,7 @@ const DeckdeckgoHighlightCode = class {
         // if the language definition doesn't exist or if unpkg is down, display code anyway
         this.prismLanguageLoaded.emit(lang);
       };
-      const definition = _deckdeckgo_highlight_code_languages_adfbe9aa_js__WEBPACK_IMPORTED_MODULE_1__["d"][this.language];
+      const definition = _deckdeckgo_highlight_code_languages_ce6124c0_js__WEBPACK_IMPORTED_MODULE_1__["d"][this.language];
       let language = !requireScript && definition.main ? definition.main : lang;
       script.src = 'https://unpkg.com/prismjs@latest/components/prism-' + language + '.js';
       script.setAttribute('deckdeckgo-prism', language);
@@ -2602,11 +2606,14 @@ const DeckdeckgoHighlightCode = class {
     this.debounceUpdateSlot();
   }
   async copyCodeToSlot() {
-    var _a, _b;
-    const code = this.el.querySelector("[slot='code']");
-    if (code) {
-      code.innerHTML = (_b = (_a = this.refCode) === null || _a === void 0 ? void 0 : _a.innerText) === null || _b === void 0 ? void 0 : _b.replace(/(?:\n\n)/g, '\n').replace(/\u200B/g, '');
+    var _a, _b, _c;
+    const code = this.el.querySelector(":scope > [slot='code']");
+    if (!code) {
+      return;
     }
+    // Avoid duplicating new lines on new entries
+    (_b = (_a = this.refCode) === null || _a === void 0 ? void 0 : _a.querySelectorAll('br')) === null || _b === void 0 ? void 0 : _b.forEach((node) => node.outerHTML = '\u200B');
+    code.innerHTML = (_c = this.refCode) === null || _c === void 0 ? void 0 : _c.innerText.replace(/\u200B/g, '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
   }
   edit() {
     var _a;
@@ -2689,10 +2696,10 @@ const DeckdeckgoHighlightCode = class {
   render() {
     var _a;
     const hostClass = {
-      'deckgo-highlight-code-carbon': this.terminal === _deckdeckgo_highlight_code_languages_adfbe9aa_js__WEBPACK_IMPORTED_MODULE_1__["D"].CARBON,
-      'deckgo-highlight-code-ubuntu': this.terminal === _deckdeckgo_highlight_code_languages_adfbe9aa_js__WEBPACK_IMPORTED_MODULE_1__["D"].UBUNTU
+      'deckgo-highlight-code-carbon': this.terminal === _deckdeckgo_highlight_code_languages_ce6124c0_js__WEBPACK_IMPORTED_MODULE_1__["D"].CARBON,
+      'deckgo-highlight-code-ubuntu': this.terminal === _deckdeckgo_highlight_code_languages_ce6124c0_js__WEBPACK_IMPORTED_MODULE_1__["D"].UBUNTU
     };
-    if (this.terminal === _deckdeckgo_highlight_code_languages_adfbe9aa_js__WEBPACK_IMPORTED_MODULE_1__["D"].CARBON) {
+    if (this.terminal === _deckdeckgo_highlight_code_languages_ce6124c0_js__WEBPACK_IMPORTED_MODULE_1__["D"].CARBON) {
       hostClass[`deckgo-highlight-code-theme-${this.theme}`] = true;
     }
     return (Object(_index_54334b7b_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_54334b7b_js__WEBPACK_IMPORTED_MODULE_0__["H"], { class: hostClass, onClick: () => this.edit() }, this.renderCarbon(), this.renderUbuntu(), this.renderHighlightStyle(), Object(_index_54334b7b_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "container", ref: (el) => (this.refContainer = el) }, Object(_index_54334b7b_js__WEBPACK_IMPORTED_MODULE_0__["h"])("code", { class: ((_a = this.highlightLines) === null || _a === void 0 ? void 0 : _a.length) > 0 ? 'highlight' : undefined, contentEditable: this.editable, onBlur: async () => await this.applyCode(), onInput: () => this.inputCode(), onKeyDown: ($event) => this.catchTab($event), ref: (el) => (this.refCode = el) }), Object(_index_54334b7b_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot", { name: "code" }))));
@@ -2704,7 +2711,7 @@ const DeckdeckgoHighlightCode = class {
     return Object(_index_54334b7b_js__WEBPACK_IMPORTED_MODULE_0__["h"])(HighlightStyle, Object.assign({}, this.highlightRows));
   }
   renderCarbon() {
-    if (this.terminal !== _deckdeckgo_highlight_code_languages_adfbe9aa_js__WEBPACK_IMPORTED_MODULE_1__["D"].CARBON) {
+    if (this.terminal !== _deckdeckgo_highlight_code_languages_ce6124c0_js__WEBPACK_IMPORTED_MODULE_1__["D"].CARBON) {
       return undefined;
     }
     return [
@@ -2716,7 +2723,7 @@ const DeckdeckgoHighlightCode = class {
     return Object(_index_54334b7b_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: color });
   }
   renderUbuntu() {
-    if (this.terminal !== _deckdeckgo_highlight_code_languages_adfbe9aa_js__WEBPACK_IMPORTED_MODULE_1__["D"].UBUNTU) {
+    if (this.terminal !== _deckdeckgo_highlight_code_languages_ce6124c0_js__WEBPACK_IMPORTED_MODULE_1__["D"].UBUNTU) {
       return undefined;
     }
     return (Object(_index_54334b7b_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "ubuntu" }, this.renderUbuntuCircle('close'), this.renderUbuntuCircle('minimize'), this.renderUbuntuCircle('maximize'), Object(_index_54334b7b_js__WEBPACK_IMPORTED_MODULE_0__["h"])("p", null, Object(_index_54334b7b_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot", { name: "user" }))));
