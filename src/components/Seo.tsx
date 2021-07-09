@@ -34,10 +34,6 @@ function SEO({ description, lang, meta, title, image, url }: IProps) {
             titleTemplate={`%s | ${site.siteMetadata.title}`}
             meta={[
                 {
-                    name: `google-site-verification`,
-                    content: `google-site-verification=9X_x9eVb3HhJs2Tqf4bDHiHQxCn9Vk6gv8MSnNUGRLI`,
-                },
-                {
                     name: `description`,
                     content: metaDescription,
                 },
