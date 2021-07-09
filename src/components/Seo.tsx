@@ -37,29 +37,59 @@ function SEO({ description, lang, meta, title, image, url }: IProps) {
                     name: `description`,
                     content: metaDescription,
                 },
+                // Open Graph Meta Tags
                 {
                     property: `og:title`,
                     content: title,
                 },
                 {
-                    property: `og:description`,
-                    content: metaDescription,
-                },
-                {
                     property: `og:type`,
-                    content: `website`,
-                },
-                {
-                    name: `og:image`,
-                    content: image ? image : logo,
+                    content: `article`,
                 },
                 {
                     name: `og:url`,
                     content: metaUrl,
                 },
                 {
+                    name: `og:image`,
+                    content: image ? image : logo,
+                },
+                {
+                    property: `og:description`,
+                    content: metaDescription,
+                },
+                {
+                    property: `og:site_name`,
+                    content: site.siteMetadata.title,
+                },
+                {
+                    property: `article:section`,
+                    content: metaDescription,
+                },
+                {
+                    property: `article:tag`,
+                    content: site.siteMetadata.keywords,
+                },
+                // Twitter Meta Tags
+                {
                     name: `twitter:card`,
                     content: `summary`,
+                },
+                {
+                    name: `twitter:site`,
+                    content: `@jorgesnjr`,
+                },
+                {
+                    name: `twitter:title`,
+                    content: `${title}`,
+                },
+                {
+                    name: `twitter:description`,
+                    content: `${metaDescription}`,
+                },
+                {
+                    name: `twitter:image:src`,
+                    content: image ? image : logo,
                 },
                 {
                     name: `twitter:image`,
@@ -68,14 +98,6 @@ function SEO({ description, lang, meta, title, image, url }: IProps) {
                 {
                     name: `twitter:creator`,
                     content: site.siteMetadata.author.name,
-                },
-                {
-                    name: `twitter:title`,
-                    content: title,
-                },
-                {
-                    name: `twitter:description`,
-                    content: metaDescription,
                 },
             ].concat(meta)}
         />
