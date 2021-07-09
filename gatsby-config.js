@@ -24,18 +24,7 @@ module.exports = {
         isUsingColorMode: true,
       },
     },
-    `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
-    // {
-    //   resolve: `gatsby-plugin-netlify-cms`,
-    //   options: {
-    //     /**
-    //      * One convention is to place your Netlify CMS customization code in a
-    //      * `src/cms` directory.
-    //      */
-    //     modulePath: `${__dirname}/src/cms/cms.js`,
-    //   },
-    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -56,12 +45,12 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-google-analytics`,
+    //   options: {
+    //     //trackingId: `ADD YOUR TRACKING ID HERE`,
+    //   },
+    // },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -98,6 +87,12 @@ module.exports = {
         theme_color: `#48E838`,
         display: `minimal-ui`,
         icon: `src/assets/image/favicon.png`, // This path is relative to the root of the site.
+      },
+    },
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        excludes: [`/404`],
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
