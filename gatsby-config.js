@@ -1,12 +1,12 @@
 module.exports = {
-  pathPrefix: "/room",
   siteMetadata: {
-    title: `Room`,
+    title: `Jorge.Room`,
     description: `Jorge's personal blog and portfolio..`,
     keywords: `DevBlog, personal blog, gatsby, react, jorge jr, frontend, backend, fullstack, NodeJs, Javascript, C#, PHP, DevOps`,
     author: {
       name: `Jorge Antônio da Silva Nascimento Junior`,
     },
+    siteUrl: `https://jorgen-jr.github.io`
   },
   plugins: [
     {
@@ -24,6 +24,7 @@ module.exports = {
         isUsingColorMode: true,
       },
     },
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
     // {
     //   resolve: `gatsby-plugin-netlify-cms`,
