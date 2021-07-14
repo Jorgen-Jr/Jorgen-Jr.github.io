@@ -133,7 +133,7 @@ const Contato = ({}) => {
                 <form
                     name="contato"
                     method="POST"
-                    action="https://jorgenjr.netlify.app/sucesso/"
+                    action="https://jorgenjr.netlify.app/"
                     data-netlify="true"
                     onSubmit={handleSubmit}
                 >
