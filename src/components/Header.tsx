@@ -205,7 +205,10 @@ const Header = ({ slide }: IProps) => {
                         justifyContent="flex-end"
                         width={["0", "100%", "100%", "0"]}
                     >
-                        <Button onClick={toggleColorMode}>
+                        <Button
+                            onClick={toggleColorMode}
+                            aria-label="Alterar para tema claro ou escuro."
+                        >
                             {colorMode === "light" ? <SunIcon /> : <MoonIcon />}
                         </Button>
                     </Flex>
