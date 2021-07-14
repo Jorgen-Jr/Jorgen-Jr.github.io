@@ -31,7 +31,11 @@ const HomePage: React.FC<PageProps<DataProps>> = () => {
 
     return (
         <Layout slide={slide}>
-            <SEO title={"Bem Vindo"} lang="pt-BR" />
+            <SEO
+                title={"Bem Vindo"}
+                lang="pt-BR"
+                description="Jorgen-Jr - Visite o blog pessoal e porfólio."
+            />
 
             <VisibilitySensor
                 onChange={(isVisible: Boolean) => {

@@ -18,7 +18,7 @@ function PlanoDeSaude() {
         <Layout slide={2}>
             <SEO
                 title={"Sobre"}
-                description={"Jorge - Conheça a História da Jorge."}
+                description={"Jorge - Conheça um pouco mais sobre."}
                 lang="pt-BR"
             />
 

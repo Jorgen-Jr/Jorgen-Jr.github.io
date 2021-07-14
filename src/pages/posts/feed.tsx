@@ -71,8 +71,8 @@ function Posts() {
     return (
         <Layout slide={-1}>
             <SEO
-                title={"Notícias"}
-                description={"Jorge - Feed de noticias e comunicados."}
+                title={"Blog"}
+                description={"Jorge - Feed de blog posts e comunicados."}
                 lang="pt-BR"
             />
 

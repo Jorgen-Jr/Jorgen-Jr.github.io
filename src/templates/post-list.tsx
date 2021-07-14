@@ -48,7 +48,9 @@ function PostListTemplate(props) {
         <Layout slide={-1}>
             <SEO
                 title={"Blog"}
-                description={"Jorge's Room - Blog Posts."}
+                description={
+                    "Jorge's Room - Blog posts e comunicados. Veja o conteudo postado."
+                }
                 lang="pt-BR"
             />
 
