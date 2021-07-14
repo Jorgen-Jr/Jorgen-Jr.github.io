@@ -1,8 +1,35 @@
-# Jorge Website
+<h1 align="center">
+  <br>
+  <a href="https://jorgen-jr.github.io/"><img src="https://github.com/Jorgen-Jr/Jorgen-Jr.github.io/raw/main/src/assets/image/logo.png" alt="Site Logo" width="200"></a>
+  <br>
+  Jorge's Room
+  <br>
+</h1>
 
-> Coming soon!
+<h4 align="center">Blog Pessoal e Portfólio.</h4>
 
-## Deploy Status
+<p align="center">
 
-[![GH-Pages](https://github.com/Jorgen-Jr/room/actions/workflows/deploy.yml/badge.svg)](https://github.com/Jorgen-Jr/room/actions/workflows/deploy.yml)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/a30b588b-14c6-43a9-a4a4-23e1661e5d7c/deploy-status)](https://app.netlify.com/sites/joujiroom/deploys)
+  <a href="https://github.com/Jorgen-Jr/room/actions/workflows/deploy.yml">
+    <img src="https://github.com/Jorgen-Jr/room/actions/workflows/deploy.yml/badge.svg"
+         alt="GH-Pages">
+  </a>
+
+  <a href="https://app.netlify.com/sites/joujiroom/deploys">
+    <img src="https://api.netlify.com/api/v1/badges/7ca5c5e9-d2e9-43dd-a65f-77dbee6e654f/deploy-status"
+         alt="Netlify Status">
+  </a>
+
+</p>
+
+<p align="center">
+    <a href="https://github.com/Jorgen-Jr">
+        <img src="https://github.com/Jorgen-Jr/Jorgen-Jr.github.io/raw/main/src/assets/image/profile_pic.png" alt="Site Logo" width="150">
+    </a>
+</p>
+
+## License
+
+[MIT](https://github.com/Jorgen-Jr/Jorgen-Jr.github.io/blob/main/LICENSE)
+
+---
