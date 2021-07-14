@@ -127,6 +127,17 @@ const HomePage: React.FC<PageProps<DataProps>> = () => {
 
                         <Flex flexDirection="column" mb={["5px", "10px"]}>
                             <Textarea
+                                aria-label="Assunto"
+                                name="assunto"
+                                placeholder="Assunto..."
+                                focusBorderColor="lime"
+                                minH="150px"
+                                mb={["5px", "10px"]}
+                            />
+                        </Flex>
+
+                        <Flex flexDirection="column" mb={["5px", "10px"]}>
+                            <Textarea
                                 aria-label="Mensagem Adcional"
                                 name="mensagem"
                                 placeholder="Mensagem Adcional..."

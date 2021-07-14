@@ -21,7 +21,7 @@ const Contato = ({}) => {
         email: "",
         numero_telefone: "",
         assunto: "",
-        conteudo: "",
+        mensagem: "",
     });
 
     const handleSubmit = () => {
@@ -243,7 +243,7 @@ const Contato = ({}) => {
                             />
                             <Textarea
                                 aria-label="Conteúdo do email"
-                                name="conteudo"
+                                name="mensagem"
                                 placeholder="Conteudo..."
                                 m={["5px", "20px"]}
                                 focusBorderColor="lightblue"

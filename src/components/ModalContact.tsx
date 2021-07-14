@@ -34,6 +34,7 @@ const ModalContact = ({ isOpen, onClose, produto }: ModalContactProps) => {
         email: "",
         numero_telefone: "",
         mensagem: "Vamos entrar em contato... ",
+        assunto: "Via Modal - Sem Assunto.",
         produto_desejado: produto ? produto : null,
     });
 
