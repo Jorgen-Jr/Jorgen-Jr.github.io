@@ -58,7 +58,7 @@ export const PostCard: React.FC<PostCardProps> = ({
                             src={post.cover}
                             alt={post.title}
                             loading={post.isBanner ? "eager" : "lazy"}
-                            style={{ marginTop: "-25%", width: "100%" }}
+                            style={{ marginTop: "-5%", width: "100%" }}
                             borderRadius={special ? "7px" : "unset"}
                             shadow={special ? "md" : "none"}
                         />
