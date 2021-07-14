@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Jorge.Room]]></title><description><![CDATA[Jorge's personal blog and portfolio..]]></description><link>https://jorgen-jr.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 14 Jul 2021 14:07:44 GMT</lastBuildDate><item><title><![CDATA[No title]]></title><description><![CDATA[Dumb Data so GraphiQL is happy.]]></description><link>https://jorgen-jr.github.io/project/dumb_data/</link><guid isPermaLink="false">https://jorgen-jr.github.io/project/dumb_data/</guid><content:encoded>&lt;p&gt;Dumb Data so GraphiQL is happy.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[No title]]></title><description><![CDATA[nDefinitionBot Eu queria testar e ver como os bots do telegram funcionão, então eu fiz esse pequeno bot que busca pelo significado de uma…]]></description><link>https://jorgen-jr.github.io/project/nDefinitionBot/</link><guid isPermaLink="false">https://jorgen-jr.github.io/project/nDefinitionBot/</guid><content:encoded>&lt;h1&gt;nDefinitionBot&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Jorge.Room]]></title><description><![CDATA[Jorge's personal blog and portfolio..]]></description><link>https://jorgen-jr.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 14 Jul 2021 14:11:23 GMT</lastBuildDate><item><title><![CDATA[No title]]></title><description><![CDATA[Dumb Data so GraphiQL is happy.]]></description><link>https://jorgen-jr.github.io/project/dumb_data/</link><guid isPermaLink="false">https://jorgen-jr.github.io/project/dumb_data/</guid><content:encoded>&lt;p&gt;Dumb Data so GraphiQL is happy.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[No title]]></title><description><![CDATA[nDefinitionBot Eu queria testar e ver como os bots do telegram funcionão, então eu fiz esse pequeno bot que busca pelo significado de uma…]]></description><link>https://jorgen-jr.github.io/project/nDefinitionBot/</link><guid isPermaLink="false">https://jorgen-jr.github.io/project/nDefinitionBot/</guid><content:encoded>&lt;h1&gt;nDefinitionBot&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Eu queria testar e ver como os bots do telegram funcionão, então eu fiz esse pequeno bot que busca pelo significado de uma palavra através dos &lt;a href=&quot;https://core.telegram.org/bots/inline&quot;&gt;comandos em linha &lt;strong&gt;(inline commands)&lt;/strong&gt;&lt;/a&gt;.
 Ele deve responder com uma lista de definições encontradas na api.&lt;/p&gt;
@@ -23,7 +23,187 @@ Ele deve responder com uma lista de definições encontradas na api.&lt;/p&gt;
 &lt;h3&gt;Incoming&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://www.dicionariopopular.com/&quot;&gt;Dicionário Popular&lt;/a&gt;;&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Sobre nDefinitionBot]]></title><description><![CDATA[Sobre nDefinitionBot Há alguns meses atrás eu desenvolvi alguns bots para o telegram, sendo eles , ,  e , no início eles rodavam na minha…]]></description><link>https://jorgen-jr.github.io/blog/2021-05-11-sobre-ndefinitionbot/</link><guid isPermaLink="false">https://jorgen-jr.github.io/blog/2021-05-11-sobre-ndefinitionbot/</guid><pubDate>Wed, 16 Jun 2021 15:15:53 GMT</pubDate><content:encoded>&lt;h1&gt;Sobre nDefinitionBot&lt;/h1&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Configurando Um Ambiente de Testes Simples com Docker]]></title><description><![CDATA[Subindo um ambiente simples com banco de dados e servidores para front-end e backend usando docker. Usando distros baseadas no Debian/Ubuntu…]]></description><link>https://jorgen-jr.github.io/blog/2021-04-21-configurando-um-ambiente-de-testes-simples-com-docker/</link><guid isPermaLink="false">https://jorgen-jr.github.io/blog/2021-04-21-configurando-um-ambiente-de-testes-simples-com-docker/</guid><pubDate>Wed, 14 Jul 2021 14:07:52 GMT</pubDate><content:encoded>&lt;p&gt;Subindo um ambiente simples com banco de dados e servidores para front-end e backend usando docker.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Usando distros baseadas no Debian/Ubuntu (No meu caso, ElementaryOS)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;Instalando o Docker&lt;/h2&gt;
+&lt;h3&gt;Usando o Repositório Official do Docker&lt;/h3&gt;
+&lt;p&gt;Para configurar o repositório, você precisa atualizar o &lt;code class=&quot;language-text&quot;&gt;apt&lt;/code&gt; e instalar os seguintes pacotes: &lt;break&gt;&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;bash&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;sudo apt-get update&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;deckgo-highlight-code language=&quot;bash&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg-agent \
+    software-properties-common&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Jorgen-Jr/tutorial_docker_compose/master/screenshots/01.png&quot; alt=&quot;Passo - 01&quot;&gt;&lt;/p&gt;
+&lt;p&gt;E em seguida adcionar a chave GPG official do Docker.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;bash&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Jorgen-Jr/tutorial_docker_compose/master/screenshots/02.png&quot; alt=&quot;Passo - 02&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Você pode verificar se a chave foi adcionada pelo fingerprint &lt;code class=&quot;language-text&quot;&gt;9DC8 5822 9FC7 DD38 854A  E2D8 8D81 803C 0EBF CD88&lt;/code&gt;, buscando pelos últimos 8 characteres. O resultado deve ser como a seguir:&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;bash&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;sudo apt-key fingerprint 0EBFCD88
+
+pub   rsa4096 2017-02-22 [SCEA]
+      9DC8 5822 9FC7 DD38 854A  E2D8 8D81 803C 0EBF CD88
+uid           [ unknown] Docker Release (CE deb) &amp;lt;docker@docker.com&amp;gt;
+sub   rsa4096 2017-02-22 [S]&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Jorgen-Jr/tutorial_docker_compose/master/screenshots/03.png&quot; alt=&quot;Passo - 03&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Agora podemos adcionar o repositório dos lançamentos estáveis do Docker Engine. Através do comando:&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;bash&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;sudo add-apt-repository \
+   &amp;quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable&amp;quot;&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Note que no caso do ElementaryOS eu precisei trocar a subfunção &lt;code class=&quot;language-text&quot;&gt;$(lsb_release-cs)&lt;/code&gt; que retorna a sua distribuição linux para &lt;code class=&quot;language-text&quot;&gt;bionic&lt;/code&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Jorgen-Jr/tutorial_docker_compose/master/screenshots/04.png&quot; alt=&quot;Passo - 04&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Com o repositório instalado, atualize seu apt-get através do comando &lt;code class=&quot;language-text&quot;&gt;sudo apt-get update&lt;/code&gt; e instale o Docker Engine através do comando &lt;code class=&quot;language-text&quot;&gt;sudo apt-get install docker-ce docker-ce-cli containerd.io&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Jorgen-Jr/tutorial_docker_compose/master/screenshots/05.png&quot; alt=&quot;Passo - 05&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Você pode verificar que o docker está instalado através do comando &lt;code class=&quot;language-text&quot;&gt;docker -vv&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Jorgen-Jr/tutorial_docker_compose/master/screenshots/06.png&quot; alt=&quot;Passo - 06&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Ou executando o comando &lt;code class=&quot;language-text&quot;&gt;docker run hello-world&lt;/code&gt; que deve baixar a imagem de teste e quando executa-la mostrar a seguinte mensagem.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Jorgen-Jr/tutorial_docker_compose/master/screenshots/07.png&quot; alt=&quot;Passo - 07&quot;&gt;&lt;/p&gt;
+&lt;h3&gt;Compose&lt;/h3&gt;
+&lt;p&gt;Instale agora o docker compose através dos comandos:&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;bash&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;sudo curl -L &amp;quot;https://github.com/docker/compose/releases/download/1.26.2/docker-compose-$(uname -s)-$(uname -m)&amp;quot; -o /usr/local/bin/docker-compose&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;para baixar o docker-compose e&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;bash&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;sudo chmod +x /usr/local/bin/docker-compose&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;para torna-lo executável.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Jorgen-Jr/tutorial_docker_compose/master/screenshots/09.png&quot; alt=&quot;Passo 8&quot;&gt;&lt;/p&gt;
+&lt;h2&gt;Configurando o Ambiente através do YAML&lt;/h2&gt;
+&lt;p&gt;O docker-compose permite o uso de scripts yaml, onde ditaremos as imagens e as propriedades de que ela deve rodar.&lt;break&gt;
+Irei criar uma pasta chamada &lt;code class=&quot;language-text&quot;&gt;ambiente_de_testes&lt;/code&gt; e dentro dela irei criar um arquivo &lt;code class=&quot;language-text&quot;&gt;docker-compose.yml&lt;/code&gt; para criarmos nosso ambiente.&lt;break&gt;
+Nosso ambiente irá usar NodeJs, Postgres e Nginx, então de inicio podemos adcionar ao arquivo as seguintes propriedades.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;python&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;version: &amp;#39;3.4&amp;#39;
+services:
+  postgres:
+    image: postgres
+    container_name: srv_postgres
+    ports:
+      - &amp;#39;5432:5432&amp;#39;
+  nginx:
+    image: nginx
+    container_name: srv_nginx
+    ports:
+      - &amp;#39;81:80&amp;#39;
+  node:
+    image: &amp;#39;node:slim&amp;#39;
+    container_name: srv_node
+    depends_on:
+      - postgres&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;Definimos até então, quais serviços serão executados ao executar o comando do docker compose, em quais portas (com exceção do nodejs) e qual será o nome dos nossos containers. Mas podemos ir além, vamos definir agora os seus volumes, suas variáveis de ambiente e o comando para iniciar o servidor nodejs.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Definir volumes é útil para poder armazenar os arquivos que a imagem irá usar, assim toda vez que o container precisar ser recriado estas informações não serão perdidas.
+Para definir o volume iremos usar no escopo da imagem &lt;code class=&quot;language-text&quot;&gt;volumes: {endereço do volume}&lt;/code&gt; onde será dividido em &lt;code class=&quot;language-text&quot;&gt;{Diretório do volume}&lt;/code&gt; + &lt;code class=&quot;language-text&quot;&gt;{nome do volume}&lt;/code&gt; + &lt;code class=&quot;language-text&quot;&gt;{diretório do volume que deseja salvar}&lt;/code&gt; e os nomes dos volumes devem ser definidos como a seguir.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;deckgo-highlight-code language=&quot;python&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;version: &amp;#39;3.4&amp;#39;
+services:
+  postgres:
+    image: postgres
+    container_name: srv_postgres
+    volumes:
+      - &amp;#39;/home/jorge-n/ambiente_de_testes/var/lib/postgres:/var/lib/postgresql/&amp;#39;
+    ports:
+      - &amp;#39;5432:5432&amp;#39;
+    environment:
+      - POSTGRES_DB= {database padrão de seu banco de dados}
+      - POSTGRES_PASSWORD= {Senha do usuário do banco de dados}
+      - POSTGRES_USER= {usuário a ser criado no banco ao inicia-lo}
+      - PGPORT=5432
+  nginx:
+    image: nginx
+    container_name: srv_nginx
+    volumes:
+      - &amp;#39;/home/jorge-n/ambiente_de_testes/nginx/www:/usr/share/nginx/html/&amp;#39;
+    ports:
+      - &amp;#39;81:80&amp;#39;
+    environment:
+      - NGINX_HOST={dominio onde irá rodar o servidor web}
+      - NGINX_PORT=80
+  node:
+    image: &amp;#39;node:slim&amp;#39;
+    container_name: srv_node
+    depends_on:
+      - postgres
+    volumes:
+      - &amp;#39;/home/jorge-n/ambiente_de_testes/backend/node:/home/node/app&amp;#39;
+    ports:
+      - &amp;#39;34012:3001&amp;#39;
+    working_dir: /home/node/app
+    environment:
+      - NODE_ENV=homolog
+      - PORT=3001
+      - SECRET_SESSION={Segredo da sessão (usado em autenticação)}
+      - DB_URI=postgres {endereço do banco de dados, aqui pode ser o nome do serviço}
+      - DB_USER={Usuário do banco que a aplicação irá usar}
+      - DB_PASSWORD={Senha do banco de dados}
+      - DB_DATABASE= {Database da aplicação}
+    expose:
+      - &amp;#39;34012&amp;#39;
+    command: bash -c &amp;quot;npm install &amp;amp;&amp;amp; node src/server.js&amp;quot; {Comando que será executado ao iniciar o servidor de aplicação}
+volumes:
+  postgres: {}
+  www: {}
+  node: {}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;Meu arquivo final ficou assim, mas você pode altera-lo conforme sua necessidade.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Jorgen-Jr/tutorial_docker_compose/master/screenshots/08.png&quot; alt=&quot;Passo 8&quot;&gt;&lt;/p&gt;
+&lt;h3&gt;Iniciando o ambiente de testes com Docker Compose.&lt;/h3&gt;
+&lt;p&gt;Para iniciar o ambiente de testes, basta ir até a pasta onde está o arquivo &lt;code class=&quot;language-text&quot;&gt;docker-compose.yml&lt;/code&gt; e executar o comando &lt;code class=&quot;language-text&quot;&gt;sudo docker-compose up&lt;/code&gt; ele irá baixar as imagens dos containers necessárias e iniciar os serviços criando as pastas aonde definimos.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Jorgen-Jr/tutorial_docker_compose/master/screenshots/10.png&quot; alt=&quot;Passo 9&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Jorgen-Jr/tutorial_docker_compose/master/screenshots/11.png&quot; alt=&quot;Passo 10&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Agora basta copiar o código da nossa aplicação para as pastas criadas e reiniciar nosso ambiente rodando ele no fundo usando o comando &lt;code class=&quot;language-text&quot;&gt;sudo docker-compose up -d&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Jorgen-Jr/tutorial_docker_compose/master/screenshots/12.png&quot; alt=&quot;Passo 11&quot;&gt;&lt;/p&gt;
+&lt;p&gt;E voilla, tá pronto o sorvetinho. já podemos acessar a aplicação localmente.&lt;/p&gt;
+&lt;h2&gt;Dockstation&lt;/h2&gt;
+&lt;p&gt;Se você preferir usar uma interface para gerenciar seus containers, recomendo usar o &lt;a href=&quot;https://dockstation.io/&quot;&gt;Dockstation&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;Importando&lt;/h3&gt;
+&lt;p&gt;Como já possuimos um arquivo docker-composee.yml basta criar um novo projeto no Dockstation usando ele.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Jorgen-Jr/tutorial_docker_compose/master/screenshots/13.png&quot; alt=&quot;Passo 12&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Jorgen-Jr/tutorial_docker_compose/master/screenshots/14.png&quot; alt=&quot;Passo 13&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Jorgen-Jr/tutorial_docker_compose/master/screenshots/15.png&quot; alt=&quot;Passo 14&quot;&gt;&lt;/p&gt;
+&lt;p&gt;O Dockstation facilita o gerenciamento, te dando acesso aos logs, propriedades e várias informações sobre o projeto e os containers, alem de dispor um editor para modificar o código do compose.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Note que você vai precisar remover os container criados anteriormente para poder usar os nomes usados em &lt;code class=&quot;language-text&quot;&gt;container_name&lt;/code&gt; no nosso arquivo compose.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;Extra Bits&lt;/h2&gt;
+&lt;h3&gt;React-Router Método 1&lt;/h3&gt;
+&lt;p&gt;Uma configuração adcional é necessária para usar o react-router do reactjs no nginx. Para fazer isso através do docker, vamos entrar no container através do terminal usando o seguinte comando.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;bash&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;sudo docker exec -it srv_nginx /bin/bash&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Jorgen-Jr/tutorial_docker_compose/master/screenshots/16.png&quot; alt=&quot;Passo 15&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Em seguida instale um editor de sua preferencia, eu usarei o nano.
+O arquivo que vamos modificar é o &lt;code class=&quot;language-text&quot;&gt;default.conf&lt;/code&gt; localizado em &lt;code class=&quot;language-text&quot;&gt;/etc/nginx/config.d/default.conf&lt;/code&gt; então irei usar o comando &lt;code class=&quot;language-text&quot;&gt;nano /etc/nginx/conf.d/default.conf&lt;/code&gt; para edita-lo.
+Adcione &lt;code class=&quot;language-text&quot;&gt;try_files $uri $uri/ /index.html;&lt;/code&gt; dentro do escopo &lt;code class=&quot;language-text&quot;&gt;location / {&lt;/code&gt; como a seguir:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Jorgen-Jr/tutorial_docker_compose/master/screenshots/17.png&quot; alt=&quot;Passo 16&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Salve o arquivo e saia do container e o reinicie com &lt;code class=&quot;language-text&quot;&gt;sudo docker container restart srv_nginx&lt;/code&gt;. Isso deve resolver os problemas com react-router onde acabamos com uma página 404.&lt;/p&gt;
+&lt;h3&gt;React-Router Método 2&lt;/h3&gt;
+&lt;p&gt;Alternativamente, você pode salvar o arquivo conf em uma pasta separada no nosso projeto adcionando aos volumes do nginx a seguinte linha.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;python&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;    - &amp;#39;./nginx/conf.d/default.conf:/etc/nginx/conf.d/default.conf&amp;#39;&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;Assim poderá editar o arquivo direto na pasta do projeto adcionando a linha &lt;code class=&quot;language-text&quot;&gt;try_files $uri $uri/ /index.html;&lt;/code&gt; dentro do escopo &lt;code class=&quot;language-text&quot;&gt;location / {&lt;/code&gt; como mostrado no método 1:&lt;/p&gt;
+&lt;h3&gt;Erro 403 Nginx&lt;/h3&gt;
+&lt;p&gt;Este erro usualmente é causado por falta de permissão aos arquivos na pasta que definimos. para resolver isso, vá até a pasta do projeto e execute o comando &lt;code class=&quot;language-text&quot;&gt;sudo chmod 777 -R ./&lt;/code&gt; para dar permissão de leitura, escrita e execução para todos o proprietário, grupo e todos os outros usuários.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Sobre nDefinitionBot]]></title><description><![CDATA[Sobre nDefinitionBot Há alguns meses atrás eu desenvolvi alguns bots para o telegram, sendo eles , ,  e , no início eles rodavam na minha…]]></description><link>https://jorgen-jr.github.io/blog/2021-05-11-sobre-ndefinitionbot/</link><guid isPermaLink="false">https://jorgen-jr.github.io/blog/2021-05-11-sobre-ndefinitionbot/</guid><pubDate>Wed, 16 Jun 2021 15:15:53 GMT</pubDate><content:encoded>&lt;h1&gt;Sobre nDefinitionBot&lt;/h1&gt;
 &lt;p&gt;Há alguns meses atrás eu desenvolvi alguns bots para o telegram, sendo eles &lt;code class=&quot;language-text&quot;&gt;@ndefinitionbot&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;@whatsinthisfoodbot&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;@ntalesbot&lt;/code&gt; e &lt;code class=&quot;language-text&quot;&gt;@ntextifybot&lt;/code&gt;, no início eles rodavam na minha máquina local, em containers usando o docker, atualmente eles usam &lt;em&gt;serverless functions&lt;/em&gt; para que se tornem mais disponíveis. Futuramente pretendo disponibilizar um tutorial de como foi o processo de desenvolvimento de um desses bots.&lt;/p&gt;
 &lt;p&gt;Tenha em mente que por estar usando serverless functions alguns clientes podem sentir as conhecidas cold starts, mas do jeito que foi aplicado estão em níveis aceitáveis.&lt;/p&gt;
 &lt;p&gt;Para usar bots embutidos (inline bots) é bem fácil no telegram, basta digitar a tag do bot e em seguida inserir sua query. Como mostra a imagem a seguir.&lt;/p&gt;
