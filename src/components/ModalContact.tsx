@@ -107,7 +107,7 @@ const ModalContact = ({ isOpen, onClose, produto }: ModalContactProps) => {
                             <form
                                 name="precadastro"
                                 method="POST"
-                                action="https://jorgenjr.netlify.app/success/"
+                                action="https://jorgenjr.netlify.app/successo/"
                                 onSubmit={handleSubmit}
                                 data-netlify="true"
                             >
