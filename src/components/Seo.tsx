@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
 
-import logo from "./../assets/image/brand_logo.png";
+import logo from "./../assets/image/logo.png";
 
 function SEO({ description, lang, meta, title, image, url }: IProps) {
     const { site } = useStaticQuery(

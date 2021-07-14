@@ -29,10 +29,10 @@ const PostTemplate = ({ data }) => {
             {post ? (
                 <>
                     <SEO
-                        title={"Jorge's Room - " + post.frontmatter.title}
+                        title={post.frontmatter.title}
                         description={post.excerpt}
                         lang="pt-BR"
-                        image={`https://joujiroom.netlify.app${post.frontmatter.cover}`}
+                        image={`https://jorgenjr.netlify.app/${post.frontmatter.cover}`}
                         meta={[
                             {
                                 name: "og:url",
