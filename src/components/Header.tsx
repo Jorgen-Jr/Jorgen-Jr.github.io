@@ -87,7 +87,9 @@ const Header = ({ slide }: IProps) => {
         <Box>
             <MotionFlex
                 initial={
-                    isAtTop ? { x: -20, opacity: 0 } : { x: 0, opacity: 1 }
+                    isAtTop
+                        ? { x: -20, opacity: 0 }
+                        : { x: 0, opacity: 1, background: "RGBA(0,0,0,0.6)" }
                 }
                 animate={{
                     x: [isAtTop ? -20 : 0, 0],
