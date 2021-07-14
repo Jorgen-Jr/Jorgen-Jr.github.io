@@ -89,7 +89,10 @@ const Header = ({ slide }: IProps) => {
                 initial={
                     isAtTop
                         ? { x: -20, opacity: 0 }
-                        : { x: 0, opacity: 1, background: "RGBA(0,0,0,0)" }
+                        : {
+                              x: 0,
+                              opacity: 1,
+                          }
                 }
                 animate={{
                     x: [isAtTop ? -20 : 0, 0],
@@ -100,7 +103,7 @@ const Header = ({ slide }: IProps) => {
                 pb={isAtTop ? "1px" : "5px"}
                 background={
                     isAtTop
-                        ? "RGBA(0,0,0,0)"
+                        ? "unset"
                         : useColorModeValue(
                               "RGBA(255,255,255,0.8)",
                               "RGBA(0,0,0,0.6)"
