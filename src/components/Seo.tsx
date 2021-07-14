@@ -2,9 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
-
-import logo from "./../assets/image/logo.png";
-
 function SEO({ description, lang, meta, title, image, url }: IProps) {
     const { site } = useStaticQuery(
         graphql`
@@ -24,6 +21,7 @@ function SEO({ description, lang, meta, title, image, url }: IProps) {
 
     const metaDescription = description || site.siteMetadata.description;
     const metaUrl = url || "";
+    const card_image = image ? image : "/favicon.png";
 
     return (
         <Helmet
@@ -52,7 +50,7 @@ function SEO({ description, lang, meta, title, image, url }: IProps) {
                 },
                 {
                     name: `og:image`,
-                    content: image ? image : logo,
+                    content: card_image,
                 },
                 {
                     property: `og:description`,
@@ -89,11 +87,11 @@ function SEO({ description, lang, meta, title, image, url }: IProps) {
                 },
                 {
                     name: `twitter:image:src`,
-                    content: image ? image : logo,
+                    content: card_image,
                 },
                 {
                     name: `twitter:image`,
-                    content: image ? image : logo,
+                    content: card_image,
                 },
                 {
                     name: `twitter:creator`,
