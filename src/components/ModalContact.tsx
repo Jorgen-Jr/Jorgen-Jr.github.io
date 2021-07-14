@@ -43,7 +43,7 @@ const ModalContact = ({ isOpen, onClose, produto }: ModalContactProps) => {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: new URLSearchParams({
-                "form-name": "contato_via_modal",
+                "form-name": "contato",
                 "data-envio": new Date().toLocaleString(),
                 ...formData,
             }).toString(),
@@ -105,9 +105,9 @@ const ModalContact = ({ isOpen, onClose, produto }: ModalContactProps) => {
                             </Flex>
 
                             <form
-                                name="contato_via_modal"
+                                name="contato"
                                 method="POST"
-                                action="https://jorgenjr.netlify.app/"
+                                action="https://jorgenjr.netlify.app/sucesso/"
                                 onSubmit={handleSubmit}
                                 data-netlify="true"
                             >
@@ -118,7 +118,7 @@ const ModalContact = ({ isOpen, onClose, produto }: ModalContactProps) => {
                                     <input
                                         type="hidden"
                                         name="form-name"
-                                        value="contato_via_modal"
+                                        value="contato"
                                     />
 
                                     <Input

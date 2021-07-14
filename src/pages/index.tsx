@@ -82,16 +82,12 @@ const HomePage: React.FC<PageProps<DataProps>> = () => {
             </VisibilitySensor>
 
             <div style={{ display: "none" }}>
-                <form name="precadastro" method="POST" data-netlify="true">
+                <form name="contato" method="POST" data-netlify="true">
                     <Flex
                         flexDirection="column"
                         m={["auto", "auto", "auto", "unset"]}
                     >
-                        <input
-                            type="hidden"
-                            name="form-name"
-                            value="precadastro"
-                        />
+                        <input type="hidden" name="form-name" value="contato" />
 
                         <Input
                             aria-label="Seu nome para contato."
