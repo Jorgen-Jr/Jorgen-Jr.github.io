@@ -97,7 +97,11 @@ const Footer = () => {
                     </Box>
 
                     <Flex flexDir="row">
-                        <Link href="./" target="_BLANK" p="10px 10px 0 0">
+                        <Link
+                            href="https://t.me/JojiJ"
+                            target="_BLANK"
+                            p="10px 10px 0 0"
+                        >
                             <Image
                                 boxSize="30px"
                                 backgroundColor="#727475"
@@ -142,7 +146,7 @@ const Footer = () => {
                             ></Image>
                         </Link>
                         <Link
-                            href="https://www.linkedin.com/in/jorge-ant%C3%B4nio-da-silva-nascimento-junior-7884191a1/"
+                            href="https://www.linkedin.com/in/jorgen-nascimento/"
                             target="_BLANK"
                             p="10px"
                         >
