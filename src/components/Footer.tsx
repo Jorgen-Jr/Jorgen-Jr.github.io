@@ -54,6 +54,7 @@ const Footer = () => {
                                     boxSize="150px"
                                     margin="auto"
                                     src={profile_pic}
+                                    alt="Imagem de perfil"
                                 ></Image>
                             </Box>
                             <Divider
@@ -99,6 +100,7 @@ const Footer = () => {
                     <Flex flexDir="row">
                         <Link
                             href="https://t.me/JojiJ"
+                            aria-label="Link para perfil do telegram"
                             target="_BLANK"
                             p="10px 10px 0 0"
                         >
@@ -106,11 +108,13 @@ const Footer = () => {
                                 boxSize="30px"
                                 backgroundColor="#727475"
                                 borderRadius="50%"
+                                alt="Ícone do telegram"
                                 src={icon_telegram}
                             ></Image>
                         </Link>
                         <Link
                             href="https://github.com/Jorgen-Jr/"
+                            aria-label="Link para perfil do github"
                             target="_BLANK"
                             p="10px"
                         >
@@ -118,11 +122,13 @@ const Footer = () => {
                                 boxSize="30px"
                                 backgroundColor="#727475"
                                 borderRadius="50%"
+                                alt="Ícone do github"
                                 src={icon_github}
                             ></Image>
                         </Link>
                         <Link
                             href="mailto:jorgenjr@pm.me"
+                            aria-label="Link para envio de email"
                             target="_BLANK"
                             p="10px"
                         >
@@ -130,11 +136,13 @@ const Footer = () => {
                                 boxSize="30px"
                                 backgroundColor="#727475"
                                 borderRadius="50%"
+                                alt="Ícone do email"
                                 src={icon_mail}
                             ></Image>
                         </Link>
                         <Link
                             href="https://www.instagram.com/jorge.njr/"
+                            aria-label="Link para perfil do instagram"
                             target="_BLANK"
                             p="10px"
                         >
@@ -143,10 +151,12 @@ const Footer = () => {
                                 backgroundColor="#727475"
                                 borderRadius="50%"
                                 src={icon_instagram}
+                                alt="Ícone do instagram"
                             ></Image>
                         </Link>
                         <Link
                             href="https://www.linkedin.com/in/jorgen-nascimento/"
+                            aria-label="Link para perfil do Linkedin"
                             target="_BLANK"
                             p="10px"
                         >
@@ -155,6 +165,7 @@ const Footer = () => {
                                 backgroundColor="#727475"
                                 borderRadius="50%"
                                 src={icon_linkedn}
+                                alt="Ícone do linkedin"
                             ></Image>
                         </Link>
                         {/* <Link href="./" target="_BLANK" p="10px">
@@ -167,6 +178,7 @@ const Footer = () => {
                         </Link> */}
                         <Link
                             href="https://twitter.com/Jorgesnjr"
+                            aria-label="Link para perfil do Twitter"
                             target="_BLANK"
                             p="10px"
                         >
@@ -175,6 +187,7 @@ const Footer = () => {
                                 backgroundColor="#727475"
                                 borderRadius="50%"
                                 src={icon_twitter}
+                                alt="Ícone do Twitter"
                             ></Image>
                         </Link>
                     </Flex>
@@ -195,6 +208,7 @@ const Footer = () => {
                 <Flex alignItems="center" p={["10px", "0"]}>
                     <Link
                         href="https://github.com/Jorgen-Jr/room"
+                        alt="Link para perfil do github - 'Feito com amor por Jorge.'"
                         target="_blank"
                         rel="noopener noreferrer"
                         style={{
