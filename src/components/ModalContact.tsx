@@ -105,7 +105,7 @@ const ModalContact = ({ isOpen, onClose, produto }: ModalContactProps) => {
                             </Flex>
 
                             <form
-                                name="precadastro"
+                                name="contato_via_modal"
                                 method="POST"
                                 action="https://jorgenjr.netlify.app/sucesso/"
                                 onSubmit={handleSubmit}
@@ -118,7 +118,7 @@ const ModalContact = ({ isOpen, onClose, produto }: ModalContactProps) => {
                                     <input
                                         type="hidden"
                                         name="form-name"
-                                        value="precadastro"
+                                        value="contato_via_modal"
                                     />
 
                                     <Input
