@@ -50,12 +50,15 @@ export const PostCard: React.FC<PostCardProps> = ({
                     justifyContent={special ? "center" : "auto"}
                     shadow={special ? "none" : "xl"}
                 >
-                    <Link to={post.slug}>
+                    <Link
+                        to={post.slug}
+                        style={{ maxHeight: fullWidth ? "250px" : "unset" }}
+                    >
                         <Image
                             src={post.cover}
                             alt={post.title}
                             loading={post.isBanner ? "eager" : "lazy"}
-                            style={{ margin: 0, width: "100%" }}
+                            style={{ marginTop: "-25%", width: "100%" }}
                             borderRadius={special ? "7px" : "unset"}
                             shadow={special ? "md" : "none"}
                         />
@@ -67,7 +70,7 @@ export const PostCard: React.FC<PostCardProps> = ({
                                       display: "none",
                                   }
                                 : null)}
-                            p="0 20px"
+                            p="10px 20px"
                         >
                             <Text
                                 as="span"
