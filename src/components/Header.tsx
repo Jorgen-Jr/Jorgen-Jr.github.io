@@ -297,7 +297,7 @@ const Header = ({ slide }: IProps) => {
                 zIndex={1}
                 background={
                     isAtTop
-                        ? "none"
+                        ? "RGBA(0,0,0,0)"
                         : useColorModeValue(
                               "RGBA(255,255,255,0.8)",
                               "RGBA(0,0,0,0.6)"
