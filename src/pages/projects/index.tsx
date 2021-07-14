@@ -53,6 +53,8 @@ function ProjectsFeed() {
             name: item.frontmatter.name,
             description: item.frontmatter.description,
             short_description: item.frontmatter.short_description,
+            category: item.frontmatter.category,
+            slug: item.slug,
         };
         return project;
     });

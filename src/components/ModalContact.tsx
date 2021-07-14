@@ -43,7 +43,7 @@ const ModalContact = ({ isOpen, onClose, produto }: ModalContactProps) => {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: new URLSearchParams({
-                "form-name": "precadastro",
+                "form-name": "contato_via_modal",
                 "data-envio": new Date().toLocaleString(),
                 ...formData,
             }).toString(),
@@ -107,7 +107,7 @@ const ModalContact = ({ isOpen, onClose, produto }: ModalContactProps) => {
                             <form
                                 name="precadastro"
                                 method="POST"
-                                action="https://joujiroom.netlify.app/"
+                                action="https://joujiroom.netlify.app/success/"
                                 onSubmit={handleSubmit}
                                 data-netlify="true"
                             >
