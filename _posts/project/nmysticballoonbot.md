@@ -1,17 +1,18 @@
 ---
-layout: projects
+layout: project
 name: nMysticBalloonBot
-short_description: Bot para Telegram
-category: Backend
+short_description: nMysticBalloonBot
+category: Bots
 tags:
-  - javascript
-  - Canvas
-  - NodeJS
+    - javascript
+    - Canvas
+    - NodeJS
 icon: /images/uploads/index.png
 link: nmysticballoonbot
 theme_color_primary: "#e3a41d"
 active: true
 ---
+
 # nMysticBalloonBot
 
 > Estava brincando com o canvas e javascript, e decidi criar este bot para o telegram.

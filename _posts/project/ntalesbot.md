@@ -1,20 +1,21 @@
 ---
-layout: projects
+layout: project
 name: nTalesBot
-short_description: Bot do telegram com curiosidades sobre numeros
-category: Desenvolvimento
+short_description: nTalesBot
+category: Bots
 tags:
-  - Javascript
-  - TelegramBot
-  - NodeJs
-  - Serverless
+    - Javascript
+    - TelegramBot
+    - NodeJs
+    - Serverless
 cover: http://numbersapi.com/img/background.jpg?1582176005
-illustration: /images/uploads/ntalesbot.png
+icon: /images/uploads/ntalesbot.png
 link: ntalesbot
 theme_color_primary: "#b821a4"
 theme_color_secondary: "#2fbfdc"
 active: true
 ---
+
 # nTalesBot
 
 > Eu queria aprender como os bots do telegram funcionam, então eu fiz este pequeno bot que busca curiosidades de um certo numero através de [comandos em linha **(inline commands)**](https://core.telegram.org/bots/inline).
@@ -29,10 +30,10 @@ Começe digitando `@ntalesbot` em qualquer chat e o numero desejada e ele vai de
 
 Você terá as seguintes opções quando enviar o numero para o bot.
 
-* Trivia: Irá retornar uma curiosidade qualquer sobre o numero.
-* Math: Irá retornar uma curiosidade matemática sobre o numero.
-* Data: Irá retornar uma curiosidade sobre um certo evento que ocorreu na data desejada. **Deve estar num formato Mês/Ano ou menor que 31, que neste caso será inferido uma data de janeiro**
-* Ano: Irá retornar algum evento que ocorreu no ano enviado.
+-   Trivia: Irá retornar uma curiosidade qualquer sobre o numero.
+-   Math: Irá retornar uma curiosidade matemática sobre o numero.
+-   Data: Irá retornar uma curiosidade sobre um certo evento que ocorreu na data desejada. **Deve estar num formato Mês/Ano ou menor que 31, que neste caso será inferido uma data de janeiro**
+-   Ano: Irá retornar algum evento que ocorreu no ano enviado.
 
 ### Referências Externas
 

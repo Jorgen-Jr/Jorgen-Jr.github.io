@@ -1,17 +1,18 @@
 ---
-layout: projects
+layout: project
 name: Landing Page sodoar.com.br
-short_description: Landing Page para o site
+short_description: Landing Page sodoar.com.br
 category: Frontend
 tags:
-  - javascript
-  - bootstrap
-  - css
-  - animations
+    - javascript
+    - bootstrap
+    - css
+    - animations
 icon: https://github.com/Jorgen-Jr/sodoar.com-landingpage/raw/master/img/Logo/logo-cabecalho.png
 link: landing-page-sodoar
 active: true
 ---
+
 # sodoar.com-landingpage
 
 ## LandingPage do site sodoar.com (Versão 2019/01)
