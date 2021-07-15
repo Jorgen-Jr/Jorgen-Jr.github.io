@@ -1,7 +1,7 @@
 ---
 layout: project
 name: nDefinitionBot
-short_description: Bot para Telegram
+short_description: nDefinitionBot
 tags:
   - NodeJS
   - Cheerio

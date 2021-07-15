@@ -4,12 +4,13 @@ name: nTextifyBot
 short_description: nTextifyBot
 category: Bots
 tags:
-    - Javascript
-    - NodeJS
-    - TelegramBot
-    - ""
+  - Javascript
+  - NodeJS
+  - TelegramBot
+  - Serverless
 icon: /images/uploads/ndefinitionbot.png
 link: ntextifybot
+theme_color_primary: "#04be10"
 active: true
 ---
 

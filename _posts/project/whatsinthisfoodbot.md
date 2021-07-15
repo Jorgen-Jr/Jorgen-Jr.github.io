@@ -4,12 +4,14 @@ name: WhatsInThisFoodBot
 short_description: WhatsInThisFoodBot
 category: Bots
 tags:
-    - javascript
-    - NodeJS
-    - edaman
-    - TelegramBot
+  - javascript
+  - NodeJS
+  - edaman
+  - TelegramBot
 icon: /images/uploads/whatsinthisfoodbot.png
 link: whatsinthisfoodbot
+theme_color_primary: "#fff200"
+theme_color_fontcolor: "#ae8f2a"
 active: true
 ---
 
