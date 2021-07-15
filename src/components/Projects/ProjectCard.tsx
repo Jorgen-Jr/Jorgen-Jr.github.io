@@ -30,12 +30,13 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             to={project.slug || null}
             style={{
                 textDecoration: "none",
+                margin: "15px",
             }}
         >
             <MotionStack
                 borderRadius="md"
                 w={["auto", "auto", "300px"]}
-                m="20px"
+                h="100%"
                 overflow="hidden"
                 position="relative"
                 textAlign="center"
@@ -52,6 +53,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                     flexDir="column"
                     justifyContent="center"
                     alignItems="center"
+                    margin="auto"
                 >
                     {project.icon ? (
                         <Image
@@ -59,7 +61,10 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                             alt={project.name}
                             boxSize="150px"
                             minH="53px"
+                            maxH="150px"
                             height="auto"
+                            width="auto"
+                            p="5px"
                         />
                     ) : (
                         <Flex
