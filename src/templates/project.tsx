@@ -162,12 +162,16 @@ const ProjectTemplate = ({ data }) => {
                             alignItems="center"
                             pos="relative"
                         >
-                            <List display="flex">
+                            <List
+                                display="flex"
+                                flexWrap="wrap"
+                                justifyContent="center/"
+                            >
                                 {project.frontmatter.tags.map((tag, index) => (
                                     <ListItem
                                         key={index}
                                         p="10px 15px "
-                                        m="0 7px"
+                                        m="3px 7px"
                                         borderRadius="7px"
                                         backgroundColor={`#333`}
                                         color="white"
