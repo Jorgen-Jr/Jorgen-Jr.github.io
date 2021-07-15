@@ -5,7 +5,7 @@ short_description: Bot para Telegram
 tags:
   - NodeJS
   - Cheerio
-icon: /images/uploads/bd81e85af9cc0febb2acb.jpg
+icon: /images/uploads/ndefinitionboticon.png
 link: nDefinitionBot
 theme_color_primary: "#1977ab"
 theme_color_secondary: "#31bedd"
