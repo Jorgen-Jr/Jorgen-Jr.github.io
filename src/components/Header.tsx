@@ -248,7 +248,6 @@ const Header = ({ slide }: IProps) => {
                                     pt="15px"
                                     pb="15px"
                                     w="100%"
-                                    backgroundColor="red"
                                 >
                                     <Link
                                         aria-label={link.label}
