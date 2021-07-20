@@ -4,14 +4,15 @@ name: TheDictApi
 short_description: TheDictApi
 category: Backend
 tags:
-    - Javascript
-    - NodeJS
-    - Cheerio
-    - Web-Scrapper
-icon: /images/uploads/book-158110_640.png
+  - Javascript
+  - NodeJS
+  - Cheerio
+  - Web-Scrapper
+icon: /images/uploads/thedicticon.png
 cover: /images/uploads/pexels-iconcom-226611.jpg
 link: thedictapi
 theme_color_primary: "#228aff"
+theme_color_fontcolor: "#03256c"
 active: true
 ---
 
