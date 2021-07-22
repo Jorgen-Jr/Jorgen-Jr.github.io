@@ -3,9 +3,9 @@ layout: post
 title: Configurando Um Ambiente de Testes Simples com Docker
 category: Desenvolvimento
 tags:
-  - Desenvolvimento
-  - Containers
-  - Docker
+    - Desenvolvimento
+    - Containers
+    - Docker
 date: 2021-07-14T14:07:52.002Z
 post_date: 2021-07-14T14:07:53.801Z
 cover: /images/uploads/pexels-pixabay-326410.jpg
@@ -13,9 +13,10 @@ isBanner: false
 special: false
 active: true
 ---
-Subindo um ambiente simples com banco de dados e servidores para front-end e backend usando docker.
 
-> Usando distros baseadas no Debian/Ubuntu (No meu caso, ElementaryOS)
+Veja como subir e configurar um ambiente simples com banco de dados e servidores para front-end e backend usando docker.
+
+> Usando distros baseadas no Debian/Ubuntu (No meu caso estarei usando o ElementaryOS 5, mas também funciona para as outras distros)
 
 ## Instalando o Docker
 
@@ -46,7 +47,7 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
 ![Passo - 02](https://raw.githubusercontent.com/Jorgen-Jr/tutorial_docker_compose/master/screenshots/02.png)
 
-Você pode verificar se a chave foi adcionada pelo fingerprint `9DC8 5822 9FC7 DD38 854A  E2D8 8D81 803C 0EBF CD88`, buscando pelos últimos 8 characteres. O resultado deve ser como a seguir:
+Você pode verificar se a chave foi adcionada pelo fingerprint `9DC8 5822 9FC7 DD38 854A E2D8 8D81 803C 0EBF CD88`, buscando pelos últimos 8 characteres. O resultado deve ser como a seguir:
 
 ```bash
 sudo apt-key fingerprint 0EBFCD88
@@ -100,7 +101,6 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 para torna-lo executável.
 
-
 ![Passo 8](https://raw.githubusercontent.com/Jorgen-Jr/tutorial_docker_compose/master/screenshots/09.png)
 
 ## Configurando o Ambiente através do YAML
@@ -131,7 +131,7 @@ services:
 
 Definimos até então, quais serviços serão executados ao executar o comando do docker compose, em quais portas (com exceção do nodejs) e qual será o nome dos nossos containers. Mas podemos ir além, vamos definir agora os seus volumes, suas variáveis de ambiente e o comando para iniciar o servidor nodejs.
 
-> Definir volumes é útil para poder armazenar os arquivos que a imagem irá usar, assim toda vez que o container precisar ser recriado estas informações não serão perdidas. 
+> Definir volumes é útil para poder armazenar os arquivos que a imagem irá usar, assim toda vez que o container precisar ser recriado estas informações não serão perdidas.
 > Para definir o volume iremos usar no escopo da imagem `volumes: {endereço do volume}` onde será dividido em `{Diretório do volume}` + `{nome do volume}` + `{diretório do volume que deseja salvar}` e os nomes dos volumes devem ser definidos como a seguir.
 
 ```python
@@ -188,23 +188,17 @@ volumes:
 
 Meu arquivo final ficou assim, mas você pode altera-lo conforme sua necessidade.
 
-
 ![Passo 8](https://raw.githubusercontent.com/Jorgen-Jr/tutorial_docker_compose/master/screenshots/08.png)
 
 ### Iniciando o ambiente de testes com Docker Compose.
 
 Para iniciar o ambiente de testes, basta ir até a pasta onde está o arquivo `docker-compose.yml` e executar o comando `sudo docker-compose up` ele irá baixar as imagens dos containers necessárias e iniciar os serviços criando as pastas aonde definimos.
 
-
 ![Passo 9](https://raw.githubusercontent.com/Jorgen-Jr/tutorial_docker_compose/master/screenshots/10.png)
 
 ![Passo 10](https://raw.githubusercontent.com/Jorgen-Jr/tutorial_docker_compose/master/screenshots/11.png)
 
-
-
-
 Agora basta copiar o código da nossa aplicação para as pastas criadas e reiniciar nosso ambiente rodando ele no fundo usando o comando `sudo docker-compose up -d`.
-
 
 ![Passo 11](https://raw.githubusercontent.com/Jorgen-Jr/tutorial_docker_compose/master/screenshots/12.png)
 
@@ -220,12 +214,9 @@ Como já possuimos um arquivo docker-composee.yml basta criar um novo projeto no
 
 ![Passo 12](https://raw.githubusercontent.com/Jorgen-Jr/tutorial_docker_compose/master/screenshots/13.png)
 
-
-
 ![Passo 13](https://raw.githubusercontent.com/Jorgen-Jr/tutorial_docker_compose/master/screenshots/14.png)
 
 ![Passo 14](https://raw.githubusercontent.com/Jorgen-Jr/tutorial_docker_compose/master/screenshots/15.png)
-
 
 O Dockstation facilita o gerenciamento, te dando acesso aos logs, propriedades e várias informações sobre o projeto e os containers, alem de dispor um editor para modificar o código do compose.
 
@@ -243,13 +234,11 @@ sudo docker exec -it srv_nginx /bin/bash
 
 ![Passo 15](https://raw.githubusercontent.com/Jorgen-Jr/tutorial_docker_compose/master/screenshots/16.png)
 
-
 Em seguida instale um editor de sua preferencia, eu usarei o nano.
 O arquivo que vamos modificar é o `default.conf` localizado em `/etc/nginx/config.d/default.conf` então irei usar o comando `nano /etc/nginx/conf.d/default.conf` para edita-lo.
 Adcione `try_files $uri $uri/ /index.html;` dentro do escopo `location / {` como a seguir:
 
 ![Passo 16](https://raw.githubusercontent.com/Jorgen-Jr/tutorial_docker_compose/master/screenshots/17.png)
-
 
 Salve o arquivo e saia do container e o reinicie com `sudo docker container restart srv_nginx`. Isso deve resolver os problemas com react-router onde acabamos com uma página 404.
 

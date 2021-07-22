@@ -30,7 +30,7 @@ export const Posts: React.FC<PostProps> = () => {
                     nodes {
                         id
                         html
-                        excerpt(pruneLength: 250)
+                        excerpt(format: HTML, pruneLength: 250)
                         frontmatter {
                             cover
                             date(fromNow: true, locale: "pt-br")

@@ -14,9 +14,7 @@ special: false
 active: true
 ---
 
-# Sobre nDefinitionBot
-
-Há alguns meses atrás eu desenvolvi alguns bots para o telegram, sendo eles `@ndefinitionbot`, `@whatsinthisfoodbot`, `@ntalesbot` e `@ntextifybot`, no início eles rodavam na minha máquina local, em containers usando o docker, atualmente eles usam _serverless functions_ para que se tornem mais disponíveis. Futuramente pretendo disponibilizar um tutorial de como foi o processo de desenvolvimento de um desses bots.
+Há alguns meses atrás eu desenvolvi alguns bots para o telegram, sendo eles **@ndefinitionbot**, **@whatsinthisfoodbot**, **@ntalesbot** e **@ntextifybot**, no início eles rodavam na minha máquina local, em containers usando o docker, atualmente eles usam _serverless functions_ para que se tornem mais disponíveis. Futuramente pretendo disponibilizar um tutorial de como foi o processo de desenvolvimento de um desses bots.
 
 Tenha em mente que por estar usando serverless functions alguns clientes podem sentir as conhecidas cold starts, mas do jeito que foi aplicado estão em níveis aceitáveis.
 

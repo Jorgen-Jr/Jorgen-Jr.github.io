@@ -50,19 +50,32 @@ export const PostCard: React.FC<PostCardProps> = ({
                     justifyContent={special ? "center" : "auto"}
                     shadow={special ? "none" : "xl"}
                 >
-                    <Link
-                        to={post.slug}
-                        style={{ maxHeight: fullWidth ? "250px" : "unset" }}
+                    <Box
+                        maxHeight={
+                            fullWidth
+                                ? ["100%", "100%", "250px", "250px"]
+                                : "unset"
+                        }
+                        maxWidth={
+                            fullWidth
+                                ? ["100%", "100%", "400px", "500px", "500px"]
+                                : "unset"
+                        }
                     >
-                        <Image
-                            src={post.cover}
-                            alt={post.title}
-                            loading={post.isBanner ? "eager" : "lazy"}
-                            style={{ marginTop: "-5%", width: "100%" }}
-                            borderRadius={special ? "7px" : "unset"}
-                            shadow={special ? "md" : "none"}
-                        />
-                    </Link>
+                        <Link
+                            to={post.slug}
+                            // style={{  }}
+                        >
+                            <Image
+                                src={post.cover}
+                                alt={post.title}
+                                loading={post.isBanner ? "eager" : "lazy"}
+                                style={{ marginTop: "-25%", width: "100%" }}
+                                borderRadius={special ? "7px" : "unset"}
+                                shadow={special ? "md" : "none"}
+                            />
+                        </Link>
+                    </Box>
                     <Link to={post.slug}>
                         <Box
                             {...(post.isBanner

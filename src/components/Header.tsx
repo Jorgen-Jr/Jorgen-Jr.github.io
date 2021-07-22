@@ -129,6 +129,7 @@ const Header = ({ slide }: IProps) => {
                         alignContent="center"
                         justifyContent="center"
                         flexDir="column"
+                        minW="150px"
                         w={["100%", "100%", "unset"]}
                     >
                         <Text fontFamily="FiraCode" fontSize="xl">
