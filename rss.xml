@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Jorge.Room]]></title><description><![CDATA[Jorge's personal blog and portfolio..]]></description><link>https://jorgen-jr.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 22 Jul 2021 13:27:51 GMT</lastBuildDate><item><title><![CDATA[No title]]></title><description><![CDATA[Dumb Data so GraphiQL is happy.]]></description><link>https://jorgen-jr.github.io/project/dumb_data/</link><guid isPermaLink="false">https://jorgen-jr.github.io/project/dumb_data/</guid><content:encoded>&lt;p&gt;Dumb Data so GraphiQL is happy.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[No title]]></title><description><![CDATA[Pedra Papel Tesoura - ReactJS O projeto se trata de um jogo de pedra papel e tesoura, criado usando ReactJS e Redux e cookies para salvar o…]]></description><link>https://jorgen-jr.github.io/project/jokenpo-react/</link><guid isPermaLink="false">https://jorgen-jr.github.io/project/jokenpo-react/</guid><content:encoded>&lt;h1&gt;Pedra Papel Tesoura - ReactJS&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Jorge.Room]]></title><description><![CDATA[Jorge's personal blog and portfolio..]]></description><link>https://jorgen-jr.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 22 Jul 2021 14:06:57 GMT</lastBuildDate><item><title><![CDATA[No title]]></title><description><![CDATA[Dumb Data so GraphiQL is happy.]]></description><link>https://jorgen-jr.github.io/project/dumb_data/</link><guid isPermaLink="false">https://jorgen-jr.github.io/project/dumb_data/</guid><content:encoded>&lt;p&gt;Dumb Data so GraphiQL is happy.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[No title]]></title><description><![CDATA[Pedra Papel Tesoura - ReactJS O projeto se trata de um jogo de pedra papel e tesoura, criado usando ReactJS e Redux e cookies para salvar o…]]></description><link>https://jorgen-jr.github.io/project/jokenpo-react/</link><guid isPermaLink="false">https://jorgen-jr.github.io/project/jokenpo-react/</guid><content:encoded>&lt;h1&gt;Pedra Papel Tesoura - ReactJS&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;O projeto se trata de um jogo de pedra papel e tesoura, criado usando ReactJS e Redux e cookies para salvar o placar do jogador localmente.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -148,7 +148,40 @@ A resposta será enviada em formato json.&lt;/p&gt;
 &lt;li&gt;Os componentes da comida.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Referências Externas&lt;/h3&gt;
-&lt;p&gt;Este bot usa a seguinte api &lt;a href=&quot;https://www.edamam.com/&quot;&gt;EDAMAN&lt;/a&gt;.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Configurando Um Ambiente de Testes Simples com Docker]]></title><description><![CDATA[Veja como subir e configurar um ambiente simples com banco de dados e servidores para front-end e backend usando docker. Usando distros…]]></description><link>https://jorgen-jr.github.io/blog/2021-04-21-configurando-um-ambiente-de-testes-simples-com-docker/</link><guid isPermaLink="false">https://jorgen-jr.github.io/blog/2021-04-21-configurando-um-ambiente-de-testes-simples-com-docker/</guid><pubDate>Wed, 14 Jul 2021 14:07:52 GMT</pubDate><content:encoded>&lt;p&gt;Veja como subir e configurar um ambiente simples com banco de dados e servidores para front-end e backend usando docker.&lt;/p&gt;
+&lt;p&gt;Este bot usa a seguinte api &lt;a href=&quot;https://www.edamam.com/&quot;&gt;EDAMAN&lt;/a&gt;.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Resolvendo o Erro 404 com React Router]]></title><description><![CDATA[A meses atrás criei um projeto usando o create-react-app e usei o react-router para lidar com as rotas da minha aplicação front-end, porém…]]></description><link>https://jorgen-jr.github.io/blog/2021-05-20-erro-404-com-o-react-router/</link><guid isPermaLink="false">https://jorgen-jr.github.io/blog/2021-05-20-erro-404-com-o-react-router/</guid><pubDate>Thu, 22 Jul 2021 13:52:10 GMT</pubDate><content:encoded>&lt;p&gt;A meses atrás criei um projeto usando o &lt;strong&gt;create-react-app&lt;/strong&gt; e usei o &lt;strong&gt;react-router&lt;/strong&gt; para lidar com as rotas da minha aplicação front-end, porém ao enviar minha build para o servidor, acabei sendo introduzido a um problema, quando o usuário entrava em uma rota e atualizar a página ou quando ele acessava através de um link externo ele retornava o erro 404, devido ao arquivo não ter sido encontrado no endereço requisitado, para resolver isso usei regras de redirecionamento no servidor. Espero que minha solução possa ajudar quem também passar por esse problema.&lt;/p&gt;
+&lt;h2&gt;Resolvendo no Apache e servidores com suporte ao arquivo .htaccess&lt;/h2&gt;
+&lt;p&gt;Basta criar uma rota de redirecionamento, como exemplificado abaixo, primeiro crie um arquivo &lt;code class=&quot;language-text&quot;&gt;.httaccess&lt;/code&gt; na pasta public do seu projeto react. É importante que este arquivo esteja na raiz quando for feito sua build.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://gist.github.com/Jorgen-Jr/d4b19ad2d89b538e466c11a828fc36d8&quot;&gt;O arquivo exemplificado pode ser encontrado aqui.&lt;/a&gt;&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;xml&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;&amp;lt;IfModule mod_rewrite.c&amp;gt;
+
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-l
+  RewriteRule . /index.html [L]
+
+&amp;lt;/IfModule&amp;gt;&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;h2&gt;Resolvendo no NGINX com o arquivo de configuraçao nginx.conf&lt;/h2&gt;
+&lt;p&gt;Acesse o arquivo de configuraço do seu nginx, normalmente localizado em /etc/nginx/conf.d/default.conf e adcione a linha &lt;code class=&quot;language-text&quot;&gt;try_files $uri $uri/ /index.html;&lt;/code&gt; como a seguir:&lt;/p&gt;
+&lt;p&gt;Observando que apenas a linha &lt;code class=&quot;language-text&quot;&gt;try_files $uri $uri/ /index.html;&lt;/code&gt; foi alterada do meu arquivo de configuração padrão.
+&lt;a href=&quot;https://gist.github.com/Jorgen-Jr/d639b2d0e9e72189e13539689e89aa39&quot;&gt;O mesmo pode ser encontrado aqui.&lt;/a&gt;&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;textile&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;    location / {
+        root   /usr/share/nginx/html;
+        index  index.html index.htm;
+	    try_files $uri $uri/ /index.html;
+    }&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;h2&gt;Resolvendo em servidores Netlify&lt;/h2&gt;
+&lt;p&gt;Para resolver este tipo de erro ao subir em servidores do Netlify você precisa criar um arquivo &lt;strong&gt;_redirect&lt;/strong&gt; na pasta public do seu projeto e adcionar a seguinte linha no arquivo. É importante que este arquivo esteja na raiz quando for feito sua build.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://gist.github.com/Jorgen-Jr/7f866bfcb6c3a3f3b247101d515213a7&quot;&gt;O mesmo pode ser encontrado aqui.&lt;/a&gt;&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;python&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;/*    /index.html   404&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;</content:encoded></item><item><title><![CDATA[Configurando Um Ambiente de Testes Simples com Docker]]></title><description><![CDATA[Veja como subir e configurar um ambiente simples com banco de dados e servidores para front-end e backend usando docker. Usando distros…]]></description><link>https://jorgen-jr.github.io/blog/2021-04-21-configurando-um-ambiente-de-testes-simples-com-docker/</link><guid isPermaLink="false">https://jorgen-jr.github.io/blog/2021-04-21-configurando-um-ambiente-de-testes-simples-com-docker/</guid><pubDate>Wed, 14 Jul 2021 14:07:52 GMT</pubDate><content:encoded>&lt;p&gt;Veja como subir e configurar um ambiente simples com banco de dados e servidores para front-end e backend usando docker.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Usando distros baseadas no Debian/Ubuntu (No meu caso estarei usando o ElementaryOS 5, mas também funciona para as outras distros)&lt;/p&gt;
 &lt;/blockquote&gt;
