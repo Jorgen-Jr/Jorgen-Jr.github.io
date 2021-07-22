@@ -1,11 +1,11 @@
 ---
 layout: post
-title: Erro 404 com o React Router
+title: "React Router Resolvendo o erro 404 "
 category: Extra Bit
 tags:
   - extrabit
-date: 2021-07-07T16:02:38.321Z
-post_date: 2021-07-07T16:01:57.336Z
+date: 2021-07-22T13:52:10.947Z
+post_date: 2021-07-22T13:52:12.162Z
 cover: /images/uploads/pexels-photo-14303.webp
 isBanner: false
 special: false
@@ -15,7 +15,7 @@ A meses atrás criei um projeto usando o **create-react-app** e usei o **react-r
 
 ## Resolvendo no Apache e servidores com suporte ao arquivo .htaccess
 
-Basta criar uma rota de redirecionamento, como exemplificado abaixo, primeiro crie um arquivo `.httaccess` na pasta public do seu projeto react.
+Basta criar uma rota de redirecionamento, como exemplificado abaixo, primeiro crie um arquivo `.httaccess` na pasta public do seu projeto react. É importante que este arquivo esteja na raiz quando for feito sua build.
 
 [O arquivo exemplificado pode ser encontrado aqui.](https://gist.github.com/Jorgen-Jr/d4b19ad2d89b538e466c11a828fc36d8)
 
@@ -46,4 +46,14 @@ Observando que apenas a linha `try_files $uri $uri/ /index.html;` foi alterada d
         index  index.html index.htm;
 	    try_files $uri $uri/ /index.html;
     }
+```
+
+## Resolvendo em servidores Netlify
+
+Para resolver este tipo de erro ao subir em servidores do Netlify você precisa criar um arquivo **_redirect** na pasta public do seu projeto e adcionar a seguinte linha no arquivo. É importante que este arquivo esteja na raiz quando for feito sua build.
+
+[O mesmo pode ser encontrado aqui.](https://gist.github.com/Jorgen-Jr/7f866bfcb6c3a3f3b247101d515213a7)
+
+```textfile
+/*    /index.html   404
 ```
