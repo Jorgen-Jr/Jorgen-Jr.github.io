@@ -54,6 +54,6 @@ Para resolver este tipo de erro ao subir em servidores do Netlify você precisa 
 
 [O mesmo pode ser encontrado aqui.](https://gist.github.com/Jorgen-Jr/7f866bfcb6c3a3f3b247101d515213a7)
 
-```textfile
+```textile
 /*    /index.html   404
 ```
