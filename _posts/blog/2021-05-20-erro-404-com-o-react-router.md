@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "React Router Resolvendo o erro 404 "
+title: Resolvendo o Erro 404 com React Router
 category: Extra Bit
 tags:
   - extrabit
