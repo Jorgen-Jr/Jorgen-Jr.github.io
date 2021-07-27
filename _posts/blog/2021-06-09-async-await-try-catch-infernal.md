@@ -33,14 +33,14 @@ function hell(){
 function heaven(){
 	const a = await step1();
 	const b = await step2();
-	cons c = await step3();
+	const c = await step3();
 	return a + b + c;
 }
 ```
 
 Isto é... Até tivermos que lidar com tratamento de erros... Porque você pode acabar caindo na torre to terror do try catch, transformando seu código simples e limpo de linhas únicas em no mínimo mais 6 linhas de código.
 
-> Exemplo da torre to teror (tower of terror)
+> Exemplo da torre do terror (tower of terror)
 
 ```javascript
 async function towerOfTerror(){
@@ -81,7 +81,7 @@ Algo como:
 function gettingBetter(){
 	const a = await step1().catch(err => { handle(err) });
 	const b = await step2().catch(err => { handle(err) });
-	cons c = await step3().catch(err => { handle(err) });
+	const c = await step3().catch(err => { handle(err) });
 	return a + b + c;
 }
 ```
@@ -114,4 +114,4 @@ async function main(){
 }
 ```
 
-[](https://www.youtube.com/watch?v=ITogH7lJTyE)[Fonte: Fireship](https://www.youtube.com/watch?v=ITogH7lJTyE)
+Referência[: Fireship](https://www.youtube.com/watch?v=ITogH7lJTyE)
