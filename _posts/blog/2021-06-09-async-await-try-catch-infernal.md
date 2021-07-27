@@ -12,6 +12,7 @@ special: false
 active: true
 ---
 Async/Await parece ótimo porque evita o inferno do calback ou a pirâmide do terror por escrever um código assíncrono linha por linha de forma limpa.
+Neste post vou demonstrar como ela funciona e as várias formas que você pode ultilizar e usarei exemplos para demonstra-los.
 
 > Exemplo do callback hell
 
