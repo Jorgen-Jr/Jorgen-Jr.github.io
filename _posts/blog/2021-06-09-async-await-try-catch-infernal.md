@@ -4,8 +4,8 @@ title: Async/Await try-catch Infernal
 category: extra-bits
 tags:
   - tutorial
-date: 2021-07-28T14:06:21.514Z
-post_date: 2021-07-28T14:06:00.000Z
+date: 2021-07-28T15:02:56.778Z
+post_date: 2021-07-28T15:02:57.569Z
 cover: /images/uploads/pexels-photo-2557709.jpeg
 isBanner: false
 special: false
