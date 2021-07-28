@@ -6,8 +6,8 @@ tags:
   - telegram
   - bot
   - sobre
-date: 2021-06-23T15:26:43.757Z
-post_date: 2021-06-23T15:26:43.768Z
+date: 2021-08-04T14:20:43.757Z
+post_date: 2021-08-04T14:20:00.000Z
 cover: /images/uploads/robot-4363354_960_720.webp
 isBanner: false
 special: false
