@@ -18,7 +18,9 @@ Vi algumas pessoas culpando o Javascript ou a linguagem em si, mas na verdade es
 Neste post pretendo explicar da forma mais concisa que eu conseguir e também como usaram a notação científica (IEEE 754) como referência para a criação de numeros "flutuantes".
 
 ## Numeros Inteiros
+
 Primeiramente numeros inteiros que em C sao chamados de `long` significando que eles possuem 32bit sendo assim
+
 > 00000000 00000000 00000000 00000000
 
 usados para representar um numero, onde vocês já devem estar acostumados a lidar com numeros binários.
@@ -30,6 +32,7 @@ usados para representar um numero, onde vocês já devem estar acostumados a lid
 E por ai vai até chegar a 2 bilhões.
 
 ## Numeros Decimais
+
 Assim como os numeros inteiros, os numeros decimais que em C são chamados de `float` tambem possuem 32bit, porém precisamos definir os decimais também, e como fariamos isso? Se fossemos arquitetar a representação desses numeros, provavelmente fariamos assim:
 
 > 00000000 00000000 . 00000000 00000000
@@ -54,4 +57,37 @@ Em qualquer combinação, como por exemplo, um meio e um quarto seriam:
 
 Mas esta idéia é na verdade horrível, porque detonamos com o tamanho do numero que podemos representar onde antes chevavamos a apróximadamente 2 bilhões, agora só podemos representar numeros até aproximádos 32 mil.
 
-Para a nossa sorte, pessoas mais inteligentes que nós tiveram a idéia de se inspirar na notação científica e garantir um melhor uso desses 32bits, assim podemos representar numeros como 23'00 em 2.3*10⁴ e 0,32 como 3.2*10⁻³
+Para a nossa sorte, pessoas mais inteligentes que nós tiveram a idéia de se inspirar na notação científica e garantir um melhor uso desses 32bits, assim podemos representar numeros como 23'00 em 2.3*10⁴ e 0,32 como 3.2*10⁻³.
+
+Se fossemos representa-los no sistema binário seria algo assim:
+
+> 11'00 => 1.1x2⁴ seria sua representação em notação cientifica.
+>
+> 0.0101 => 0.01x2⁻³
+
+Este método de representação carrega o nome **IEEE 754.**
+
+## O Que Define IEEE 754?
+
+Como de costume, nós receberemos os 32bits, porém como a seguir.
+
+> 0 00000000 000000000000000000000000
+
+Sendo o **primeiro bit** o bit do sinal, onde **0** significa que ele é positivo e **1** significa que ele é negativo.
+
+> 0 00000000 000000000000000000000000 = x
+> 1 00000000 000000000000000000000000 = -x
+
+Os **próximos oito bits** representam o expoênte, sendo então:
+
+> 0 00000001 000000000000000000000000 = x*2¹
+> 0 00000010 000000000000000000000000 = x*2²
+> 0 00000011 000000000000000000000000 = x*2³
+
+E por ai vai, mas nos atentando que com 8 bits podemos representar numeros de **\[255-0]**, porém também vamos precisar de expoentes negativos, então por este motivo os numeros são movidos para **\[128-127]**, o que significa que ao invés de termos **x*2³*** *como no exemplo anterior, nós teremos **x*****2⁽³⁻¹²⁷⁾** e se quisermos que o expoente realmente seja 3, precisamos alterar os bits para 130 como a seguir:
+
+> 0 10000100 000000000000000000000000 = **x*2⁽¹³⁰⁻¹²⁷⁾**
+
+Porque 130 - 127 = 3.
+
+E os ultimos 23 bits, representa a **mantissa**.
