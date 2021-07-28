@@ -40,7 +40,7 @@ function heaven(){
 }
 ```
 
-Isto é... Até tivermos que lidar com tratamento de erros... Porque você pode acabar caindo na torre to terror do try catch, transformando seu código simples e limpo de linhas únicas em no mínimo mais 6 linhas de código.
+Isto é... Até tivermos que lidar com tratamento de erros... Porque você pode acabar caindo na torre do terror do try catch, transformando seu código simples e limpo de linhas únicas em no mínimo mais 6 linhas de código.
 
 > Exemplo da torre do terror (tower of terror)
 
@@ -116,4 +116,4 @@ async function main(){
 }
 ```
 
-Referência[: Fireship](https://www.youtube.com/watch?v=ITogH7lJTyE)
+Referência: [Fireship](https://www.youtube.com/watch?v=ITogH7lJTyE)
