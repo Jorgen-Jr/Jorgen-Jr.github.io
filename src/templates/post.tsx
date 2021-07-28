@@ -32,7 +32,7 @@ const PostTemplate = ({ data }) => {
                         title={post.frontmatter.title}
                         description={post.excerpt}
                         lang="pt-BR"
-                        image={`https://jorgenjr.netlify.app/${post.frontmatter.cover}`}
+                        image={`https://jorgenjr.netlify.app${post.frontmatter.cover}`}
                         meta={[
                             {
                                 name: "og:url",
