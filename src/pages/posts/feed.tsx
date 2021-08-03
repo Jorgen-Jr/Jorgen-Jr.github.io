@@ -38,7 +38,7 @@ function Posts() {
                         html
                         frontmatter {
                             cover
-                            date(fromNow: true, locale: "pt-br")
+                            date(formatString: "DD/MM/YYYY HH:mm")
                             isBanner
                             layout
                             special

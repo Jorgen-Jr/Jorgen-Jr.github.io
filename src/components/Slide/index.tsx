@@ -5,32 +5,32 @@ import "./style.css";
 import { Box } from "@chakra-ui/react";
 
 const Slide = ({ children, id }: IProps) => {
-  return (
-    <>
-      <Box
-        className="slide-anchor"
-        id={id}
-        style={{ paddingTop: id !== "home" ? "40px" : "1px" }}
-        opacity={0}
-      ></Box>
-      <div
-        className={id !== "home" ? "slide-container" : null}
-        id={"slide_" + id}
-      >
-        {children}
-      </div>
-    </>
-  );
+    return (
+        <>
+            <Box
+                className="slide-anchor"
+                id={id}
+                style={{ paddingTop: id !== "home" ? "40px" : "1px" }}
+                opacity={0}
+            ></Box>
+            <div
+                className={id !== "home" ? "slide-container" : null}
+                id={"slide_" + id}
+            >
+                {children}
+            </div>
+        </>
+    );
 };
 
 interface IProps {
-  children: ReactNode;
-  id: string;
+    children: ReactNode;
+    id: string;
 }
 
 Slide.propTypes = {
-  children: PropTypes.node.isRequired,
-  id: PropTypes.string.isRequired,
+    children: PropTypes.node.isRequired,
+    id: PropTypes.string.isRequired,
 };
 
 export default Slide;

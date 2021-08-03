@@ -26,7 +26,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             html
             frontmatter {
               cover
-              date(fromNow: true, locale: "pt-br")
+              date(formatString: "DD/MM/YYYY HH:mm")
               isBanner
               layout
               special

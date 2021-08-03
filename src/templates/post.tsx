@@ -218,7 +218,7 @@ export const pageQuery = graphql`
             excerpt(format: PLAIN, pruneLength: 250)
             frontmatter {
                 cover
-                date(fromNow: true, locale: "pt-br")
+                date(formatString: "DD/MM/YYYY HH:mm")
                 isBanner
                 layout
                 special

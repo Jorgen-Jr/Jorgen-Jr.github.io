@@ -33,7 +33,7 @@ export const Posts: React.FC<PostProps> = () => {
                         excerpt(format: HTML, pruneLength: 250)
                         frontmatter {
                             cover
-                            date(fromNow: true, locale: "pt-br")
+                            date(formatString: "DD/MM/YYYY HH:mm")
                             isBanner
                             layout
                             special
