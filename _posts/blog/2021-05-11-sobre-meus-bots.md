@@ -1,13 +1,13 @@
 ---
 layout: post
 title: Sobre Meus Bots
-category: bots
+category: Bots
 tags:
   - telegram
   - bot
   - sobre
-date: 2021-08-04T14:20:43.757Z
-post_date: 2021-08-04T14:20:00.000Z
+date: 2021-08-04T16:55:39.335Z
+post_date: 2021-08-04T16:55:40.274Z
 cover: /images/uploads/robot-4363354_960_720.webp
 isBanner: false
 special: false
@@ -21,7 +21,7 @@ Mantenha em mente que por estarem usando funções serverless na aws vocês pode
 
 Perdão pelo longo nome, este bot usa a api da EDAMAN para buscar informações sobre a uma certa comida, sendo um prato, fruta entre outros. Pessoalmente não gostei muito do banco de dados da EDAMAN, mas foi o que encontrei e funcionou super bem e isto é o que você pode esperar:
 
-![Buscando "french fries" (Batata Frita)](https://telegra.ph/file/dd7fcc3a25e24e0d88064.png "Buscando \\"french fries\\" (Batata Frita)")
+![Buscando "french fries" (Batata Frita)](https://telegra.ph/file/dd7fcc3a25e24e0d88064.png "Buscando \\\"french fries\\\" (Batata Frita)")
 
 Buscando "french fries" (Batata Frita)
 
@@ -33,7 +33,7 @@ Resultado
 
 Este bot usa uma api em numbersapi.com para buscar algumas curiosidades sobre numeros, sendo sobre uma data especifica, curiosidades matemáticas ou curiosidades em geral.
 
-![Buscando "275"](https://telegra.ph/file/a0328b17abc166020ca88.png "Buscando \\"275\\"")
+![Buscando 275](https://telegra.ph/file/a0328b17abc166020ca88.png "Buscando 275")
 
 Buscando "275"
 
