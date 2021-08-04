@@ -17,11 +17,11 @@ Há vários meses atrás eu desenvolvi alguns bots apra o telegram, sendo eles *
 
 Mantenha em mente que por estarem usando funções serverless na aws vocês podem expecienciar as tais chamadas *cold starts* e por isso... Minhas sinceras desculpas, estarei explicando o que cada bot faz e o que você pode esperar deles.
 
-## \`@whatsinthisfoodbot\`
+## @whatsinthisfoodbot
 
 Perdão pelo longo nome, este bot usa a api da EDAMAN para buscar informações sobre a uma certa comida, sendo um prato, fruta entre outros. Pessoalmente não gostei muito do banco de dados da EDAMAN, mas foi o que encontrei e funcionou super bem e isto é o que você pode esperar:
 
-![Buscando "french fries" (Batata Frita)](https://telegra.ph/file/dd7fcc3a25e24e0d88064.png "Buscando \\\"french fries\\\" (Batata Frita)")
+![Buscando "french fries" (Batata Frita)](https://telegra.ph/file/dd7fcc3a25e24e0d88064.png "Buscando \\\\"french fries\\\\" (Batata Frita)")
 
 Buscando "french fries" (Batata Frita)
 
@@ -29,7 +29,7 @@ Buscando "french fries" (Batata Frita)
 
 Resultado
 
-## \`@ntalesbot\`
+## @ntalesbot
 
 Este bot usa uma api em numbersapi.com para buscar algumas curiosidades sobre numeros, sendo sobre uma data especifica, curiosidades matemáticas ou curiosidades em geral.
 
@@ -37,7 +37,7 @@ Este bot usa uma api em numbersapi.com para buscar algumas curiosidades sobre nu
 
 Buscando "275"
 
-## \`@ntextifybot\`
+## @ntextifybot
 
 Este é o bot mais inútil que criei dentre todos os outros, ele apenas altera o texto enviado o tornando minúsculo, de cabeça para baixo, espelhado e o resultado pode ver a seguir:
 
