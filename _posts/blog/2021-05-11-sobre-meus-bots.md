@@ -13,7 +13,7 @@ isBanner: false
 special: false
 active: true
 ---
-Há vários meses atrás eu desenvolvi alguns bots apra o telegram, sendo eles **\`@ndefinitionbot\`**, **\`@whatsinthisfoodbot\`**, **\`@ntalesbot\`** e **\`@ntextifybot\`**, e recentemente migrei eles para usarem a arquitetura serverless para que se tornem mais disponíveis.
+Há vários meses atrás eu desenvolvi alguns bots apra o telegram, sendo eles **`@ndefinitionbot`**, **`@whatsinthisfoodbot`**, **`@ntalesbot`** e **`@ntextifybot`**, e recentemente migrei eles para usarem a arquitetura serverless para que se tornem mais disponíveis.
 
 Mantenha em mente que por estarem usando funções serverless na aws vocês podem expecienciar as tais chamadas *cold starts* e por isso... Minhas sinceras desculpas, estarei explicando o que cada bot faz e o que você pode esperar deles.
 
@@ -21,7 +21,7 @@ Mantenha em mente que por estarem usando funções serverless na aws vocês pode
 
 Perdão pelo longo nome, este bot usa a api da EDAMAN para buscar informações sobre a uma certa comida, sendo um prato, fruta entre outros. Pessoalmente não gostei muito do banco de dados da EDAMAN, mas foi o que encontrei e funcionou super bem e isto é o que você pode esperar:
 
-![Buscando "french fries" (Batata Frita)](https://telegra.ph/file/dd7fcc3a25e24e0d88064.png "Buscando \\\\"french fries\\\\" (Batata Frita)")
+![Buscando french fries (Batata Frita)](https://telegra.ph/file/dd7fcc3a25e24e0d88064.png "Buscando french fries (Batata Frita)")
 
 Buscando "french fries" (Batata Frita)
 
