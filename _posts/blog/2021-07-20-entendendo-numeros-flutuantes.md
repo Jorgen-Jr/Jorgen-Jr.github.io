@@ -27,9 +27,9 @@ Primeiramente numeros inteiros que em C sao chamados de `long` significando que 
 usados para representar um numero, onde vocês já devem estar acostumados a lidar com numeros binários.
 
 > 00000000 00000000 00000000 00000001 = 1
-
+>
 > 00000000 00000000 00000000 00000011 = 2
-
+>
 > 00000000 00000000 00000000 00000100 = 3
 
 E por ai vai até chegar a 2 bilhões.
@@ -43,21 +43,21 @@ Assim como os numeros inteiros, os numeros decimais que em C são chamados de `f
 Simplesmente colocar um ponto decimal no meio, antes do ponto decimal contariamos da forma usual.
 
 > 00000000 00000001 . 00000000 00000000 = 1.0
-
+>
 > 00000000 00000010 . 00000000 00000000 = 2.0
-
+>
 > 00000000 00000011 . 00000000 00000000 = 3.0
-
+>
 > 00000000 00000100 . 00000000 00000000 = 4.0
 
 E após o numero decimal, não temos muitas surpresas também, mas devemos nos atentar que estamos lidando com numeros binários então ao invés de 10, 100 e 1000 nós teriamos:
 
 > 00000000 00000100 . 10000000 00000000 = 4.5
-
+>
 > 00000000 00000100 . 01000000 00000000 = 4.75
-
+>
 > 00000000 00000100 . 00100000 00000000 = 4.125
-
+>
 > 00000000 00000100 . 00010000 00000000 = 4.0625
 
 Em qualquer combinação, como por exemplo, um meio e um quarto seriam:
@@ -85,21 +85,21 @@ Como de costume, nós receberemos os 32bits, porém como a seguir.
 Sendo o **primeiro bit** o bit do sinal, onde **0** significa que ele é positivo e **1** significa que ele é negativo.
 
 > 0 00000000 000000000000000000000000 = x
-
+>
 > 1 00000000 000000000000000000000000 = -x
 
 Os **próximos oito bits** representam o expoênte, sendo então:
 
 > 0 00000001 000000000000000000000000 = x*2¹*
-
+>
 > 0 00000010 000000000000000000000000 *\= x*2²
-
+>
 > 0 00000011 000000000000000000000000 = x*2³
 
-E por ai vai, mas nos atentando que com 8 bits podemos representar numeros de **\[255-0]**, porém também vamos precisar de expoentes negativos, então por este motivo os numeros são movidos para **\[128-127]**, o que significa que ao invés de termos **x*2³*** *como no exemplo anterior, nós teremos **x*****2⁽³⁻¹²⁷⁾** e se quisermos que o expoente realmente seja 3, precisamos alterar os bits para 130 como a seguir:
+E por ai vai, mas nos atentando que com 8 bits podemos representar numeros de **\[255-0]**, porém também vamos precisar de expoentes negativos, então por este motivo os numeros são movidos para **\[128-127]**, o que significa que ao invés de termos **x*2³*** *como no exemplo anterior, nós teremos **x\*\****2⁽³⁻¹²⁷⁾\*\* e se quisermos que o expoente realmente seja 3, precisamos alterar os bits para 130 como a seguir:
 
 > 0 10000100 000000000000000000000000 = **x*2⁽¹³⁰⁻¹²⁷⁾**
 
 Porque 130 - 127 = 3.
 
-E os ultimos 23 bits, representa a **mantissa**.
+E os ultimos 23 bits, representa a **mantissa**. Quando tratamos de notaç
