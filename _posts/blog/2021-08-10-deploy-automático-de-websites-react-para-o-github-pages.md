@@ -72,8 +72,8 @@ Em seguira, navegue até a página de configuração do seu repositório e entã
 
 E então crie um secret com o nome "ACTION_DEPLOY_KEY" e cole sua chave privada.
 
->Imagem do secret key
-
+> Imagem do secret key
+>
 > Pode escolher os nomes que desejar, apenas altere no arquivo yml conforme necessário.
 
 ### Primeiro deploy
@@ -87,5 +87,7 @@ Com a branch gh-pages criada, podemos ir para as configurações de repositório
 > Imagem da aba de Pages.
 
 ## Referências
+
+Para mais detalhes e guia para outros geradores estáticos (Hugo, Jekyll, Vue, Node, Flutter Web...)
 
 * [peaceiris/actions-gh-pages](https://github.com/peaceiris/actions-gh-pages)
