@@ -10,11 +10,11 @@ isBanner: false
 special: false
 active: true
 ---
-Vou demonstrar neste post como eu fiz a automatização do deploy deste meu blog usando github actions de forma super fácil e serve também para outras bibliotecas do react, no meu caso estou usando o gatsby no blog.
+Vou demonstrar neste post como eu fiz a automatização do deploy deste meu blog usando github actions de forma super fácil também serve para sites estáticos ou geradores de site estático, no meu caso estou usando o gatsby no blog.
 
-# Workflow
+## Workflow de Referência
 
-[Este arquivo pode ser encontrado aqui](https://gist.github.com/Jorgen-Jr/8b0d0a5ea008853e7332696b5d67e3dd#file-built-deploy-yml)
+Este é o arquivo que uso atualmente para realizar o deploy do blog [Este arquivo pode ser encontrado aqui](https://gist.github.com/Jorgen-Jr/8b0d0a5ea008853e7332696b5d67e3dd#file-built-deploy-yml)
 
 ```yaml
 name: Deploy
@@ -37,15 +37,55 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Install Packages
-        run: npm install
+        run: npm install # Instalação de dependências.
       - name: Build pages
-        run: yarn build
+        run: yarn build # Script de build
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          publish_dir: ./public
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }} # Segredo com a chave privada para acesso ssh
+          publish_dir: ./public # Pasta onde estará a build e será copiada para a branch.
 ```
 
-Precisamente o que este arquivo define, primeiro dei o nome deste workflow de Deploy, e sempre que ocorrer um push na branch principal (main) ira disparar um gatilho para que rode meu script de build definido no package.json e em seguida usando a biblioteca [peaceiris/actions-gh-pages](https://github.com/peaceiris/actions-gh-pages) para realizar o envio da pasta ./public na branch gh-pages, tornando-o disponivel para o github pages.
+Precisamente o que este arquivo define que sempre que ocorrer um push na branch principal (main) ira disparar um gatilho para que rode meu script de build definido no package.json e em seguida usando a biblioteca [peaceiris/actions-gh-pages](https://github.com/peaceiris/actions-gh-pages) para realizar o envio da pasta ./public na branch gh-pages, tornando-o disponivel para o github pages.
+
+## Inicio
+
+Primeiro você precisa criar este arquivo na pasta `.github/workflows/${nome_da_action}` na raiz do seu projeto para que possamos definir quais serão as actions.
+
+Em seguida você precisa definir uma chave de acesso, no caso eu criei uma chave de deploy (deploy key) pois escolhi usar ssh, mas existem as opções de token do github ou token pessoal.
+
+### Gerando chave SSH de deploy
+
+Para gerar uma chave de ssh você pode usar o seguinte comando.
+
+```textile
+ssh-keygen -t rsa -b 4096 -C "$(git config user.email)" -f gh-pages -N ""
+```
+
+Isso irá gerar dois arquivos, `gh-pages.pub` sendo a sua chave pública e `gh-pages` sendo sua chave privada.
+
+Em seguira, navegue até a página de configuração do seu repositório e então DEPLOY_KEYS, clique em adicionar nova chave de deploy com o nome "public key of ACTION_DEPLOY_KEY", e cole sua chave pública nele.
+
+> Imagem Ilustrativa da deploykey c'mon...
+
+E então crie um secret com o nome "ACTION_DEPLOY_KEY" e cole sua chave privada.
+
+>Imagem do secret key
+
+> Pode escolher os nomes que desejar, apenas altere no arquivo yml conforme necessário.
+
+### Primeiro deploy
+
+Com isso você já pode realizar o primeiro deploy, e observar seu progresso na aba Actions do seu repositório.
+
+> Imagem da aba de actions...
+
+Com a branch gh-pages criada, podemos ir para as configurações de repositório e na aba Pages onde podemos definir qual branch será a que irá ao ar, qual pasta entre outras configurações relacionadas.
+
+> Imagem da aba de Pages.
+
+## Referências
+
+* [peaceiris/actions-gh-pages](https://github.com/peaceiris/actions-gh-pages)
