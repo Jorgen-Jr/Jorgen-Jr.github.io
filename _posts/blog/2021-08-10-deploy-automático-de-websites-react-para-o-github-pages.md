@@ -1,11 +1,12 @@
 ---
 layout: post
-title: Deploy Automático de Websites React Para o Github Pages
+title: Deploy Automático de Websites Para o Github Pages
 category: Tutorial
 tags:
   - tutorial
 date: 2021-08-10T18:33:56.619Z
 post_date: 2021-08-10T18:33:56.662Z
+cover: /images/uploads/auto_github_pages.jpg
 isBanner: false
 special: false
 active: true
