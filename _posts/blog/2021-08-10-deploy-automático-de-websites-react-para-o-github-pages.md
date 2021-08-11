@@ -14,7 +14,7 @@ Vou demonstrar neste post como eu fiz a automatização do deploy deste meu blog
 
 ## Workflow de Referência
 
-Este é o arquivo que uso atualmente para realizar o deploy do blog [Este arquivo pode ser encontrado aqui](https://gist.github.com/Jorgen-Jr/8b0d0a5ea008853e7332696b5d67e3dd#file-built-deploy-yml)
+Este é o arquivo que uso atualmente para realizar o deploy do blog [Este arquivo pode ser encontrado aqui](https://gist.github.com/Jorgen-Jr/8b0d0a5ea008853e7332696b5d67e3dd#file-built-deploy-yml).
 
 ```yaml
 name: Deploy
@@ -45,10 +45,12 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }} # Segredo com a chave privada para acesso ssh
-          publish_dir: ./public # Pasta onde estará a build e será copiada para a branch.
+          publish_dir: ./public # Pasta onde estará a build e será copiada para a branch gh-pages.
 ```
 
 Precisamente o que este arquivo define que sempre que ocorrer um push na branch principal (main) ira disparar um gatilho para que rode meu script de build definido no package.json e em seguida usando a biblioteca [peaceiris/actions-gh-pages](https://github.com/peaceiris/actions-gh-pages) para realizar o envio da pasta ./public na branch gh-pages, tornando-o disponivel para o github pages.
+
+Voce pode obter outros exemplos para outras bibliotecas ou aplicaçoes no repositorio acima.
 
 ## Inicio
 
@@ -68,23 +70,25 @@ Isso irá gerar dois arquivos, `gh-pages.pub` sendo a sua chave pública e `gh-p
 
 Em seguira, navegue até a página de configuração do seu repositório e então DEPLOY_KEYS, clique em adicionar nova chave de deploy com o nome "public key of ACTION_DEPLOY_KEY", e cole sua chave pública nele.
 
-> Imagem Ilustrativa da deploykey c'mon...
+![Screenshot chave publica de deploy](/images/uploads/blog_gihub_actions_public_deploy_key.png)
 
 E então crie um secret com o nome "ACTION_DEPLOY_KEY" e cole sua chave privada.
 
-> Imagem do secret key
->
+![Screenshot chave privada de deploy.](/images/uploads/blog_gihub_actions_private_deploy_key.png)
+
 > Pode escolher os nomes que desejar, apenas altere no arquivo yml conforme necessário.
 
 ### Primeiro deploy
 
 Com isso você já pode realizar o primeiro deploy, e observar seu progresso na aba Actions do seu repositório.
 
-> Imagem da aba de actions...
+![Aba de actions github.](/images/uploads/blog_gihub_actions_actions_tab.png)
 
 Com a branch gh-pages criada, podemos ir para as configurações de repositório e na aba Pages onde podemos definir qual branch será a que irá ao ar, qual pasta entre outras configurações relacionadas.
 
-> Imagem da aba de Pages.
+![Aba de Pages](/images/uploads/blog_gihub_actions_pages_tab.png)
+
+> Por eu ter colocado o nome do meu repositorio meu nome de perfil + .github.io o github disponibiliza-ra o website em ${nome_de_perfil}.github.io, caso contrario estaria em ${nome_de_perfil}.github.io/${nome_do_repositorio}.
 
 ## Referências
 
