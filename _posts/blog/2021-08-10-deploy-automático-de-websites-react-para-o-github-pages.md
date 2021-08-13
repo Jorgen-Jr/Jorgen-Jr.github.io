@@ -82,7 +82,7 @@ E então crie um secret com o nome "ACTION_DEPLOY_KEY" e cole sua chave privada.
 
 ![Screenshot chave privada de deploy.](/images/uploads/blog_gihub_actions_private_deploy_key.png)
 
-> Pode escolher os nomes que desejar, apenas altere no arquivo yml conforme necessário.
+> Pode escolher os nomes que desejar, apenas altere no **arquivo da action** conforme necessário.
 
 ### Primeiro deploy
 
