@@ -4,8 +4,8 @@ title: Deploy Automático de Websites Para o Github Pages
 category: Tutorial
 tags:
   - tutorial
-date: 2021-08-13T14:12:01.862Z
-post_date: 2021-08-13T14:12:03.141Z
+date: 2021-08-13T14:21:32.064Z
+post_date: 2021-08-13T14:21:33.017Z
 cover: /images/uploads/auto_github_pages.jpg
 isBanner: false
 special: false
