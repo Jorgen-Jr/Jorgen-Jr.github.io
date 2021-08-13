@@ -11,7 +11,7 @@ isBanner: false
 special: false
 active: true
 ---
-Vou demonstrar neste post como eu fiz a automatização do deploy deste meu blog usando github actions de forma super fácil também serve para sites estáticos ou geradores de site estático, no meu caso estou usando o gatsby no blog.
+Vou demonstrar neste post como eu fiz a automatização do deploy deste meu blog usando github actions de forma super fácil também serve para sites estáticos ou geradores de site estático, no meu caso estou usando o **gatsby** no blog.
 
 ## Workflow de Referência
 
@@ -40,7 +40,7 @@ jobs:
       - name: Install Packages
         run: npm install # Instalação de dependências.
       - name: Build pages
-        run: yarn build # Script de build
+        run: yarn build # Script de build definido no package.json
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
@@ -49,9 +49,14 @@ jobs:
           publish_dir: ./public # Pasta onde estará a build e será copiada para a branch gh-pages.
 ```
 
-Precisamente o que este arquivo define que sempre que ocorrer um push na branch principal (main) ira disparar um gatilho para que rode meu script de build definido no package.json e em seguida usando a biblioteca [peaceiris/actions-gh-pages](https://github.com/peaceiris/actions-gh-pages) para realizar o envio da pasta ./public na branch gh-pages, tornando-o disponivel para o github pages.
+Precisamente o que este arquivo define que sempre que ocorrer um push na branch principal (main) ira disparar um gatilho para que rode meu script de build definido no package.json e em seguida usando a biblioteca [peaceiris/actions-gh-pages](https://github.com/peaceiris/actions-gh-pages) para realizar o envio da pasta ./public na branch gh-pages, tornando-o disponível para o github pages. Para resumir ele irá executar os seguintes passos:
 
-Voce pode obter outros exemplos para outras bibliotecas ou aplicaçoes no repositorio acima.
+* Realizar um check-out para que o workflow tenha acesso ao repositório.
+* Instalar todas as dependências necessárias para a build.
+* Executar o script de build.
+* E para finalizar ele usa o script de [peaceiris/actions-gh-pages](https://github.com/peaceiris/actions-gh-pages) usando os parâmetros que definimos para realizar o deploy.
+
+Você pode obter outros exemplos para outras bibliotecas ou aplicações no repositório acima.
 
 ## Inicio
 
@@ -89,7 +94,7 @@ Com a branch gh-pages criada, podemos ir para as configurações de repositório
 
 ![Aba de Pages](/images/uploads/blog_gihub_actions_pages_tab.png)
 
-> Por eu ter colocado o nome do meu repositorio meu nome de perfil + .github.io o github disponibiliza-ra o website em ${nome_de_perfil}.github.io, caso contrario estaria em ${nome_de_perfil}.github.io/${nome_do_repositorio}.
+> Por eu ter colocado o nome do meu repositório meu nome de perfil + .github.io o github irá disponibilizar o website em ${nome_de_perfil}.github.io, caso contrario estaria em ${nome_de_perfil}.github.io/${nome_do_repositorio}.
 
 ## Referências
 
