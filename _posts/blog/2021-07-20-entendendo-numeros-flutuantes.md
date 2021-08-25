@@ -14,7 +14,7 @@ active: true
 ---
 Se você já realizou operações o suficiente com números flutuantes já deve ter passado com uma situação onde 0.1 + 0.2 = 0.30000000000000004, ou basicamente você tentou comparar os dois e concluindo que 0.1 + 0.2 != 0.3 por exemplo. 
 
-Vi algumas pessoas culpando o Javascript ou a linguagem em si, mas na verdade este é um problema que deve ser levado um pouco mais a fundo para entender, tanto que criaram um site [explicando o porque disto acontecer](https://0.30000000000000004.com/).
+Vi algumas pessoas culpando o Javascript ou a linguagem em si, mas na verdade este é um problema que deve ser levado um pouco mais a fundo para entender, tanto que criaram um site explicando o porque disto acontecer.
 
 Neste post pretendo explicar da forma mais concisa que eu conseguir e também como usaram a notação científica (IEEE 754) como referência para a criação de números "flutuantes".
 
@@ -125,4 +125,21 @@ Por mais que os 23 bits nos deem um alcanse de 0 ate 2*²³ nos diminuimos para 
 
 ## Ta, mas e ai?
 
-Bom, agora que sabemos como os numeros flutuantes funcionam,
+Bom, agora que sabemos como os numeros flutuantes são armazenados, tudo isso se resume as bases usadas, os computadores não lidam com números da mesma forma que nós lidamos, eles precisam converter para binário e depois para decimal e quando convertemos para a base 10 acabamos tendo que lidar com algumas "sobras". o padrão IEEE dita que todas as operações devem ser arredondadas de forma exata, isso significa que todos os resultados devem ser computados de forma exata e então arredondados, e durante essa conversão perdemos essa precisão devido a isso, o que a representação IEEE certifica é que este arredondamento esteja dentro de um certo limite.\
+Como podemos ver a seguir usando uma ferramenta de conversão.
+
+![Conversão de numeros float.](/images/uploads/floating_point_converter.png "Tool Used: https://www.h-schmidt.net/FloatConverter/IEEE754.html")
+
+*(Ferramenta usada: https://www.h-schmidt.net/FloatConverter/IEEE754.html)*\
+\
+*Referências:*
+
+[What Every Computer Scientist Should Know About Floating-Point Arithmetic](http://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html)
+
+[0.30000000000000004.com](https://0.30000000000000004.com/)
+
+[Float Converter](<  https://www.h-schmidt.net/FloatConverter/IEEE754.html>)
+
+[An Introdution to Floating Point](https://indico.cern.ch/event/626147/attachments/1456066/2247140/FloatingPoint.Handout.pdf) by Jeff Arnold
+
+[Fast Inverse Square Root from Quake III](https://youtu.be/p8u_k2LIZyo?t=258)
