@@ -130,7 +130,8 @@ Como podemos ver a seguir usando uma ferramenta de conversão.
 
 ![Conversão de numeros float.](/images/uploads/floating_point_converter.png "Tool Used: https://www.h-schmidt.net/FloatConverter/IEEE754.html")
 
-*(Ferramenta usada: https://www.h-schmidt.net/FloatConverter/IEEE754.html)*\
+*(Ferramenta usada:* <https://www.h-schmidt.net/FloatConverter/IEEE754.html>*)*
+
 \
 *Referências:*
 
