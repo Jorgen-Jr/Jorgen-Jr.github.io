@@ -125,7 +125,7 @@ Por mais que os 23 bits nos deem um alcanse de 0 ate 2*²³ nos diminuimos para 
 
 ## Ta, mas e ai?
 
-Bom, agora que sabemos como os numeros flutuantes são armazenados, tudo isso se resume as bases usadas, os computadores não lidam com números da mesma forma que nós lidamos, eles precisam converter para binário e depois para decimal e quando convertemos para a base 10 acabamos tendo que lidar com algumas "sobras". o padrão IEEE dita que todas as operações devem ser arredondadas de forma exata, isso significa que todos os resultados devem ser computados de forma exata e então arredondados, e durante essa conversão perdemos essa precisão devido a isso, o que a representação IEEE certifica é que este arredondamento esteja dentro de um certo limite.\
+Bom, agora que sabemos como os numeros flutuantes são armazenados, tudo isso se resume as bases usadas, os computadores não lidam com números da mesma forma que nós lidamos, eles precisam converter para binário e depois para decimal e quando convertemos para a base decimal acabamos tendo que lidar com algumas "sobras". o padrão IEEE dita que todas as operações devem ser arredondadas de forma exata, isso significa que todos os resultados devem ser computados de forma exata e então arredondados, e durante essa conversão perdemos essa precisão devido a isso, o que a representação IEEE certifica é que este arredondamento esteja dentro de um certo limite.\
 Como podemos ver a seguir usando uma ferramenta de conversão.
 
 ![Conversão de numeros float.](/images/uploads/floating_point_converter.png "Tool Used: https://www.h-schmidt.net/FloatConverter/IEEE754.html")
