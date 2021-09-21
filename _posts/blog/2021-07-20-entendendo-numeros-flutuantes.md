@@ -5,8 +5,8 @@ category: Desenvolvimento
 tags:
   - Desenvolvimento
   - pontosflutuantes
-date: 2021-09-21T18:17:19.396Z
-post_date: 2021-09-21T18:17:21.481Z
+date: 2021-09-22T15:17:00.000Z
+post_date: 2021-09-22T15:17:21.481Z
 cover: /images/uploads/pexels-karolina-grabowska-4589440.jpg
 isBanner: false
 special: false
