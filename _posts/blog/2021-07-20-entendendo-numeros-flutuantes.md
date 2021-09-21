@@ -82,33 +82,33 @@ E por ai vai, mas nos atentando que com 8 bits podemos representar números de *
 
 Porque 130 - 127 = 3.
 
-E os últimos 23 bits, representa a **mantissa**. Quando tratamos de notaçao cientifica nos queremos definir um digito, uma virgula e os decimais, mas com 23 bits podemos definir de 0 ate 2²³ e nao e exatamente disso que precisamos, porque precisamos da mantissa de ir de 1 ate 10, ou em notacao cientifica binaria, de ir de 1 ate 2. Podemos tentar novamente fazer oque fizemos da ultima vez e tentar adcionar uma virgula apos o primeiro bit.
+E os últimos 23 bits, representa a **mantissa**. Quando tratamos de notação científica nos queremos definir um dígito, uma vírgula e os decimais, mas com 23 bits podemos definir de 0 ate 2²³ e nao e exatamente disso que precisamos, porque precisamos da mantissa de ir de 1 ate 10, ou em notacao cientifica binaria, de ir de 1 até 2. Podemos tentar novamente fazer oque fizemos da ultima vez e tentar adcionar uma vírgula apos o primeiro bit.
 
-> 0 10000100 0**.**0000000000000000000000
+> 0 10000100 0.0000000000000000000000
 
 Ai podemos definir de 
 
-> 0 10000100 **1.**0000000000000000000000 = 1.000*2⁴
+> 0 10000100 1.0000000000000000000000 = 1.000*2⁴
 
 até
 
-> 0 10000100 **1.**1111111111111111111111 = 1.999*2⁴
+> 0 10000100 1.1111111111111111111111 = 1.999*2⁴
 
 Mas essa soluçao disperdiça um armazenamento, as pessoas que fizeram o design desse padrao perceberam que quando estamos lidando com numeros binarios algo acontece que nao acontece em nenhuma outra base.
 
-> 11'000   **1**.1*2⁴ Preste atençao no primeiro digito.*
+> 11'000   1.1*2⁴ Preste atençao no primeiro digito.*
 >
-> *0.0101   **1**.01*2⁻³ Por definicao, este numero sempre sera **não** zero.
+> *0.0101   1.01*2⁻³ Por definição, este numero sempre sera **não** zero.
 
-Mas em binario existe so existe um numero que nao e zero, **1**. Ou seja, se sabemos que o primeiro digito sempre sera **1**, nao precisamos guarda-lo, podemos salvar um bit movendo a virgula para esquerda e deixarmos este numero **1** fixo. Agora nossa mantissa esta entre 1 e 2.
+Mas em binario existe só existe um numero que nao e zero, **1**. Ou seja, se sabemos que o primeiro dígito sempre sera **1**, nao precisamos guarda-lo, podemos salvar um bit movendo a vírgula para esquerda e deixarmos este numero **1** fixo. Agora nossa mantissa esta entre 1 e 2.
 
-> 0 10000100 **.**00000000000000000000000
+> 0 10000100 .00000000000000000000000
 
-Por mais que os 23 bits nos deem um alcanse de 0 ate 2*²³ nos diminuimos para conseguir numeros entre 0 e 1 e entao fixamos o numero 1 para conseguir numeros entre 1 e 2 e esta e a parte principal do padrao IEEE 754, mas para os tais numeros normalizados, sei que os leitores informados sabem que eles tambem incluem numeros nao normalizados, NaN, infinitos e 0 & 0 que talvez eu entre em detalhes num post futuro.
+Por mais que os 23 bits nos deem um alcanse de 0 ate 2*²³ nós diminuimos para conseguir numeros entre 0 e 1 e entao fixamos o numero 1 para conseguir numeros entre 1 e 2 e esta é a parte principal do padrão IEEE 754, mas para os tais numeros normalizados, sei que os leitores informados sabem que eles tambem incluem numeros não normalizados, NaN, infinitos e 0 & 0 que talvez eu entre em detalhes num post futuro.
 
 ## Ta, mas e ai?
 
-Bom, agora que sabemos como os numeros flutuantes são armazenados. Podemos resumer que este caso curioso ocorre devido as bases usadas, os computadores não lidam com números da mesma forma que nós lidamos, eles precisam converter para binário e depois para decimal e quando convertemos para a base decimal acabamos tendo que lidar com algumas "sobras". o padrão IEEE dita que todas as operações devem ser arredondadas de forma exata, isso significa que todos os resultados devem ser computados de forma exata e então arredondados, e durante essa conversão perdemos essa precisão devido a isso, o que a representação IEEE certifica é que este arredondamento esteja dentro de um certo limite.\
+Bom, agora que sabemos como os numeros flutuantes são armazenados. Podemos resumir que este caso curioso ocorre devido as bases usadas, os computadores não lidam com números da mesma forma que nós lidamos, eles precisam converter para binário e depois para decimal e quando convertemos para a base decimal acabamos tendo que lidar com algumas "sobras". o padrão IEEE dita que todas as operações devem ser arredondadas de forma exata, isso significa que todos os resultados devem ser computados de forma exata e então arredondados, e durante essa conversão perdemos essa precisão devido a isso, o que a representação IEEE certifica é que este arredondamento esteja dentro de um certo limite.\
 Como podemos ver a seguir usando uma ferramenta de conversão.
 
 ![Conversão de numeros float.](/images/uploads/floating_point_converter.png "Tool Used: https://www.h-schmidt.net/FloatConverter/IEEE754.html")
