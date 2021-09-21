@@ -1,12 +1,12 @@
 ---
 layout: post
-title: Entendendo Operações com Pontos Flutuantes
+title: Pontos Flutuantes e a Normativa IEE 754
 category: Desenvolvimento
 tags:
   - Desenvolvimento
   - pontosflutuantes
-date: 2021-07-28T16:49:03.006Z
-post_date: 2021-07-28T16:49:04.242Z
+date: 2021-09-21T18:17:19.396Z
+post_date: 2021-09-21T18:17:21.481Z
 cover: /images/uploads/pexels-karolina-grabowska-4589440.jpg
 isBanner: false
 special: false
@@ -26,11 +26,7 @@ Primeiramente números inteiros que em C sao chamados de `long` significando que
 
 usados para representar um numero, onde vocês já devem estar acostumados a lidar com números binários.
 
-> 00000000 00000000 00000000 00000001 = 1
->
-> 00000000 00000000 00000000 00000011 = 2
->
-> 00000000 00000000 00000000 00000100 = 3
+![](/images/uploads/int.gif "Integers")
 
 E por ai vai até chegar a 2 bilhões.
 
@@ -42,23 +38,11 @@ Assim como os numeros inteiros, os números decimais que em C são chamados de `
 
 Simplesmente colocar um ponto decimal no meio, antes do ponto decimal contaríamos da forma usual.
 
-> 00000000 00000001 . 00000000 00000000 = 1.0
->
-> 00000000 00000010 . 00000000 00000000 = 2.0
->
-> 00000000 00000011 . 00000000 00000000 = 3.0
->
-> 00000000 00000100 . 00000000 00000000 = 4.0
+![](/images/uploads/render.gif "Point in the middle approach")
 
 E após o numero decimal, não temos muitas surpresas também, mas devemos nos atentar que estamos lidando com números binários então ao invés de 10, 100 e 1000 nós teriamos:
 
-> 00000000 00000100 . 10000000 00000000 = 4.5
->
-> 00000000 00000100 . 01000000 00000000 = 4.75
->
-> 00000000 00000100 . 00100000 00000000 = 4.125
->
-> 00000000 00000100 . 00010000 00000000 = 4.0625
+![](/images/uploads/render-half.gif "Integer halfs the gross way")
 
 Em qualquer combinação, como por exemplo, um meio e um quarto seriam:
 
@@ -90,13 +74,9 @@ Sendo o **primeiro bit** o bit do sinal, onde **0** significa que ele é positiv
 
 Os **próximos oito bits** representam o expoente, sendo então:
 
-> 0 00000001 000000000000000000000000 = x*2¹*
->
-> 0 00000010 000000000000000000000000 *\= x*2²
->
-> 0 00000011 000000000000000000000000 = x*2³
+![](/images/uploads/ieee-exponents.gif "IEEE Exponents")
 
-E por ai vai, mas nos atentando que com 8 bits podemos representar números de **\[255-0]**, porém também vamos precisar de expoentes negativos, então por este motivo os números são movidos para **\[128-127]**, o que significa que ao invés de termos **x*2³*** *como no exemplo anterior, nós teremos **x\*\****2⁽³⁻¹²⁷⁾\*\* e se quisermos que o expoente realmente seja 3, precisamos alterar os bits para 130 como a seguir:
+E por ai vai, mas nos atentando que com 8 bits podemos representar números de **\[255-0]**, porém também vamos precisar de expoentes negativos, então por este motivo os números são movidos para **\[128-127]**, o que significa que ao invés de termos **x*2³*** *como no exemplo anterior, nós teremos **x***2⁽³⁻¹²⁷⁾ e se quisermos que o expoente realmente seja 3, precisamos alterar os bits para 130 como a seguir:
 
 > 0 10000100 000000000000000000000000 = **x*2⁽¹³⁰⁻¹²⁷⁾**
 
@@ -109,15 +89,18 @@ E os últimos 23 bits, representa a **mantissa**. Quando tratamos de notaçao ci
 Ai podemos definir de 
 
 > 0 10000100 **1.**0000000000000000000000 = 1.000*2⁴
->
+
+até
+
 > 0 10000100 **1.**1111111111111111111111 = 1.999*2⁴
 
 Mas essa soluçao disperdiça um armazenamento, as pessoas que fizeram o design desse padrao perceberam que quando estamos lidando com numeros binarios algo acontece que nao acontece em nenhuma outra base.
 
-> 11'000   **1**.1*2⁴ Preste atençao no primeiro digito.
-> 0.0101   **1**.01*2⁻³ Por definicao, este numero sempre sera nao zero.
+> 11'000   **1**.1*2⁴ Preste atençao no primeiro digito.*
+>
+> *0.0101   **1**.01*2⁻³ Por definicao, este numero sempre sera **não** zero.
 
-Mas em binario existe so existe um numero que nao e zero **1**. Ou seja, se sabemos que o primeiro digito sempre sera 1, nao precisamos guarda-lo, podemos salvar um bit movendo a virgula para esquerda e deixarmos este numero **1** fixo. Agora nossa mantissa esta entre 1 e 2.
+Mas em binario existe so existe um numero que nao e zero, **1**. Ou seja, se sabemos que o primeiro digito sempre sera **1**, nao precisamos guarda-lo, podemos salvar um bit movendo a virgula para esquerda e deixarmos este numero **1** fixo. Agora nossa mantissa esta entre 1 e 2.
 
 > 0 10000100 **.**00000000000000000000000
 
@@ -125,7 +108,7 @@ Por mais que os 23 bits nos deem um alcanse de 0 ate 2*²³ nos diminuimos para 
 
 ## Ta, mas e ai?
 
-Bom, agora que sabemos como os numeros flutuantes são armazenados, tudo isso se resume as bases usadas, os computadores não lidam com números da mesma forma que nós lidamos, eles precisam converter para binário e depois para decimal e quando convertemos para a base decimal acabamos tendo que lidar com algumas "sobras". o padrão IEEE dita que todas as operações devem ser arredondadas de forma exata, isso significa que todos os resultados devem ser computados de forma exata e então arredondados, e durante essa conversão perdemos essa precisão devido a isso, o que a representação IEEE certifica é que este arredondamento esteja dentro de um certo limite.\
+Bom, agora que sabemos como os numeros flutuantes são armazenados. Podemos resumer que este caso curioso ocorre devido as bases usadas, os computadores não lidam com números da mesma forma que nós lidamos, eles precisam converter para binário e depois para decimal e quando convertemos para a base decimal acabamos tendo que lidar com algumas "sobras". o padrão IEEE dita que todas as operações devem ser arredondadas de forma exata, isso significa que todos os resultados devem ser computados de forma exata e então arredondados, e durante essa conversão perdemos essa precisão devido a isso, o que a representação IEEE certifica é que este arredondamento esteja dentro de um certo limite.\
 Como podemos ver a seguir usando uma ferramenta de conversão.
 
 ![Conversão de numeros float.](/images/uploads/floating_point_converter.png "Tool Used: https://www.h-schmidt.net/FloatConverter/IEEE754.html")
