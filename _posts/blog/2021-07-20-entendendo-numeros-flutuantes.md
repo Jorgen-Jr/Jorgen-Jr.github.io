@@ -44,9 +44,10 @@ E após o numero decimal, não temos muitas surpresas também, mas devemos nos a
 
 ![](/images/uploads/render-half.gif "Integer halfs the gross way")
 
-Em qualquer combinação, como por exemplo, um meio e um quarto seriam:
+Em qualquer combinação, então por exemplo, 4.75 poderia ser representado destas duas formas:
 
 > 00000000 00000100 . 11000000 00000000 = 4.75
+> 00000000 00000100 . 01000000 00000000 = 4.75
 
 Mas esta ideia é na verdade horrível, porque detonamos com o tamanho do numero que podemos representar onde antes chegavamos a apróximadamente 2 bilhões, agora só podemos representar numeros até aproximádos 32 mil.
 
