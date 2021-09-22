@@ -88,15 +88,16 @@ E os últimos 23 bits, representa a **mantissa**. Quando tratamos de notação c
 
 > 0 10000100 0.0000000000000000000000
 
-Ai podemos definir de 
+Ai podemos definir:
 
-> 0 10000100 1.0000000000000000000000 = 1.000*2⁴
+
+![](/images/uploads/ieee754.gif "IEE754 walkthrough")
 
 até
 
 > 0 10000100 1.1111111111111111111111 = 1.999*2⁴
 
-Mas essa soluçao disperdiça um armazenamento, as pessoas que fizeram o design desse padrao perceberam que quando estamos lidando com numeros binarios algo acontece que nao acontece em nenhuma outra base.
+Mas essa soluçao disperdiça um bit armazenamento, as pessoas que fizeram o design desse padrao perceberam que quando estamos lidando com numeros binarios algo acontece que nao acontece em nenhuma outra base.
 
 > 11'000   1.1*2⁴ Preste atençao no primeiro digito.*
 >
@@ -106,7 +107,7 @@ Mas em binario existe só existe um numero que nao e zero, **1**. Ou seja, se sa
 
 > 0 10000100 .00000000000000000000000
 
-Por mais que os 23 bits nos deem um alcanse de 0 até 2*²³ nós diminuimos para conseguir numeros entre 0 e 1 e entao fixamos o numero 1 para conseguir numeros entre 1 e 2 e esta é a parte principal do padrão IEEE 754, mas para os tais numeros normalizados, Como devem saber neste padrão eles tambem incluem numeros não normalizados, *NaN, infinitos e 0 & 0* que talvez eu entre em detalhes num post futuro.
+Por mais que os 23 bits nos deem um alcanse de 0 até 2*²³ nós diminuimos para conseguir numeros entre 0 e 1 e entao fixamos o numero 1 para conseguir numeros entre 1 e 2 e esta é a parte principal do padrão IEEE 754, mas para os tais numeros normalizados, Como devem saber neste padrão eles tambem incluem numeros não normalizados,* NaN, infinitos e 0 & 0* que talvez eu entre em detalhes num post futuro.
 
 ## Ta, mas e ai?
 
