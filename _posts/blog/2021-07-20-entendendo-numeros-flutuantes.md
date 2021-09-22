@@ -52,7 +52,7 @@ Em qualquer combinação, então por exemplo, 4.75 poderia ser representado dest
 
 Mas esta ideia é na verdade horrível, porque detonamos com o tamanho do numero que podemos representar onde antes chegavamos a apróximadamente 2 bilhões, agora só podemos representar numeros até aproximádos 32 mil.
 
-Para a nossa sorte, pessoas mais inteligentes que nós tiveram a ideia de se inspirar na notação científica e garantir um melhor uso desses 32bits, assim podemos representar números como 23'00 em 2.3*10⁴ e 0,32 como 3.2*10⁻³.
+Para a nossa sorte, pessoas mais espertas que nós tiveram a ideia de se inspirar na notação científica e garantir um melhor uso desses 32bits, assim podemos representar números como 23'00 em 2.3*10⁴ e 0,32 como 3.2*10⁻³.
 
 Se fossemos representá-los no sistema binário seria algo assim:
 
