@@ -95,7 +95,7 @@ Ai podemos definir:
 
 até
 
-> 0 10000100 1.1111111111111111111111 = 1.999*2⁴
+> 0 10000100 1.1111111111111111111111 = 1.999*2⁵
 
 Mas essa soluçao disperdiça um bit armazenamento, as pessoas que fizeram o design desse padrao perceberam que quando estamos lidando com numeros binarios algo acontece que nao acontece em nenhuma outra base.
 
