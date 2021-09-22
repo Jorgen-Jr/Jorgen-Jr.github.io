@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Pontos Flutuantes e o padrão IEE 754
+title: Pontos Flutuantes e o padrão IEEE 754
 category: Desenvolvimento
 tags:
   - Desenvolvimento
