@@ -91,7 +91,7 @@ E os últimos 23 bits, representa a **mantissa**. Quando tratamos de notação c
 Ai podemos definir:
 
 
-![](/images/uploads/ieee754.gif "IEE754 walkthrough")
+![](/images/uploads/ieee754.gif "IEE754 walkthrough.")
 
 até
 
