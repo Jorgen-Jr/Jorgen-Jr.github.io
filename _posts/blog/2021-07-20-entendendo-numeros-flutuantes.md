@@ -40,13 +40,14 @@ Simplesmente colocar um ponto decimal no meio, antes do ponto decimal contaríam
 
 ![](/images/uploads/render.gif "Point in the middle approach")
 
-E após o numero decimal, não temos muitas surpresas também, mas devemos nos atentar que estamos lidando com números binários então ao invés de 10, 100 e 1000 nós teriamos:
+E após o ponto decimal, não temos muitas surpresas também, mas devemos nos atentar que estamos lidando com números binários então ao invés de 10, 100 e 1000 nós teriamos:
 
 ![](/images/uploads/render-half.gif "Integer halfs the gross way")
 
 Em qualquer combinação, então por exemplo, 4.75 poderia ser representado destas duas formas:
 
 > 00000000 00000100 . 11000000 00000000 = 4.75
+>
 > 00000000 00000100 . 01000000 00000000 = 4.75
 
 Mas esta ideia é na verdade horrível, porque detonamos com o tamanho do numero que podemos representar onde antes chegavamos a apróximadamente 2 bilhões, agora só podemos representar numeros até aproximádos 32 mil.
@@ -55,11 +56,11 @@ Para a nossa sorte, pessoas mais inteligentes que nós tiveram a ideia de se ins
 
 Se fossemos representá-los no sistema binário seria algo assim:
 
-> 11'00 => 1.1x2⁴ seria sua representação em notação cientifica.
+> 11'00 => 1.1x2⁴ *seria sua representação em notação cientifica.*
 >
 > 0.0101 => 0.01x2⁻³
 
-Este método de representação carrega o nome **IEEE 754.**
+Esta forma de representação carrega o nome **IEEE 754.**
 
 ## O Que Define IEEE 754?
 
@@ -105,7 +106,7 @@ Mas em binario existe só existe um numero que nao e zero, **1**. Ou seja, se sa
 
 > 0 10000100 .00000000000000000000000
 
-Por mais que os 23 bits nos deem um alcanse de 0 ate 2*²³ nós diminuimos para conseguir numeros entre 0 e 1 e entao fixamos o numero 1 para conseguir numeros entre 1 e 2 e esta é a parte principal do padrão IEEE 754, mas para os tais numeros normalizados, sei que os leitores informados sabem que eles tambem incluem numeros não normalizados, NaN, infinitos e 0 & 0 que talvez eu entre em detalhes num post futuro.
+Por mais que os 23 bits nos deem um alcanse de 0 até 2*²³ nós diminuimos para conseguir numeros entre 0 e 1 e entao fixamos o numero 1 para conseguir numeros entre 1 e 2 e esta é a parte principal do padrão IEEE 754, mas para os tais numeros normalizados, Como devem saber neste padrão eles tambem incluem numeros não normalizados, *NaN, infinitos e 0 & 0* que talvez eu entre em detalhes num post futuro.
 
 ## Ta, mas e ai?
 
