@@ -1,6 +1,7 @@
 ---
 layout: project
 name: Conversor de Duto
+short_description: Conversor de Duto
 category: desenvolvimento
 tags:
   - javascript
