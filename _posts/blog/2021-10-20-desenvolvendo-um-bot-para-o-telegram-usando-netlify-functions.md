@@ -20,6 +20,8 @@ Neste tutorial vou mostrar o passo a passo de como criar seu bot de telegram usa
 
 1. [Criando Seu Bot](#criando-seu-bot)
 2. [Iniciando o Projeto](#iniciando-o-projeto)
+3. [Codando o Bot](#codando-o-bot)
+4. [Subindo seu codigo](#subindo-seu-codigo)
 
 ## Criando Seu Bot
 
@@ -48,3 +50,44 @@ Como é um projeto simples em javascript, esta é a configuração básica para 
 ![Project Init](/images/uploads/screenshot-from-2021-10-20-13-58-09.png "Iniciando o projeto")
 
 Sendo que precisamos do arquivo netlify.toml para definir onde nossas funções serveless estarão, e uma pasta functions para colocar as tais funções.
+
+Abra a pasta raíz do projeto na ide que preferir.
+
+\### Arquivo netlify.toml
+
+Neste arquivo precisamos informar qual será a pasta com as funções serverless, como neste projeto ela está na pasta /functions/ podemos atribuir como a seguir:
+
+```yaml
+[build]
+  functions = "./functions"
+```
+
+\### Criando as funções de acordo com a [documentação da API de bots](https://core.telegram.org/bots/api).
+
+Para este bot vamos usar estas 3 funções. Sendo o bot o nosso endpoint para receber as requests e as outras duas para responder essas requests.
+
+* bot.js
+* [answerInlineQuery.js](https://core.telegram.org/bots/api#answerinlinequery)
+* [sendMessage.js](https://core.telegram.org/bots/api#sendmessage)
+
+A estrutura do nosso projeto deve estar assim:
+
+![Estrutura do Projeto.](/images/uploads/screenshot-from-2021-10-20-14-10-35.png "Estrutura do Projeto")
+
+## Codando o Bot
+
+### Função Principal
+
+## Subindo seu codigo
+
+Faça o upload do seu código no github, gitlab ou bitbucket, no meu caso estarei usando o github.
+
+Acesse o [netlify](https://app.netlify.com/start) e indique qual repositório ele vai usar.
+
+![Criando o website no netlify.](/images/uploads/screenshot-from-2021-10-20-14-47-05.png "Criando o website no netlify.")
+
+![Criando o website no netlify pt.2](/images/uploads/screenshot-from-2021-10-20-14-48-12.png "Criando o website no netlify pt.2")
+
+Com as configurações padrão, ele irá fazer o primeiro deploy, sem misterios, eu apenas troquei o nome padrão do site para ficar mais fácil de acessar.
+
+![Trocando o nome do site.](/images/uploads/screenshot-from-2021-10-20-14-50-21.png "Trocando o nome do site.")
