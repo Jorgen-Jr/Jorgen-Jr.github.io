@@ -15,6 +15,7 @@ special: false
 active: true
 ---
 Neste tutorial vou mostrar o passo a passo de como criar seu bot de telegram usando javascript e o serviço serverless netlify functions.
+Ao final do post vou deixar nas disposições finais as desvantagens de usar este método, apesar de que o serviço ser gratuíto é bem interessante de usar.
 
 # Table of Contents
 
