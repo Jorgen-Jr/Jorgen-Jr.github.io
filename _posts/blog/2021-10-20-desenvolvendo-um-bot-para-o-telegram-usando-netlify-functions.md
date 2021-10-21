@@ -94,6 +94,77 @@ Vamos estar usando o `axios`, então podemos usar o npm init para usar o package
 
 ### Função Principal
 
+```
+const axios = require('axios'); //Usando axios para realizar as requests.
+
+exports.handler = async event => {
+    const body = event.body; //Recebendo o body da request com as informações.
+
+    const req = JSON.parse(body); //Convertendo a body em um arquivo JSON.
+
+    const { message, inline_query } = req;
+    //Desestruturando apenas os objetos necessários para as funções. Nosso bot irá receber mensagens e comandos de inline query.
+
+    let response = {}; //Iniciando nosso objeto de resposta. Que servirá para os dois tipos de resposta.
+
+    //Respondendo comandos inline.
+    if (inline_query) {
+        //Comandos inline esperam um array com várias respostas, então vamos armazenar na variável results.
+        const results = [];
+
+        //Por hora apenas uma resposta é o suficiente então vou inserir apenas:
+        results.push({
+            type: "Article", //O tipo de resposta da inline query
+            id: results.length, //O ID da resposta.
+            title: `Olá ${inline_query.from.first_name} ${inline_query.from.last_name}`, //O título da resposta.
+            thumb_url: "https://raw.githubusercontent.com/Jorgen-Jr/Jorgen-Jr.github.io/main/src/assets/image/logo.png", //Imagem que irá aparecer na request.
+            description: `Olá ${inline_query.from.first_name} ${inline_query.from.last_name}`,
+            // Em seguida a resposta da inline query, que será entregue caso o usuário escolha esta resposta.
+            input_message_content: {
+                parse_mode: "HTML",
+                message_text: `Olá ${inline_query.from.first_name} ${inline_query.from.last_name}, ${inline_query.query}`,
+            },
+        });
+
+        /* Armazenando a resposta com o resultado. */
+        response = {
+            inline_query_id: inline_query.id,
+            results,
+        };
+
+        await answerInlineQuery(response);
+    }
+    //Respondendo mensagens.
+    else if (message) {
+        const chatId = message.chat.id;
+
+        const parse_mode = "HTML";
+
+        response = {
+            chat_id: chatId,
+            text: `Olá ${message.from.first_name} ${message.from.last_name}.`,
+            parse_mode,
+        }
+
+        await sendMessage(response);
+    }
+
+    async function sendMessage(response) {
+        return await axios.post('https://ola-usuario-bot.netlify.app/.netlify/functions/sendMessage', response);
+    }
+
+    async function answerInlineQuery(response) {
+        return await axios.post('https://ola-usuario-bot.netlify.app/.netlify/functions/answerInlineQuery', response);
+    }
+
+    return {
+        statusCode: 200,
+
+        body: JSON.stringify(response),
+    }
+}
+```
+
 ### Função answerInlineQuery
 
 Vamos fazer uma função genérica para responder as inline queries respeitando a documentação do Telegram, sendo assim como já estamos recebendo a estrutura corretamente da função principal, nosso código pode ficar assim.
@@ -106,22 +177,18 @@ exports.handler = async event => {
 
     const body = event.body; //Receber o resultado da request resultante do bot.js
 
-    const response = JSON.parse(body); 
-  
+    const response = JSON.parse(body);
+
     //Criar URL de acesso usando as variáveis de ambiente.
-    const bot_url = "https://api.telegram.org/bot" + process.env.BOT_TOKEN; 
+    const bot_url = "https://api.telegram.org/bot" + process.env.BOT_TOKEN;
 
     //Enviar a resposta de volta para o telegram.
     const res = await axios.post(bot_url + '/answerInlineQuery', response);
 
     return {
-
         statusCode: res.status,
-
-        body: JSON.stringify(res),
-
+        body: JSON.stringify({ message: "Query finalizada." }),
     }
-
 }
 ```
 
@@ -146,13 +213,9 @@ exports.handler = async event => {
     const res = await axios.post(bot_url + '/sendMessage', response);
 
     return {
-
         statusCode: res.status,
-
-        body: JSON.stringify(res),
-
+        body: JSON.stringify({ message: "Message sent." }),
     }
-
 }
 ```
 
