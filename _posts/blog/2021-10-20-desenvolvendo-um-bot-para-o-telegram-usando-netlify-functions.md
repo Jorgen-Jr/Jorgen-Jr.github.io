@@ -118,14 +118,14 @@ exports.handler = async event => {
 
         statusCode: res.status,
 
-        body: JSON.stringify({ success }),
+        body: JSON.stringify(res),
 
     }
 
 }
 ```
 
-### Função answerMessage
+### Função sendMessage
 
 Partindo da mesma idéia da função anterior, nossa request só irá alterar o método usado na chamada da api do telegram.
 
@@ -135,19 +135,21 @@ const axios = require('axios');
 exports.handler = async event => {
     console.log("Respondendo ao usuário.");
 
-    const body = event.body;
+    const body = event.body;  //Receber o resultado da request resultante do bot.js
 
     const response = JSON.parse(body);
 
+    //Criar URL de acesso usando as variáveis de ambiente.
     const bot_url = "https://api.telegram.org/bot" + process.env.BOT_TOKEN;
 
-    const res = await axios.post(bot_url + '/answerInlineQuery', response);
+    //Enviar a resposta de volta para o telegram.
+    const res = await axios.post(bot_url + '/sendMessage', response);
 
     return {
 
         statusCode: res.status,
 
-        body: JSON.stringify({ success }),
+        body: JSON.stringify(res),
 
     }
 
