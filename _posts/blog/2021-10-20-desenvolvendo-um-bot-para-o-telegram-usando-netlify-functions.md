@@ -121,8 +121,9 @@ exports.handler = async event => {
         const results = [];
 
         //Por hora apenas uma resposta é o suficiente então vou inserir apenas:
+        //O formato desta resposta pode ser referida aqui https://core.telegram.org/bots/api#answerinlinequery
         results.push({
-            type: "Article", //O tipo de resposta da inline query
+            type: "Article", 
             id: results.length, //O ID da resposta.
             title: `Olá ${inline_query.from.first_name} ${inline_query.from.last_name}`, //O título da resposta.
             thumb_url: "https://raw.githubusercontent.com/Jorgen-Jr/Jorgen-Jr.github.io/main/src/assets/image/logo.png", //Imagem que irá aparecer na request.
@@ -134,7 +135,6 @@ exports.handler = async event => {
             },
         });
 
-        /* Armazenando a resposta com o resultado. */
         response = {
             inline_query_id: inline_query.id,
             results,
@@ -149,6 +149,7 @@ exports.handler = async event => {
 
         const parse_mode = "HTML";
 
+        //O formato da resposta pode ser referida aqui: https://core.telegram.org/bots/api#sendmessage
         response = {
             chat_id: chatId,
             text: `Olá ${message.from.first_name} ${message.from.last_name}.`,
@@ -158,10 +159,12 @@ exports.handler = async event => {
         await sendMessage(response);
     }
 
+    //Função para enviar as mensagens
     async function sendMessage(response) {
         return await axios.post('https://ola-usuario-bot.netlify.app/.netlify/functions/sendMessage', response);
     }
 
+    //Função para responder comandos inline
     async function answerInlineQuery(response) {
         return await axios.post('https://ola-usuario-bot.netlify.app/.netlify/functions/answerInlineQuery', response);
     }
