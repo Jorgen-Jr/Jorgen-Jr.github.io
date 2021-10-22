@@ -71,7 +71,7 @@ Sendo que precisamos do arquivo netlify.toml para definir onde nossas funções 
 
 Abra a pasta raíz do projeto na ide que preferir.
 
-\### Arquivo netlify.toml
+### Arquivo netlify.toml
 
 Neste arquivo precisamos informar qual será a pasta com as funções serverless, como neste projeto ela está na pasta /functions/ podemos atribuir como a seguir:
 
@@ -252,7 +252,7 @@ E também precisamos adcionar o TOKEN do bot nas variáveis de ambiente, para qu
 
 ## Configurando WebHook
 
-[Eu deixei preparado um arquivo do insomnia que vocês podem usar para esta parte caso achem mais fácil.](https://github.com/Jorgen-Jr/ola_usuario_bot/blob/main/docs/insomnia.json)
+[Eu deixei preparado um arquivo do insomnia que vocês podem usar para esta parte caso achem mais fácil.](https://github.com/Jorgen-Jr/ola_usuario_bot/blob/master/docs/insomnia.json)
 
 Estarei usando as variáveis de ambiente do insonmia e elas estão configuradas assim:
 
