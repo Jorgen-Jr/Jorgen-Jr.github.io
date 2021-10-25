@@ -17,7 +17,7 @@ active: true
 Neste tutorial vou mostrar o passo a passo de como criar seu bot de telegram usando javascript e o serviço serverless netlify functions.
 Ao final do post vou deixar nas disposições finais as desvantagens de usar este método, apesar de que o serviço ser gratuíto é bem interessante de usar.
 
-## Resumo de Conteudo
+## Sumário
 
 1. [Criando Seu Bot](#criando-seu-bot)
 2. [Iniciando o Projeto](#iniciando-o-projeto)
@@ -234,7 +234,7 @@ exports.handler = async event => {
 
 ## Subindo seu codigo
 
-Faça o upload do seu código no github, gitlab ou bitbucket, no meu caso estarei usando o github.
+Faça o upload do seu código no github, gitlab ou bitbucket, no meu caso estarei usando o github. Este passo é necesário pois o netlify requere que seja ativado a integração de implantação contínua para usar as cloud functions.
 
 Acesse o [netlify](https://app.netlify.com/start) e indique qual repositório ele vai usar.
 
@@ -277,3 +277,10 @@ Agora se acessarmos o bot ele já deve nos responder com "Olá, primeiro nome e 
 Claro, este é apenas um projeto simples demonstrando como o netlify functions pode ser usada com os bots do telegram, mas é possível fazer bastante coisa com apenas isso. Você pode ler sobre alguns de meus bots que funcionam usando este mesmo método [aqui sobre o meu bot de dicionário](https://jorgen-jr.github.io/blog/2021-05-11-sobre-ndefinitionbot/) e [aqui sobre outros bots que desenvolvi](https://jorgen-jr.github.io/blog/2021-05-11-sobre-meus-bots/).
 
 ## Disposições Finais
+
+As cloud functions são ótimas pra isso por não precisarem de um servidor dedicado rodando 24/7 para que o bot funcione, mas são limitadas as funções de resposta rápida pois elas devem respeitar o limite  de resposta em 10 segundos, o mesmo limite também é usado para respostas de inline_query então esse limite é aceitável, mas devemos ter em mente de que podemos experienciar as cold starts e a depender do tamanho da função isso pode impactar negativamente o funcionamento do bot causando problemas de resposta e time-outs, por isso para aplicações mais complexas ou de longa execução essa abordagem é de longe a melhor indicada.
+
+![Execuçao da funçao principal.](/images/uploads/screenshot-from-2021-10-25-15-18-27.png "Execuçao da funçao principal.")
+
+
+Porem, para aplicações simples até que isso cumpre sua função e É completamente gratuíto então pode ser uma alternativa atraente para alguns. E caso contrário por estar em javascript é bem fácil de reescrever tudo em nodejs e abrir um servidor dedicado somente para isso.
