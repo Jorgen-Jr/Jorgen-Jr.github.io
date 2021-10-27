@@ -3,11 +3,11 @@ layout: post
 title: Desenvolvendo um Bot para o Telegram usando Netlify Functions
 category: Desenvolvimento
 tags:
-  - tutorial
-  - backend
-  - javascript
-  - bot
-  - telegram
+    - tutorial
+    - backend
+    - javascript
+    - bot
+    - telegram
 date: 2021-10-27T14:46:00.000Z
 post_date: 2021-10-27T14:46:00.000Z
 cover: /images/uploads/pexels-pixabay-209831.jpg
@@ -15,6 +15,7 @@ isBanner: false
 special: false
 active: true
 ---
+
 Neste tutorial vou mostrar o passo a passo de como criar seu bot de telegram usando javascript e o serviço serverless netlify functions.
 Ao final do post vou deixar nas disposições finais as desvantagens de usar este método, apesar de que o serviço ser gratuíto é bem interessante de usar.
 
@@ -23,10 +24,9 @@ Ao final do post vou deixar nas disposições finais as desvantagens de usar est
 1. [Criando Seu Bot](#criando-seu-bot)
 2. [Iniciando o Projeto](#iniciando-o-projeto)
 3. [Codando o Bot](#codando-o-bot)
-4. [Subindo seu codigo](#subindo-seu-codigo)
-5. [Configurando netlify](#configurando-netlify)
-6. [Configurando Webhook](#configurando-webhook)
-7. [Disposições finais](#disposicoes-finais)
+4. [Subindo o Código Para o Netlify](#subindo-o-código-para-o-netlify)
+5. [Configurando Webhook](#configurando-webhook)
+6. [Disposições finais](#disposições-finais)
 
 ## Criando Seu Bot
 
@@ -87,9 +87,9 @@ Neste arquivo precisamos informar qual será a pasta com as funções serverless
 
 Para este bot vamos usar estas 3 funções. Sendo o bot o nosso endpoint para receber as requests e as outras duas para responder essas requests.
 
-* bot.js
-* [answerInlineQuery.js](https://core.telegram.org/bots/api#answerinlinequery)
-* [sendMessage.js](https://core.telegram.org/bots/api#sendmessage)
+-   bot.js
+-   [answerInlineQuery.js](https://core.telegram.org/bots/api#answerinlinequery)
+-   [sendMessage.js](https://core.telegram.org/bots/api#sendmessage)
 
 A estrutura do nosso projeto deve estar assim:
 
@@ -106,9 +106,9 @@ Vamos estar usando o `axios`, então podemos usar o npm init para iniciar um pro
 Está função será responsável por receber os updates sempre que o bot for contatado no telegram, mais a frente quando formos configurar nosso webhook será para essa função que iremos redirecionar.
 
 ```javascript
-const axios = require('axios'); //Usando axios para realizar as requests.
+const axios = require("axios"); //Usando axios para realizar as requests.
 
-exports.handler = async event => {
+exports.handler = async (event) => {
     const body = event.body; //Recebendo o body da request com as informações.
 
     const req = JSON.parse(body); //Convertendo a body em JSON.
@@ -126,10 +126,11 @@ exports.handler = async event => {
         //O formato desta resposta pode ser referida aqui https://core.telegram.org/bots/api#answerinlinequery
         //Por hora apenas uma resposta é o suficiente então vou inserir apenas:
         results.push({
-            type: "Article", 
+            type: "Article",
             id: results.length, //O ID da resposta.
             title: `Olá ${inline_query.from.first_name} ${inline_query.from.last_name}`, //O título da resposta.
-            thumb_url: "https://raw.githubusercontent.com/Jorgen-Jr/Jorgen-Jr.github.io/main/src/assets/image/logo.png", //Imagem que irá aparecer na request.
+            thumb_url:
+                "https://raw.githubusercontent.com/Jorgen-Jr/Jorgen-Jr.github.io/main/src/assets/image/logo.png", //Imagem que irá aparecer na request.
             description: `Olá ${inline_query.from.first_name} ${inline_query.from.last_name}`,
             // Em seguida a resposta da inline query, que será entregue caso o usuário escolha esta resposta.
             input_message_content: {
@@ -157,28 +158,33 @@ exports.handler = async event => {
             chat_id: chatId,
             text: `Olá ${message.from.first_name} ${message.from.last_name}.`,
             parse_mode,
-        }
+        };
 
         await sendMessage(response);
     }
 
     //Função para enviar as mensagens
     async function sendMessage(response) {
-        return await axios.post('https://ola-usuario-bot.netlify.app/.netlify/functions/sendMessage', response);
+        return await axios.post(
+            "https://ola-usuario-bot.netlify.app/.netlify/functions/sendMessage",
+            response
+        );
     }
 
     //Função para responder comandos inline
     async function answerInlineQuery(response) {
-        return await axios.post('https://ola-usuario-bot.netlify.app/.netlify/functions/answerInlineQuery', response);
+        return await axios.post(
+            "https://ola-usuario-bot.netlify.app/.netlify/functions/answerInlineQuery",
+            response
+        );
     }
 
     return {
         statusCode: 200,
 
         body: JSON.stringify(response),
-    }
-
-}
+    };
+};
 ```
 
 ### Função answerInlineQuery
@@ -186,9 +192,9 @@ exports.handler = async event => {
 Vamos fazer uma função genérica para responder as inline queries respeitando a documentação do Telegram, sendo assim como já estamos recebendo a estrutura corretamente da função principal, nosso código pode ficar assim.
 
 ```javascript
-const axios = require('axios');
+const axios = require("axios");
 
-exports.handler = async event => {
+exports.handler = async (event) => {
     console.log("Enviando o resultado da inline query.");
 
     const body = event.body; //Receber o resultado da request resultante do bot.js
@@ -199,13 +205,13 @@ exports.handler = async event => {
     const bot_url = "https://api.telegram.org/bot" + process.env.BOT_TOKEN;
 
     //Enviar a resposta de volta para o telegram.
-    const res = await axios.post(bot_url + '/answerInlineQuery', response);
+    const res = await axios.post(bot_url + "/answerInlineQuery", response);
 
     return {
         statusCode: res.status,
         body: JSON.stringify({ message: "Query finalizada." }),
-    }
-}
+    };
+};
 ```
 
 ### Função sendMessage
@@ -213,12 +219,12 @@ exports.handler = async event => {
 Partindo da mesma idéia da função anterior, nossa request só irá alterar o método usado na chamada da api do telegram.
 
 ```javascript
-const axios = require('axios');
+const axios = require("axios");
 
-exports.handler = async event => {
+exports.handler = async (event) => {
     console.log("Respondendo ao usuário.");
 
-    const body = event.body;  //Receber o resultado da request resultante do bot.js
+    const body = event.body; //Receber o resultado da request resultante do bot.js
 
     const response = JSON.parse(body);
 
@@ -226,16 +232,16 @@ exports.handler = async event => {
     const bot_url = "https://api.telegram.org/bot" + process.env.BOT_TOKEN;
 
     //Enviar a resposta de volta para o telegram.
-    const res = await axios.post(bot_url + '/sendMessage', response);
+    const res = await axios.post(bot_url + "/sendMessage", response);
 
     return {
         statusCode: res.status,
         body: JSON.stringify({ message: "Message sent." }),
-    }
-}
+    };
+};
 ```
 
-## Subindo seu codigo
+## Subindo o Código Para o Netlify
 
 Faça o upload do seu código no github, gitlab ou bitbucket, no meu caso estarei usando o github. Este passo é necesário pois o netlify requere que seja ativado a integração de implantação contínua para usar as cloud functions.
 
@@ -281,7 +287,7 @@ Claro, este é apenas um projeto simples demonstrando como o netlify functions p
 
 ## Disposições Finais
 
-As cloud functions são ótimas pra isso por não precisarem de um servidor dedicado rodando 24/7 para que o bot funcione, mas são limitadas as funções de resposta rápida pois elas devem respeitar o limite  de resposta em 10 segundos, o mesmo limite também é usado para respostas de inline_query então esse limite é aceitável, mas devemos ter em mente de que podemos experienciar as cold starts e a depender do tamanho da função isso pode impactar negativamente o funcionamento do bot causando problemas de resposta e time-outs, por isso para aplicações mais complexas ou de longa execução essa abordagem é de longe a melhor indicada.
+As cloud functions são ótimas pra isso por não precisarem de um servidor dedicado rodando 24/7 para que o bot funcione, mas são limitadas as funções de resposta rápida pois elas devem respeitar o limite de resposta em 10 segundos, o mesmo limite também é usado para respostas de inline_query então esse limite é aceitável, mas devemos ter em mente de que podemos experienciar as cold starts e a depender do tamanho da função isso pode impactar negativamente o funcionamento do bot causando problemas de resposta e time-outs, por isso para aplicações mais complexas ou de longa execução essa abordagem é de longe a melhor indicada.
 
 ![Execuçao da funçao principal.](/images/uploads/screenshot-from-2021-10-25-15-18-27.png "Execuçao da funçao principal.")
 
