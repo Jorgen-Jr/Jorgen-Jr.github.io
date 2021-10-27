@@ -2,7 +2,7 @@ backend:
   name: git-gateway
   branch: main
 
-locale: "pt"
+locale: "br"
 
 # This line should *not* be indented
 publish_mode: editorial_workflow
