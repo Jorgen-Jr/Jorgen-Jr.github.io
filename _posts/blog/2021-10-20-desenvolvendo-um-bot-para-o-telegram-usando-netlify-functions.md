@@ -81,7 +81,7 @@ Neste arquivo precisamos informar qual será a pasta com as funções serverless
   functions = "./functions"
 ```
 
-\### Criando as funções de acordo com a [documentação da API de bots](https://core.telegram.org/bots/api).
+###### Criando as funções de acordo com a [documentação da API de bots](https://core.telegram.org/bots/api).
 
 Para este bot vamos usar estas 3 funções. Sendo o bot o nosso endpoint para receber as requests e as outras duas para responder essas requests.
 
@@ -93,7 +93,7 @@ A estrutura do nosso projeto deve estar assim:
 
 ![Estrutura do Projeto.](/images/uploads/screenshot-from-2021-10-20-14-10-35.png "Estrutura do Projeto")
 
-Vamos estar usando o `axios`, então podemos usar o npm init para usar o package json e instalar esta dependencia com `npm install axios`
+Vamos estar usando o `axios`, então podemos usar o npm init para iniciar um projeto node e instalar esta dependencia com `npm install axios`
 
 ## Codando o Bot
 
@@ -121,8 +121,8 @@ exports.handler = async event => {
         //Comandos inline esperam um array com várias respostas, então vamos armazenar na variável results.
         const results = [];
 
-        //Por hora apenas uma resposta é o suficiente então vou inserir apenas:
         //O formato desta resposta pode ser referida aqui https://core.telegram.org/bots/api#answerinlinequery
+        //Por hora apenas uma resposta é o suficiente então vou inserir apenas:
         results.push({
             type: "Article", 
             id: results.length, //O ID da resposta.
@@ -243,7 +243,7 @@ Acesse o [netlify](https://app.netlify.com/start) e indique qual repositório el
 
 ![Criando o website no netlify pt.2](/images/uploads/screenshot-from-2021-10-20-14-48-12.png "Criando o website no netlify pt.2")
 
-Com as configurações padrão, ele irá fazer o primeiro deploy, sem misterios, eu apenas troquei o nome padrão do site para ficar mais fácil de acessar.
+Com as configurações padrão, ele irá fazer o primeiro deploy, sem misterios, eu apenas troquei o nome padrão do site para ficar mais fácil de acessar. Em "Site Settings" e em Site information deve ter um botão chamado "Change Site Name".
 
 ![Trocando o nome do site.](/images/uploads/screenshot-from-2021-10-20-14-50-21.png "Trocando o nome do site.")
 
@@ -269,13 +269,13 @@ Com isso nosso bot já deve estar funcionando, mas podemos confirmar que o webho
 
 ## Bot em Funcionamento
 
-Agora se acessarmos o bot ele já deve nos responder com "Olá, primeiro nome e ultimo nome" para qualquer mensagem que enviarmos no chat dele, ou para qualquer comando inline.
+Agora se acessarmos o bot ele já deve nos responder com "Olá, `primeiro nome` e `ultimo nome`" para qualquer mensagem que enviarmos no chat dele, ou para qualquer comando inline.
 
 ![Mensagem.](/images/uploads/screenshot-from-2021-10-22-09-38-06.png "Mensagem.")
 
 ![Comando inline](/images/uploads/screenshot-from-2021-10-22-09-39-27.png "Comando inline.")
 
-Claro, este é apenas um projeto simples demonstrando como o netlify functions pode ser usada com os bots do telegram, mas é possível fazer bastante coisa com apenas isso. Você pode ler sobre alguns de meus bots que funcionam usando este mesmo método [aqui sobre o meu bot de dicionário](https://jorgen-jr.github.io/blog/2021-05-11-sobre-ndefinitionbot/) e [aqui sobre outros bots que desenvolvi](https://jorgen-jr.github.io/blog/2021-05-11-sobre-meus-bots/).
+Claro, este é apenas um projeto simples demonstrando como o netlify functions pode ser usada com os bots do telegram, mas é possível fazer bastante coisa com apenas isso. Você pode ler sobre alguns de meus bots que funcionam usando este mesmo método [aqui sobre o meu bot de dicionário](https://jorgen-jr.github.io/blog/2021-05-11-sobre-ndefinitionbot/) e [aqui sobre outros bots que desenvolvi](https://jorgen-jr.github.io/blog/2021-05-11-sobre-meus-bots/). Todos estão com o código fonte liberados no meu perfil no github.
 
 ## Disposições Finais
 
@@ -283,5 +283,4 @@ As cloud functions são ótimas pra isso por não precisarem de um servidor dedi
 
 ![Execuçao da funçao principal.](/images/uploads/screenshot-from-2021-10-25-15-18-27.png "Execuçao da funçao principal.")
 
-
-Porem, para aplicações simples até que isso cumpre sua função e É completamente gratuíto então pode ser uma alternativa atraente para alguns. E caso contrário por estar em javascript é bem fácil de reescrever tudo em nodejs e abrir um servidor dedicado somente para isso.
+Porem, para aplicações simples até que isso cumpre sua função e é completamente gratuíto então pode ser uma alternativa atraente para alguns. E caso contrário por estar em javascript é bem fácil de reescrever tudo em nodejs e abrir um servidor dedicado somente para isso.
