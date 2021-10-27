@@ -8,8 +8,8 @@ tags:
   - javascript
   - bot
   - telegram
-date: 2021-10-20T16:20:37.825Z
-post_date: 2021-10-20T16:20:37.864Z
+date: 2021-10-27T14:46:00.000Z
+post_date: 2021-10-27T14:46:00.000Z
 cover: /images/uploads/pexels-pixabay-209831.jpg
 isBanner: false
 special: false
