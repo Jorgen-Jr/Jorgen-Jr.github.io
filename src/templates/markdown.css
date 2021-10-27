@@ -39,6 +39,7 @@
     font-weight: lighter;
 }
 
+.post-content-full > ol,
 .post-content-full > ul {
     margin-left: 5px;
     margin-top: 20px;
