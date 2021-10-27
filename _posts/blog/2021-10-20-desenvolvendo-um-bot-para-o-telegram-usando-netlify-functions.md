@@ -81,7 +81,9 @@ Neste arquivo precisamos informar qual será a pasta com as funções serverless
   functions = "./functions"
 ```
 
-###### Criando as funções de acordo com a [documentação da API de bots](https://core.telegram.org/bots/api).
+### **Criando as** Funções
+
+**Criando as funções de acordo com a [documentação da API de bots](https://core.telegram.org/bots/api).**
 
 Para este bot vamos usar estas 3 funções. Sendo o bot o nosso endpoint para receber as requests e as outras duas para responder essas requests.
 
