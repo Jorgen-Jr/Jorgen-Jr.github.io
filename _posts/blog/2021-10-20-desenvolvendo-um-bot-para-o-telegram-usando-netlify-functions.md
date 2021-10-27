@@ -10,6 +10,7 @@ tags:
   - telegram
 date: 2021-10-20T16:20:37.825Z
 post_date: 2021-10-20T16:20:37.864Z
+cover: /images/uploads/pexels-pixabay-209831.jpg
 isBanner: false
 special: false
 active: true
