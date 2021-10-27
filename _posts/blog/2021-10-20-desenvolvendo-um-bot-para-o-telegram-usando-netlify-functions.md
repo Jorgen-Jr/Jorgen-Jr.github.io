@@ -3,13 +3,13 @@ layout: post
 title: Desenvolvendo um Bot para o Telegram usando Netlify Functions
 category: Desenvolvimento
 tags:
-    - tutorial
-    - backend
-    - javascript
-    - bot
-    - telegram
-date: 2021-10-27T14:46:00.000Z
-post_date: 2021-10-27T14:46:00.000Z
+  - tutorial
+  - backend
+  - javascript
+  - bot
+  - telegram
+date: 2021-10-27T14:31:19.521Z
+post_date: 2021-10-27T14:31:00.000Z
 cover: /images/uploads/pexels-pixabay-209831.jpg
 isBanner: false
 special: false
