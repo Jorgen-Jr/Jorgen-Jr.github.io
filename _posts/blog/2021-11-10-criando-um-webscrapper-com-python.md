@@ -70,6 +70,8 @@ beautiful_page = BeautifulSoup(page.text, 'html.parser')
 
 Com isso já podemos navegar sobre a página.
 
+## Navegando pelas Páginas
+
 Abra a página com seu navegador e inspecione a, procurando seus atributos, no caso do significado podemos selecionar todos os elementos do tipo spans que possuam o atributo itemprop="description".
 
 ![Procurando o elemento.](/images/uploads/screenshot-from-2021-11-10-15-13-00.png "Procurando o elemento.")
@@ -186,7 +188,7 @@ except:
 source = url
 ```
 
-\## Salvando os Dados
+## Salvando os Dados
 
 Agora vamos formatar estes dados em um objeto para facilitar a manipulação. E então salvar em um arquivo tipo json.
 
