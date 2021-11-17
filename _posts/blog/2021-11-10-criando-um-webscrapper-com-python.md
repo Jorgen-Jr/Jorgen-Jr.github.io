@@ -6,13 +6,14 @@ tags:
   - tutorial
   - webscrapper
   - python
-date: 2021-11-10T17:17:26.391Z
-post_date: 2021-11-10T17:17:26.411Z
+date: 2021-11-17T12:45:37.567Z
+post_date: 2021-11-17T12:45:39.572Z
+cover: /images/uploads/iceland-2608985_960_720.webp
 isBanner: false
 special: false
 active: true
 ---
-Neste tutorial vamos criar um webscrapper usando Python, usando as libs BeautifulSoup4 e requests. E no fim do tutorial vamos salvar essas informações em um banco de dados mongodb e em um arquivo do tipo JSON.
+Neste tutorial vamos criar um webscrapper usando Python, usando as libs BeautifulSoup4 e requests. E no fim do tutorial vamos salvar essas informações em um banco de dados mongodb e em um arquivo do tipo JSON. Assim como algumas configurações adcionais que precisaram ser feitas para o uso do AtlasDB.
 
 ## Sumário
 
