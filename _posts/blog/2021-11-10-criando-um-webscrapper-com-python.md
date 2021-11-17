@@ -13,7 +13,7 @@ isBanner: false
 special: false
 active: true
 ---
-Neste tutorial vamos criar um webscrapper usando Python, usando as libs BeautifulSoup4 e requests. E no fim do tutorial vamos salvar essas informações em um banco de dados mongodb e em um arquivo do tipo JSON. Assim como algumas configurações adcionais que precisaram ser feitas para o uso do AtlasDB.
+Neste tutorial vamos criar um webscrapper usando Python, usando as libs BeautifulSoup4 e requests. E no fim do tutorial vamos salvar essas informações em um banco de dados mongodb e em um arquivo do tipo JSON. Assim como algumas configurações adcionais que precisaram ser feitas para o uso do MongoDB Atlas.
 
 ## Sumário
 
