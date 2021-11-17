@@ -292,7 +292,7 @@ Se rodarmos o nosso código agora, ele irá criar um arquivo chamado "significad
 },
 ```
 
-## Enviando os Dados Para o Banco de Dados
+## Enviando para o Banco de Dados
 
 Estarei salvando estes dados em um banco de dados mongodb, usando o [atlas](https://www.mongodb.com/atlas-signup-from-mlab), e como recomendação, adcionarei a lista de requirements as dependências `pymongo` e `dnspython`.
 
