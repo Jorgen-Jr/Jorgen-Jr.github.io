@@ -6,8 +6,8 @@ tags:
   - tutorial
   - webscrapper
   - python
-date: 2021-11-17T12:45:37.567Z
-post_date: 2021-11-17T12:45:39.572Z
+date: 2021-11-17T15:40:17.425Z
+post_date: 2021-11-17T15:40:18.869Z
 cover: /images/uploads/iceland-2608985_960_720.webp
 isBanner: false
 special: false
