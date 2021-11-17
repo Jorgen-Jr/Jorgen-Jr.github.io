@@ -21,7 +21,7 @@ Neste tutorial vamos criar um webscrapper usando Python, usando as libs Beautifu
 3. [Baixando a Página](#baixando-a-pagina)
 4. [Navegando pelas Páginas](#navegando-pelas-paginas)
 5. [Salvando os Dados](#salvando-os-dados)
-6. [Enviando os Dados para o Banco](#enviando-os-dados-para-o-banco)
+6. [Enviando os Dados para o Banco de Dados](#enviando-os-dados-para-o-banco-de-dados)
 7. [Disposições Finais](disposiçoes-finais)
 
 ## Criando o Repositório
@@ -131,7 +131,6 @@ for definition_i in definition.find_all('span'):
     # Evitando os elementos que possuem a classe tag, para evitar repetições.
     if element_class != 'tag':
         str_definition.append(definition_i.get_text().strip())
-
 ```
 
 Se rodarmos nosso código agora vamos ter o seguinte resultado:
@@ -291,3 +290,165 @@ Se rodarmos o nosso código agora, ele irá criar um arquivo chamado "significad
     }
 },
 ```
+
+## Enviando os Dados Para o Banco de Dados
+
+Estarei salvando estes dados em um banco de dados mongodb, usando o [atlas](https://www.mongodb.com/atlas-signup-from-mlab), e como recomendação, adcionarei a lista de requirements as dependências `pymongo` e `dnspython`.
+
+Vamos definir um método para instanciar a nossa conexão com o banco de dados, que pode ser dita da seguinte forma:
+
+```python
+from pymongo import MongoClient
+import pymongo
+
+def get_database():
+    from pymongo import MongoClient
+    import pymongo
+
+    # Prover a url de conexão do atlas para usar com o pymongo
+    CONNECTION_STRING = "mongodb+srv://[usuario]:[senha]@[dominio].mongodb.net/[database]retryWrites=true&w=majority"
+
+    # Criar a conexão usando o MongoClient. Pode ser feita importando o MongoClient ou usando pymongo.MongoClient
+    from pymongo import MongoClient
+    client = MongoClient(CONNECTION_STRING)
+
+    # Criar o banco de dados ou usar o seguinte banco.
+    return client['scrapper_database']
+```
+
+Você também pode conseguir a url de conexão usando o próprio site do atlas se estiver usando. Clique no botão `connect` ainda na aba de overview, deve estar no canto direito da tela.
+
+![Botao connect.](/images/uploads/screenshot-from-2021-11-17-09-27-20.png "Botao connect.")
+
+E então clique na opção `Connect Your Application`.
+
+![Botao Connect Your Application](/images/uploads/screenshot-from-2021-11-17-09-27-36.png "Botao Connect Your Application")
+
+Assim você pode copiar a url do banco e apenas substituir o usuario, senha e banco de dados que deseja usar.
+
+![url do banco.](/images/uploads/screenshot-from-2021-11-17-09-27-54.png "url do banco.")
+
+Substituindo respectivamente <username> com seu nome de usuário, <password> com a senha desse usuário e `myFirstDatabase` com o nome do banco de dados que se deseja utilizar.
+
+Se estiver tendo problema de conexão, procure acessar  a aba de `Network Access` em `Security` e adcione o ip `0.0.0.0/0` e tente novamente. Isso libera conexão de todos os IPs para o banco então use com cautela.
+
+![Aba de Segurança](/images/uploads/screenshot-from-2021-11-17-09-38-57.png "Aba de Segurança")
+
+![Adcionando o IP.](/images/uploads/screenshot-from-2021-11-17-09-37-23.png "Adcionando o IP.")
+
+Se ainda não tiver usuário de banco no atlas, crie um novo usuário na aba `Database Access`.
+
+Assim podemos usar-lo para enviar os dados, podemos definir a coleção que queremos usar como a seguir.
+
+```python
+dbname = get_database()
+scrapper_collection = dbname["scrapper_collection"]
+```
+
+E então para enviar os dados basta usar a função insert enviando nosso objeto `resolve`.
+
+```python
+scrapper_collection.insert_one(resolve)
+```
+
+No fim, nosso código completo estará assim.
+
+```python
+# Importando as dependências necessárias.
+import requests
+from bs4 import BeautifulSoup
+
+
+from pymongo import MongoClient
+import pymongo
+
+def get_database():
+    from pymongo import MongoClient
+    import pymongo
+
+    # Prover a url de conexão do atlas para usar com o pymongo
+    CONNECTION_STRING = "mongodb+srv://[usuario]:[senha]@[dominio].mongodb.net/[database]retryWrites=true&w=majority"
+
+    # Criar a conexão usando o MongoClient. Pode ser feita importando o MongoClient ou usando pymongo.MongoClient
+    from pymongo import MongoClient
+    client = MongoClient(CONNECTION_STRING)
+
+    # Criar o banco de dados ou usar o seguinte banco.
+    return client['scrapper_database']
+
+dbname = get_database()
+scrapper_collection = dbname["scrapper_collection"]
+
+# Definindo nossa url alvo.
+url = "https://www.dicio.com.br/vida/"
+
+# Baixando a página
+page = requests.get(url)
+
+# Formatando a página com BeautifulSoup4
+beautiful_page = BeautifulSoup(page.text, 'html.parser')
+
+# Capturando o elemento que possue a definição da palavra.
+definition = beautiful_page.find(attrs={'itemprop': 'description'})
+
+str_definition = []
+
+# Iterando sobre todos os elementos do tipo span encontrados.
+for definition_i in definition.find_all('span'):
+    try:
+        element_class = definition_i['class'][0]
+    except:
+        element_class = ""
+    
+    # Evitando os elementos que possuem a classe tag, para evitar repetições.
+    if element_class != 'tag':
+        str_definition.append(definition_i.get_text().strip())
+
+# Nem sempre vamos ter disponível exemplos para todas as frases. Logo vamos usar um bloco try catch.
+try:
+    # Buscar o elemento H3 com a classe 'tit-exemplo', onde os exemplos estarão na sua div pai. por isso o uso do .parent
+    example = beautiful_page.find(attrs={'class': 'tit-exemplo'}).parent.find_all(attrs={'class': 'frase'})
+    
+    str_example = []
+
+    # Iterar sobre os exemplos.
+    for example_i in example:
+        str_example.append(example_i.get_text().strip())
+except:
+    example = "",
+    str_example = [],
+
+## Valor com o link da fonte das informações.
+source = url
+
+# Criando um objeto com todas as informações.
+resolve = {
+    "word": "amor",
+    "definition": str_definition,
+    "source": source,
+    "example": str_example,
+    "html": {
+        "definition": str(definition),
+        "example": str(example),
+    }
+}
+
+# Escrevendo em um objeto tipo json guardando o nosso objeto.
+f = open("significado_de_amor.json", "a")
+
+f.write(str(resolve).replace('"', "`").replace("'", '"').replace("`", "'"))
+
+f.write(',\n')
+
+f.close()
+
+# Salvar o objeto em banco de dados.
+scrapper_collection.insert_one(resolve)
+```
+
+Rodando nosso código teremos o seguinte resultado, ele irá salvar o objeto `resolve` em um arquivo do tipo json e também irá salvar em um banco de dados do atlas usando a database `scrapper_database` na coleção `scrapper_collection`, como a seguir:
+
+![Banco de dados MongoDB com a coleçao.](/images/uploads/screenshot-from-2021-11-17-09-22-40.png "Banco de dados MongoDB com a coleçao.")
+
+## Disposiçes Finais
+Com isso
