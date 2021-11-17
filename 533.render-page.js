@@ -431,7 +431,7 @@ const deckdeckgoHighlightCodeLanguages = {
 
 
 
-function f(e,n){let t;return (...i)=>{let r=()=>e(...i);t&&clearTimeout(t),t=setTimeout(r,n&&n>0?n:300);}}function L(e,n){return new Promise((t,i)=>{if(document.getElementById(e)){t("CSS already loaded.");return}let r=document.createElement("link");r.id=e,r.setAttribute("rel","stylesheet"),r.setAttribute("href",n),r.addEventListener("load",()=>t("CSS loaded.")),r.addEventListener("error",()=>i("Error loading css.")),r.addEventListener("abort",()=>i("CSS loading aborted.")),document.head.appendChild(r);})}
+function p(e,t){let n;return (...r)=>{let o=()=>e(...r);n&&clearTimeout(n),n=setTimeout(o,t&&t>0?t:300);}}function M(e,t){return new Promise((n,r)=>{if(document.getElementById(e)){n("CSS already loaded.");return}let o=document.createElement("link");o.id=e,o.setAttribute("rel","stylesheet"),o.setAttribute("href",t),o.addEventListener("load",()=>n("CSS loaded.")),o.addEventListener("error",()=>r("Error loading css.")),o.addEventListener("abort",()=>r("CSS loading aborted.")),document.head.appendChild(o);})}var m=()=>window&&window.getSelection?window.getSelection():document&&document.getSelection?document.getSelection():document&&document.selection?document.selection.createRange().text:null,k=e=>{s({element:e,collapse:"end"});},s=({element:e,collapse:t})=>{if(!e)return;let n=document.createRange();n.selectNodeContents(e),n.collapse(t==="start");let r=m();r?.removeAllRanges(),r?.addRange(n),n.detach();};var F=e=>{e?.key==="Tab"&&(e.preventDefault(),document.execCommand("insertHTML",!1,"&#009"));};
 
 function loadTheme(theme) {
   if (!theme || theme === undefined) {
@@ -723,7 +723,7 @@ var Prism = (function (_self) {
 					//    at _.util.currentScript (http://localhost/components/prism-core.js:119:5)
 					//    at Global code (http://localhost/components/prism-core.js:606:1)
 
-					var src = (/at [^(\r\n]*\((.*):.+:.+\)$/i.exec(err.stack) || [])[1];
+					var src = (/at [^(\r\n]*\((.*):[^:]+:[^:]+\)$/i.exec(err.stack) || [])[1];
 					if (src) {
 						var scripts = document.getElementsByTagName('script');
 						for (var i in scripts) {
@@ -1748,8 +1748,14 @@ if (typeof commonjsGlobal !== 'undefined') {
 ********************************************** */
 
 Prism.languages.markup = {
-	'comment': /<!--[\s\S]*?-->/,
-	'prolog': /<\?[\s\S]+?\?>/,
+	'comment': {
+		pattern: /<!--(?:(?!<!--)[\s\S])*?-->/,
+		greedy: true
+	},
+	'prolog': {
+		pattern: /<\?[\s\S]+?\?>/,
+		greedy: true
+	},
 	'doctype': {
 		// https://www.w3.org/TR/xml/#NT-doctypedecl
 		pattern: /<!DOCTYPE(?:[^>"'[\]]|"[^"]*"|'[^']*')+(?:\[(?:[^<"'\]]|"[^"]*"|'[^']*'|<(?!!--)|<!--(?:[^-]|-(?!->))*-->)*\]\s*)?>/i,
@@ -1766,11 +1772,14 @@ Prism.languages.markup = {
 				greedy: true
 			},
 			'punctuation': /^<!|>$|[[\]]/,
-			'doctype-tag': /^DOCTYPE/,
+			'doctype-tag': /^DOCTYPE/i,
 			'name': /[^\s<>'"]+/
 		}
 	},
-	'cdata': /<!\[CDATA\[[\s\S]*?\]\]>/i,
+	'cdata': {
+		pattern: /<!\[CDATA\[[\s\S]*?\]\]>/i,
+		greedy: true
+	},
 	'tag': {
 		pattern: /<\/?(?!\d)[^\s>\/=$<%]+(?:\s(?:\s*[^\s>\/=]+(?:\s*=\s*(?:"[^"]*"|'[^']*'|[^\s'">=]+(?=[\s>]))|(?=[\s/>])))+)?\s*\/?>/,
 		greedy: true,
@@ -2415,8 +2424,72 @@ const parseCode = async ({ refContainer, refCode, code, lineNumbers, highlightLi
 
 const loadGoogleFonts = async (terminal) => {
   if (terminal === DeckdeckgoHighlightCodeTerminal.UBUNTU) {
-    await L('google-fonts-ubuntu', 'https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Mono&display=swap');
+    await M('google-fonts-ubuntu', 'https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Mono&display=swap');
   }
+};
+
+const injectRequiredJS = ({ lang }) => {
+  return new Promise((resolve) => {
+    let script = document.querySelector(`deckdeckgo-prism-${lang}`);
+    if (script) {
+      resolve(script.hasAttribute('deckdeckgo-prism-loaded') ? 'loaded' : 'attached');
+      return;
+    }
+    script = document.createElement('script');
+    script.setAttribute('deckdeckgo-prism', lang);
+    script.defer = true;
+    script.src = scriptSrc(lang);
+    script.addEventListener('load', () => {
+      script.setAttribute('deckdeckgo-prism-loaded', lang);
+      resolve('loaded');
+    });
+    script.addEventListener('error', () => resolve('error'));
+    script.addEventListener('abort', () => resolve('abort'));
+    document.head.appendChild(script);
+  });
+};
+const loadMainScript = ({ lang, reload = false, prismLanguageLoaded }) => {
+  return new Promise(async (resolve) => {
+    if (!document || !lang || lang === '') {
+      resolve('error');
+      return;
+    }
+    // No need to load javascript, it is there
+    if (lang === 'javascript') {
+      prismLanguageLoaded.emit('javascript');
+      resolve('loaded');
+      return;
+    }
+    const scripts = document.querySelector("[deckdeckgo-prism='" + lang + "']");
+    if (scripts) {
+      if (reload) {
+        prismLanguageLoaded.emit(lang);
+      }
+      resolve('loaded');
+      return;
+    }
+    const script = document.createElement('script');
+    script.onload = () => {
+      script.setAttribute('deckdeckgo-prism-loaded', lang);
+      prismLanguageLoaded.emit(lang);
+    };
+    script.onerror = () => {
+      if (script.parentElement) {
+        script.parentElement.removeChild(script);
+      }
+      resolve('error');
+    };
+    const definition = deckdeckgoHighlightCodeLanguages[lang];
+    const language = definition.main ? definition.main : lang;
+    script.src = scriptSrc(language);
+    script.setAttribute('deckdeckgo-prism', language);
+    script.defer = true;
+    document.head.appendChild(script);
+    script.addEventListener('load', () => resolve('loaded'), { once: true });
+  });
+};
+const scriptSrc = (language) => {
+  return 'https://unpkg.com/prismjs@latest/components/prism-' + language + '.js';
 };
 
 const CarbonThemeStyle = ({ style }) => {
@@ -2453,6 +2526,7 @@ const DeckdeckgoHighlightCode = class {
   constructor(hostRef) {
     (0,index_b28ed814.r)(this, hostRef);
     this.prismLanguageLoaded = (0,index_b28ed814.c)(this, "prismLanguageLoaded", 7);
+    this.prismLanguageError = (0,index_b28ed814.c)(this, "prismLanguageError", 7);
     this.codeDidChange = (0,index_b28ed814.c)(this, "codeDidChange", 7);
     /**
      * Define the language to be used for the syntax highlighting. The list of supported languages is defined by Prism.js
@@ -2482,13 +2556,8 @@ const DeckdeckgoHighlightCode = class {
      */
     this.revealProgress = 'start';
     this.highlightRows = undefined;
-    this.catchTab = async ($event) => {
-      if ($event && $event.key === 'Tab') {
-        $event.preventDefault();
-        document.execCommand('insertHTML', false, '&#009');
-      }
-    };
-    this.debounceUpdateSlot = f(async () => {
+    this.editFocused = false;
+    this.debounceUpdateSlot = p(async () => {
       await this.copyCodeToSlot();
     }, 500);
   }
@@ -2497,7 +2566,7 @@ const DeckdeckgoHighlightCode = class {
     await this.loadTheme();
   }
   async componentDidLoad() {
-    const languageWasLoaded = await this.languageDidLoad();
+    const languageWasLoaded = this.languageDidLoad();
     await this.loadLanguages();
     if (languageWasLoaded) {
       await this.parse();
@@ -2517,17 +2586,19 @@ const DeckdeckgoHighlightCode = class {
     const { theme } = await loadTheme(this.theme);
     this.themeStyle = theme;
   }
-  async languageLoaded($event) {
-    if (!$event || !$event.detail) {
+  async onLanguageLoaded({ detail }) {
+    if (this.language !== detail || this.loaded) {
       return;
     }
-    if (this.languagesToLoad) {
-      this.languagesToLoad = this.languagesToLoad.filter((lang) => lang !== $event.detail);
+    await this.parse();
+    this.loaded = true;
+  }
+  async onLanguageError({ detail }) {
+    if (this.language !== detail) {
+      return;
     }
-    if (this.language && !this.loaded && (this.languagesToLoad === undefined || this.languagesToLoad.length <= 0)) {
-      await this.parse();
-      this.loaded = true;
-    }
+    this.language = 'javascript';
+    this.prismLanguageLoaded.emit(this.language);
   }
   async parse() {
     if (!this.language || !deckdeckgoHighlightCodeLanguages[this.language]) {
@@ -2536,19 +2607,14 @@ const DeckdeckgoHighlightCode = class {
     await this.parseSlottedCode();
   }
   languageDidLoad() {
-    return new Promise((resolve) => {
-      if (!document || !this.language || this.language === '') {
-        resolve(false);
-        return;
-      }
-      const scripts = document.querySelector("[deckdeckgo-prism-loaded='" + this.language + "']");
-      if (scripts) {
-        resolve(true);
-      }
-      else {
-        resolve(false);
-      }
-    });
+    if (!document || !this.language || this.language === '') {
+      return false;
+    }
+    const scripts = document.querySelector("[deckdeckgo-prism-loaded='" + this.language + "']");
+    if (scripts) {
+      return true;
+    }
+    return false;
   }
   async onLanguage() {
     await this.loadLanguages(true);
@@ -2559,68 +2625,43 @@ const DeckdeckgoHighlightCode = class {
       console.error(`Language ${this.language} is not supported`);
       return;
     }
-    await this.initLanguagesToLoad();
-    await this.loadLanguagesRequire();
-    await this.loadScript(this.language, reload);
+    const loadingScript = await this.loadRequiredLanguages();
+    // We need all required scripts to be loaded. If multiple components are use within the same page, it is possible that the required scripts are attached to the DOM and are still loading.
+    // loadScript will trigger an event on the document, therefore those who do not loadScript will receive the event anyway when everything is ready.
+    if (loadingScript === 'attached') {
+      return;
+    }
+    if (loadingScript === 'error') {
+      this.fallbackJavascript();
+      return;
+    }
+    const state = await loadMainScript({ lang: this.language, reload, prismLanguageLoaded: this.prismLanguageLoaded });
+    if (state === 'loaded') {
+      return;
+    }
+    this.fallbackJavascript();
   }
-  async initLanguagesToLoad() {
+  fallbackJavascript() {
+    console.error('A required script for the language could not be fetched therefore, falling back to JavaScript to display code anyway.');
+    this.prismLanguageError.emit(this.language);
+  }
+  async loadRequiredLanguages() {
     if (!this.language) {
-      return;
+      return 'error';
     }
     const definition = deckdeckgoHighlightCodeLanguages[this.language];
-    this.languagesToLoad = definition.require && definition.require.length > 0 ? [this.language, ...definition.require] : [this.language];
-  }
-  async loadLanguagesRequire() {
-    const promises = [];
-    const definition = deckdeckgoHighlightCodeLanguages[this.language];
-    if (definition.require) {
-      promises.push(...definition.require.map((extraScript) => this.loadScript(extraScript, false, true)));
+    if (!definition.require || definition.require.length <= 0) {
+      return 'loaded';
     }
-    if (promises.length <= 0) {
-      return;
+    // Load now the required languages scripts because Prism needs these to be loaded before the actual main language script
+    const promises = definition.require.map((lang) => injectRequiredJS({ lang }));
+    const states = await Promise.all(promises);
+    const stateError = states.find((state) => ['error', 'abort'].includes(state));
+    if (stateError !== undefined) {
+      return 'error';
     }
-    await Promise.all(promises);
-  }
-  loadScript(lang, reload = false, requireScript = false) {
-    return new Promise(async (resolve) => {
-      if (!document || !lang || lang === '') {
-        resolve();
-        return;
-      }
-      // No need to load javascript, it is there
-      if (lang === 'javascript') {
-        this.prismLanguageLoaded.emit('javascript');
-        resolve();
-        return;
-      }
-      const scripts = document.querySelector("[deckdeckgo-prism='" + lang + "']");
-      if (scripts) {
-        if (reload) {
-          this.prismLanguageLoaded.emit(lang);
-        }
-        resolve();
-        return;
-      }
-      const script = document.createElement('script');
-      script.onload = async () => {
-        script.setAttribute('deckdeckgo-prism-loaded', lang);
-        this.prismLanguageLoaded.emit(lang);
-      };
-      script.onerror = async () => {
-        if (script.parentElement) {
-          script.parentElement.removeChild(script);
-        }
-        // if the language definition doesn't exist or if unpkg is down, display code anyway
-        this.prismLanguageLoaded.emit(lang);
-      };
-      const definition = deckdeckgoHighlightCodeLanguages[this.language];
-      let language = !requireScript && definition.main ? definition.main : lang;
-      script.src = 'https://unpkg.com/prismjs@latest/components/prism-' + language + '.js';
-      script.setAttribute('deckdeckgo-prism', language);
-      script.defer = true;
-      document.head.appendChild(script);
-      script.addEventListener('load', () => resolve(), { once: true });
-    });
+    const stateNotLoaded = states.find((state) => state !== 'loaded');
+    return stateNotLoaded !== undefined ? 'attached' : 'loaded';
   }
   async onLineNumbersChange() {
     await this.parse();
@@ -2675,6 +2716,7 @@ const DeckdeckgoHighlightCode = class {
     if (!this.editable) {
       return;
     }
+    this.editFocused = false;
     await this.copyCodeToSlot();
     await this.parseSlottedCode();
     this.codeDidChange.emit(this.el);
@@ -2696,11 +2738,15 @@ const DeckdeckgoHighlightCode = class {
     code.innerHTML = (_c = this.refCode) === null || _c === void 0 ? void 0 : _c.innerText.replace(/\u200B/g, '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
   }
   edit() {
-    var _a;
-    if (!this.editable) {
+    if (!this.editable || this.editFocused) {
       return;
     }
-    (_a = this.refCode) === null || _a === void 0 ? void 0 : _a.focus();
+    if (!this.refCode) {
+      return;
+    }
+    this.editFocused = true;
+    this.refCode.focus();
+    k(this.refCode);
   }
   /**
    * @internal Used when integrated in DeckDeckGo presentations. Call `nextHighlight()`.
@@ -2782,7 +2828,7 @@ const DeckdeckgoHighlightCode = class {
     if (this.terminal === DeckdeckgoHighlightCodeTerminal.CARBON) {
       hostClass[`deckgo-highlight-code-theme-${this.theme}`] = true;
     }
-    return ((0,index_b28ed814.h)(index_b28ed814.H, { class: hostClass, onClick: () => this.edit() }, this.renderCarbon(), this.renderUbuntu(), this.renderHighlightStyle(), (0,index_b28ed814.h)("div", { class: "container", ref: (el) => (this.refContainer = el) }, (0,index_b28ed814.h)("code", { class: ((_a = this.highlightLines) === null || _a === void 0 ? void 0 : _a.length) > 0 ? 'highlight' : undefined, contentEditable: this.editable, onBlur: async () => await this.applyCode(), onInput: () => this.inputCode(), onKeyDown: ($event) => this.catchTab($event), ref: (el) => (this.refCode = el) }), (0,index_b28ed814.h)("slot", { name: "code" }))));
+    return ((0,index_b28ed814.h)(index_b28ed814.H, { class: hostClass, onClick: () => this.edit() }, this.renderCarbon(), this.renderUbuntu(), this.renderHighlightStyle(), (0,index_b28ed814.h)("div", { class: "container", ref: (el) => (this.refContainer = el) }, (0,index_b28ed814.h)("code", { class: ((_a = this.highlightLines) === null || _a === void 0 ? void 0 : _a.length) > 0 ? 'highlight' : undefined, contentEditable: this.editable, onBlur: async () => await this.applyCode(), onInput: () => this.inputCode(), onKeyDown: ($event) => F($event), ref: (el) => (this.refCode = el) }), (0,index_b28ed814.h)("slot", { name: "code" }))));
   }
   renderHighlightStyle() {
     if (!this.highlightLines || this.highlightLines.length <= 0) {
