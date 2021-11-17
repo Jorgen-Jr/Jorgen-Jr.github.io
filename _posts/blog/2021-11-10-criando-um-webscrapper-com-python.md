@@ -18,12 +18,12 @@ Neste tutorial vamos criar um webscrapper usando Python, usando as libs Beautifu
 ## Sumário
 
 1. [Criando o Repositório](#criando-o-reposit%C3%B3rio)
-2. [Instalando Dependências](#instalando-dependencias)
-3. [Baixando a Página](#baixando-a-pagina)
-4. [Navegando pelas Páginas](#navegando-pelas-paginas)
+2. [Instalando Dependências](#instalando-dependências)
+3. [Baixando a Página](#baixando-a-página)
+4. [Navegando pelas Páginas](#navegando-pelas-páginas)
 5. [Salvando os Dados](#salvando-os-dados)
-6. [Enviando os Dados para o Banco de Dados](#enviando-os-dados-para-o-banco-de-dados)
-7. [Disposições Finais](disposiçoes-finais)
+6. [Enviando para o Banco de Dados](#enviando-para-o-banco-de-dados)
+7. [Disposições Finais](#disposições-finais)
 
 ## Criando o Repositório
 
@@ -451,5 +451,5 @@ Rodando nosso código teremos o seguinte resultado, ele irá salvar o objeto `re
 
 ![Banco de dados MongoDB com a coleçao.](/images/uploads/screenshot-from-2021-11-17-09-22-40.png "Banco de dados MongoDB com a coleçao.")
 
-## Disposiçes Finais
+## Disposições Finais
 Com isso
