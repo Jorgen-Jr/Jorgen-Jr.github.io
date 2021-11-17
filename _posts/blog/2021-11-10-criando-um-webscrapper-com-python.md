@@ -452,4 +452,9 @@ Rodando nosso código teremos o seguinte resultado, ele irá salvar o objeto `re
 ![Banco de dados MongoDB com a coleçao.](/images/uploads/screenshot-from-2021-11-17-09-22-40.png "Banco de dados MongoDB com a coleçao.")
 
 ## Disposições Finais
-Com isso
+
+Web Scrapping nunca foi tão fácil e em pouco tempo é possivel escrever um código capaz de fazer o tal, neste caso escolhi usar python, mas em outro momento também já o fiz usando javascript e não tem segredo. Contanto que não precise lidar com sistemas de anti-bot ou captchas é bem fácil de realizar. Mas caso tenha ainda é possível, só é um pouco mais complicado.
+
+Quando escrevia este post me deparei com um repositório bem interessante quando temos que lidar com sites com detecção de bots. Vale a pena dar uma lida em [Avoiding bot detection](https://github.com/niespodd/browser-fingerprinting) para termos mais sucesso em diversos cenários.
+
+[O código fonte usado neste tutorial pode ser acessado aqui.](https://github.com/Jorgen-Jr/scrapper_tutorial)
