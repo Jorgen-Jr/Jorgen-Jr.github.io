@@ -31,6 +31,7 @@ Você consegue usar esta api enviando requests do tipo GET para os seguintes end
 -   `https://thedictapi.netlify.app/.netlify/functions/thesaurus/{word}`
 -   `https://thedictapi.netlify.app/.netlify/functions/urbandictionary/{word}`
 -   `https://thedictapi.netlify.app/.netlify/functions/priberam/{word}`
+-   `https://thedictapi.netlify.app/.netlify/functions/dicio/{word}`
 
 Alterando o `{word}` pela palavra desejada.
 A resposta será enviada em formato json.
@@ -42,6 +43,7 @@ Existe atualmente as seguintes opções de dicionário.
 -   Thesaurus (With the english definition)
 -   Urban Dictionary (With the Urban Dictionary definition in case of slangs)
 -   Priberam (Para palavras em português)
+-   Dicio (Para palavras em português)
 
 ### Referências Externas
 
@@ -50,7 +52,8 @@ Esse bot usa os seguintes sites como referência:
 -   [Thesaurus](http://word.com);
 -   [UrbanDictionary](http://urbandictionary.com);
 -   [Priberam](https://dicionario.priberam.org);
+-   [Dicio](https://www.dicio.com.br/);
 
 ### Em Breve
 
--   [Dicionário Popular](https://www.dicionariopopular.com/);
+-   [Dicionário Informal](https://www.dicionarioinformal.com.br/);
