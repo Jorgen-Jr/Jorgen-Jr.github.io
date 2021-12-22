@@ -17,21 +17,17 @@ active: true
 Quando estamos iniciando em desenvolvimento web e sempre bom ter formas gratuitas de colocar seu projeto no ar e mostrar para quem quiser sem a necessidade de estar rodando no seu computador. Neste post vou listar algumas plataformas onde isso e possível.
 
 1. [Páginas Estáticas](#páginas-estáticas)
-
    1. [Netlify](#netlify)
    2. [Github Pages](#github-pages)
 2. [Back-End](#backend)
-
    1. [Heroku](#heroku)
    2. [Firebase](#firebase)
 3. [Banco de Dados](#banco-de-dados)
-
    1. [ElephantSQL](#elephantsql)
    2. [AtlasDB](#atlasdb)
    3. [FreeMySQLHosting](#freemysqlhosting)
 4. [CronJobs](#cronjobs)
 5. [Tunelização](#tunelização)
-
    1. [Ngrok](#ngrok)
    2. [StaqLab](#staqlab)
 
