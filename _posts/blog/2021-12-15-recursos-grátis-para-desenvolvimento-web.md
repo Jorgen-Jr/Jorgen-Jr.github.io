@@ -40,29 +40,46 @@ Quando estamos iniciando em desenvolvimento web e sempre bom ter formas gratuita
 ### Netlify
 
 ![Acesse a Netlify](https://upload.wikimedia.org/wikipedia/commons/b/b8/Netlify_logo.svg "Logo Netlify")
+
 A [netlify](https://www.netlify.com/) apresenta uma otima solução desenvolvimento de sites web, tornando o processo de deploy rapido e intuitivo, tambem conta com varias features como [Netlify Functions](https://functions.netlify.com/) que são cloud functions permitindo que possua um backend em sua aplicação, [tais functions que usei para criar alguns bots para o telegram](https://jorgen-jr.github.io/blog/2021-10-20-desenvolvendo-um-bot-para-o-telegram-usando-netlify-functions/) e [Netlify CMS](https://www.netlifycms.org/) que é o gerenciador de conteúdo que estou usando atualmente.
 
 Tal ferramenta também possui funcionalidades de previews de build, integração com o github então toda vez que ocorrer um push no repositório ele irá iniciar a build da aplicação, sendo a branch `master` ou `main` a build que irá para o subdominio desejado e suas outras branchs apenas para review (isso pode ser controlado nas configurações de deploy.
 
 ### Github Pages
 
-![Octocat](/images/uploads/octocat.png "Octocar")
+![Octocat - Github](/images/uploads/octocat.png "Octocat - Github")
+
+Githuh pages funciona muito bem para seus projetos do github, se integra super bem com o github actions para automatizar a build caso necessário [como exemplificado aqui](https://jorgen-jr.github.io/blog/2021-08-10-deploy-autom%C3%A1tico-de-websites-react-para-o-github-pages/), seu dominio sera atrelado aos subdominios do github, cujo será `nome_de_usuário.github.io/repositório` ou, se seu repositório tiver o nome `nome_de_usuario.github.io` este será seu dominio.
+
+Você pode ler mais sobre isso [aqui](https://docs.github.com/en/pages).
 
 ## Back-end
 
 ### Heroku
 
+![Heroku Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Heroku_logo.svg/640px-Heroku_logo.svg.png "Heroku Logo")
+
 ### Firebase
+
+![Firebase Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Firebase_Logo.png/640px-Firebase_Logo.png "Firebase Logo")
+
+
 
 ### Render
 
 ## CronJobs
 
+![cron-jon.org](https://cron-job.org/img/logo.png "cron-jon.org")
+
 ## Banco de Dados
 
 ### ElephantSQL
 
+![ElephantSQL](https://www.elephantsql.com/favicon.ico "ElephantSQL")
+
 ### AtlasDB
+
+![AtlasDB](https://webimages.mongodb.com/_com_assets/cms/kuyjf3vea2hg34taa-horizontal_default_slate_blue.svg?auto=format%252Ccompress "AtlasDB")
 
 ### FreeMySQLHosting
 
@@ -70,4 +87,10 @@ Tal ferramenta também possui funcionalidades de previews de build, integração
 
 ### Ngrok
 
+![ngrok](https://ngrok.com/static/img/ngrok-black.svg "ngrok")
+
+
+
 ### StaqLab
+
+![StaqLab](https://tunnel.staqlab.com/theme/img/basic/logo.png "StaqLab")
