@@ -17,17 +17,21 @@ active: true
 Quando estamos iniciando em desenvolvimento web e sempre bom ter formas gratuitas de colocar seu projeto no ar e mostrar para quem quiser sem a necessidade de estar rodando no seu computador. Neste post vou listar algumas plataformas onde isso e possível.
 
 1. [Páginas Estáticas](#páginas-estáticas)
+
    1. [Netlify](#netlify)
    2. [Github Pages](#github-pages)
 2. [Back-End](#backend)
+
    1. [Heroku](#heroku)
    2. [Firebase](#firebase)
 3. [Banco de Dados](#banco-de-dados)
+
    1. [ElephantSQL](#elephantsql)
    2. [AtlasDB](#atlasdb)
    3. [FreeMySQLHosting](#freemysqlhosting)
 4. [CronJobs](#cronjobs)
 5. [Tunelização](#tunelização)
+
    1. [Ngrok](#ngrok)
    2. [StaqLab](#staqlab)
 
@@ -53,7 +57,7 @@ Você pode ler mais sobre isso [aqui](https://docs.github.com/en/pages).
 
 ### Heroku
 
-![Heroku Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Heroku_logo.svg/640px-Heroku_logo.svg.png "Heroku Logo")
+![Heroku Logo](/images/uploads/heroku_logo.svg.png "Heroku Logo")
 
 Heroku é uma uma plataforma que lida com aplicações como contêiners que eles chamam de dynos, que podem ser escalados de forma facilitada, seu serviço gratuíto permite que crie até 5 dynos, suportando várias linguagens de programação e frameworks, integração de desenvolvimento contínuo, e pipelines que facilitam a implementação de instâncias para homologação por exemplo.
 
@@ -83,7 +87,7 @@ Banco de dados Postgres com 20 megas grátis. Rápido e de fácil conexão.
 
 ### AtlasDB
 
-![AtlasDB](https://webimages.mongodb.com/_com_assets/cms/kuyjf3vea2hg34taa-horizontal_default_slate_blue.svg?auto=format%252Ccompress "AtlasDB")
+![AtlasDB](/images/uploads/mongodb.png "AtlasDB")
 
 Banco de dados do tipo MongoDB, orientado a objetos, de ate 512 megas gratuítos, [já escrevi sobre esse banco em outro post](https://jorgen-jr.github.io/blog/2021-11-10-criando-um-webscrapper-com-python/).
 
@@ -91,7 +95,7 @@ Banco de dados do tipo MongoDB, orientado a objetos, de ate 512 megas gratuítos
 
 ### Firebase
 
-![Firebase Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Firebase_Logo.png/640px-Firebase_Logo.png "Firebase Logo")
+![Firebase Logo](/images/uploads/640px-firebase_logo.png "Firebase Logo")
 
 Firebase é a solução do google para banco de dados em tempo real, de fácil integração com outros produtos da google, possui um banco de dados orientado a documentos `Firestore` com escalonamento automático, também possui soluções de cloud functions, storage e outros.
 
@@ -107,7 +111,7 @@ Túneis são casos especiais, pois requerem que você transmita os dados atravé
 
 ### Ngrok
 
-![ngrok](https://ngrok.com/static/img/ngrok-black.svg "ngrok")
+![ngrok](/images/uploads/ngrok-black.png "ngrok")
 
 [Pode ser acessado aqui](https://ngrok.com/).
 
