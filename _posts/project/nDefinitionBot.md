@@ -30,6 +30,7 @@ Existe atualmente as seguintes opções de dicionário.
 * Thesaurus (With the english definition)
 * Urban Dictionary (With the Urban Dictionary definition in case of slangs)
 * Priberam (Para palavras em português)
+* Dicio (Para palavras em português)
 
 ### Referências Externas
 
@@ -38,8 +39,9 @@ Esse bot usa os seguintes sites como referência:
 * [Thesaurus](http://word.com);
 * [UrbanDictionary](http://urbandictionary.com);
 * [Priberam](https://dicionario.priberam.org);
+* [Dicio](https://www.dicio.com.br/);
 * [TheDictApi](https://github.com/Jorgen-Jr/TheDictApi)
 
 ### Em Breve
 
-* [Dicionário Popular](https://www.dicionariopopular.com/);
+* [Dicionário Informal](https://www.dicionarioinformal.com.br/);
