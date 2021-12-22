@@ -14,17 +14,18 @@ isBanner: false
 special: false
 active: true
 ---
-Quando estamos iniciando em desenvolvimento web e sempre bom ter formas gratuitas de enviar seu projeto e mostrar para quem quiser ao vivo. Neste post vou listar algumas plataformas onde isso e possivel.
+Quando estamos iniciando em desenvolvimento web e sempre bom ter formas gratuitas de colocar seu projeto no ar e mostrar para quem quiser sem a necessidade de estar rodando no seu computador. Neste post vou listar algumas plataformas onde isso e possível.
 
-## Paginas Estaticas
+## Paginas Estáticas
 ### Netlify
-### Vercell
 ### Github Pages
 
 ## Back-end
 ### Heroku
 ### Firebase
 ### Render
+
+## CronJobs
 
 ## Banco de Dados
 ### ElephantSQL
