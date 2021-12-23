@@ -7,8 +7,8 @@ tags:
   - free
   - resources
   - web_development
-date: 2021-12-22T17:12:32.959Z
-post_date: 2021-12-22T17:12:33.902Z
+date: 2021-12-23T15:32:53.882Z
+post_date: 2021-12-23T15:32:55.137Z
 cover: /images/uploads/cutte.webp
 isBanner: false
 special: false
