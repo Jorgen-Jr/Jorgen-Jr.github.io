@@ -21,7 +21,7 @@ Quando estamos iniciando em desenvolvimento web e sempre bom ter formas gratuita
    2. [Github Pages](#github-pages)
 2. [Back-End](#backend)
    1. [Heroku](#heroku)
-   2. [Firebase](#firebase)
+   2. [Render](#Render)
 3. [Banco de Dados](#banco-de-dados)
    1. [ElephantSQL](#elephantsql)
    2. [AtlasDB](#atlasdb)
@@ -91,7 +91,7 @@ Banco de dados Postgres com 20 megas grátis. Rápido e de fácil conexão.
 
 ![AtlasDB](/images/uploads/mongodb.png "AtlasDB")
 
-Banco de dados do tipo MongoDB, orientado a objetos, de ate 512 megas gratuítos, [já escrevi sobre esse banco em outro post](https://jorgen-jr.github.io/blog/2021-11-10-criando-um-webscrapper-com-python/).
+Banco de dados do tipo MongoDB, orientado a documentos (NoSQL), de ate 512 megas gratuítos, [já escrevi sobre esse banco em outro post](https://jorgen-jr.github.io/blog/2021-11-10-criando-um-webscrapper-com-python/).
 
 [Pode ser acessado aqui](https://www.mongodb.com/).
 
