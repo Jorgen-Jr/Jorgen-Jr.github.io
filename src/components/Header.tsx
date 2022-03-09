@@ -33,8 +33,10 @@ import { Link } from "gatsby";
 const MotionFlex = motion.custom(Flex);
 const MotionText = motion.custom(Text);
 
-const Header = ({ slide }: IProps) => {
+const Header = ({ slide, slide_name }: IProps) => {
     const { isOpen, onOpen, onClose } = useDisclosure();
+
+    const [title, setTitle] = useState("");
 
     const { colorMode, toggleColorMode } = useColorMode();
 
@@ -67,6 +69,7 @@ const Header = ({ slide }: IProps) => {
     }
 
     useEffect(() => {
+        getTitle();
         setActiveLink(slide);
     }, [slide]);
 
@@ -82,6 +85,23 @@ const Header = ({ slide }: IProps) => {
             };
         }
     }, []);
+
+    function createTitle(char) {
+        setTitle(char);
+    }
+
+    function getTitle() {
+        const toBeDone = slide_name.split("");
+
+        let cached = "";
+
+        toBeDone.forEach((char: string, index: number) => {
+            setTimeout(() => {
+                cached += char;
+                createTitle(cached);
+            }, index * 120);
+        });
+    }
 
     return (
         <Box>
@@ -132,21 +152,23 @@ const Header = ({ slide }: IProps) => {
                         minW="150px"
                         w={["100%", "100%", "unset"]}
                     >
-                        <Text fontFamily="FiraCode" fontSize="xl">
-                            Jorge.room{" "}
-                            <MotionText
-                                as="span"
-                                initial={{ opacity: 0 }}
-                                animate={{
-                                    opacity: [1, 0],
-                                }}
-                                transition={{
-                                    repeat: Infinity,
-                                }}
-                            >
-                                |{" "}
-                            </MotionText>
-                        </Text>
+                        <Link to="/">
+                            <Text fontFamily="FiraCode" fontSize="xl">
+                                {title}
+                                <MotionText
+                                    as="span"
+                                    initial={{ opacity: 0 }}
+                                    animate={{
+                                        opacity: [1, 0],
+                                    }}
+                                    transition={{
+                                        repeat: Infinity,
+                                    }}
+                                >
+                                    |{" "}
+                                </MotionText>
+                            </Text>
+                        </Link>
                     </Flex>
 
                     <Box
@@ -328,6 +350,7 @@ const Header = ({ slide }: IProps) => {
 
 interface IProps {
     slide: number;
+    slide_name: string;
 }
 
 Header.propTypes = {

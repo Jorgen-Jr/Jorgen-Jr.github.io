@@ -13,9 +13,9 @@ import SEO from "../components/Seo";
 import Contato from "../components/Contato";
 import { Link } from "gatsby";
 
-function PlanoDeSaude() {
+function ContatoPage() {
     return (
-        <Layout slide={4}>
+        <Layout slide={{ index: 4, name: "Contato" }}>
             <SEO
                 title={"Contato"}
                 description={"Jorge.room - Entre em contato"}
@@ -53,4 +53,4 @@ function PlanoDeSaude() {
     );
 }
 
-export default PlanoDeSaude;
+export default ContatoPage;

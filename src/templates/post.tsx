@@ -24,8 +24,12 @@ const PostTemplate = ({ data }) => {
     // const siteTitle = data.site.siteMetadata?.title || `Title`;
     const { previous, next } = data;
 
+    console.log(data);
+
     return (
-        <Layout slide={-1}>
+        <Layout
+            slide={{ index: -1, name: `blog.post[${data.count.totalCount}]` }}
+        >
             {post ? (
                 <>
                     <SEO
@@ -206,7 +210,12 @@ const PostTemplate = ({ data }) => {
 export default PostTemplate;
 
 export const pageQuery = graphql`
-    query Post($id: String!, $previousPostId: String, $nextPostId: String) {
+    query Post(
+        $id: String!
+        $date: Date
+        $previousPostId: String
+        $nextPostId: String
+    ) {
         site {
             siteMetadata {
                 title
@@ -227,6 +236,11 @@ export const pageQuery = graphql`
             fields {
                 slug
             }
+        }
+        count: allMarkdownRemark(
+            filter: { frontmatter: { date: { lt: $date } } }
+        ) {
+            totalCount
         }
         previous: markdownRemark(id: { eq: $previousPostId }) {
             fields {

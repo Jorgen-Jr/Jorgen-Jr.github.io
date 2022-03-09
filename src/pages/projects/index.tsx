@@ -60,7 +60,7 @@ function ProjectsFeed() {
     });
 
     return (
-        <Layout slide={4}>
+        <Layout slide={{ index: 4, name: "projetos" }}>
             <SEO
                 title={"Projetos - Jorge.room"}
                 description={"Jorge - Conheça os projetos."}

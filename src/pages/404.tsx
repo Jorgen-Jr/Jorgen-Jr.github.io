@@ -13,7 +13,7 @@ import SEO from "../components/Seo";
 
 const NotFound: React.FC = () => {
     return (
-        <Layout slide={-1}>
+        <Layout slide={{ index: -1, name: "room" }}>
             <SEO
                 title={"Não Encontrado"}
                 description={"Jorge.room - Página Não Encontrada"}

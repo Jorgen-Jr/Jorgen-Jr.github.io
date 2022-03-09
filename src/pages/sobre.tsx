@@ -15,7 +15,7 @@ import Sobre from "../components/Sobre";
 
 function PlanoDeSaude() {
     return (
-        <Layout slide={2}>
+        <Layout slide={{ index: 2, name: "sobre" }}>
             <SEO
                 title={"Sobre"}
                 description={"Jorge - Conheça um pouco mais sobre."}
