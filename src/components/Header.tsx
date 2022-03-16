@@ -154,7 +154,7 @@ const Header = ({ slide, slide_name }: IProps) => {
                     >
                         <Link to="/">
                             <Text fontFamily="FiraCode" fontSize="xl">
-                                {title}
+                                Jorge.{title}
                                 <MotionText
                                     as="span"
                                     initial={{ opacity: 0 }}

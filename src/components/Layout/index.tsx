@@ -48,7 +48,7 @@ const Layout = ({ children, slide }: IProps) => {
 
     return (
         <>
-            <Header slide={slide.index} slide_name={"Jorge." + slide.name} />
+            <Header slide={slide.index} slide_name={slide.name} />
             <Box className="content-container">{children}</Box>
             <Footer />
 
