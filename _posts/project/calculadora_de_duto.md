@@ -8,7 +8,7 @@ tags:
   - nextjs
 icon: https://raw.githubusercontent.com/Jorgen-Jr/calculadora_de_dutos/main/public/favicon.png
 link: calculadora_de_duto
-theme_color_primary: "#725100"
+theme_color_primary: "#00722d"
 theme_color_secondary: "#ebff3e"
 active: true
 ---
@@ -30,6 +30,6 @@ Um pequeno aplicativo Web que desenvolvi em NextJS.
   </a>
 </p>
 
-## License
+## Licensa
 
 [APACHE](https://github.com/Jorgen-Jr/calculadora_de_duto/blob/main/LICENSE)
