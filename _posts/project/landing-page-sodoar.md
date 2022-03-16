@@ -10,7 +10,7 @@ tags:
   - animations
 icon: https://github.com/Jorgen-Jr/sodoar.com-landingpage/raw/master/img/Logo/logo-cabecalho.png
 link: landing-page-sodoar
-theme_color_primary: "#41a2e3"
+theme_color_primary: "#0e79c1"
 active: true
 ---
 
