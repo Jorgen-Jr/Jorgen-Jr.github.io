@@ -4,13 +4,13 @@ name: Tema sodoar.com.br
 short_description: Tema sodoar.com.br
 category: Frontend
 tags:
-    - javascript
-    - php
-    - bootstrap
-    - css
+  - javascript
+  - php
+  - bootstrap
+  - css
 icon: https://github.com/Jorgen-Jr/sodoar.com-theme/raw/master/custom/img/Logo/logo-cabecalho-mobile.png
 link: sodoar-theme
-theme_color_primary: "#41a2e3"
+theme_color_primary: "#17a2ff"
 active: true
 ---
 
