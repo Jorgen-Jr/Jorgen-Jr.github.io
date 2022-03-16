@@ -31,7 +31,7 @@ const ProjectTemplate = ({ data }) => {
     };
 
     return (
-        <Layout slide={-1}>
+        <Layout slide={{ index: -1, name: "projeto" }}>
             <SEO
                 title={project.frontmatter.name}
                 description={
@@ -177,7 +177,6 @@ const ProjectTemplate = ({ data }) => {
                                         color="white"
                                         fontWeight="bolder"
                                     >
-                                        {console.log(tag)}
                                         {tag}
                                     </ListItem>
                                 ))}

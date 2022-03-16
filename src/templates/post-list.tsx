@@ -45,7 +45,7 @@ function PostListTemplate(props) {
     });
 
     return (
-        <Layout slide={-1}>
+        <Layout slide={{ index: -1, name: "blog" }}>
             <SEO
                 title={"Blog"}
                 description={

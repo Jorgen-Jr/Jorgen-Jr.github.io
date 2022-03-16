@@ -16,7 +16,7 @@ import SEO from "../components/Seo";
 
 const NotFound: React.FC = () => {
     return (
-        <Layout slide={-1}>
+        <Layout slide={{ index: -1, name: "room" }}>
             <SEO
                 title={"Sucesso!"}
                 description={"Jorge.room - Sucesso de formulário"}

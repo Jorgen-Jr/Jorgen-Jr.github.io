@@ -21,7 +21,7 @@ const Layout = ({ children, slide }: IProps) => {
 
     if (typeof window !== `undefined`) {
         isAtTop = window.pageYOffset < 50 ? true : false;
-        if (slide !== 0) {
+        if (slide.index !== 0) {
             isAtTop = false;
         }
     }
@@ -48,7 +48,7 @@ const Layout = ({ children, slide }: IProps) => {
 
     return (
         <>
-            <Header slide={slide} />
+            <Header slide={slide.index} slide_name={slide.name} />
             <Box className="content-container">{children}</Box>
             <Footer />
 
@@ -119,7 +119,7 @@ const Layout = ({ children, slide }: IProps) => {
 
 interface IProps {
     children: ReactNode;
-    slide: number;
+    slide: { index: number; name: string };
 }
 
 Layout.propTypes = {

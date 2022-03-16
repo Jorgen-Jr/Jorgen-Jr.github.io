@@ -61,11 +61,17 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       const nextPostId =
         index === post_list.length - 1 ? null : post_list[index + 1].id;
 
+      const date = post.frontmatter.date;
+      const day = date.substring(0, 2);
+      const month = date.substring(3, 5);
+      const year = date.substring(6, 10);
+
       createPage({
         path: post.fields.slug,
         component: blogPost,
         context: {
           id: post.id,
+          date: `${year}-${month}-${day}`,
           previousPostId,
           nextPostId,
         },

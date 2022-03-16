@@ -69,7 +69,7 @@ function Posts() {
     });
 
     return (
-        <Layout slide={-1}>
+        <Layout slide={{ index: -1, name: "room" }}>
             <SEO
                 title={"Blog"}
                 description={"Jorge - Feed de blog posts e comunicados."}

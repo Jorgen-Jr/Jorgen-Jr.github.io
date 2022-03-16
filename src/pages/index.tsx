@@ -27,7 +27,11 @@ type DataProps = {
 };
 
 const HomePage: React.FC<PageProps<DataProps>> = () => {
-    const [slide, setSlideIndex] = useState(0);
+    const [slide, setSlideIndex] = useState({ index: 0, name: "room" });
+
+    function setSlide(index, name) {
+        setSlideIndex({ index, name });
+    }
 
     return (
         <Layout slide={slide}>
@@ -39,7 +43,7 @@ const HomePage: React.FC<PageProps<DataProps>> = () => {
 
             <VisibilitySensor
                 onChange={(isVisible: Boolean) => {
-                    isVisible ? setSlideIndex(0) : null;
+                    isVisible ? setSlide(0, "room") : null;
                 }}
             >
                 <Slide id="home">
@@ -51,7 +55,7 @@ const HomePage: React.FC<PageProps<DataProps>> = () => {
                 minTopValue={300}
                 partialVisibility={true}
                 onChange={(isVisible: Boolean) => {
-                    isVisible ? setSlideIndex(1) : null;
+                    isVisible ? setSlide(2, "blog") : null;
                 }}
             >
                 <Slide id="posts">
@@ -62,7 +66,7 @@ const HomePage: React.FC<PageProps<DataProps>> = () => {
             <VisibilitySensor
                 minTopValue={400}
                 onChange={(isVisible: Boolean) => {
-                    isVisible ? setSlideIndex(1) : null;
+                    isVisible ? setSlide(1, "projetos") : null;
                 }}
             >
                 <Slide id="projetos">
@@ -73,7 +77,7 @@ const HomePage: React.FC<PageProps<DataProps>> = () => {
             <VisibilitySensor
                 minTopValue={600}
                 onChange={(isVisible: Boolean) => {
-                    isVisible ? setSlideIndex(4) : null;
+                    isVisible ? setSlide(3, "contato") : null;
                 }}
             >
                 <Slide id="contato">
