@@ -24,8 +24,6 @@ const PostTemplate = ({ data }) => {
     // const siteTitle = data.site.siteMetadata?.title || `Title`;
     const { previous, next } = data;
 
-    console.log(data);
-
     return (
         <Layout
             slide={{ index: -1, name: `blog.post[${data.count.totalCount}]` }}
