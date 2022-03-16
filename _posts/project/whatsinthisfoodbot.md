@@ -10,7 +10,7 @@ tags:
   - TelegramBot
 icon: /images/uploads/whatsinthisfoodbot.png
 link: whatsinthisfoodbot
-theme_color_primary: "#fff200"
+theme_color_primary: "#6a5000"
 theme_color_fontcolor: "#ae8f2a"
 active: true
 ---
