@@ -4,12 +4,12 @@ name: nMysticBalloonBot
 short_description: nMysticBalloonBot
 category: Bots
 tags:
-    - javascript
-    - Canvas
-    - NodeJS
+  - javascript
+  - Canvas
+  - NodeJS
 icon: /images/uploads/index.png
 link: nmysticballoonbot
-theme_color_primary: "#e3a41d"
+theme_color_primary: "#642491"
 active: true
 ---
 
