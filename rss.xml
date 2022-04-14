@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Jorge.Room]]></title><description><![CDATA[Jorge's personal blog and portfolio..]]></description><link>https://jorgen-jr.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 17 Mar 2022 02:41:50 GMT</lastBuildDate><item><title><![CDATA[No title]]></title><description><![CDATA[Um pequeno aplicativo Web que desenvolvi em NextJS. Uma calculadora de formatos de dutos e calcular frequencia de ressonância para sistemas…]]></description><link>https://jorgen-jr.github.io/project/calculadora_de_duto/</link><guid isPermaLink="false">https://jorgen-jr.github.io/project/calculadora_de_duto/</guid><content:encoded>&lt;p&gt;Um pequeno aplicativo Web que desenvolvi em NextJS.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Jorge.Room]]></title><description><![CDATA[Jorge's personal blog and portfolio..]]></description><link>https://jorgen-jr.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 14 Apr 2022 15:02:13 GMT</lastBuildDate><item><title><![CDATA[No title]]></title><description><![CDATA[Um pequeno aplicativo Web que desenvolvi em NextJS. Uma calculadora de formatos de dutos e calcular frequencia de ressonância para sistemas…]]></description><link>https://jorgen-jr.github.io/project/calculadora_de_duto/</link><guid isPermaLink="false">https://jorgen-jr.github.io/project/calculadora_de_duto/</guid><content:encoded>&lt;p&gt;Um pequeno aplicativo Web que desenvolvi em NextJS.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Uma calculadora de formatos de dutos e calcular frequencia de ressonância para sistemas de audio.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -202,7 +202,53 @@ A resposta será enviada em formato json.&lt;/p&gt;
 &lt;li&gt;Os componentes da comida.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&quot;referências-externas&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#refer%C3%AAncias-externas&quot; aria-label=&quot;referências externas permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Referências Externas&lt;/h3&gt;
-&lt;p&gt;Este bot usa a seguinte api &lt;a href=&quot;https://www.edamam.com/&quot;&gt;EDAMAN&lt;/a&gt;.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Recursos Grátis para Desenvolvimento Web]]></title><description><![CDATA[Quando estamos iniciando em desenvolvimento web e sempre bom ter formas gratuitas de colocar seu projeto no ar e mostrar para quem quiser…]]></description><link>https://jorgen-jr.github.io/blog/2021-12-15-recursos-grátis-para-desenvolvimento-web/</link><guid isPermaLink="false">https://jorgen-jr.github.io/blog/2021-12-15-recursos-grátis-para-desenvolvimento-web/</guid><pubDate>Thu, 23 Dec 2021 15:32:53 GMT</pubDate><content:encoded>&lt;p&gt;Quando estamos iniciando em desenvolvimento web e sempre bom ter formas gratuitas de colocar seu projeto no ar e mostrar para quem quiser sem a necessidade de estar rodando no seu computador. Neste post vou listar algumas plataformas onde isso e possível.&lt;/p&gt;
+&lt;p&gt;Este bot usa a seguinte api &lt;a href=&quot;https://www.edamam.com/&quot;&gt;EDAMAN&lt;/a&gt;.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[PostgreSQL e Distinct On]]></title><description><![CDATA[Vamos dar uma olhada na cláusula  do postgreSQL, e um de seus casos de uso,  é usado juntamente com o  para remover duplicatas de uma…]]></description><link>https://jorgen-jr.github.io/blog/2022-04-14-postgresql-e-distinct-on/</link><guid isPermaLink="false">https://jorgen-jr.github.io/blog/2022-04-14-postgresql-e-distinct-on/</guid><pubDate>Thu, 14 Apr 2022 03:02:11 GMT</pubDate><content:encoded>&lt;p&gt;Vamos dar uma olhada na cláusula &lt;code class=&quot;language-text&quot;&gt;distinct on&lt;/code&gt; do postgreSQL, e um de seus casos de uso, &lt;code class=&quot;language-text&quot;&gt;distinct on&lt;/code&gt; é usado juntamente com o &lt;code class=&quot;language-text&quot;&gt;select&lt;/code&gt; para remover duplicatas de uma consulta da mesma forma que um &lt;code class=&quot;language-text&quot;&gt;distinct&lt;/code&gt; comum, com a única diferença de que ele mantém a &lt;code class=&quot;language-text&quot;&gt;primeira linha&lt;/code&gt; de cada linha de duplicatas no resultado.&lt;/p&gt;
+&lt;h1 id=&quot;posgresql-distinct-on&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#posgresql-distinct-on&quot; aria-label=&quot;posgresql distinct on permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;a href=&quot;https://www.postgresql.org/docs/current/sql-select.html#SQL-DISTINCT&quot;&gt;PosgreSQL DISTINCT ON&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;Se &lt;strong&gt;SELECT DISTINCT&lt;/strong&gt; estiver especificado, todas as linhas duplicatas serão removidas do resultado (uma linha é mantida de cada grupo de duplicatas). &lt;strong&gt;SELECT ALL&lt;/strong&gt; especifica o oposto, todas as linhas do resultado são mantidas; este é o padrão.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;SELECT DISTINCT ON&lt;/strong&gt; ( expression [, …] ) mantém apenas a primeira linha de cada conjunto de linhas cujo a expressão seja avaliada como igual. A expressão &lt;strong&gt;DISTINCT ON&lt;/strong&gt; são interpretadas pela mesmas regras do &lt;strong&gt;&lt;a href=&quot;https://www.postgresql.org/docs/current/sql-select.html#SQL-ORDERBY&quot;&gt;ORDER BY&lt;/a&gt;&lt;/strong&gt;. Note que a “primeira linha” de cada conjunto é imprevisível a menos que o &lt;strong&gt;ORDER BY&lt;/strong&gt; seja usado para garantir que a linha desejada apareça primeiro.&lt;/p&gt;
+&lt;p&gt;Vamos considerar a seguinte tabela para armazenar dados de musicas:&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;sql&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt; CREATE TABLE song(
+    id serial NOT NULL PRIMARY KEY,
+    name VARCHAR,
+    singer VARCHAR,
+    launch_date DATE
+);&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;E os seguintes dados:&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;sql&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;INSERT INTO song(name, singer, launch_date)
+VALUES
+    (&amp;#39;Forever Young&amp;#39;, &amp;#39;Alphaville&amp;#39;, &amp;#39;1984-08-08&amp;#39;),
+    (&amp;#39;Big in Japan&amp;#39;, &amp;#39;Alphaville&amp;#39;, &amp;#39;1984-01-20&amp;#39;),
+    (&amp;#39;Sounds Like a Melody&amp;#39;, null, &amp;#39;1983-10-15&amp;#39;),
+    (&amp;#39;Romeos&amp;#39;, &amp;#39;Alphaville&amp;#39;, &amp;#39;1989-03-01&amp;#39;),
+    (null, &amp;#39;Alphaville&amp;#39;, &amp;#39;1994-10-05&amp;#39;),
+    (&amp;#39;Red is The New Black&amp;#39;, null, &amp;#39;2001-05-05&amp;#39;),
+    (&amp;#39;In da Club&amp;#39;, &amp;#39;50 Cent&amp;#39;, &amp;#39;2002-02-21&amp;#39;),
+    (&amp;#39;Candy Shop&amp;#39;, &amp;#39;50 Cent&amp;#39;, &amp;#39;2005-02-15&amp;#39;),
+    (&amp;#39;I Started a Joke&amp;#39;, &amp;#39;Bee Gees&amp;#39;, &amp;#39;1968-03-23&amp;#39;),
+    (&amp;#39;My Universe&amp;#39;, &amp;#39;Coldplay&amp;#39;, &amp;#39;2021-10-27&amp;#39;),
+    (&amp;#39;Holiday&amp;#39;, &amp;#39;Bee Gees&amp;#39;, &amp;#39;1967-05-15&amp;#39;),
+    (&amp;#39;Paradise&amp;#39;, &amp;#39;Coldplay&amp;#39;, &amp;#39;2011-09-12&amp;#39;),
+    (&amp;#39;The Scientist&amp;#39;, &amp;#39;Coldplay&amp;#39;, &amp;#39;2002-08-26&amp;#39;);&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;Agora, se quisermos retornar todas as músicas mais atuais de um cantor sem repetições,e podemos usar a seguinte consulta:&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;sql&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt; SELECT DISTINCT ON (singer) singer, name, launch_date
+   FROM song
+   ORDER BY singer, launch_date DESC;&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;Retornando os seguintes dados&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/uploads/screenshot-from-2022-04-13-23-49-20.png&quot; alt=&quot;Resultado Distinct On&quot; title=&quot;Resultado Distinct On&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Retorna a musica mais recente para cada cantor. Mas se não usarmos o &lt;strong&gt;ORDER BY&lt;/strong&gt; para forçar a ordem dos valores de tempo para cada localização teriamos obtido um valor imprevisível para cada cantor.&lt;/p&gt;
+&lt;p&gt;As expressões &lt;strong&gt;DISTINCT ON&lt;/strong&gt; precisam se equiparar com a expressão &lt;strong&gt;ORDER BY&lt;/strong&gt; que estiver mais a esquerda (a primeira coluna a ser ordenada). A cláusula &lt;strong&gt;ORDER BY&lt;/strong&gt; normalmente conterá expressões adicionais para determinar o precedente desejado de linhas em cada conjunto definido pelo &lt;strong&gt;DISTINCT ON&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Atualmente, &lt;strong&gt;FOR NO KEY UPDATE, FOR UPDATE, FOR SHARE&lt;/strong&gt; e &lt;strong&gt;FOR KEY SHARE&lt;/strong&gt; não podem ser especificados com &lt;strong&gt;DISTINCT&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Fontes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.geeksforgeeks.org/postgresql-distinct-on-expression/&quot;&gt;GeeksForGeeks&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.postgresql.org/docs/current/sql-select.html#SQL-DISTINCT&quot;&gt;PostgreSQL Docs&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Recursos Grátis para Desenvolvimento Web]]></title><description><![CDATA[Quando estamos iniciando em desenvolvimento web e sempre bom ter formas gratuitas de colocar seu projeto no ar e mostrar para quem quiser…]]></description><link>https://jorgen-jr.github.io/blog/2021-12-15-recursos-grátis-para-desenvolvimento-web/</link><guid isPermaLink="false">https://jorgen-jr.github.io/blog/2021-12-15-recursos-grátis-para-desenvolvimento-web/</guid><pubDate>Thu, 23 Dec 2021 15:32:53 GMT</pubDate><content:encoded>&lt;p&gt;Quando estamos iniciando em desenvolvimento web e sempre bom ter formas gratuitas de colocar seu projeto no ar e mostrar para quem quiser sem a necessidade de estar rodando no seu computador. Neste post vou listar algumas plataformas onde isso e possível.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&quot;#p%C3%A1ginas-est%C3%A1ticas&quot;&gt;Páginas Estáticas&lt;/a&gt;
 &lt;ol&gt;
