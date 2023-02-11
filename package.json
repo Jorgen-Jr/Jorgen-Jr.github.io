@@ -6,7 +6,7 @@
   "author": "Jorge Antônio da Silva Nascimento Junior <jorgenjr@outlook.com>",
   "scripts": {
     "build": "gatsby build",
-    "dev": "gatsby develop",
+    "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",

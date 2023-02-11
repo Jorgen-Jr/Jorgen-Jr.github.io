@@ -17,7 +17,7 @@ import { motion } from "framer-motion";
 const MotionFlex = motion.custom(Flex);
 const MotionButton = motion.custom(Button);
 
-import aux_image from "./../assets/image/about/home_aux.jpg";
+import aux_image from "./../assets/image/about/home_aux.png";
 
 interface HomeProps {}
 
