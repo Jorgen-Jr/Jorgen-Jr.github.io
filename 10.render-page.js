@@ -3,25 +3,25 @@ exports.id = 10;
 exports.ids = [10];
 exports.modules = {
 
-/***/ 5010:
+/***/ 4010:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "theme": () => (/* binding */ theme)
+/* harmony export */   theme: () => (/* binding */ theme)
 /* harmony export */ });
 const theme = `{
-  --deckgo-highlight-code-carbon-background: #263238;
-  --deckgo-highlight-code-carbon-color: rgb(233, 237, 237);
-  --deckgo-highlight-code-token-atrule: rgba(199, 146, 234);
-  --deckgo-highlight-code-token-comment: #546e7a;
-  --deckgo-highlight-code-token-comment-rgb: 84, 110, 122;
-  --deckgo-highlight-code-token-function: #82b1ff;
-  --deckgo-highlight-code-token-operator: rgb(233, 237, 237);
-  --deckgo-highlight-code-token-property: #80cbae;
-  --deckgo-highlight-code-token-punctuation: rgb(233, 237, 237);
-  --deckgo-highlight-code-token-regex: #c3e88d;
-  --deckgo-highlight-code-token-selector: #ff5370;
+  --deckgo-highlight-code-carbon-background: #282c34;
+  --deckgo-highlight-code-carbon-color: rgb(171, 178, 191);
+  --deckgo-highlight-code-token-atrule: #c678dd;
+  --deckgo-highlight-code-token-comment: #5c6370;
+  --deckgo-highlight-code-token-comment-rgb: 92, 99, 112;
+  --deckgo-highlight-code-token-function: #e5c07b;
+  --deckgo-highlight-code-token-operator: #56b6c2;
+  --deckgo-highlight-code-token-property: #56b6c2;
+  --deckgo-highlight-code-token-punctuation: rgb(171, 178, 191);
+  --deckgo-highlight-code-token-regex: #98c379;
+  --deckgo-highlight-code-token-selector: #e06c75;
 }`;
 
 

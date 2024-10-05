@@ -3,25 +3,25 @@ exports.id = 233;
 exports.ids = [233];
 exports.modules = {
 
-/***/ 2233:
+/***/ 6233:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "theme": () => (/* binding */ theme)
+/* harmony export */   theme: () => (/* binding */ theme)
 /* harmony export */ });
 const theme = `{
-  --deckgo-highlight-code-carbon-background: #282a36;
-  --deckgo-highlight-code-carbon-color: #ffffff;
-  --deckgo-highlight-code-token-atrule: #ff79c6; //get from JAVA interface color
-  --deckgo-highlight-code-token-comment: #6272a4; // get from JAVA yolo comment
-  --deckgo-highlight-code-token-comment-rgb: 98, 114, 164;
-  --deckgo-highlight-code-token-function: #ffb86c; // get from JAVA className color
-  --deckgo-highlight-code-token-operator: #ff79c6; // get from JAVA equal color(NumericTest isEven (=) )
-  --deckgo-highlight-code-token-property: #bd93f9; // get from CSS propName
-  --deckgo-highlight-code-token-punctuation: #6272a4; // get from CSS colon
-  --deckgo-highlight-code-token-selector: #50fa7b; //get from CSS selector button
-  --deckgo-highlight-code-token-regex: #f1fa8c; // get from JAVASCROIP REGEX
+  --deckgo-highlight-code-carbon-background: rgb(253, 246, 227);
+  --deckgo-highlight-code-carbon-color: rgb(101, 123, 131);
+  --deckgo-highlight-code-token-atrule: #cb4b16;
+  --deckgo-highlight-code-token-comment: #586e75;
+  --deckgo-highlight-code-token-comment-rgb: 88, 110, 117;
+  --deckgo-highlight-code-token-function: #2aa198;
+  --deckgo-highlight-code-token-operator: #6c7164;
+  --deckgo-highlight-code-token-property: #2aa198;
+  --deckgo-highlight-code-token-regex: rgb(133, 153, 0);
+  --deckgo-highlight-code-token-selector: #93a1a1;
+  --deckgo-highlight-code-token-punctuation: rgb(101, 123, 131);
 }`;
 
 
