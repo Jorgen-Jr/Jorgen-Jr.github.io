@@ -1,16 +1,16 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, useEffect } from "react";
 import PropTypes from "prop-types";
 import { Link } from "gatsby";
 
 import "./style.css";
 import Footer from "../Footer";
 import Header from "../Header";
-import { Box, Flex, useColorModeValue } from "@chakra-ui/react";
+import { Box, Flex, useColorMode, useColorModeValue } from "@chakra-ui/react";
 import { ArrowUpIcon } from "@chakra-ui/icons";
 import { motion, useAnimation } from "framer-motion";
 
-const MotionBox = motion.custom(Box);
-const MotionFlex = motion.custom(Flex);
+const MotionBox = motion(Box);
+const MotionFlex = motion(Flex);
 
 //Syntax highlighting component
 import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader";
@@ -28,91 +28,111 @@ const Layout = ({ children, slide }: IProps) => {
 
     const toTopAnimation = useAnimation();
 
-    if (!isAtTop) {
-        toTopAnimation.start({
-            opacity: [0.8, 1],
-            y: [150, 0],
-            transition: {
-                duration: 0.4,
-            },
-        });
-    } else {
-        toTopAnimation.start({
-            opacity: [0.8, 1],
-            y: [0, 150],
-            transition: {
-                duration: 0.4,
-            },
-        });
-    }
+    useEffect(() => {
+        if (!isAtTop) {
+            toTopAnimation.start({
+                opacity: [0.8, 1],
+                y: [150, 0],
+                transition: {
+                    duration: 0.4,
+                },
+            });
+        } else {
+            toTopAnimation.start({
+                opacity: [0.8, 1],
+                y: [0, 150],
+                transition: {
+                    duration: 0.4,
+                },
+            });
+        }
+    });
+
+    const { colorMode } = useColorMode();
+
+    const backgroundColor = useColorModeValue("#FFF", "#1A202C");
 
     return (
         <>
             <Header slide={slide.index} slide_name={slide.name} />
-            <Box className="content-container">{children}</Box>
-            <Footer />
-
-            <MotionFlex
-                position="fixed"
-                flexDir="column"
-                zIndex={1}
-                right={15}
-                bottom={15}
-                borderRadius="15px"
-                initial={{ y: 150, opacity: 0.8 }}
-                animate={toTopAnimation}
-                whileHover={{
-                    opacity: 1,
-                    transition: { duration: 0.4, type: "spring", bounce: 0.5 },
-                    cursor: "pointer",
-                }}
-                // transition="0.2s"
-                alignItems="center"
-                justifyContent="center"
+            <MotionBox
+                key={colorMode}
+                initial={{ opacity: 0, backgroundColor }}
+                animate={{ opacity: 1, backgroundColor }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.6 }}
+                color={useColorModeValue("black", "#DDD")}
+                style={{ transition: "background-color 0.5s ease" }}
             >
-                <Link to="#" aria-label="Voltar para o topo da página.">
-                    <MotionFlex
-                        w="50px"
-                        h="50px"
-                        mt="5px"
-                        borderRadius="15px"
-                        background={useColorModeValue("white", "#333")}
-                        boxShadow={useColorModeValue(
-                            "0 0 10px #CCC",
-                            "0 0 10px #222"
-                        )}
-                        whileHover={{
-                            opacity: 1,
-                            scale: [1, 1.2, 1.3],
-                            borderRadius: ["15px", "50%"],
-                            transition: {
-                                duration: 0.4,
-                                type: "spring",
-                                bounce: 0.5,
-                            },
-                            cursor: "pointer",
-                        }}
-                        // transition="0.2s"
-                        alignItems="center"
-                        justifyContent="center"
-                    >
-                        <MotionBox
+                <Box className="content-container">{children}</Box>
+                <Footer />
+
+                <MotionFlex
+                    position="fixed"
+                    flexDir="column"
+                    zIndex={1}
+                    right={15}
+                    bottom={15}
+                    borderRadius="15px"
+                    initial={{ y: 150, opacity: 0.8 }}
+                    animate={toTopAnimation}
+                    whileHover={{
+                        opacity: 1,
+                        transition: {
+                            duration: 0.4,
+                            type: "spring",
+                            bounce: 0.5,
+                        },
+                        cursor: "pointer",
+                    }}
+                    // transition="0.2s"
+                    alignItems="center"
+                    justifyContent="center"
+                >
+                    <Link to="#" aria-label="Voltar para o topo da página.">
+                        <MotionFlex
+                            w="50px"
+                            h="50px"
+                            mt="5px"
+                            borderRadius="15px"
+                            background={useColorModeValue("white", "#333")}
+                            boxShadow={useColorModeValue(
+                                "0 0 10px #CCC",
+                                "0 0 10px #222",
+                            )}
                             whileHover={{
                                 opacity: 1,
                                 scale: [1, 1.2, 1.3],
+                                borderRadius: ["15px", "50%"],
                                 transition: {
-                                    duration: 1,
+                                    duration: 0.4,
                                     type: "spring",
                                     bounce: 0.5,
                                 },
                                 cursor: "pointer",
                             }}
+                            // transition="0.2s"
+                            alignItems="center"
+                            justifyContent="center"
                         >
-                            <ArrowUpIcon w={"32px"} h={"32px"} />
-                        </MotionBox>
-                    </MotionFlex>
-                </Link>
-            </MotionFlex>
+                            <MotionBox
+                                whileHover={{
+                                    opacity: 1,
+                                    scale: [1, 1.2, 1.3],
+                                    transition: {
+                                        duration: 1,
+                                        type: "spring",
+                                        bounce: 0.5,
+                                    },
+                                    cursor: "pointer",
+                                }}
+                            >
+                                <ArrowUpIcon w={"32px"} h={"32px"} />
+                            </MotionBox>
+                        </MotionFlex>
+                    </Link>
+                </MotionFlex>
+            </MotionBox>
         </>
     );
 };

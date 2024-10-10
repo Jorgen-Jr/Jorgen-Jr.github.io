@@ -16,7 +16,7 @@ import { Project } from "../../types";
 
 import { motion } from "framer-motion";
 
-const MotionStack = motion.custom(Stack);
+const MotionStack = motion(Stack);
 
 interface ProjectCardProps {
     project: Project;
@@ -54,6 +54,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                     justifyContent="center"
                     alignItems="center"
                     margin="auto"
+                    color={useColorModeValue("black", "#FFF")}
                 >
                     {project.icon ? (
                         <Image

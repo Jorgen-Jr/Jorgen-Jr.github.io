@@ -18,8 +18,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     `
       {
         allMarkdownRemark(
-          filter: { frontmatter: { layout: { eq: "post" } } }
-          sort: { fields: frontmatter___date, order: ASC }
+          filter: {frontmatter: {layout: {eq: "post"}}}
+          sort: {frontmatter: {date: ASC}}
         ) {
           nodes {
             id
@@ -84,8 +84,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     `
       {
         allMarkdownRemark(
-          sort: { fields: [frontmatter___date], order: DESC }
-          filter: { frontmatter: { layout: { eq: "post" } } }
+          sort: {frontmatter: {date: DESC}}
+          filter: {frontmatter: {layout: {eq: "post"}}}
         ) {
           edges {
             node {
@@ -135,7 +135,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   await graphql(
     `
     {
-      allMarkdownRemark(filter: {frontmatter: {layout: {eq: "project"}, active: {eq: true}}}, sort: {fields: frontmatter___date, order: ASC}) {
+      allMarkdownRemark(
+        filter: {frontmatter: {layout: {eq: "project"}, active: {eq: true}}}
+        sort: {frontmatter: {date: ASC}}
+      ) {
         nodes {
           id
           html
@@ -189,6 +192,15 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     }
   });
 
+};
+
+exports.onCreatePage = ({ page, actions }) => {
+  const { createPage } = actions;
+
+  if (page.path.match(/^\/projects/)) {
+    page.matchPath = "/projects/*";
+    createPage(page);
+  }
 };
 
 exports.onCreateNode = ({ node, actions, getNode }) => {

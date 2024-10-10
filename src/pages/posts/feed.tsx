@@ -16,43 +16,41 @@ import { Post } from "../../types";
 // import { Container } from './styles';
 
 function Posts() {
-    const { allMarkdownRemark } = useStaticQuery(
-        graphql`
-            {
-                site {
-                    siteMetadata {
-                        title
+    const { allMarkdownRemark } = useStaticQuery(graphql`
+        {
+            site {
+                siteMetadata {
+                    title
+                }
+            }
+            allMarkdownRemark(
+                filter: {
+                    frontmatter: {
+                        layout: { eq: "post" }
+                        active: { eq: true }
                     }
                 }
-                allMarkdownRemark(
-                    filter: {
-                        frontmatter: {
-                            layout: { eq: "post" }
-                            active: { eq: true }
-                        }
+                sort: { frontmatter: { date: ASC } }
+            ) {
+                nodes {
+                    id
+                    html
+                    frontmatter {
+                        cover
+                        date(formatString: "DD/MM/YYYY HH:mm")
+                        isBanner
+                        layout
+                        special
+                        title
+                        category
                     }
-                    sort: { fields: frontmatter___date, order: ASC }
-                ) {
-                    nodes {
-                        id
-                        html
-                        frontmatter {
-                            cover
-                            date(formatString: "DD/MM/YYYY HH:mm")
-                            isBanner
-                            layout
-                            special
-                            title
-                            category
-                        }
-                        fields {
-                            slug
-                        }
+                    fields {
+                        slug
                     }
                 }
             }
-        `
-    );
+        }
+    `);
 
     const posts: Post[] = allMarkdownRemark.nodes.map((item) => {
         let post: Post = {

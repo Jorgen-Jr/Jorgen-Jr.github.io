@@ -9,45 +9,43 @@ interface PostProps {
 }
 
 export const Posts: React.FC<PostProps> = () => {
-    const { allMarkdownRemark } = useStaticQuery(
-        graphql`
-            {
-                site {
-                    siteMetadata {
-                        title
+    const { allMarkdownRemark } = useStaticQuery(graphql`
+        {
+            site {
+                siteMetadata {
+                    title
+                }
+            }
+            allMarkdownRemark(
+                filter: {
+                    frontmatter: {
+                        layout: { eq: "post" }
+                        active: { eq: true }
                     }
                 }
-                allMarkdownRemark(
-                    filter: {
-                        frontmatter: {
-                            layout: { eq: "post" }
-                            active: { eq: true }
-                        }
+                sort: { frontmatter: { date: DESC } }
+                limit: 5
+            ) {
+                nodes {
+                    id
+                    html
+                    excerpt(format: HTML, pruneLength: 250)
+                    frontmatter {
+                        cover
+                        date(formatString: "DD/MM/YYYY HH:mm")
+                        isBanner
+                        layout
+                        special
+                        title
+                        category
                     }
-                    sort: { fields: frontmatter___date, order: DESC }
-                    limit: 5
-                ) {
-                    nodes {
-                        id
-                        html
-                        excerpt(format: HTML, pruneLength: 250)
-                        frontmatter {
-                            cover
-                            date(formatString: "DD/MM/YYYY HH:mm")
-                            isBanner
-                            layout
-                            special
-                            title
-                            category
-                        }
-                        fields {
-                            slug
-                        }
+                    fields {
+                        slug
                     }
                 }
             }
-        `
-    );
+        }
+    `);
 
     const posts: Post[] = allMarkdownRemark.nodes.map((item) => {
         let post: Post = {
@@ -80,7 +78,7 @@ export const Posts: React.FC<PostProps> = () => {
                 backgroundColor={useColorModeValue("#00DBDE", "#083D77")}
                 backgroundImage={useColorModeValue(
                     "linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%)",
-                    "#0093E9"
+                    "#0093E9",
                 )}
                 h={["95%", "80%"]}
                 w="200%"

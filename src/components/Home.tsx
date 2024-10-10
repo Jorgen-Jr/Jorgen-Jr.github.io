@@ -14,8 +14,8 @@ import ModalContact from "./ModalContact";
 
 import { motion } from "framer-motion";
 
-const MotionFlex = motion.custom(Flex);
-const MotionButton = motion.custom(Button);
+const MotionFlex = motion(Flex);
+const MotionButton = motion(Button);
 
 import aux_image from "./../assets/image/about/home_aux.png";
 
@@ -100,7 +100,7 @@ export const Home: React.FC<HomeProps> = ({}) => {
                                         fontWeight="bolder"
                                         color={useColorModeValue(
                                             "#4A6D7C",
-                                            "#EF6351"
+                                            "#EF6351",
                                         )}
                                     >
                                         <Text>Bem vindo a Jorge.room</Text>
@@ -111,7 +111,7 @@ export const Home: React.FC<HomeProps> = ({}) => {
                                         textAlign={["center", "center", "left"]}
                                         color={useColorModeValue(
                                             "#475657",
-                                            "#26FFE6"
+                                            "#26FFE6",
                                         )}
                                         fontWeight="light"
                                     >

@@ -9,43 +9,41 @@ import Projects from "../../components/Projects";
 import { Project } from "../../types";
 
 function ProjectsFeed() {
-    const { allMarkdownRemark } = useStaticQuery(
-        graphql`
-            {
-                site {
-                    siteMetadata {
-                        title
+    const { allMarkdownRemark } = useStaticQuery(graphql`
+        {
+            site {
+                siteMetadata {
+                    title
+                }
+            }
+            allMarkdownRemark(
+                filter: {
+                    frontmatter: {
+                        layout: { eq: "project" }
+                        active: { eq: true }
                     }
                 }
-                allMarkdownRemark(
-                    filter: {
-                        frontmatter: {
-                            layout: { eq: "project" }
-                            active: { eq: true }
-                        }
+                sort: { frontmatter: { date: ASC } }
+            ) {
+                nodes {
+                    id
+                    html
+                    frontmatter {
+                        layout
+                        description
+                        short_description
+                        icon
+                        link
+                        name
+                        title
                     }
-                    sort: { fields: frontmatter___date, order: ASC }
-                ) {
-                    nodes {
-                        id
-                        html
-                        frontmatter {
-                            layout
-                            description
-                            short_description
-                            icon
-                            link
-                            name
-                            title
-                        }
-                        fields {
-                            slug
-                        }
+                    fields {
+                        slug
                     }
                 }
             }
-        `
-    );
+        }
+    `);
 
     const projects: Project[] = allMarkdownRemark.nodes.map((item) => {
         let project: Project = {

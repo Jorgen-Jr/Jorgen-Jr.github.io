@@ -30,8 +30,8 @@ import {
 } from "@chakra-ui/icons";
 import { Link } from "gatsby";
 
-const MotionFlex = motion.custom(Flex);
-const MotionText = motion.custom(Text);
+const MotionFlex = motion(Flex);
+const MotionText = motion(Text);
 
 const Header = ({ slide, slide_name }: IProps) => {
     const { isOpen, onOpen, onClose } = useDisclosure();
@@ -106,6 +106,7 @@ const Header = ({ slide, slide_name }: IProps) => {
     return (
         <Box>
             <MotionFlex
+                color={useColorModeValue("black", "#DDD")}
                 initial={
                     isAtTop
                         ? { x: -20, opacity: 0 }
@@ -126,7 +127,7 @@ const Header = ({ slide, slide_name }: IProps) => {
                         ? "unset"
                         : useColorModeValue(
                               "RGBA(255,255,255,0.8)",
-                              "RGBA(0,0,0,0.6)"
+                              "RGBA(0,0,0,0.6)",
                           )
                 }
                 mt={["1px", isAtTop ? "auto" : "2px"]}
@@ -197,8 +198,8 @@ const Header = ({ slide, slide_name }: IProps) => {
                                         link.url
                                             ? link.url
                                             : index === slide
-                                            ? "#"
-                                            : "/#" + link.target_id
+                                              ? "#"
+                                              : "/#" + link.target_id
                                     }
                                     color={
                                         link.active
@@ -213,7 +214,7 @@ const Header = ({ slide, slide_name }: IProps) => {
                                             ? "#C000C4"
                                             : useColorModeValue(
                                                   "black",
-                                                  "#DDD"
+                                                  "#DDD",
                                               ),
                                     }}
                                 >
@@ -284,18 +285,18 @@ const Header = ({ slide, slide_name }: IProps) => {
                                             link.url
                                                 ? link.url
                                                 : index === slide
-                                                ? "#"
-                                                : "/#" + link.target_id
+                                                  ? "#"
+                                                  : "/#" + link.target_id
                                         }
                                         color={
                                             link.active
                                                 ? useColorModeValue(
                                                       "#003761",
-                                                      "#0274cc"
+                                                      "#0274cc",
                                                   )
                                                 : useColorModeValue(
                                                       "black",
-                                                      "#DDD"
+                                                      "#DDD",
                                                   )
                                         }
                                         fontWeight="bolder"
@@ -328,7 +329,7 @@ const Header = ({ slide, slide_name }: IProps) => {
                         ? "RGBA(0,0,0,0)"
                         : useColorModeValue(
                               "RGBA(255,255,255,0.8)",
-                              "RGBA(0,0,0,0.6)"
+                              "RGBA(0,0,0,0.6)",
                           )
                 }
             >
@@ -339,7 +340,7 @@ const Header = ({ slide, slide_name }: IProps) => {
                     background="#00DBDE"
                     backgroundImage={useColorModeValue(
                         "linear-gradient(90deg, #74EBD5 0%, #9FACE6 100%)",
-                        "linear-gradient(90deg, #3da491 0%, #485aa6 100%)"
+                        "linear-gradient(90deg, #3da491 0%, #485aa6 100%)",
                     )}
                     transition="0.2s"
                 ></Box>

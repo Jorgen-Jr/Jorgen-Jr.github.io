@@ -12,36 +12,31 @@ interface ServicosProps {
 export const ProjectsFeed: React.FC<ServicosProps> = () => {
     const { allMarkdownRemark } = useStaticQuery(graphql`
         {
-            site {
-                siteMetadata {
-                    title
-                }
+        site {
+            siteMetadata {
+            title
             }
-            allMarkdownRemark(
-                filter: {
-                    frontmatter: {
-                        layout: { eq: "project" }
-                        active: { eq: true }
-                    }
-                }
-                sort: { fields: frontmatter___date, order: ASC }
-            ) {
-                nodes {
-                    id
-                    html
-                    frontmatter {
-                        layout
-                        description
-                        short_description
-                        icon
-                        name
-                        title
-                    }
-                    fields {
-                        slug
-                    }
-                }
+        }
+        allMarkdownRemark(
+            filter: {frontmatter: {layout: {eq: "project"}, active: {eq: true}}}
+            sort: {frontmatter: {date: ASC}}
+        ) {
+            nodes {
+            id
+            html
+            frontmatter {
+                layout
+                description
+                short_description
+                icon
+                name
+                title
             }
+            fields {
+                slug
+            }
+            }
+        }
         }
     `);
 
@@ -77,7 +72,7 @@ export const ProjectsFeed: React.FC<ServicosProps> = () => {
                         textAlign="center"
                     >
                         <Box>
-                            <Heading fontWeight="light" size="lg">
+                            <Heading fontWeight="light" size="lg" color={useColorModeValue("black", "#DDD")}>
                                 <Text as="span">Conheça os</Text>
                                 <Text as="span" fontWeight="bold">
                                     {" "}
@@ -91,7 +86,6 @@ export const ProjectsFeed: React.FC<ServicosProps> = () => {
                         <Box
                             maxW="450px"
                             textAlign="center"
-                            colo
                             color={useColorModeValue("#666", "#CCC")}
                             m={["15px", "0"]}
                         >

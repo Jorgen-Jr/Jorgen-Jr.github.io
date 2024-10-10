@@ -158,32 +158,32 @@ export const pageQuery = graphql`
     query PostFeed($skip: Int!, $limit: Int!) {
         site {
             siteMetadata {
-                title
+            title
             }
         }
         allMarkdownRemark(
-            sort: { fields: [frontmatter___date], order: DESC }
+            sort: {frontmatter: {date: DESC}}
             limit: $limit
             skip: $skip
-            filter: { frontmatter: { layout: { eq: "post" } } }
+            filter: {frontmatter: {layout: {eq: "post"}}}
         ) {
             edges {
-                node {
-                    excerpt(format: HTML, pruneLength: 200)
-                    fields {
-                        slug
-                    }
-                    frontmatter {
-                        cover
-                        date(formatString: "DD/MM/YYYY HH:mm")
-                        isBanner
-                        layout
-                        special
-                        title
-                        category
-                    }
+            node {
+                excerpt(format: HTML, pruneLength: 200)
+                fields {
+                slug
+                }
+                frontmatter {
+                cover
+                date(formatString: "DD/MM/YYYY HH:mm")
+                isBanner
+                layout
+                special
+                title
+                category
                 }
             }
+            }
         }
-    }
+        }
 `;
