@@ -1,4 +1,9 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, {
+    ForwardRefExoticComponent,
+    useEffect,
+    useRef,
+    useState,
+} from "react";
 
 import PropTypes from "prop-types";
 
@@ -134,7 +139,6 @@ const Header = ({ slide, slide_name }: IProps) => {
                 w="100%"
                 pl={["15px", "15px", "30px", "80px"]}
                 position="fixed"
-                transition="0.2s"
                 zIndex={1}
             >
                 <Flex
@@ -164,6 +168,7 @@ const Header = ({ slide, slide_name }: IProps) => {
                                     }}
                                     transition={{
                                         repeat: Infinity,
+                                        duration: 0.8,
                                     }}
                                 >
                                     |{" "}

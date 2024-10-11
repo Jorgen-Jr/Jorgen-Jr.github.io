@@ -10,6 +10,7 @@ export type Post = {
     cover?: string;
     post_date: DateTime;
     special?: boolean;
+    banner?: string;
     isBanner?: boolean;
     category: string;
     slug: string;

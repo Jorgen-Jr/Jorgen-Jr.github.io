@@ -1,4 +1,4 @@
-import { background, Box, Flex, useColorModeValue } from "@chakra-ui/react";
+import { Box, Flex, useColorModeValue } from "@chakra-ui/react";
 import { graphql, Link, useStaticQuery } from "gatsby";
 import React from "react";
 import { Post } from "../../types";

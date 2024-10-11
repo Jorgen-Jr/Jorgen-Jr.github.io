@@ -18,9 +18,8 @@ deckDeckGoHighlightElement();
 
 const Layout = ({ children, slide }: IProps) => {
     let isAtTop = false;
-
     if (typeof window !== `undefined`) {
-        isAtTop = window.pageYOffset < 50 ? true : false;
+        isAtTop = window.scrollY < 50 ? true : false;
         if (slide.index !== 0) {
             isAtTop = false;
         }
