@@ -1,5 +1,1 @@
-{
-    "componentChunkName": "component---src-pages-index-tsx",
-    "path": "/",
-    "result": {"data":{"site":{"buildTime":"2024-10-05 05:51 pm UTC"}},"pageContext":{}},
-    "staticQueryHashes": ["2960885644","3863124064","712016698"]}
+{"componentChunkName":"component---src-pages-index-tsx","path":"/","result":{"data":{"site":{"buildTime":"2024-10-12 12:01 am UTC"}},"pageContext":{}},"staticQueryHashes":["2080848153","499929748","712016698"],"slicesMap":{}}

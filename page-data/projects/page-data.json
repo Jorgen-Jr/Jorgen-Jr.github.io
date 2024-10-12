@@ -1,6 +1,1 @@
-{
-    "componentChunkName": "component---src-pages-projects-index-tsx",
-    "path": "/projects/",
-    "result": {"pageContext":{"matchPath":"/projects/*"}},
-    "staticQueryHashes": ["2960885644","4131231720","712016698"],
-    "matchPath": "/projects/*"}
+{"componentChunkName":"component---src-pages-projects-index-tsx","path":"/projects/","result":{"pageContext":{}},"staticQueryHashes":["244266706","499929748","712016698"],"slicesMap":{},"matchPath":"/projects/*"}
