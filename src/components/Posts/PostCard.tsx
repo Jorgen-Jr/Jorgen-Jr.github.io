@@ -39,7 +39,7 @@ export const PostCard: React.FC<PostCardProps> = ({ post: post }) => {
                     alt={post.title}
                     minW={["100%", "100%", "400px"]}
                     minH={["100%", "100%", "300px"]}
-                    loading={post.isBanner ? "eager" : "lazy"}
+                    //loading={post.isBanner ? "eager" : "lazy"}
                     style={{ margin: 0 }}
                 />
                 <Box
@@ -75,7 +75,7 @@ export const PostCard: React.FC<PostCardProps> = ({ post: post }) => {
                                 style={{
                                     color: useColorModeValue(
                                         "darkblue",
-                                        "lightblue"
+                                        "lightblue",
                                     ),
                                 }}
                             >

@@ -137,7 +137,7 @@ const PostTemplate = ({ data }) => {
                                         boxSize="30px"
                                         color={useColorModeValue(
                                             "#053a63",
-                                            "#5c9fed"
+                                            "#5c9fed",
                                         )}
                                     />
                                     {"  "}
@@ -150,7 +150,7 @@ const PostTemplate = ({ data }) => {
                                         alignItems="center"
                                         color={useColorModeValue(
                                             "#053a63",
-                                            "#5c9fed"
+                                            "#5c9fed",
                                         )}
                                         paddingTop="2px"
                                         lineHeight="1"
@@ -178,7 +178,7 @@ const PostTemplate = ({ data }) => {
                                         alignItems="center"
                                         color={useColorModeValue(
                                             "#053a63",
-                                            "#5c9fed"
+                                            "#5c9fed",
                                         )}
                                         paddingTop="2px"
                                         lineHeight="1"
@@ -190,7 +190,7 @@ const PostTemplate = ({ data }) => {
                                         boxSize="30px"
                                         color={useColorModeValue(
                                             "#053a63",
-                                            "#5c9fed"
+                                            "#5c9fed",
                                         )}
                                     />
                                 </Flex>
