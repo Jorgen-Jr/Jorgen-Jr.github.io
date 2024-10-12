@@ -62,7 +62,7 @@ const Footer = () => {
                                 margin="auto"
                                 borderColor={useColorModeValue(
                                     "#333",
-                                    "#e1e1e1"
+                                    "#e1e1e1",
                                 )}
                             />
                             <Flex

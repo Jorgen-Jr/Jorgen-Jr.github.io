@@ -31,8 +31,8 @@ export const PostCard: React.FC<PostCardProps> = ({
                         special
                             ? "100%"
                             : fullWidth
-                            ? "100%"
-                            : ["100%", "100%", "100%", "29%"]
+                              ? "100%"
+                              : ["100%", "100%", "100%", "29%"]
                     }
                     m="20px"
                     overflow="hidden"
@@ -62,14 +62,10 @@ export const PostCard: React.FC<PostCardProps> = ({
                                 : "unset"
                         }
                     >
-                        <Link
-                            to={post.slug}
-                            // style={{  }}
-                        >
+                        <Link to={post.slug}>
                             <Image
                                 src={post.cover}
                                 alt={post.title}
-                                loading={post.isBanner ? "eager" : "lazy"}
                                 style={{ marginTop: "-25%", width: "100%" }}
                                 borderRadius={special ? "7px" : "unset"}
                                 shadow={special ? "md" : "none"}
@@ -123,7 +119,7 @@ export const PostCard: React.FC<PostCardProps> = ({
                                         style={{
                                             color: useColorModeValue(
                                                 "darkblue",
-                                                "lightblue"
+                                                "lightblue",
                                             ),
                                         }}
                                     >

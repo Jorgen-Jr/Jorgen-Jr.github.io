@@ -1,6 +1,6 @@
 import React, { ReactNode, useEffect } from "react";
 import PropTypes from "prop-types";
-import { Link } from "gatsby";
+import { Link, useScrollRestoration } from "gatsby";
 
 import "./style.css";
 import Footer from "../Footer";
@@ -59,14 +59,15 @@ const Layout = ({ children, slide }: IProps) => {
                 initial={{ opacity: 0, backgroundColor }}
                 animate={{ opacity: 1, backgroundColor }}
                 exit={{ opacity: 0 }}
-                transition={{ duration: 0.6 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
                 color={useColorModeValue("black", "#DDD")}
-                style={{ transition: "background-color 0.5s ease" }}
+                style={{
+                    transition: "background-color 0.5s ease-in-out",
+                }}
             >
                 <Box className="content-container">{children}</Box>
-                <Footer />
 
-                <MotionFlex
+                {/* <MotionFlex
                     position="fixed"
                     flexDir="column"
                     zIndex={1}
@@ -130,8 +131,9 @@ const Layout = ({ children, slide }: IProps) => {
                             </MotionBox>
                         </MotionFlex>
                     </Link>
-                </MotionFlex>
+                </MotionFlex> */}
             </MotionBox>
+            <Footer />
         </>
     );
 };
