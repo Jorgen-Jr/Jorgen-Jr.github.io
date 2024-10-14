@@ -2,8 +2,9 @@
 layout: post
 title: Resolvendo o Erro 404 com React Router
 category: Extra Bit
+domain: tech
 tags:
-  - extrabit
+    - extrabit
 date: 2021-07-22T13:52:10.947Z
 post_date: 2021-07-22T13:52:12.162Z
 cover: /images/uploads/pexels-photo-14303.webp
@@ -11,6 +12,7 @@ isBanner: false
 special: false
 active: true
 ---
+
 A meses atrás criei um projeto usando o **create-react-app** e usei o **react-router** para lidar com as rotas da minha aplicação front-end, porém ao enviar minha build para o servidor, acabei sendo introduzido a um problema, quando o usuário entrava em uma rota e atualizar a página ou quando ele acessava através de um link externo ele retornava o erro 404, devido ao arquivo não ter sido encontrado no endereço requisitado, para resolver isso usei regras de redirecionamento no servidor. Espero que minha solução possa ajudar quem também passar por esse problema.
 
 ## Resolvendo no Apache e servidores com suporte ao arquivo .htaccess
@@ -50,7 +52,7 @@ Observando que apenas a linha `try_files $uri $uri/ /index.html;` foi alterada d
 
 ## Resolvendo em servidores Netlify
 
-Para resolver este tipo de erro ao subir em servidores do Netlify você precisa criar um arquivo **_redirect** na pasta public do seu projeto e adcionar a seguinte linha no arquivo. É importante que este arquivo esteja na raiz quando for feito sua build.
+Para resolver este tipo de erro ao subir em servidores do Netlify você precisa criar um arquivo **\_redirect** na pasta public do seu projeto e adcionar a seguinte linha no arquivo. É importante que este arquivo esteja na raiz quando for feito sua build.
 
 [O mesmo pode ser encontrado aqui.](https://gist.github.com/Jorgen-Jr/7f866bfcb6c3a3f3b247101d515213a7)
 

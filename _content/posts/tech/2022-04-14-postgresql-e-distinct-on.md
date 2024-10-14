@@ -2,9 +2,10 @@
 layout: post
 title: PostgreSQL e Distinct On
 category: sql
+domain: tech
 tags:
-  - tutorial
-  - extra-bits
+    - tutorial
+    - extra-bits
 date: 2022-04-14T14:59:58.767Z
 post_date: 2022-04-14T14:59:59.654Z
 cover: /images/uploads/searching.jpg
@@ -12,7 +13,8 @@ isBanner: false
 special: false
 active: true
 ---
-Vamos dar uma olhada na cláusula `distinct on` do postgreSQL, e um de seus casos de uso, `distinct on` é usado juntamente com o `select` para remover duplicatas de uma consulta da mesma forma que um `distinct` comum, com a única diferença de que ele mantém a `primeira linha` de cada linha de duplicatas no resultado. 
+
+Vamos dar uma olhada na cláusula `distinct on` do postgreSQL, e um de seus casos de uso, `distinct on` é usado juntamente com o `select` para remover duplicatas de uma consulta da mesma forma que um `distinct` comum, com a única diferença de que ele mantém a `primeira linha` de cada linha de duplicatas no resultado.
 
 # [PosgreSQL DISTINCT ON](https://www.postgresql.org/docs/current/sql-select.html#SQL-DISTINCT)
 
@@ -71,5 +73,5 @@ Atualmente, **FOR NO KEY UPDATE, FOR UPDATE, FOR SHARE** e **FOR KEY SHARE** nã
 
 Fontes:
 
-* [GeeksForGeeks](https://www.geeksforgeeks.org/postgresql-distinct-on-expression/)
-* [PostgreSQL Docs](https://www.postgresql.org/docs/current/sql-select.html#SQL-DISTINCT)
+-   [GeeksForGeeks](https://www.geeksforgeeks.org/postgresql-distinct-on-expression/)
+-   [PostgreSQL Docs](https://www.postgresql.org/docs/current/sql-select.html#SQL-DISTINCT)

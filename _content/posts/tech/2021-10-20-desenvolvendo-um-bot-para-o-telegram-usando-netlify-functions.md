@@ -2,6 +2,7 @@
 layout: post
 title: Desenvolvendo um Bot para o Telegram usando Netlify Functions
 category: Desenvolvimento
+domain: tech
 tags:
     - tutorial
     - backend
@@ -167,7 +168,7 @@ exports.handler = async (event) => {
     async function sendMessage(response) {
         return await axios.post(
             "https://ola-usuario-bot.netlify.app/.netlify/functions/sendMessage",
-            response
+            response,
         );
     }
 
@@ -175,7 +176,7 @@ exports.handler = async (event) => {
     async function answerInlineQuery(response) {
         return await axios.post(
             "https://ola-usuario-bot.netlify.app/.netlify/functions/answerInlineQuery",
-            response
+            response,
         );
     }
 

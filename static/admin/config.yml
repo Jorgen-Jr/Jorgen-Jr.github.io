@@ -12,8 +12,29 @@ media_folder: "static/images/uploads" # Media files will be stored in the repo u
 public_folder: "/images/uploads"
 
 collections:
+  - name: "Projects" # Used in routes, e.g., /admin/collections/blog
+    label: "Projetos / Serviços" # Used in the UI
+    folder: "_content/project" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{link}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - { label: "Layout", name: "layout", widget: "hidden", default: "project", }
+      - { label: "Nome", name: "name", widget: "string" }
+      - { label: "Descrição Curta", name: "short_description", widget: "string", required: false, }
+      - { label: "Categoria", name: "category", widget: "string" }
+      - { label: "Tags", name: "tags", widget: "list", default: ["javascript"] }
+      - { label: "Ícone", name: "icon", widget: "image", required: false }
+      - { label: "Capa", name: "cover", widget: "image", required: false }
+      - { label: "Illustração", name: "illustration", widget: "image", required: false, }
+      - { label: "Endereço de Acesso", name: "link", widget: "string" }
+      - { label: "Cor Primária", name: "theme_color_primary", widget: "color", required: false, }
+      - { label: "Cor Secundária", name: "theme_color_secondary", widget: "color", required: false, }
+      - { label: "Cor Textual", name: "theme_color_fontcolor", widget: "color", required: false, }
+      - { label: "Descricao", name: "body", widget: "markdown", required: false, }
+      - { label: "Ativo", name: "active", widget: "boolean", default: true }
+
   - name: "post" # Used in routes, e.g., /admin/collections/blog
-    label: "Posts" # Used in the UI
+    label: "Post" # Used in the UI
     folder: "_content/posts/" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}-{{title}}" # Filename template, e.g., YYYY-MM-DD-title.md
@@ -35,14 +56,14 @@ collections:
       - { label: "Ativo", name: "active", widget: "boolean", default: true }
 
   - name: "tech" # Used in routes, e.g., /admin/collections/blog
-    label: "Tech Posts" # Used in the UI
+    label: "Tech Post" # Used in the UI
     folder: "_content/posts/tech" # The path to the folder where the documents are stored
     filter: {field: "domain", value: "tech"}
     create: true # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}-{{title}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
       - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
-      - { label: "Campo de Conhecimento", name: "domain", widget: "string", default: "tech" }
+      - { label: "Campo de Conhecimento", name: "domain", widget: "hidden", default: "tech" }
       - { label: "Titulo", name: "title", widget: "string" }
       - { label: "Categoria", name: "category", widget: "string" }
       - { label: "Tags", name: "tags", widget: "list", default: ["tutorial"] }
@@ -55,16 +76,13 @@ collections:
       - { label: "Ativo", name: "active", widget: "boolean", default: true }
 
   - name: "hobby" # Used in routes, e.g., /admin/collections/blog
-    label: "Hobbie Related Posts" # Used in the UI
+    label: "Hobbie Post" # Used in the UI
     folder: "_content/posts/hobby" # The path to the folder where the documents are stored
-    nested:
-      depth: 100 # max depth to show in the collection tree
-      summary: '{{title}}' # optional summary for a tree node, defaults to the inferred title field
     create: true # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}-{{title}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
       - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
-      - { label: "Campo de Conhecimento", name: "domain", widget: "string", default: "hobby" }
+      - { label: "Campo de Conhecimento", name: "domain", widget: "hidden", default: "hobby" }
       - { label: "Titulo", name: "title", widget: "string" }
       - { label: "Categoria", name: "category", widget: "string" }
       - { label: "Tags", name: "tags", widget: "list", default: ["tutorial"] }
@@ -77,14 +95,14 @@ collections:
       - { label: "Ativo", name: "active", widget: "boolean", default: true }
 
   - name: "art" # Used in routes, e.g., /admin/collections/blog
-    label: "Hobbie Related Posts (Art)" # Used in the UI
-    folder: "_content/posts/hobby/art" # The path to the folder where the documents are stored
-    filter: {field: "domain", value: "hobby"}
+    label: "Hobbie Post (Art)" # Used in the UI
+    folder: "_content/posts/hobby" # The path to the folder where the documents are stored
+    filter: {field: "category", value: "art"}
     create: true # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}-{{title}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
       - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
-      - { label: "Campo de Conhecimento", name: "domain", widget: "string", default: "hobby" }
+      - { label: "Campo de Conhecimento", name: "domain", widget: "hidden", default: "hobby" }
       - { label: "Titulo", name: "title", widget: "string" }
       - { label: "Categoria", name: "category", widget: "string", default: "art" }
       - { label: "Tags", name: "tags", widget: "list", default: ["tutorial"] }
@@ -94,25 +112,4 @@ collections:
       - { label: "Conteúdo", name: "body", widget: "markdown", required: false }
       - { label: "Banner (Sem Conteúdo Textual)", name: "isBanner", widget: "boolean", default: false, }
       - { label: "Especial (Ganha um destaque na tela inicial)", name: "special", widget: "boolean", default: false, }
-      - { label: "Ativo", name: "active", widget: "boolean", default: true }
-
-  - name: "Projects" # Used in routes, e.g., /admin/collections/blog
-    label: "Projetos / Serviços" # Used in the UI
-    folder: "_content/project" # The path to the folder where the documents are stored
-    create: true # Allow users to create new documents in this collection
-    slug: "{{link}}" # Filename template, e.g., YYYY-MM-DD-title.md
-    fields: # The fields for each document, usually in front matter
-      - { label: "Layout", name: "layout", widget: "hidden", default: "project", }
-      - { label: "Nome", name: "name", widget: "string" }
-      - { label: "Descrição Curta", name: "short_description", widget: "string", required: false, }
-      - { label: "Categoria", name: "category", widget: "string" }
-      - { label: "Tags", name: "tags", widget: "list", default: ["javascript"] }
-      - { label: "Ícone", name: "icon", widget: "image", required: false }
-      - { label: "Capa", name: "cover", widget: "image", required: false }
-      - { label: "Illustração", name: "illustration", widget: "image", required: false, }
-      - { label: "Endereço de Acesso", name: "link", widget: "string" }
-      - { label: "Cor Primária", name: "theme_color_primary", widget: "color", required: false, }
-      - { label: "Cor Secundária", name: "theme_color_secondary", widget: "color", required: false, }
-      - { label: "Cor Textual", name: "theme_color_fontcolor", widget: "color", required: false, }
-      - { label: "Descricao", name: "body", widget: "markdown", required: false, }
       - { label: "Ativo", name: "active", widget: "boolean", default: true }

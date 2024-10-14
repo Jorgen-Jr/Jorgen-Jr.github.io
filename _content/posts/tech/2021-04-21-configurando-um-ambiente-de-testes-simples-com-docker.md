@@ -2,6 +2,7 @@
 layout: post
 title: Configurando Um Ambiente de Testes Simples com Docker
 category: Desenvolvimento
+domain: tech
 tags:
     - Desenvolvimento
     - Containers

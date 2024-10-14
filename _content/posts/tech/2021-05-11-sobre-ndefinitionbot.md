@@ -2,6 +2,7 @@
 layout: post
 title: Sobre nDefinitionBot
 category: bot
+domain: tech
 tags:
     - telegram
     - bot
