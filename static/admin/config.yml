@@ -58,7 +58,6 @@ collections:
   - name: "tech" # Used in routes, e.g., /admin/collections/blog
     label: "Tech Post" # Used in the UI
     folder: "_content/posts/tech" # The path to the folder where the documents are stored
-    filter: {field: "domain", value: "tech"}
     create: true # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}-{{title}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
