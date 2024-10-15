@@ -2,8 +2,9 @@
 layout: post
 title: Deploy Automático de Websites Para o Github Pages
 category: Tutorial
+domain: tech
 tags:
-  - tutorial
+    - tutorial
 date: 2021-08-13T14:21:32.064Z
 post_date: 2021-08-13T14:21:33.017Z
 cover: /images/uploads/auto_github_pages.jpg
@@ -11,6 +12,7 @@ isBanner: false
 special: false
 active: true
 ---
+
 Vou demonstrar neste post como eu fiz a automatização do deploy deste meu blog usando github actions de forma super fácil também serve para sites estáticos ou geradores de site estático, no meu caso estou usando o **gatsby** no blog.
 
 ## Workflow de Referência
@@ -20,41 +22,41 @@ Este é o arquivo que uso atualmente para realizar o deploy do blog [Este arquiv
 ```yaml
 name: Deploy
 on:
-  push:
-    branches:
-      - main
+    push:
+        branches:
+            - main
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [14.x]
-    steps:
-      - uses: actions/checkout@v1
+    deploy:
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                node-version: [14.x]
+        steps:
+            - uses: actions/checkout@v1
 
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
 
-      - name: Install Packages
-        run: npm install # Instalação de dependências.
-      - name: Build pages
-        run: yarn build # Script de build definido no package.json
+            - name: Install Packages
+              run: npm install # Instalação de dependências.
+            - name: Build pages
+              run: yarn build # Script de build definido no package.json
 
-      - name: Deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }} # Segredo com a chave privada para acesso ssh
-          publish_dir: ./public # Pasta onde estará a build e será copiada para a branch gh-pages.
+            - name: Deploy to gh-pages
+              uses: peaceiris/actions-gh-pages@v3
+              with:
+                  deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }} # Segredo com a chave privada para acesso ssh
+                  publish_dir: ./public # Pasta onde estará a build e será copiada para a branch gh-pages.
 ```
 
 Precisamente o que este arquivo define que sempre que ocorrer um push na branch principal (main) ira disparar um gatilho para que rode meu script de build definido no package.json e em seguida usando a biblioteca [peaceiris/actions-gh-pages](https://github.com/peaceiris/actions-gh-pages) para realizar o envio da pasta ./public na branch gh-pages, tornando-o disponível para o github pages. Para resumir ele irá executar os seguintes passos:
 
-* Realizar um check-out para que o workflow tenha acesso ao repositório.
-* Instalar todas as dependências necessárias para a build.
-* Executar o script de build.
-* E para finalizar ele usa o script de [peaceiris/actions-gh-pages](https://github.com/peaceiris/actions-gh-pages) usando os parâmetros que definimos para realizar o deploy.
+-   Realizar um check-out para que o workflow tenha acesso ao repositório.
+-   Instalar todas as dependências necessárias para a build.
+-   Executar o script de build.
+-   E para finalizar ele usa o script de [peaceiris/actions-gh-pages](https://github.com/peaceiris/actions-gh-pages) usando os parâmetros que definimos para realizar o deploy.
 
 Você pode obter outros exemplos para outras bibliotecas ou aplicações no repositório acima.
 
@@ -100,4 +102,4 @@ Com a branch gh-pages criada, podemos ir para as configurações de repositório
 
 Para mais detalhes e guia para outros geradores estáticos (Hugo, Jekyll, Vue, Node, Flutter Web...)
 
-* [peaceiris/actions-gh-pages](https://github.com/peaceiris/actions-gh-pages)
+-   [peaceiris/actions-gh-pages](https://github.com/peaceiris/actions-gh-pages)

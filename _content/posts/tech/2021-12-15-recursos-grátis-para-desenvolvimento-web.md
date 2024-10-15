@@ -2,11 +2,12 @@
 layout: post
 title: Recursos Grátis para Desenvolvimento Web
 category: Extra Bits
+domain: tech
 tags:
-  - tips
-  - free
-  - resources
-  - web_development
+    - tips
+    - free
+    - resources
+    - web_development
 date: 2021-12-23T15:32:53.882Z
 post_date: 2021-12-23T15:32:55.137Z
 cover: /images/uploads/cutte.webp
@@ -14,22 +15,23 @@ isBanner: false
 special: false
 active: true
 ---
+
 Quando estamos iniciando em desenvolvimento web e sempre bom ter formas gratuitas de colocar seu projeto no ar e mostrar para quem quiser sem a necessidade de estar rodando no seu computador. Neste post vou listar algumas plataformas onde isso e possível.
 
 1. [Páginas Estáticas](#páginas-estáticas)
-   1. [Netlify](#netlify)
-   2. [Github Pages](#github-pages)
+    1. [Netlify](#netlify)
+    2. [Github Pages](#github-pages)
 2. [Back-End](#backend)
-   1. [Heroku](#heroku)
-   2. [Render](#Render)
+    1. [Heroku](#heroku)
+    2. [Render](#Render)
 3. [Banco de Dados](#banco-de-dados)
-   1. [ElephantSQL](#elephantsql)
-   2. [AtlasDB](#atlasdb)
-   3. [FreeMySQLHosting](#freemysqlhosting)
+    1. [ElephantSQL](#elephantsql)
+    2. [AtlasDB](#atlasdb)
+    3. [FreeMySQLHosting](#freemysqlhosting)
 4. [CronJobs](#cronjobs)
 5. [Tunelização](#tunelização)
-   1. [Ngrok](#ngrok)
-   2. [StaqLab](#staqlab)
+    1. [Ngrok](#ngrok)
+    2. [StaqLab](#staqlab)
 
 ## Páginas Estáticas
 
@@ -83,7 +85,7 @@ Os cron-jobs são úteis em aplicações onde é necessário executar algo de te
 
 ![ElephantSQL](https://www.elephantsql.com/favicon.ico "ElephantSQL")
 
-Banco de dados Postgres com 20 megas grátis. Rápido e de fácil conexão. 
+Banco de dados Postgres com 20 megas grátis. Rápido e de fácil conexão.
 
 [Pode ser acessado aqui](https://www.elephantsql.com/).
 

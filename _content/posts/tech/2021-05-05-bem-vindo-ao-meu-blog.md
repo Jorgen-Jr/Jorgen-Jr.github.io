@@ -2,6 +2,7 @@
 layout: post
 title: Bem Vindo ao Meu Blog
 category: Aviso
+domain: tech
 tags:
     - aviso
     - diversos

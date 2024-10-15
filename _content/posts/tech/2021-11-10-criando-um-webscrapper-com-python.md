@@ -2,10 +2,11 @@
 layout: post
 title: Criando um WebScrapper com Python
 category: Desenvolvimento
+domain: tech
 tags:
-  - tutorial
-  - webscrapper
-  - python
+    - tutorial
+    - webscrapper
+    - python
 date: 2021-11-17T15:40:17.425Z
 post_date: 2021-11-17T15:40:18.869Z
 cover: /images/uploads/iceland-2608985_960_720.webp
@@ -13,6 +14,7 @@ isBanner: false
 special: false
 active: true
 ---
+
 Neste tutorial vamos criar um webscrapper usando Python, usando as libs BeautifulSoup4 e requests. E no fim do tutorial vamos salvar essas informações em um banco de dados mongodb e em um arquivo do tipo JSON. Assim como algumas configurações adcionais que precisaram ser feitas para o uso do MongoDB Atlas.
 
 ## Sumário
@@ -27,7 +29,7 @@ Neste tutorial vamos criar um webscrapper usando Python, usando as libs Beautifu
 
 ## Criando o Repositório
 
-Para iniciar, vamos criar nosso repositório. Para este simples projetos vamos precisar apenas de dois arquivos, **requirements.txt** onde iremos colocar as dependencias para facilitar a instalações posteriores *(útil para conteinerização),* e o arquivo com o código do scrapper, podemos chamar de **main.py**. Logo se em ambiente linux podemos lançar o seguinte comando no terminal:
+Para iniciar, vamos criar nosso repositório. Para este simples projetos vamos precisar apenas de dois arquivos, **requirements.txt** onde iremos colocar as dependencias para facilitar a instalações posteriores _(útil para conteinerização),_ e o arquivo com o código do scrapper, podemos chamar de **main.py**. Logo se em ambiente linux podemos lançar o seguinte comando no terminal:
 
 ```shell
 mkdir scrapper && touch scrapper/requirements.txt && touch scrapper/main.py
@@ -52,7 +54,7 @@ Com isso todas as dependências que precisamos até então estão supridas.
 
 Vamos pro nosso código em `main.py` e vamos começar a pegar os dados da página da seguinte forma:
 
-*Como exemplo, minha página alvo é a página com o significado de amor, e meu objetivo é capturar os significados dessa palavra, exemplos e frases com essa palavra que estão na página.*
+_Como exemplo, minha página alvo é a página com o significado de amor, e meu objetivo é capturar os significados dessa palavra, exemplos e frases com essa palavra que estão na página._
 
 ```python
 # Importando as dependências necessárias.
@@ -128,7 +130,7 @@ for definition_i in definition.find_all('span'):
         element_class = definition_i['class'][0]
     except:
         element_class = ""
-    
+
     # Evitando os elementos que possuem a classe tag, para evitar repetições.
     if element_class != 'tag':
         str_definition.append(definition_i.get_text().strip())
@@ -165,7 +167,7 @@ for definition_i in definition.find_all('span'):
         element_class = definition_i['class'][0]
     except:
         element_class = ""
-    
+
     # Evitando os elementos que possuem a classe tag, para evitar repetições.
     if element_class != 'tag':
         str_definition.append(definition_i.get_text().strip())
@@ -174,7 +176,7 @@ for definition_i in definition.find_all('span'):
 try:
     # Buscar o elemento H3 com a classe 'tit-exemplo', onde os exemplos estarão na sua div pai. por isso o uso do .parent
     example = beautiful_page.find(attrs={'class': 'tit-exemplo'}).parent.find_all(attrs={'class': 'frase'})
-    
+
     str_example = []
 
     # Iterar sobre os exemplos.
@@ -217,7 +219,7 @@ for definition_i in definition.find_all('span'):
         element_class = definition_i['class'][0]
     except:
         element_class = ""
-    
+
     # Evitando os elementos que possuem a classe tag, para evitar repetições.
     if element_class != 'tag':
         str_definition.append(definition_i.get_text().strip())
@@ -226,7 +228,7 @@ for definition_i in definition.find_all('span'):
 try:
     # Buscar o elemento H3 com a classe 'tit-exemplo', onde os exemplos estarão na sua div pai. por isso o uso do .parent
     example = beautiful_page.find(attrs={'class': 'tit-exemplo'}).parent.find_all(attrs={'class': 'frase'})
-    
+
     str_example = []
 
     # Iterar sobre os exemplos.
@@ -331,7 +333,7 @@ Assim você pode copiar a url do banco e apenas substituir o usuario, senha e ba
 
 Substituindo respectivamente <username> com seu nome de usuário, <password> com a senha desse usuário e `myFirstDatabase` com o nome do banco de dados que se deseja utilizar.
 
-Se estiver tendo problema de conexão, procure acessar  a aba de `Network Access` em `Security` e adcione o ip `0.0.0.0/0` e tente novamente. Isso libera conexão de todos os IPs para o banco então use com cautela.
+Se estiver tendo problema de conexão, procure acessar a aba de `Network Access` em `Security` e adcione o ip `0.0.0.0/0` e tente novamente. Isso libera conexão de todos os IPs para o banco então use com cautela.
 
 ![Aba de Segurança](/images/uploads/screenshot-from-2021-11-17-09-38-57.png "Aba de Segurança")
 
@@ -400,7 +402,7 @@ for definition_i in definition.find_all('span'):
         element_class = definition_i['class'][0]
     except:
         element_class = ""
-    
+
     # Evitando os elementos que possuem a classe tag, para evitar repetições.
     if element_class != 'tag':
         str_definition.append(definition_i.get_text().strip())
@@ -409,7 +411,7 @@ for definition_i in definition.find_all('span'):
 try:
     # Buscar o elemento H3 com a classe 'tit-exemplo', onde os exemplos estarão na sua div pai. por isso o uso do .parent
     example = beautiful_page.find(attrs={'class': 'tit-exemplo'}).parent.find_all(attrs={'class': 'frase'})
-    
+
     str_example = []
 
     # Iterar sobre os exemplos.

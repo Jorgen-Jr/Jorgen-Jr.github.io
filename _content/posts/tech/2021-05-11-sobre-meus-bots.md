@@ -2,10 +2,11 @@
 layout: post
 title: Sobre Meus Bots
 category: Bots
+domain: tech
 tags:
-  - telegram
-  - bot
-  - sobre
+    - telegram
+    - bot
+    - sobre
 date: 2021-08-04T16:55:39.335Z
 post_date: 2021-08-04T16:55:40.274Z
 cover: /images/uploads/robot-4363354_960_720.webp
@@ -13,9 +14,10 @@ isBanner: false
 special: false
 active: true
 ---
+
 Há vários meses atrás eu desenvolvi alguns bots apra o telegram, sendo eles **`@ndefinitionbot`**, **`@whatsinthisfoodbot`**, **`@ntalesbot`** e **`@ntextifybot`**, e recentemente migrei eles para usarem a arquitetura serverless para que se tornem mais disponíveis.
 
-Mantenha em mente que por estarem usando funções serverless na aws vocês podem expecienciar as tais chamadas *cold starts* e por isso... Minhas sinceras desculpas, estarei explicando o que cada bot faz e o que você pode esperar deles.
+Mantenha em mente que por estarem usando funções serverless na aws vocês podem expecienciar as tais chamadas _cold starts_ e por isso... Minhas sinceras desculpas, estarei explicando o que cada bot faz e o que você pode esperar deles.
 
 ## @whatsinthisfoodbot
 
