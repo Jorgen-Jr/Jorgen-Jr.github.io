@@ -112,3 +112,63 @@ collections:
       - { label: "Banner (Sem Conteúdo Textual)", name: "isBanner", widget: "boolean", default: false, }
       - { label: "Especial (Ganha um destaque na tela inicial)", name: "special", widget: "boolean", default: false, }
       - { label: "Ativo", name: "active", widget: "boolean", default: true }
+
+  - name: "hiking" # Used in routes, e.g., /admin/collections/blog
+    label: "Hobbie Post (Hike)" # Used in the UI
+    folder: "_content/posts/hobby" # The path to the folder where the documents are stored
+    filter: {field: "category", value: "hike"}
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}-{{title}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
+      - { label: "Campo de Conhecimento", name: "domain", widget: "hidden", default: "hobby" }
+      - { label: "Titulo", name: "title", widget: "string" }
+      - { label: "Categoria", name: "category", widget: "string", default: "hike" }
+      - { label: "Tags", name: "tags", widget: "list", default: ["tutorial"] }
+      - { label: "Data de Publicação", name: "date", widget: "datetime" }
+      - { label: "Data de Postagem", name: "post_date", widget: "datetime" }
+      - { label: "Imagem de Capa 1:1", name: "cover", widget: "image", required: false, }
+      - { label: "Conteúdo", name: "body", widget: "markdown", required: false }
+      - { label: "Banner (Sem Conteúdo Textual)", name: "isBanner", widget: "boolean", default: false, }
+      - { label: "Especial (Ganha um destaque na tela inicial)", name: "special", widget: "boolean", default: false, }
+      - { label: "Ativo", name: "active", widget: "boolean", default: true }
+
+  - name: "music" # Used in routes, e.g., /admin/collections/blog
+    label: "Hobbie Post (Music)" # Used in the UI
+    folder: "_content/posts/hobby" # The path to the folder where the documents are stored
+    filter: {field: "category", value: "music"}
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}-{{title}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
+      - { label: "Campo de Conhecimento", name: "domain", widget: "hidden", default: "hobby" }
+      - { label: "Titulo", name: "title", widget: "string" }
+      - { label: "Categoria", name: "category", widget: "string", default: "music" }
+      - { label: "Tags", name: "tags", widget: "list", default: ["tutorial"] }
+      - { label: "Data de Publicação", name: "date", widget: "datetime" }
+      - { label: "Data de Postagem", name: "post_date", widget: "datetime" }
+      - { label: "Imagem de Capa 1:1", name: "cover", widget: "image", required: false, }
+      - { label: "Conteúdo", name: "body", widget: "markdown", required: false }
+      - { label: "Banner (Sem Conteúdo Textual)", name: "isBanner", widget: "boolean", default: false, }
+      - { label: "Especial (Ganha um destaque na tela inicial)", name: "special", widget: "boolean", default: false, }
+      - { label: "Ativo", name: "active", widget: "boolean", default: true }
+
+  - name: "eletronics" # Used in routes, e.g., /admin/collections/blog
+    label: "Hobbie Post (Eletrônica)" # Used in the UI
+    folder: "_content/posts/hobby" # The path to the folder where the documents are stored
+    filter: {field: "category", value: "eletronics"}
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}-{{title}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
+      - { label: "Campo de Conhecimento", name: "domain", widget: "hidden", default: "hobby" }
+      - { label: "Titulo", name: "title", widget: "string" }
+      - { label: "Categoria", name: "category", widget: "string", default: "eletronics" }
+      - { label: "Tags", name: "tags", widget: "list", default: ["tutorial"] }
+      - { label: "Data de Publicação", name: "date", widget: "datetime" }
+      - { label: "Data de Postagem", name: "post_date", widget: "datetime" }
+      - { label: "Imagem de Capa 1:1", name: "cover", widget: "image", required: false, }
+      - { label: "Conteúdo", name: "body", widget: "markdown", required: false }
+      - { label: "Banner (Sem Conteúdo Textual)", name: "isBanner", widget: "boolean", default: false, }
+      - { label: "Especial (Ganha um destaque na tela inicial)", name: "special", widget: "boolean", default: false, }
+      - { label: "Ativo", name: "active", widget: "boolean", default: true }
