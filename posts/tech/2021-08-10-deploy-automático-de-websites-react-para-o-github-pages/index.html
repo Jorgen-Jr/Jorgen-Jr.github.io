@@ -96,33 +96,33 @@
 <deckgo-highlight-code language="yaml"  >
           <code slot="code">name: Deploy
 on:
-  push:
-    branches:
-      - main
+    push:
+        branches:
+            - main
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [14.x]
-    steps:
-      - uses: actions/checkout@v1
+    deploy:
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                node-version: [14.x]
+        steps:
+            - uses: actions/checkout@v1
 
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
 
-      - name: Install Packages
-        run: npm install # Instalação de dependências.
-      - name: Build pages
-        run: yarn build # Script de build definido no package.json
+            - name: Install Packages
+              run: npm install # Instalação de dependências.
+            - name: Build pages
+              run: yarn build # Script de build definido no package.json
 
-      - name: Deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }} # Segredo com a chave privada para acesso ssh
-          publish_dir: ./public # Pasta onde estará a build e será copiada para a branch gh-pages.</code>
+            - name: Deploy to gh-pages
+              uses: peaceiris/actions-gh-pages@v3
+              with:
+                  deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }} # Segredo com a chave privada para acesso ssh
+                  publish_dir: ./public # Pasta onde estará a build e será copiada para a branch gh-pages.</code>
         </deckgo-highlight-code>
 <p>Precisamente o que este arquivo define que sempre que ocorrer um push na branch principal (main) ira disparar um gatilho para que rode meu script de build definido no package.json e em seguida usando a biblioteca <a href="https://github.com/peaceiris/actions-gh-pages">peaceiris/actions-gh-pages</a> para realizar o envio da pasta ./public na branch gh-pages, tornando-o disponível para o github pages. Para resumir ele irá executar os seguintes passos:</p>
 <ul>

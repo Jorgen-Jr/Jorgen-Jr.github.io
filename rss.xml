@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Feed Jorge.Room]]></title><description><![CDATA[Jorge's personal blog and portfolio..]]></description><link>https://jorgen-jr.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 14 Oct 2024 23:41:08 GMT</lastBuildDate><item><title><![CDATA[No title]]></title><description><![CDATA[Um pequeno aplicativo Web que desenvolvi em NextJS. Uma calculadora de formatos de dutos e calcular frequencia de ressonância para sistemas…]]></description><link>https://jorgen-jr.github.io/project/calculadora_de_duto/</link><guid isPermaLink="false">https://jorgen-jr.github.io/project/calculadora_de_duto/</guid><content:encoded>&lt;p&gt;Um pequeno aplicativo Web que desenvolvi em NextJS.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Feed Jorge.Room]]></title><description><![CDATA[Jorge's personal blog and portfolio..]]></description><link>https://jorgen-jr.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 15 Oct 2024 00:06:30 GMT</lastBuildDate><item><title><![CDATA[No title]]></title><description><![CDATA[Dumb Data so GraphiQL is happy.]]></description><link>https://jorgen-jr.github.io/project/dumb_data/</link><guid isPermaLink="false">https://jorgen-jr.github.io/project/dumb_data/</guid><content:encoded>&lt;p&gt;Dumb Data so GraphiQL is happy.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[No title]]></title><description><![CDATA[Um pequeno aplicativo Web que desenvolvi em NextJS. Uma calculadora de formatos de dutos e calcular frequencia de ressonância para sistemas…]]></description><link>https://jorgen-jr.github.io/project/calculadora_de_duto/</link><guid isPermaLink="false">https://jorgen-jr.github.io/project/calculadora_de_duto/</guid><content:encoded>&lt;p&gt;Um pequeno aplicativo Web que desenvolvi em NextJS.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Uma calculadora de formatos de dutos e calcular frequencia de ressonância para sistemas de audio.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -14,7 +14,7 @@
   &lt;/a&gt;
 &lt;/p&gt;
 &lt;h2 id=&quot;licensa&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#licensa&quot; aria-label=&quot;licensa permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Licensa&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/Jorgen-Jr/calculadora_de_duto/blob/main/LICENSE&quot;&gt;APACHE&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[No title]]></title><description><![CDATA[Dumb Data so GraphiQL is happy.]]></description><link>https://jorgen-jr.github.io/project/dumb_data/</link><guid isPermaLink="false">https://jorgen-jr.github.io/project/dumb_data/</guid><content:encoded>&lt;p&gt;Dumb Data so GraphiQL is happy.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[No title]]></title><description><![CDATA[DVD Logo Just playing a little bit with svelte. Made the DVD Logo animation. Usage You can access through this link, where you can set up…]]></description><link>https://jorgen-jr.github.io/project/dvd_logo/</link><guid isPermaLink="false">https://jorgen-jr.github.io/project/dvd_logo/</guid><content:encoded>&lt;h1 id=&quot;dvd-logo&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#dvd-logo&quot; aria-label=&quot;dvd logo permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;DVD Logo&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/Jorgen-Jr/calculadora_de_duto/blob/main/LICENSE&quot;&gt;APACHE&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[No title]]></title><description><![CDATA[DVD Logo Just playing a little bit with svelte. Made the DVD Logo animation. Usage You can access through this link, where you can set up…]]></description><link>https://jorgen-jr.github.io/project/dvd_logo/</link><guid isPermaLink="false">https://jorgen-jr.github.io/project/dvd_logo/</guid><content:encoded>&lt;h1 id=&quot;dvd-logo&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#dvd-logo&quot; aria-label=&quot;dvd logo permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;DVD Logo&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Just playing a little bit with svelte. Made the DVD Logo animation.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -414,7 +414,7 @@ for definition_i in definition.find_all(&amp;#39;span&amp;#39;):
         element_class = definition_i[&amp;#39;class&amp;#39;][0]
     except:
         element_class = &amp;quot;&amp;quot;
-    
+
     # Evitando os elementos que possuem a classe tag, para evitar repetições.
     if element_class != &amp;#39;tag&amp;#39;:
         str_definition.append(definition_i.get_text().strip())&lt;/code&gt;
@@ -447,7 +447,7 @@ for definition_i in definition.find_all(&amp;#39;span&amp;#39;):
         element_class = definition_i[&amp;#39;class&amp;#39;][0]
     except:
         element_class = &amp;quot;&amp;quot;
-    
+
     # Evitando os elementos que possuem a classe tag, para evitar repetições.
     if element_class != &amp;#39;tag&amp;#39;:
         str_definition.append(definition_i.get_text().strip())
@@ -456,7 +456,7 @@ for definition_i in definition.find_all(&amp;#39;span&amp;#39;):
 try:
     # Buscar o elemento H3 com a classe &amp;#39;tit-exemplo&amp;#39;, onde os exemplos estarão na sua div pai. por isso o uso do .parent
     example = beautiful_page.find(attrs={&amp;#39;class&amp;#39;: &amp;#39;tit-exemplo&amp;#39;}).parent.find_all(attrs={&amp;#39;class&amp;#39;: &amp;#39;frase&amp;#39;})
-    
+
     str_example = []
 
     # Iterar sobre os exemplos.
@@ -496,7 +496,7 @@ for definition_i in definition.find_all(&amp;#39;span&amp;#39;):
         element_class = definition_i[&amp;#39;class&amp;#39;][0]
     except:
         element_class = &amp;quot;&amp;quot;
-    
+
     # Evitando os elementos que possuem a classe tag, para evitar repetições.
     if element_class != &amp;#39;tag&amp;#39;:
         str_definition.append(definition_i.get_text().strip())
@@ -505,7 +505,7 @@ for definition_i in definition.find_all(&amp;#39;span&amp;#39;):
 try:
     # Buscar o elemento H3 com a classe &amp;#39;tit-exemplo&amp;#39;, onde os exemplos estarão na sua div pai. por isso o uso do .parent
     example = beautiful_page.find(attrs={&amp;#39;class&amp;#39;: &amp;#39;tit-exemplo&amp;#39;}).parent.find_all(attrs={&amp;#39;class&amp;#39;: &amp;#39;frase&amp;#39;})
-    
+
     str_example = []
 
     # Iterar sobre os exemplos.
@@ -596,7 +596,7 @@ def get_database():
 &lt;p&gt;Assim você pode copiar a url do banco e apenas substituir o usuario, senha e banco de dados que deseja usar.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/images/uploads/screenshot-from-2021-11-17-09-27-54.png&quot; alt=&quot;url do banco.&quot; title=&quot;url do banco.&quot;&gt;&lt;/p&gt;
 &lt;p&gt;Substituindo respectivamente &lt;username&gt; com seu nome de usuário, &lt;password&gt; com a senha desse usuário e &lt;code class=&quot;language-text&quot;&gt;myFirstDatabase&lt;/code&gt; com o nome do banco de dados que se deseja utilizar.&lt;/p&gt;
-&lt;p&gt;Se estiver tendo problema de conexão, procure acessar  a aba de &lt;code class=&quot;language-text&quot;&gt;Network Access&lt;/code&gt; em &lt;code class=&quot;language-text&quot;&gt;Security&lt;/code&gt; e adcione o ip &lt;code class=&quot;language-text&quot;&gt;0.0.0.0/0&lt;/code&gt; e tente novamente. Isso libera conexão de todos os IPs para o banco então use com cautela.&lt;/p&gt;
+&lt;p&gt;Se estiver tendo problema de conexão, procure acessar a aba de &lt;code class=&quot;language-text&quot;&gt;Network Access&lt;/code&gt; em &lt;code class=&quot;language-text&quot;&gt;Security&lt;/code&gt; e adcione o ip &lt;code class=&quot;language-text&quot;&gt;0.0.0.0/0&lt;/code&gt; e tente novamente. Isso libera conexão de todos os IPs para o banco então use com cautela.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/images/uploads/screenshot-from-2021-11-17-09-38-57.png&quot; alt=&quot;Aba de Segurança&quot; title=&quot;Aba de Segurança&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/images/uploads/screenshot-from-2021-11-17-09-37-23.png&quot; alt=&quot;Adcionando o IP.&quot; title=&quot;Adcionando o IP.&quot;&gt;&lt;/p&gt;
 &lt;p&gt;Se ainda não tiver usuário de banco no atlas, crie um novo usuário na aba &lt;code class=&quot;language-text&quot;&gt;Database Access&lt;/code&gt;.&lt;/p&gt;
@@ -656,7 +656,7 @@ for definition_i in definition.find_all(&amp;#39;span&amp;#39;):
         element_class = definition_i[&amp;#39;class&amp;#39;][0]
     except:
         element_class = &amp;quot;&amp;quot;
-    
+
     # Evitando os elementos que possuem a classe tag, para evitar repetições.
     if element_class != &amp;#39;tag&amp;#39;:
         str_definition.append(definition_i.get_text().strip())
@@ -665,7 +665,7 @@ for definition_i in definition.find_all(&amp;#39;span&amp;#39;):
 try:
     # Buscar o elemento H3 com a classe &amp;#39;tit-exemplo&amp;#39;, onde os exemplos estarão na sua div pai. por isso o uso do .parent
     example = beautiful_page.find(attrs={&amp;#39;class&amp;#39;: &amp;#39;tit-exemplo&amp;#39;}).parent.find_all(attrs={&amp;#39;class&amp;#39;: &amp;#39;frase&amp;#39;})
-    
+
     str_example = []
 
     # Iterar sobre os exemplos.
@@ -824,7 +824,7 @@ exports.handler = async (event) =&amp;gt; {
     async function sendMessage(response) {
         return await axios.post(
             &amp;quot;https://ola-usuario-bot.netlify.app/.netlify/functions/sendMessage&amp;quot;,
-            response
+            response,
         );
     }
 
@@ -832,7 +832,7 @@ exports.handler = async (event) =&amp;gt; {
     async function answerInlineQuery(response) {
         return await axios.post(
             &amp;quot;https://ola-usuario-bot.netlify.app/.netlify/functions/answerInlineQuery&amp;quot;,
-            response
+            response,
         );
     }
 
@@ -961,7 +961,7 @@ exports.handler = async (event) =&amp;gt; {
 &lt;/blockquote&gt;
 &lt;p&gt;Os &lt;strong&gt;próximos oito bits&lt;/strong&gt; representam o expoente, sendo então:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/images/uploads/ieee-exponents.gif&quot; alt=&quot;&quot; title=&quot;IEEE Exponents&quot;&gt;&lt;/p&gt;
-&lt;p&gt;E por ai vai, mas nos atentando que com 8 bits podemos representar números de &lt;strong&gt;[255-0]&lt;/strong&gt;, porém também vamos precisar de expoentes negativos, então por este motivo os números são movidos para &lt;strong&gt;[128-127]&lt;/strong&gt;, o que significa que ao invés de termos &lt;strong&gt;x&lt;em&gt;2³&lt;/em&gt;&lt;/strong&gt; &lt;em&gt;como no exemplo anterior, nós teremos &lt;strong&gt;x&lt;/strong&gt;&lt;/em&gt;2⁽³⁻¹²⁷⁾ e se quisermos que o expoente realmente seja 3, precisamos alterar os bits para 130 como a seguir:&lt;/p&gt;
+&lt;p&gt;E por ai vai, mas nos atentando que com 8 bits podemos representar números de &lt;strong&gt;[255-0]&lt;/strong&gt;, porém também vamos precisar de expoentes negativos, então por este motivo os números são movidos para &lt;strong&gt;[128-127]&lt;/strong&gt;, o que significa que ao invés de termos &lt;strong&gt;x&lt;em&gt;2³&lt;/em&gt;&lt;/strong&gt; *como no exemplo anterior, nós teremos **x***2⁽³⁻¹²⁷⁾ e se quisermos que o expoente realmente seja 3, precisamos alterar os bits para 130 como a seguir:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;0 10000100 000000000000000000000000 = &lt;strong&gt;x*2⁽¹³⁰⁻¹²⁷⁾&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -978,8 +978,8 @@ exports.handler = async (event) =&amp;gt; {
 &lt;/blockquote&gt;
 &lt;p&gt;Mas essa soluçao disperdiça um bit armazenamento, as pessoas que fizeram o design desse padrao perceberam que quando estamos lidando com numeros binarios algo acontece que nao acontece em nenhuma outra base.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;11’000   1.1&lt;em&gt;2⁴ Preste atençao no primeiro digito.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;0.0101   1.01&lt;/em&gt;2⁻³ Por definição, este numero sempre sera &lt;strong&gt;não&lt;/strong&gt; zero.&lt;/p&gt;
+&lt;p&gt;11’000 1.1&lt;em&gt;2⁴ Preste atençao no primeiro digito.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;0.0101 1.01&lt;/em&gt;2⁻³ Por definição, este numero sempre sera &lt;strong&gt;não&lt;/strong&gt; zero.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Mas em binario existe só existe um numero que nao e zero, &lt;strong&gt;1&lt;/strong&gt;. Ou seja, se sabemos que o primeiro dígito sempre sera &lt;strong&gt;1&lt;/strong&gt;, nao precisamos guarda-lo, podemos salvar um bit movendo a vírgula para esquerda e deixarmos este numero &lt;strong&gt;1&lt;/strong&gt; fixo. Agora nossa mantissa esta entre 1 e 2.&lt;/p&gt;
 &lt;blockquote&gt;
@@ -1003,33 +1003,33 @@ Como podemos ver a seguir usando uma ferramenta de conversão.&lt;/p&gt;
 &lt;deckgo-highlight-code language=&quot;yaml&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;name: Deploy
 on:
-  push:
-    branches:
-      - main
+    push:
+        branches:
+            - main
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [14.x]
-    steps:
-      - uses: actions/checkout@v1
+    deploy:
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                node-version: [14.x]
+        steps:
+            - uses: actions/checkout@v1
 
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
 
-      - name: Install Packages
-        run: npm install # Instalação de dependências.
-      - name: Build pages
-        run: yarn build # Script de build definido no package.json
+            - name: Install Packages
+              run: npm install # Instalação de dependências.
+            - name: Build pages
+              run: yarn build # Script de build definido no package.json
 
-      - name: Deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }} # Segredo com a chave privada para acesso ssh
-          publish_dir: ./public # Pasta onde estará a build e será copiada para a branch gh-pages.&lt;/code&gt;
+            - name: Deploy to gh-pages
+              uses: peaceiris/actions-gh-pages@v3
+              with:
+                  deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }} # Segredo com a chave privada para acesso ssh
+                  publish_dir: ./public # Pasta onde estará a build e será copiada para a branch gh-pages.&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
 &lt;p&gt;Precisamente o que este arquivo define que sempre que ocorrer um push na branch principal (main) ira disparar um gatilho para que rode meu script de build definido no package.json e em seguida usando a biblioteca &lt;a href=&quot;https://github.com/peaceiris/actions-gh-pages&quot;&gt;peaceiris/actions-gh-pages&lt;/a&gt; para realizar o envio da pasta ./public na branch gh-pages, tornando-o disponível para o github pages. Para resumir ele irá executar os seguintes passos:&lt;/p&gt;
 &lt;ul&gt;
@@ -1089,14 +1089,14 @@ jobs:
 &lt;p&gt;Exemplo do callback hell&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;deckgo-highlight-code language=&quot;javascript&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;function hell(){
-	step1((a) =&amp;gt; {
-		step2((b) =&amp;gt; {
-			step3((c) =&amp;gt; {
-				//Bem Vindo
-			})
-		})
-	})
+          &lt;code slot=&quot;code&quot;&gt;function hell() {
+    step1((a) =&amp;gt; {
+        step2((b) =&amp;gt; {
+            step3((c) =&amp;gt; {
+                //Bem Vindo
+            });
+        });
+    });
 }&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
 &lt;blockquote&gt;
@@ -1115,34 +1115,34 @@ jobs:
 &lt;p&gt;Exemplo da torre do terror (tower of terror)&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;deckgo-highlight-code language=&quot;javascript&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;async function towerOfTerror(){
-	let a;
-	let b;
-	let c;
-	
-	try{
-		a = await step1();
-	}catch (error) {
-		handle(error)
-	}
-	
-	try{
-		b = await step2();
-	}catch (error) {
-		handle(error)
-	}
-	try{
-		c = await step3();
-	}catch (error) {
-		handle(error)
-	}
-	
-	return a + b + c;
+          &lt;code slot=&quot;code&quot;&gt;async function towerOfTerror() {
+    let a;
+    let b;
+    let c;
+
+    try {
+        a = await step1();
+    } catch (error) {
+        handle(error);
+    }
+
+    try {
+        b = await step2();
+    } catch (error) {
+        handle(error);
+    }
+    try {
+        c = await step3();
+    } catch (error) {
+        handle(error);
+    }
+
+    return a + b + c;
 }&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
 &lt;p&gt;Nesses casos, a solução mais simples é simplesmente usar o catch no final de cada promise criada.&lt;/p&gt;
 &lt;deckgo-highlight-code language=&quot;javascript&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;	await step1().catch(fun);&lt;/code&gt;
+          &lt;code slot=&quot;code&quot;&gt;await step1().catch(fun);&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
 &lt;p&gt;Algo como:&lt;/p&gt;
 &lt;deckgo-highlight-code language=&quot;javascript&quot;  &gt;
@@ -1155,26 +1155,27 @@ jobs:
         &lt;/deckgo-highlight-code&gt;
 &lt;p&gt;O que até que fica melhor porém ainda é repetitivo, uma outra opção é criar uma funcão onde exista apenas um bloco try catch para substituir todas as outras, como a seguir:&lt;/p&gt;
 &lt;deckgo-highlight-code language=&quot;javascript&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;async function awessome(){
-	try{
-		const data = await promise;		
-		return [data, null];
-	} catch (error) {
-		console.error(error);
-		return [null, error];
-	}
+          &lt;code slot=&quot;code&quot;&gt;async function awessome() {
+    try {
+        const data = await promise;
+        return [data, null];
+    } catch (error) {
+        console.error(error);
+        return [null, error];
+    }
 }&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
 &lt;p&gt;Assim quando a promessa for resolvida, ela devolverá um array com sua resposta e nulo se não houver erros, e se conter erros retornará um array com o primeiro índice nulo e o erro, assim podemos manter o código limpo linha por linha usando desestruturação e usar um if caso queira fazer outra coisa com o erro.&lt;/p&gt;
 &lt;deckgo-highlight-code language=&quot;javascript&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;async function main(){
-	const [ data, error ] = await awessome();
-	
-	if(error) { }
-	
-	const [ data2, error2 ] = await awessome();
-	const [ data3, error3 ] = await awessome();
-	return a + b + c;
+          &lt;code slot=&quot;code&quot;&gt;async function main() {
+    const [data, error] = await awessome();
+
+    if (error) {
+    }
+
+    const [data2, error2] = await awessome();
+    const [data3, error3] = await awessome();
+    return a + b + c;
 }&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
 &lt;p&gt;Referência: &lt;a href=&quot;https://www.youtube.com/watch?v=ITogH7lJTyE&quot;&gt;Fireship&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Resolvendo o Erro 404 com React Router]]></title><description><![CDATA[A meses atrás criei um projeto usando o create-react-app e usei o react-router para lidar com as rotas da minha aplicação front-end, porém…]]></description><link>https://jorgen-jr.github.io/posts/tech/2021-05-20-erro-404-com-o-react-router/</link><guid isPermaLink="false">https://jorgen-jr.github.io/posts/tech/2021-05-20-erro-404-com-o-react-router/</guid><pubDate>Thu, 22 Jul 2021 13:52:10 GMT</pubDate><content:encoded>&lt;p&gt;A meses atrás criei um projeto usando o &lt;strong&gt;create-react-app&lt;/strong&gt; e usei o &lt;strong&gt;react-router&lt;/strong&gt; para lidar com as rotas da minha aplicação front-end, porém ao enviar minha build para o servidor, acabei sendo introduzido a um problema, quando o usuário entrava em uma rota e atualizar a página ou quando ele acessava através de um link externo ele retornava o erro 404, devido ao arquivo não ter sido encontrado no endereço requisitado, para resolver isso usei regras de redirecionamento no servidor. Espero que minha solução possa ajudar quem também passar por esse problema.&lt;/p&gt;

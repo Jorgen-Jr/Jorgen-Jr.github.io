@@ -182,7 +182,7 @@ for definition_i in definition.find_all(&#39;span&#39;):
         element_class = definition_i[&#39;class&#39;][0]
     except:
         element_class = &quot;&quot;
-    
+
     # Evitando os elementos que possuem a classe tag, para evitar repetições.
     if element_class != &#39;tag&#39;:
         str_definition.append(definition_i.get_text().strip())</code>
@@ -215,7 +215,7 @@ for definition_i in definition.find_all(&#39;span&#39;):
         element_class = definition_i[&#39;class&#39;][0]
     except:
         element_class = &quot;&quot;
-    
+
     # Evitando os elementos que possuem a classe tag, para evitar repetições.
     if element_class != &#39;tag&#39;:
         str_definition.append(definition_i.get_text().strip())
@@ -224,7 +224,7 @@ for definition_i in definition.find_all(&#39;span&#39;):
 try:
     # Buscar o elemento H3 com a classe &#39;tit-exemplo&#39;, onde os exemplos estarão na sua div pai. por isso o uso do .parent
     example = beautiful_page.find(attrs={&#39;class&#39;: &#39;tit-exemplo&#39;}).parent.find_all(attrs={&#39;class&#39;: &#39;frase&#39;})
-    
+
     str_example = []
 
     # Iterar sobre os exemplos.
@@ -264,7 +264,7 @@ for definition_i in definition.find_all(&#39;span&#39;):
         element_class = definition_i[&#39;class&#39;][0]
     except:
         element_class = &quot;&quot;
-    
+
     # Evitando os elementos que possuem a classe tag, para evitar repetições.
     if element_class != &#39;tag&#39;:
         str_definition.append(definition_i.get_text().strip())
@@ -273,7 +273,7 @@ for definition_i in definition.find_all(&#39;span&#39;):
 try:
     # Buscar o elemento H3 com a classe &#39;tit-exemplo&#39;, onde os exemplos estarão na sua div pai. por isso o uso do .parent
     example = beautiful_page.find(attrs={&#39;class&#39;: &#39;tit-exemplo&#39;}).parent.find_all(attrs={&#39;class&#39;: &#39;frase&#39;})
-    
+
     str_example = []
 
     # Iterar sobre os exemplos.
@@ -364,7 +364,7 @@ def get_database():
 <p>Assim você pode copiar a url do banco e apenas substituir o usuario, senha e banco de dados que deseja usar.</p>
 <p><img src="/images/uploads/screenshot-from-2021-11-17-09-27-54.png" alt="url do banco." title="url do banco."></p>
 <p>Substituindo respectivamente <username> com seu nome de usuário, <password> com a senha desse usuário e <code class="language-text">myFirstDatabase</code> com o nome do banco de dados que se deseja utilizar.</p>
-<p>Se estiver tendo problema de conexão, procure acessar  a aba de <code class="language-text">Network Access</code> em <code class="language-text">Security</code> e adcione o ip <code class="language-text">0.0.0.0/0</code> e tente novamente. Isso libera conexão de todos os IPs para o banco então use com cautela.</p>
+<p>Se estiver tendo problema de conexão, procure acessar a aba de <code class="language-text">Network Access</code> em <code class="language-text">Security</code> e adcione o ip <code class="language-text">0.0.0.0/0</code> e tente novamente. Isso libera conexão de todos os IPs para o banco então use com cautela.</p>
 <p><img src="/images/uploads/screenshot-from-2021-11-17-09-38-57.png" alt="Aba de Segurança" title="Aba de Segurança"></p>
 <p><img src="/images/uploads/screenshot-from-2021-11-17-09-37-23.png" alt="Adcionando o IP." title="Adcionando o IP."></p>
 <p>Se ainda não tiver usuário de banco no atlas, crie um novo usuário na aba <code class="language-text">Database Access</code>.</p>
@@ -424,7 +424,7 @@ for definition_i in definition.find_all(&#39;span&#39;):
         element_class = definition_i[&#39;class&#39;][0]
     except:
         element_class = &quot;&quot;
-    
+
     # Evitando os elementos que possuem a classe tag, para evitar repetições.
     if element_class != &#39;tag&#39;:
         str_definition.append(definition_i.get_text().strip())
@@ -433,7 +433,7 @@ for definition_i in definition.find_all(&#39;span&#39;):
 try:
     # Buscar o elemento H3 com a classe &#39;tit-exemplo&#39;, onde os exemplos estarão na sua div pai. por isso o uso do .parent
     example = beautiful_page.find(attrs={&#39;class&#39;: &#39;tit-exemplo&#39;}).parent.find_all(attrs={&#39;class&#39;: &#39;frase&#39;})
-    
+
     str_example = []
 
     # Iterar sobre os exemplos.

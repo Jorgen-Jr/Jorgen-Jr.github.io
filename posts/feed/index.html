@@ -331,14 +331,14 @@ Adcione <code class="language-text">try_files $uri $uri/ /index.html;</code> den
 <p>Exemplo do callback hell</p>
 </blockquote>
 <deckgo-highlight-code language="javascript"  >
-          <code slot="code">function hell(){
-	step1((a) =&gt; {
-		step2((b) =&gt; {
-			step3((c) =&gt; {
-				//Bem Vindo
-			})
-		})
-	})
+          <code slot="code">function hell() {
+    step1((a) =&gt; {
+        step2((b) =&gt; {
+            step3((c) =&gt; {
+                //Bem Vindo
+            });
+        });
+    });
 }</code>
         </deckgo-highlight-code>
 <blockquote>
@@ -357,34 +357,34 @@ Adcione <code class="language-text">try_files $uri $uri/ /index.html;</code> den
 <p>Exemplo da torre do terror (tower of terror)</p>
 </blockquote>
 <deckgo-highlight-code language="javascript"  >
-          <code slot="code">async function towerOfTerror(){
-	let a;
-	let b;
-	let c;
-	
-	try{
-		a = await step1();
-	}catch (error) {
-		handle(error)
-	}
-	
-	try{
-		b = await step2();
-	}catch (error) {
-		handle(error)
-	}
-	try{
-		c = await step3();
-	}catch (error) {
-		handle(error)
-	}
-	
-	return a + b + c;
+          <code slot="code">async function towerOfTerror() {
+    let a;
+    let b;
+    let c;
+
+    try {
+        a = await step1();
+    } catch (error) {
+        handle(error);
+    }
+
+    try {
+        b = await step2();
+    } catch (error) {
+        handle(error);
+    }
+    try {
+        c = await step3();
+    } catch (error) {
+        handle(error);
+    }
+
+    return a + b + c;
 }</code>
         </deckgo-highlight-code>
 <p>Nesses casos, a solução mais simples é simplesmente usar o catch no final de cada promise criada.</p>
 <deckgo-highlight-code language="javascript"  >
-          <code slot="code">	await step1().catch(fun);</code>
+          <code slot="code">await step1().catch(fun);</code>
         </deckgo-highlight-code>
 <p>Algo como:</p>
 <deckgo-highlight-code language="javascript"  >
@@ -397,26 +397,27 @@ Adcione <code class="language-text">try_files $uri $uri/ /index.html;</code> den
         </deckgo-highlight-code>
 <p>O que até que fica melhor porém ainda é repetitivo, uma outra opção é criar uma funcão onde exista apenas um bloco try catch para substituir todas as outras, como a seguir:</p>
 <deckgo-highlight-code language="javascript"  >
-          <code slot="code">async function awessome(){
-	try{
-		const data = await promise;		
-		return [data, null];
-	} catch (error) {
-		console.error(error);
-		return [null, error];
-	}
+          <code slot="code">async function awessome() {
+    try {
+        const data = await promise;
+        return [data, null];
+    } catch (error) {
+        console.error(error);
+        return [null, error];
+    }
 }</code>
         </deckgo-highlight-code>
 <p>Assim quando a promessa for resolvida, ela devolverá um array com sua resposta e nulo se não houver erros, e se conter erros retornará um array com o primeiro índice nulo e o erro, assim podemos manter o código limpo linha por linha usando desestruturação e usar um if caso queira fazer outra coisa com o erro.</p>
 <deckgo-highlight-code language="javascript"  >
-          <code slot="code">async function main(){
-	const [ data, error ] = await awessome();
-	
-	if(error) { }
-	
-	const [ data2, error2 ] = await awessome();
-	const [ data3, error3 ] = await awessome();
-	return a + b + c;
+          <code slot="code">async function main() {
+    const [data, error] = await awessome();
+
+    if (error) {
+    }
+
+    const [data2, error2] = await awessome();
+    const [data3, error3] = await awessome();
+    return a + b + c;
 }</code>
         </deckgo-highlight-code>
 <p>Referência: <a href="https://www.youtube.com/watch?v=ITogH7lJTyE">Fireship</a></p></div> <p class="chakra-text css-0" style="color:darkblue">ler mais</p></div></div></div></a></div><div class="chakra-stack css-1jsau4y"><div class="css-1p0udhr"><a href="/posts/tech/2021-05-11-sobre-meus-bots/"><img alt="Sobre Meus Bots" src="/images/uploads/robot-4363354_960_720.webp" class="chakra-image css-svbs6s" style="margin-top:-25%;width:100%"/></a></div><a href="/posts/tech/2021-05-11-sobre-meus-bots/"><div class="css-1ecxfl0"><span class="chakra-text css-1ggbzx1">BOTS</span> • <span class="chakra-text css-18zwm99">04/08/2021 16:55</span><h2 class="chakra-heading css-nhb820">Sobre Meus Bots</h2><div class="css-dex746"><div class="css-t66hqc"><div class="aviso-content-list"><p>Há vários meses atrás eu desenvolvi alguns bots apra o telegram, sendo eles <strong><code class="language-text">@ndefinitionbot</code></strong>, <strong><code class="language-text">@whatsinthisfoodbot</code></strong>, <strong><code class="language-text">@ntalesbot</code></strong> e <strong><code class="language-text">@ntextifybot</code></strong>, e recentemente migrei eles para usarem a arquitetura serverless para que se tornem mais disponíveis.</p>
@@ -441,33 +442,33 @@ Adcione <code class="language-text">try_files $uri $uri/ /index.html;</code> den
 <deckgo-highlight-code language="yaml"  >
           <code slot="code">name: Deploy
 on:
-  push:
-    branches:
-      - main
+    push:
+        branches:
+            - main
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [14.x]
-    steps:
-      - uses: actions/checkout@v1
+    deploy:
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                node-version: [14.x]
+        steps:
+            - uses: actions/checkout@v1
 
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
 
-      - name: Install Packages
-        run: npm install # Instalação de dependências.
-      - name: Build pages
-        run: yarn build # Script de build definido no package.json
+            - name: Install Packages
+              run: npm install # Instalação de dependências.
+            - name: Build pages
+              run: yarn build # Script de build definido no package.json
 
-      - name: Deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }} # Segredo com a chave privada para acesso ssh
-          publish_dir: ./public # Pasta onde estará a build e será copiada para a branch gh-pages.</code>
+            - name: Deploy to gh-pages
+              uses: peaceiris/actions-gh-pages@v3
+              with:
+                  deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }} # Segredo com a chave privada para acesso ssh
+                  publish_dir: ./public # Pasta onde estará a build e será copiada para a branch gh-pages.</code>
         </deckgo-highlight-code>
 <p>Precisamente o que este arquivo define que sempre que ocorrer um push na branch principal (main) ira disparar um gatilho para que rode meu script de build definido no package.json e em seguida usando a biblioteca <a href="https://github.com/peaceiris/actions-gh-pages">peaceiris/actions-gh-pages</a> para realizar o envio da pasta ./public na branch gh-pages, tornando-o disponível para o github pages. Para resumir ele irá executar os seguintes passos:</p>
 <ul>
@@ -550,7 +551,7 @@ jobs:
 </blockquote>
 <p>Os <strong>próximos oito bits</strong> representam o expoente, sendo então:</p>
 <p><img src="/images/uploads/ieee-exponents.gif" alt="" title="IEEE Exponents"></p>
-<p>E por ai vai, mas nos atentando que com 8 bits podemos representar números de <strong>[255-0]</strong>, porém também vamos precisar de expoentes negativos, então por este motivo os números são movidos para <strong>[128-127]</strong>, o que significa que ao invés de termos <strong>x<em>2³</em></strong> <em>como no exemplo anterior, nós teremos <strong>x</strong></em>2⁽³⁻¹²⁷⁾ e se quisermos que o expoente realmente seja 3, precisamos alterar os bits para 130 como a seguir:</p>
+<p>E por ai vai, mas nos atentando que com 8 bits podemos representar números de <strong>[255-0]</strong>, porém também vamos precisar de expoentes negativos, então por este motivo os números são movidos para <strong>[128-127]</strong>, o que significa que ao invés de termos <strong>x<em>2³</em></strong> *como no exemplo anterior, nós teremos **x***2⁽³⁻¹²⁷⁾ e se quisermos que o expoente realmente seja 3, precisamos alterar os bits para 130 como a seguir:</p>
 <blockquote>
 <p>0 10000100 000000000000000000000000 = <strong>x*2⁽¹³⁰⁻¹²⁷⁾</strong></p>
 </blockquote>
@@ -567,8 +568,8 @@ jobs:
 </blockquote>
 <p>Mas essa soluçao disperdiça um bit armazenamento, as pessoas que fizeram o design desse padrao perceberam que quando estamos lidando com numeros binarios algo acontece que nao acontece em nenhuma outra base.</p>
 <blockquote>
-<p>11’000   1.1<em>2⁴ Preste atençao no primeiro digito.</em></p>
-<p><em>0.0101   1.01</em>2⁻³ Por definição, este numero sempre sera <strong>não</strong> zero.</p>
+<p>11’000 1.1<em>2⁴ Preste atençao no primeiro digito.</em></p>
+<p><em>0.0101 1.01</em>2⁻³ Por definição, este numero sempre sera <strong>não</strong> zero.</p>
 </blockquote>
 <p>Mas em binario existe só existe um numero que nao e zero, <strong>1</strong>. Ou seja, se sabemos que o primeiro dígito sempre sera <strong>1</strong>, nao precisamos guarda-lo, podemos salvar um bit movendo a vírgula para esquerda e deixarmos este numero <strong>1</strong> fixo. Agora nossa mantissa esta entre 1 e 2.</p>
 <blockquote>
@@ -702,7 +703,7 @@ exports.handler = async (event) =&gt; {
     async function sendMessage(response) {
         return await axios.post(
             &quot;https://ola-usuario-bot.netlify.app/.netlify/functions/sendMessage&quot;,
-            response
+            response,
         );
     }
 
@@ -710,7 +711,7 @@ exports.handler = async (event) =&gt; {
     async function answerInlineQuery(response) {
         return await axios.post(
             &quot;https://ola-usuario-bot.netlify.app/.netlify/functions/answerInlineQuery&quot;,
-            response
+            response,
         );
     }
 
@@ -886,7 +887,7 @@ for definition_i in definition.find_all(&#39;span&#39;):
         element_class = definition_i[&#39;class&#39;][0]
     except:
         element_class = &quot;&quot;
-    
+
     # Evitando os elementos que possuem a classe tag, para evitar repetições.
     if element_class != &#39;tag&#39;:
         str_definition.append(definition_i.get_text().strip())</code>
@@ -919,7 +920,7 @@ for definition_i in definition.find_all(&#39;span&#39;):
         element_class = definition_i[&#39;class&#39;][0]
     except:
         element_class = &quot;&quot;
-    
+
     # Evitando os elementos que possuem a classe tag, para evitar repetições.
     if element_class != &#39;tag&#39;:
         str_definition.append(definition_i.get_text().strip())
@@ -928,7 +929,7 @@ for definition_i in definition.find_all(&#39;span&#39;):
 try:
     # Buscar o elemento H3 com a classe &#39;tit-exemplo&#39;, onde os exemplos estarão na sua div pai. por isso o uso do .parent
     example = beautiful_page.find(attrs={&#39;class&#39;: &#39;tit-exemplo&#39;}).parent.find_all(attrs={&#39;class&#39;: &#39;frase&#39;})
-    
+
     str_example = []
 
     # Iterar sobre os exemplos.
@@ -968,7 +969,7 @@ for definition_i in definition.find_all(&#39;span&#39;):
         element_class = definition_i[&#39;class&#39;][0]
     except:
         element_class = &quot;&quot;
-    
+
     # Evitando os elementos que possuem a classe tag, para evitar repetições.
     if element_class != &#39;tag&#39;:
         str_definition.append(definition_i.get_text().strip())
@@ -977,7 +978,7 @@ for definition_i in definition.find_all(&#39;span&#39;):
 try:
     # Buscar o elemento H3 com a classe &#39;tit-exemplo&#39;, onde os exemplos estarão na sua div pai. por isso o uso do .parent
     example = beautiful_page.find(attrs={&#39;class&#39;: &#39;tit-exemplo&#39;}).parent.find_all(attrs={&#39;class&#39;: &#39;frase&#39;})
-    
+
     str_example = []
 
     # Iterar sobre os exemplos.
@@ -1068,7 +1069,7 @@ def get_database():
 <p>Assim você pode copiar a url do banco e apenas substituir o usuario, senha e banco de dados que deseja usar.</p>
 <p><img src="/images/uploads/screenshot-from-2021-11-17-09-27-54.png" alt="url do banco." title="url do banco."></p>
 <p>Substituindo respectivamente <username> com seu nome de usuário, <password> com a senha desse usuário e <code class="language-text">myFirstDatabase</code> com o nome do banco de dados que se deseja utilizar.</p>
-<p>Se estiver tendo problema de conexão, procure acessar  a aba de <code class="language-text">Network Access</code> em <code class="language-text">Security</code> e adcione o ip <code class="language-text">0.0.0.0/0</code> e tente novamente. Isso libera conexão de todos os IPs para o banco então use com cautela.</p>
+<p>Se estiver tendo problema de conexão, procure acessar a aba de <code class="language-text">Network Access</code> em <code class="language-text">Security</code> e adcione o ip <code class="language-text">0.0.0.0/0</code> e tente novamente. Isso libera conexão de todos os IPs para o banco então use com cautela.</p>
 <p><img src="/images/uploads/screenshot-from-2021-11-17-09-38-57.png" alt="Aba de Segurança" title="Aba de Segurança"></p>
 <p><img src="/images/uploads/screenshot-from-2021-11-17-09-37-23.png" alt="Adcionando o IP." title="Adcionando o IP."></p>
 <p>Se ainda não tiver usuário de banco no atlas, crie um novo usuário na aba <code class="language-text">Database Access</code>.</p>
@@ -1128,7 +1129,7 @@ for definition_i in definition.find_all(&#39;span&#39;):
         element_class = definition_i[&#39;class&#39;][0]
     except:
         element_class = &quot;&quot;
-    
+
     # Evitando os elementos que possuem a classe tag, para evitar repetições.
     if element_class != &#39;tag&#39;:
         str_definition.append(definition_i.get_text().strip())
@@ -1137,7 +1138,7 @@ for definition_i in definition.find_all(&#39;span&#39;):
 try:
     # Buscar o elemento H3 com a classe &#39;tit-exemplo&#39;, onde os exemplos estarão na sua div pai. por isso o uso do .parent
     example = beautiful_page.find(attrs={&#39;class&#39;: &#39;tit-exemplo&#39;}).parent.find_all(attrs={&#39;class&#39;: &#39;frase&#39;})
-    
+
     str_example = []
 
     # Iterar sobre os exemplos.

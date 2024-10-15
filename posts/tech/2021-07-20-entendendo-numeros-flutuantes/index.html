@@ -135,7 +135,7 @@
 </blockquote>
 <p>Os <strong>próximos oito bits</strong> representam o expoente, sendo então:</p>
 <p><img src="/images/uploads/ieee-exponents.gif" alt="" title="IEEE Exponents"></p>
-<p>E por ai vai, mas nos atentando que com 8 bits podemos representar números de <strong>[255-0]</strong>, porém também vamos precisar de expoentes negativos, então por este motivo os números são movidos para <strong>[128-127]</strong>, o que significa que ao invés de termos <strong>x<em>2³</em></strong> <em>como no exemplo anterior, nós teremos <strong>x</strong></em>2⁽³⁻¹²⁷⁾ e se quisermos que o expoente realmente seja 3, precisamos alterar os bits para 130 como a seguir:</p>
+<p>E por ai vai, mas nos atentando que com 8 bits podemos representar números de <strong>[255-0]</strong>, porém também vamos precisar de expoentes negativos, então por este motivo os números são movidos para <strong>[128-127]</strong>, o que significa que ao invés de termos <strong>x<em>2³</em></strong> *como no exemplo anterior, nós teremos **x***2⁽³⁻¹²⁷⁾ e se quisermos que o expoente realmente seja 3, precisamos alterar os bits para 130 como a seguir:</p>
 <blockquote>
 <p>0 10000100 000000000000000000000000 = <strong>x*2⁽¹³⁰⁻¹²⁷⁾</strong></p>
 </blockquote>
@@ -152,8 +152,8 @@
 </blockquote>
 <p>Mas essa soluçao disperdiça um bit armazenamento, as pessoas que fizeram o design desse padrao perceberam que quando estamos lidando com numeros binarios algo acontece que nao acontece em nenhuma outra base.</p>
 <blockquote>
-<p>11’000   1.1<em>2⁴ Preste atençao no primeiro digito.</em></p>
-<p><em>0.0101   1.01</em>2⁻³ Por definição, este numero sempre sera <strong>não</strong> zero.</p>
+<p>11’000 1.1<em>2⁴ Preste atençao no primeiro digito.</em></p>
+<p><em>0.0101 1.01</em>2⁻³ Por definição, este numero sempre sera <strong>não</strong> zero.</p>
 </blockquote>
 <p>Mas em binario existe só existe um numero que nao e zero, <strong>1</strong>. Ou seja, se sabemos que o primeiro dígito sempre sera <strong>1</strong>, nao precisamos guarda-lo, podemos salvar um bit movendo a vírgula para esquerda e deixarmos este numero <strong>1</strong> fixo. Agora nossa mantissa esta entre 1 e 2.</p>
 <blockquote>
